@@ -233,3 +233,7 @@ def render_model_explorer():
             )
             fig_compare.update_layout(xaxis_tickangle=-45)
             st.plotly_chart(fig_compare, use_container_width=True)
+
+
+# Run when loaded as standalone Streamlit page
+render_model_explorer()

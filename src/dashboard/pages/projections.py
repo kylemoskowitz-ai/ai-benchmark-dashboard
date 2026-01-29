@@ -310,3 +310,7 @@ def render_projections():
     ⚠️ **Remember:** {DISCLAIMER}
     </div>
     """, unsafe_allow_html=True)
+
+
+# Run when loaded as standalone Streamlit page
+render_projections()

@@ -292,3 +292,7 @@ overrides:
     reason: "Corrected per official errata"
     date: "2024-03-15"
             """, language="yaml")
+
+
+# Run when loaded as standalone Streamlit page
+render_data_quality()
