@@ -85,15 +85,26 @@ def linear_projection(
     n_bootstrap = 1000
     bootstrap_forecasts = np.zeros((n_bootstrap, len(forecast_x)))
 
+    valid_bootstraps = 0
     for i in range(n_bootstrap):
         # Resample with replacement
         indices = np.random.choice(len(x), size=len(x), replace=True)
         x_boot = x[indices]
         y_boot = y[indices]
 
-        # Fit on bootstrap sample
-        slope_boot, intercept_boot = np.polyfit(x_boot, y_boot, 1)
-        bootstrap_forecasts[i] = intercept_boot + slope_boot * forecast_x
+        # Skip degenerate samples (all same x values)
+        if len(np.unique(x_boot)) < 2:
+            bootstrap_forecasts[i] = forecast_values  # Use point estimate
+            continue
+
+        try:
+            # Fit on bootstrap sample
+            slope_boot, intercept_boot = np.polyfit(x_boot, y_boot, 1)
+            bootstrap_forecasts[i] = intercept_boot + slope_boot * forecast_x
+            valid_bootstraps += 1
+        except np.linalg.LinAlgError:
+            # Use point estimate for failed fits
+            bootstrap_forecasts[i] = forecast_values
 
     # Calculate confidence intervals
     ci_80_low = np.percentile(bootstrap_forecasts, (1 - confidence_levels[0]) / 2 * 100, axis=0)
