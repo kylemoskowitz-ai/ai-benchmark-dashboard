@@ -67,8 +67,15 @@ def linear_projection(
     x = np.array([(d - start_date).days for d in dates])
     y = np.array(scores)
 
+    # Check for sufficient unique x values
+    if len(np.unique(x)) < 2:
+        return None
+
     # Fit linear regression
-    slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+    try:
+        slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+    except (ValueError, np.linalg.LinAlgError):
+        return None
 
     # Generate forecast dates
     forecast_dates = []
