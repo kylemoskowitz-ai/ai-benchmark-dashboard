@@ -1,6 +1,7 @@
 """Configuration settings for the benchmark dashboard."""
 
 from pathlib import Path
+from typing import Union
 from pydantic_settings import BaseSettings
 from pydantic import Field
 
@@ -40,7 +41,7 @@ class Settings(BaseSettings):
 settings = Settings()
 
 
-def get_absolute_path(relative_path: Path | str) -> Path:
+def get_absolute_path(relative_path: Union[Path, str]) -> Path:
     """Convert relative path to absolute path from project root."""
     if isinstance(relative_path, str):
         relative_path = Path(relative_path)
