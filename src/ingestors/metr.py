@@ -47,17 +47,16 @@ class METRIngestor(BaseIngestor):
 
     def fetch_raw(self) -> Path:
         """Load METR data from local CSV snapshot."""
-        for rel_path in self.SNAPSHOT_PATHS:
-            workspace_path = Path("/sessions/elegant-modest-turing/mnt/Programming") / rel_path
-            if workspace_path.exists():
-                return workspace_path
+        # Get project root (this file is at src/ingestors/metr.py)
+        project_root = Path(__file__).parent.parent.parent
 
-            project_path = Path("/sessions/elegant-modest-turing/mnt/Programming/ai-benchmark-dashboard") / rel_path
-            if project_path.exists():
-                return project_path
+        for rel_path in self.SNAPSHOT_PATHS:
+            snapshot_path = project_root / rel_path
+            if snapshot_path.exists():
+                return snapshot_path
 
         raise FileNotFoundError(
-            f"METR snapshot not found. Tried: {self.SNAPSHOT_PATHS}"
+            f"METR snapshot not found in {project_root}. Tried: {self.SNAPSHOT_PATHS}"
         )
 
     def parse(self, raw_path: Path) -> list[Result]:

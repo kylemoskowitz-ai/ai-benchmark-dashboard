@@ -50,20 +50,18 @@ class SWEBenchIngestor(BaseIngestor):
 
         The CSV is from Epoch AI's benchmark evaluations.
         """
+        # Get project root (this file is at src/ingestors/swe_bench.py)
+        project_root = Path(__file__).parent.parent.parent
+
         # Try to find the snapshot
         for rel_path in self.SNAPSHOT_PATHS:
-            # Check workspace root first
-            workspace_path = Path("/sessions/elegant-modest-turing/mnt/Programming") / rel_path
-            if workspace_path.exists():
-                return workspace_path
-
-            # Check project directory
-            project_path = Path("/sessions/elegant-modest-turing/mnt/Programming/ai-benchmark-dashboard") / rel_path
-            if project_path.exists():
-                return project_path
+            # Check relative to project root
+            snapshot_path = project_root / rel_path
+            if snapshot_path.exists():
+                return snapshot_path
 
         raise FileNotFoundError(
-            f"SWE-Bench snapshot not found. Tried: {self.SNAPSHOT_PATHS}"
+            f"SWE-Bench snapshot not found in {project_root}. Tried: {self.SNAPSHOT_PATHS}"
         )
 
     def parse(self, raw_path: Path) -> list[Result]:

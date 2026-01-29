@@ -147,7 +147,7 @@ def render_model_explorer():
     # Detailed results table with provenance
     st.subheader("Detailed Results with Provenance")
 
-    for _, row in results.iter_rows(named=True):
+    for row in results.iter_rows(named=True):
         with st.container():
             col1, col2, col3, col4 = st.columns([2, 1, 1, 2])
 
