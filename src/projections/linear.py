@@ -109,8 +109,8 @@ def linear_projection(
             slope_boot, intercept_boot = np.polyfit(x_boot, y_boot, 1)
             bootstrap_forecasts[i] = intercept_boot + slope_boot * forecast_x
             valid_bootstraps += 1
-        except np.linalg.LinAlgError:
-            # Use point estimate for failed fits
+        except Exception:
+            # Use point estimate for failed fits (catches LinAlgError and others)
             bootstrap_forecasts[i] = forecast_values
 
     # Calculate confidence intervals
