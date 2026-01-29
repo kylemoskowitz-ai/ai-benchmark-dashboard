@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Data (raw downloads - not committed)
+data/raw/
+data/processed/
+data/backups/
+
+# Database WAL files (not the main database - we commit that as seed data)
+data/*.duckdb.wal
+data/*.duckdb-journal
+# Note: data/benchmark.duckdb IS committed as seed data for Streamlit Cloud
+
+# Exports
+exports/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type checking
+.mypy_cache/
+
+# Ruff
+.ruff_cache/

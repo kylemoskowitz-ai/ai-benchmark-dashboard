@@ -1,0 +1,13 @@
+# Manual data overrides
+# These are applied LAST during data updates, allowing for corrections.
+#
+# Example override format:
+# overrides:
+#   - result_id: "abc123"
+#     field: "score"
+#     old_value: 45.2
+#     new_value: 46.1
+#     reason: "Corrected per official errata"
+#     date: "2024-03-15"
+
+overrides: []

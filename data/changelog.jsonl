@@ -1,0 +1,3 @@
+{"timestamp": "2026-01-29T04:42:04.937792", "action": "update", "table": "results", "record_id": "swe_bench_verified", "old_value": null, "new_value": {"count": 24}, "reason": "Batch update from swe_bench_verified ingestor", "source": "update_data"}
+{"timestamp": "2026-01-29T04:42:06.400011", "action": "update", "table": "results", "record_id": "metr_time_horizons", "old_value": null, "new_value": {"count": 30}, "reason": "Batch update from metr_time_horizons ingestor", "source": "update_data"}
+{"timestamp": "2026-01-29T04:42:07.769512", "action": "update", "table": "results", "record_id": "frontiermath_tier4", "old_value": null, "new_value": {"count": 27}, "reason": "Batch update from frontiermath_tier4 ingestor", "source": "update_data"}

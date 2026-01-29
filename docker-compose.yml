@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: benchmark-dashboard
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src:ro
+    environment:
+      - DATABASE_PATH=/app/data/benchmark.duckdb
+      - STREAMLIT_SERVER_PORT=8501
+      - STREAMLIT_SERVER_ADDRESS=0.0.0.0
+    command: ["streamlit", "run", "src/dashboard/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: benchmark-api
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src:ro
+    environment:
+      - DATABASE_PATH=/app/data/benchmark.duckdb
+    command: ["uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    restart: unless-stopped
+
+  # One-off container for data updates
+  updater:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: benchmark-updater
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_PATH=/app/data/benchmark.duckdb
+    command: ["python", "-m", "scripts.update_data"]
+    profiles:
+      - update  # Only runs with: docker compose --profile update run updater
+
+networks:
+  default:
+    name: benchmark-network

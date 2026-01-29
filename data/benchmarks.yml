@@ -1,0 +1,57 @@
+# Benchmark definitions
+# These are loaded during initialization and can be extended.
+
+benchmarks:
+  swe_bench_verified:
+    name: "SWE-Bench Verified"
+    category: "coding"
+    description: "SWE-Bench evaluates models on real GitHub issues. The Verified subset contains 500 human-verified test cases."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://www.swebench.com/"
+    paper_url: "https://arxiv.org/abs/2310.06770"
+
+  metr_time_horizons:
+    name: "METR Time Horizons"
+    category: "agentic"
+    description: "METR evaluates AI agents on long-horizon autonomous tasks."
+    unit: "hours"
+    scale_min: 0
+    scale_max: 1000
+    higher_is_better: true
+    official_url: "https://metr.org/"
+    paper_url: "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+
+  frontiermath_tier4:
+    name: "FrontierMath (Tier 4)"
+    category: "math"
+    description: "FrontierMath Tier 4 contains the most challenging mathematical problems."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://epoch.ai/frontiermath"
+    paper_url: "https://arxiv.org/abs/2411.04872"
+
+  arc_agi:
+    name: "ARC-AGI"
+    category: "reasoning"
+    description: "Abstraction and Reasoning Corpus - evaluates fluid intelligence."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://arcprize.org/"
+    notes: "Data pending - add ARC Prize leaderboard ingestor"
+
+  gpqa_diamond:
+    name: "GPQA Diamond"
+    category: "reasoning"
+    description: "Graduate-level science questions requiring expert knowledge."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://arxiv.org/abs/2311.12022"
