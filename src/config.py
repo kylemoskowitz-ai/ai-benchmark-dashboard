@@ -40,8 +40,10 @@ class Settings(BaseSettings):
 settings = Settings()
 
 
-def get_absolute_path(relative_path: Path) -> Path:
+def get_absolute_path(relative_path: Path | str) -> Path:
     """Convert relative path to absolute path from project root."""
+    if isinstance(relative_path, str):
+        relative_path = Path(relative_path)
     if relative_path.is_absolute():
         return relative_path
     return settings.project_root / relative_path
