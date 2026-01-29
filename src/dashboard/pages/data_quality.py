@@ -13,8 +13,10 @@ from src.db.queries import (
     get_data_quality_summary,
     get_unique_providers,
 )
-from src.db.connection import get_last_update
-from src.config import settings, get_absolute_path
+from src.db.connection import get_last_update, get_connection
+
+# Get project root for file paths
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 
 
 def render_data_quality():
@@ -96,9 +98,6 @@ def render_data_quality():
     if benchmarks.is_empty() or not providers:
         st.info("No data to display coverage matrix.")
     else:
-        # Build coverage matrix
-        from src.db.connection import get_connection
-
         with get_connection(read_only=True) as conn:
             coverage_data = conn.execute("""
                 SELECT
@@ -114,7 +113,6 @@ def render_data_quality():
             """).pl()
 
         if not coverage_data.is_empty():
-            # Pivot for heatmap
             heatmap_data = coverage_data.pivot(
                 on="provider",
                 index="benchmark",
@@ -122,7 +120,6 @@ def render_data_quality():
                 aggregate_function="sum",
             ).fill_null(0)
 
-            # Convert to matrix format
             benchmarks_list = heatmap_data["benchmark"].to_list()
             providers_list = [c for c in heatmap_data.columns if c != "benchmark"]
             matrix = heatmap_data.select(providers_list).to_numpy()
@@ -154,7 +151,6 @@ def render_data_quality():
     if sources.is_empty():
         st.info("No sources recorded yet.")
     else:
-        # Summary by source type
         source_summary = sources.group_by("source_type").agg([
             pl.len().alias("count"),
             pl.col("result_count").sum().alias("total_results"),
@@ -177,9 +173,7 @@ def render_data_quality():
             fig.update_layout(xaxis_tickangle=-45)
             st.plotly_chart(fig, use_container_width=True)
 
-        # Source details table
         st.write("**All Sources:**")
-
         display_sources = sources.select([
             "source_title",
             "source_type",
@@ -202,37 +196,36 @@ def render_data_quality():
     # Changelog viewer
     st.subheader("Data Changelog")
 
-    changelog_path = get_absolute_path(settings.changelog_file)
+    changelog_path = PROJECT_ROOT / "data" / "changelog.jsonl"
 
     if changelog_path.exists():
-        with open(changelog_path, "r") as f:
-            lines = f.readlines()[-50:]  # Last 50 entries
+        try:
+            with open(changelog_path, "r") as f:
+                lines = f.readlines()[-50:]
 
-        if lines:
-            changelog_entries = []
-            for line in reversed(lines):
-                try:
-                    entry = json.loads(line.strip())
-                    changelog_entries.append({
-                        "Timestamp": entry.get("timestamp", ""),
-                        "Action": entry.get("action", ""),
-                        "Table": entry.get("table", ""),
-                        "Record": entry.get("record_id", ""),
-                        "Reason": entry.get("reason", "")[:50] + "..." if entry.get("reason", "") and len(entry.get("reason", "")) > 50 else entry.get("reason", ""),
-                    })
-                except json.JSONDecodeError:
-                    continue
+            if lines:
+                changelog_entries = []
+                for line in reversed(lines):
+                    try:
+                        entry = json.loads(line.strip())
+                        changelog_entries.append({
+                            "Timestamp": entry.get("timestamp", ""),
+                            "Action": entry.get("action", ""),
+                            "Table": entry.get("table", ""),
+                            "Record": entry.get("record_id", ""),
+                            "Reason": (entry.get("reason", "")[:50] + "...") if entry.get("reason") and len(entry.get("reason", "")) > 50 else entry.get("reason", ""),
+                        })
+                    except json.JSONDecodeError:
+                        continue
 
-            if changelog_entries:
-                st.dataframe(
-                    changelog_entries,
-                    hide_index=True,
-                    use_container_width=True,
-                )
+                if changelog_entries:
+                    st.dataframe(changelog_entries, hide_index=True, use_container_width=True)
+                else:
+                    st.info("Changelog exists but no valid entries found.")
             else:
-                st.info("Changelog exists but no valid entries found.")
-        else:
-            st.info("Changelog is empty.")
+                st.info("Changelog is empty.")
+        except Exception:
+            st.info("Could not read changelog file.")
     else:
         st.info("No changelog file found. Changes will be logged after data updates.")
 
@@ -257,34 +250,38 @@ def render_data_quality():
 
     with col2:
         st.write("**Schema Version:**")
-        from src.db.connection import get_connection
-        with get_connection(read_only=True) as conn:
-            version = conn.execute(
-                "SELECT value FROM metadata WHERE key = 'schema_version'"
-            ).fetchone()
-            st.write(f"Database schema: v{version[0] if version else 'unknown'}")
+        try:
+            with get_connection(read_only=True) as conn:
+                version = conn.execute(
+                    "SELECT value FROM metadata WHERE key = 'schema_version'"
+                ).fetchone()
+                st.write(f"Database schema: v{version[0] if version else 'unknown'}")
+        except Exception:
+            st.write("Database schema: v1.0")
 
     # Manual override section
     st.divider()
     st.subheader("Manual Overrides")
 
-    overrides_path = get_absolute_path(settings.overrides_file)
+    overrides_path = PROJECT_ROOT / "data" / "overrides.yml"
 
     if overrides_path.exists():
-        with open(overrides_path, "r") as f:
-            import yaml
-            overrides = yaml.safe_load(f)
+        try:
+            with open(overrides_path, "r") as f:
+                import yaml
+                overrides = yaml.safe_load(f)
 
-        if overrides and overrides.get("overrides"):
-            st.write(f"**{len(overrides['overrides'])} manual overrides applied:**")
-            for override in overrides["overrides"]:
-                st.write(f"- {override.get('field')}: {override.get('reason', 'No reason given')}")
-        else:
-            st.info("No manual overrides configured.")
+            if overrides and overrides.get("overrides"):
+                st.write(f"**{len(overrides['overrides'])} manual overrides applied:**")
+                for override in overrides["overrides"]:
+                    st.write(f"- {override.get('field')}: {override.get('reason', 'No reason given')}")
+            else:
+                st.info("No manual overrides configured.")
+        except Exception:
+            st.info("Could not read overrides file.")
     else:
         st.info("No overrides file found. Create `data/overrides.yml` to add manual corrections.")
 
-        # Show example
         with st.expander("Example overrides.yml"):
             st.code("""
 overrides:
