@@ -5,13 +5,20 @@ from pathlib import Path
 from contextlib import contextmanager
 from datetime import datetime
 import shutil
-
-from src.config import settings, get_absolute_path
+import os
 
 
 def get_db_path() -> Path:
     """Get absolute path to database file."""
-    return get_absolute_path(settings.database_path)
+    # Check environment variable first
+    env_path = os.environ.get("DATABASE_PATH")
+    if env_path:
+        return Path(env_path)
+    
+    # Default: relative to this file's location
+    # This file is at src/db/connection.py, so project root is ../../
+    project_root = Path(__file__).parent.parent.parent
+    return project_root / "data" / "benchmark.duckdb"
 
 
 @contextmanager
@@ -25,7 +32,10 @@ def get_connection(read_only: bool = False):
         DuckDB connection object
     """
     db_path = get_db_path()
-    db_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # Don't try to create parent dirs on read-only filesystems
+    if not read_only:
+        db_path.parent.mkdir(parents=True, exist_ok=True)
 
     conn = duckdb.connect(str(db_path), read_only=read_only)
     try:
@@ -35,16 +45,12 @@ def get_connection(read_only: bool = False):
 
 
 def backup_database() -> Path:
-    """Create a timestamped backup of the database.
-
-    Returns:
-        Path to backup file
-    """
+    """Create a timestamped backup of the database."""
     db_path = get_db_path()
     if not db_path.exists():
         raise FileNotFoundError(f"Database not found: {db_path}")
 
-    backup_dir = get_absolute_path(settings.backups_dir)
+    backup_dir = db_path.parent / "backups"
     backup_dir.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
@@ -55,11 +61,7 @@ def backup_database() -> Path:
 
 
 def restore_database(backup_path: Path) -> None:
-    """Restore database from backup.
-
-    Args:
-        backup_path: Path to backup file
-    """
+    """Restore database from backup."""
     if not backup_path.exists():
         raise FileNotFoundError(f"Backup not found: {backup_path}")
 
@@ -144,7 +146,7 @@ def init_database() -> None:
             )
         """)
 
-        # Metadata table for tracking updates
+        # Metadata table
         conn.execute("""
             CREATE TABLE IF NOT EXISTS metadata (
                 key VARCHAR PRIMARY KEY,
@@ -153,26 +155,11 @@ def init_database() -> None:
             )
         """)
 
-        # Create indexes for common queries
-        conn.execute("""
-            CREATE INDEX IF NOT EXISTS idx_results_benchmark
-            ON results(benchmark_id, evaluation_date)
-        """)
-
-        conn.execute("""
-            CREATE INDEX IF NOT EXISTS idx_results_model
-            ON results(model_id)
-        """)
-
-        conn.execute("""
-            CREATE INDEX IF NOT EXISTS idx_results_trust
-            ON results(trust_tier)
-        """)
-
-        conn.execute("""
-            CREATE INDEX IF NOT EXISTS idx_models_provider
-            ON models(provider)
-        """)
+        # Create indexes
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_results_benchmark ON results(benchmark_id, evaluation_date)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_results_model ON results(model_id)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_results_trust ON results(trust_tier)")
+        conn.execute("CREATE INDEX IF NOT EXISTS idx_models_provider ON models(provider)")
 
         # Set initial metadata
         conn.execute("""
@@ -185,13 +172,16 @@ def init_database() -> None:
 
 def get_last_update() -> datetime | None:
     """Get timestamp of last successful data update."""
-    with get_connection(read_only=True) as conn:
-        result = conn.execute("""
-            SELECT value FROM metadata WHERE key = 'last_update'
-        """).fetchone()
-        if result:
-            return datetime.fromisoformat(result[0])
-        return None
+    try:
+        with get_connection(read_only=True) as conn:
+            result = conn.execute("""
+                SELECT value FROM metadata WHERE key = 'last_update'
+            """).fetchone()
+            if result:
+                return datetime.fromisoformat(result[0])
+    except Exception:
+        pass
+    return None
 
 
 def set_last_update(timestamp: datetime) -> None:
