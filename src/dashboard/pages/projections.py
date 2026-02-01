@@ -9,6 +9,7 @@ import numpy as np
 from src.db.queries import get_all_benchmarks, get_frontier_results
 from src.projections.linear import linear_projection
 from src.projections.saturation import saturation_projection
+from src.projections.power_law import power_law_projection
 
 
 def render_projections():
@@ -48,10 +49,11 @@ def render_projections():
     with col2:
         projection_method = st.selectbox(
             "Fitting Method",
-            options=["linear", "saturation", "ensemble"],
+            options=["linear", "saturation", "power_law", "ensemble"],
             format_func=lambda x: {
                 "linear": "Linear Extrapolation",
                 "saturation": "Logistic (Saturation)",
+                "power_law": "Power Law (Scaling)",
                 "ensemble": "Ensemble (Compare All)",
             }.get(x),
         )
@@ -108,6 +110,14 @@ def render_projections():
 
     if projection_method == "ensemble" or projection_method == "saturation":
         projections["saturation"] = saturation_projection(
+            frontier,
+            ceiling=ceiling,
+            window_months=window_months,
+            forecast_months=forecast_months
+        )
+
+    if projection_method == "ensemble" or projection_method == "power_law":
+        projections["power_law"] = power_law_projection(
             frontier,
             ceiling=ceiling,
             window_months=window_months,
@@ -185,7 +195,7 @@ def render_projections():
 
     # Ensemble: show other methods as lighter lines
     if projection_method == "ensemble":
-        other_colors = {"linear": "#6B8E9F", "saturation": "#8B7355"}
+        other_colors = {"linear": "#6B8E9F", "saturation": "#8B7355", "power_law": "#7B6B8E"}
         for method, proj in projections.items():
             if method != primary_method:
                 fig.add_trace(go.Scatter(
