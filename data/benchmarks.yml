@@ -76,3 +76,43 @@ benchmarks:
     higher_is_better: true
     official_url: "https://mmmu-benchmark.github.io/"
     paper_url: "https://arxiv.org/abs/2311.16502"
+
+  zerobench:
+    name: "ZeroBench"
+    category: "multimodal"
+    description: "Zero-shot visual understanding benchmark for evaluating vision-language models."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://zerobench.github.io/"
+
+  humanities_last_exam:
+    name: "Humanities Last Exam"
+    category: "reasoning"
+    description: "Expert-level humanities exam questions to evaluate deep knowledge and reasoning."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://lastexam.ai/"
+
+  remote_labor_index:
+    name: "Remote Labor Index"
+    category: "agentic"
+    description: "Evaluates AI systems on remote labor tasks measuring practical work capability."
+    unit: "hours"
+    scale_min: 0
+    scale_max: 1000
+    higher_is_better: true
+    official_url: "https://metr.org/"
+
+  epoch_capabilities_index:
+    name: "Epoch Capabilities Index"
+    category: "general"
+    description: "Composite index of frontier AI capabilities across multiple benchmarks."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://epoch.ai/"

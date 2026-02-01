@@ -8,6 +8,10 @@ from .frontier_math import FrontierMathIngestor
 from .epoch import EpochIngestor
 from .arc_agi import ARCAGI1Ingestor, ARCAGI2Ingestor
 from .mmmu import MMMUIngestor
+from .zerobench import ZeroBenchIngestor
+from .humanities_last_exam import HumanitiesLastExamIngestor
+from .remote_labor_index import RemoteLaborIndexIngestor
+from .epoch_capabilities_index import EpochCapabilitiesIndexIngestor
 
 # Registry of all available ingestors
 # Priority: Official sources first, then third-party
@@ -19,6 +23,10 @@ INGESTORS: dict[str, type[BaseIngestor]] = {
     "arc_agi_1": ARCAGI1Ingestor,
     "arc_agi_2": ARCAGI2Ingestor,
     "mmmu": MMMUIngestor,
+    "zerobench": ZeroBenchIngestor,
+    "humanities_last_exam": HumanitiesLastExamIngestor,
+    "remote_labor_index": RemoteLaborIndexIngestor,
+    "epoch_capabilities_index": EpochCapabilitiesIndexIngestor,
 }
 
 
@@ -44,6 +52,10 @@ __all__ = [
     "ARCAGI1Ingestor",
     "ARCAGI2Ingestor",
     "MMMUIngestor",
+    "ZeroBenchIngestor",
+    "HumanitiesLastExamIngestor",
+    "RemoteLaborIndexIngestor",
+    "EpochCapabilitiesIndexIngestor",
     "INGESTORS",
     "get_ingestor",
     "get_all_ingestors",
