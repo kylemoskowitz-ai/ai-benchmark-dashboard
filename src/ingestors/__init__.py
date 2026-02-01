@@ -7,6 +7,7 @@ from .metr import METRIngestor
 from .frontier_math import FrontierMathIngestor
 from .epoch import EpochIngestor
 from .arc_agi import ARCAGI1Ingestor, ARCAGI2Ingestor
+from .mmmu import MMMUIngestor
 
 # Registry of all available ingestors
 # Priority: Official sources first, then third-party
@@ -17,6 +18,7 @@ INGESTORS: dict[str, type[BaseIngestor]] = {
     "frontiermath_tier4": FrontierMathIngestor,
     "arc_agi_1": ARCAGI1Ingestor,
     "arc_agi_2": ARCAGI2Ingestor,
+    "mmmu": MMMUIngestor,
 }
 
 
@@ -41,6 +43,7 @@ __all__ = [
     "EpochIngestor",
     "ARCAGI1Ingestor",
     "ARCAGI2Ingestor",
+    "MMMUIngestor",
     "INGESTORS",
     "get_ingestor",
     "get_all_ingestors",

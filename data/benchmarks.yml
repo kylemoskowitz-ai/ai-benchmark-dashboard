@@ -65,3 +65,14 @@ benchmarks:
     scale_max: 100
     higher_is_better: true
     official_url: "https://arxiv.org/abs/2311.12022"
+
+  mmmu:
+    name: "MMMU"
+    category: "multimodal"
+    description: "Massive Multi-discipline Multimodal Understanding - evaluates multimodal models on college-level tasks."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://mmmu-benchmark.github.io/"
+    paper_url: "https://arxiv.org/abs/2311.16502"
