@@ -59,7 +59,7 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
 
   return (
     <Link
-      href={`/explorer?benchmark=${benchmark.id}`}
+      href={`/explorer/?benchmark=${benchmark.id}`}
       className="card group cursor-pointer hover:border-accent/50 hover:glow-accent/10"
     >
       {/* Header */}

@@ -2,15 +2,21 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { href: "/", label: "Progress" },
-  { href: "/explorer", label: "Explorer" },
-  { href: "/projections", label: "Projections" },
+  { href: "/explorer/", label: "Explorer" },
+  { href: "/projections/", label: "Projections" },
 ];
 
 export function Navigation() {
   const pathname = usePathname();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-base-200 bg-base/80 backdrop-blur-lg">
@@ -33,9 +39,11 @@ export function Navigation() {
           {/* Navigation Links */}
           <div className="flex items-center gap-8">
             {navItems.map((item) => {
-              const isActive = item.href === "/"
-                ? pathname === "/"
-                : pathname.startsWith(item.href);
+              const isActive = mounted && (
+                item.href === "/"
+                  ? pathname === "/" || pathname === ""
+                  : pathname?.startsWith(item.href.replace(/\/$/, ""))
+              );
 
               return (
                 <Link
