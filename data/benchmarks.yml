@@ -21,7 +21,7 @@ benchmarks:
     scale_min: 0
     scale_max: 1000
     higher_is_better: true
-    official_url: "https://metr.org/"
+    official_url: "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
     paper_url: "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
 
   frontiermath_tier4:
@@ -32,7 +32,7 @@ benchmarks:
     scale_min: 0
     scale_max: 100
     higher_is_better: true
-    official_url: "https://epoch.ai/frontiermath"
+    official_url: "https://epoch.ai/frontiermath/tiers-1-4"
     paper_url: "https://arxiv.org/abs/2411.04872"
 
   arc_agi_1:
@@ -43,7 +43,7 @@ benchmarks:
     scale_min: 0
     scale_max: 100
     higher_is_better: true
-    official_url: "https://arcprize.org/"
+    official_url: "https://arcprize.org/leaderboard"
     paper_url: "https://arxiv.org/abs/1911.01547"
 
   arc_agi_2:
@@ -54,7 +54,7 @@ benchmarks:
     scale_min: 0
     scale_max: 100
     higher_is_better: true
-    official_url: "https://arcprize.org/arc-agi-2"
+    official_url: "https://arcprize.org/leaderboard"
 
   gpqa_diamond:
     name: "GPQA Diamond"
@@ -74,7 +74,7 @@ benchmarks:
     scale_min: 0
     scale_max: 100
     higher_is_better: true
-    official_url: "https://mmmu-benchmark.github.io/"
+    official_url: "https://www.vals.ai/benchmarks/mmmu"
     paper_url: "https://arxiv.org/abs/2311.16502"
 
   zerobench:
@@ -88,14 +88,14 @@ benchmarks:
     official_url: "https://zerobench.github.io/"
 
   humanities_last_exam:
-    name: "Humanities Last Exam"
+    name: "Humanities Last Exam (No Tools)"
     category: "reasoning"
-    description: "Expert-level humanities exam questions to evaluate deep knowledge and reasoning."
+    description: "Expert-level humanities exam questions to evaluate deep knowledge and reasoning. No Tools Variant."
     unit: "percent"
     scale_min: 0
     scale_max: 100
     higher_is_better: true
-    official_url: "https://lastexam.ai/"
+    official_url: "https://scale.com/leaderboard/humanitys_last_exam_text_only"
 
   remote_labor_index:
     name: "Remote Labor Index"
@@ -105,7 +105,7 @@ benchmarks:
     scale_min: 0
     scale_max: 1000
     higher_is_better: true
-    official_url: "https://metr.org/"
+    official_url: "https://scale.com/leaderboard/rli"
 
   epoch_capabilities_index:
     name: "Epoch Capabilities Index"

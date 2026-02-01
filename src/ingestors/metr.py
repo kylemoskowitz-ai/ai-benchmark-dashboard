@@ -35,7 +35,7 @@ class METRIngestor(BaseIngestor):
         scale_min=0.0,
         scale_max=1000.0,  # Time horizons can be high
         higher_is_better=True,
-        official_url="https://metr.org/",
+        official_url="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
         paper_url="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
         notes="Time horizon in hours. Higher = can complete more complex autonomous tasks.",
     )

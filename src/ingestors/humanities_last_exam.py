@@ -15,18 +15,18 @@ class HumanitiesLastExamIngestor(BaseIngestor):
     """Ingestor for Humanities Last Exam benchmark."""
 
     BENCHMARK_ID = "humanities_last_exam"
-    LEADERBOARD_URL = "https://lastexam.ai/"
+    LEADERBOARD_URL = "https://scale.com/leaderboard/humanitys_last_exam_text_only"
 
     BENCHMARK_META = Benchmark(
         benchmark_id="humanities_last_exam",
-        name="Humanities Last Exam",
+        name="Humanities Last Exam (No Tools)",
         category="reasoning",
-        description="Expert-level humanities exam questions to evaluate deep knowledge and reasoning.",
+        description="Expert-level humanities exam questions to evaluate deep knowledge and reasoning. No Tools Variant.",
         unit="percent",
         scale_min=0.0,
         scale_max=100.0,
         higher_is_better=True,
-        official_url="https://lastexam.ai/",
+        official_url="https://scale.com/leaderboard/humanitys_last_exam_text_only",
     )
 
     def fetch_raw(self) -> Path:

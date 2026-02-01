@@ -139,7 +139,7 @@ class ARCAGI1Ingestor(ARCAGIBaseIngestor):
         scale_min=0.0,
         scale_max=100.0,
         higher_is_better=True,
-        official_url="https://arcprize.org/",
+        official_url="https://arcprize.org/leaderboard",
         paper_url="https://arxiv.org/abs/1911.01547",
     )
 
@@ -149,7 +149,7 @@ class ARCAGI2Ingestor(ARCAGIBaseIngestor):
 
     BENCHMARK_ID = "arc_agi_2"
     VERSION = "2"
-    LEADERBOARD_URL = "https://arcprize.org/arc-agi-2"
+    LEADERBOARD_URL = "https://arcprize.org/leaderboard"
 
     BENCHMARK_META = Benchmark(
         benchmark_id="arc_agi_2",
@@ -160,5 +160,5 @@ class ARCAGI2Ingestor(ARCAGIBaseIngestor):
         scale_min=0.0,
         scale_max=100.0,
         higher_is_better=True,
-        official_url="https://arcprize.org/arc-agi-2",
+        official_url="https://arcprize.org/leaderboard",
     )

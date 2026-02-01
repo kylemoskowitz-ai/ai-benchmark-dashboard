@@ -15,7 +15,7 @@ class MMMUIngestor(BaseIngestor):
     """Ingestor for MMMU benchmark."""
 
     BENCHMARK_ID = "mmmu"
-    LEADERBOARD_URL = "https://mmmu-benchmark.github.io/"
+    LEADERBOARD_URL = "https://www.vals.ai/benchmarks/mmmu"
 
     BENCHMARK_META = Benchmark(
         benchmark_id="mmmu",
@@ -26,7 +26,7 @@ class MMMUIngestor(BaseIngestor):
         scale_min=0.0,
         scale_max=100.0,
         higher_is_better=True,
-        official_url="https://mmmu-benchmark.github.io/",
+        official_url="https://www.vals.ai/benchmarks/mmmu",
         paper_url="https://arxiv.org/abs/2311.16502",
     )
 

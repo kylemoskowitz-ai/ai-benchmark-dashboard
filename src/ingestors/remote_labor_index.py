@@ -15,7 +15,7 @@ class RemoteLaborIndexIngestor(BaseIngestor):
     """Ingestor for Remote Labor Index benchmark."""
 
     BENCHMARK_ID = "remote_labor_index"
-    LEADERBOARD_URL = "https://metr.org/blog/remote-labor-index/"
+    LEADERBOARD_URL = "https://scale.com/leaderboard/rli"
 
     BENCHMARK_META = Benchmark(
         benchmark_id="remote_labor_index",
@@ -26,7 +26,7 @@ class RemoteLaborIndexIngestor(BaseIngestor):
         scale_min=0.0,
         scale_max=1000.0,
         higher_is_better=True,
-        official_url="https://metr.org/",
+        official_url="https://scale.com/leaderboard/rli",
     )
 
     def fetch_raw(self) -> Path:

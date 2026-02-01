@@ -36,7 +36,7 @@ class FrontierMathIngestor(BaseIngestor):
         scale_min=0.0,
         scale_max=100.0,
         higher_is_better=True,
-        official_url="https://epoch.ai/frontiermath",
+        official_url="https://epoch.ai/frontiermath/tiers-1-4",
         paper_url="https://arxiv.org/abs/2411.04872",
         notes="Tier 4 = hardest problems. Most models score <15%.",
     )
@@ -66,10 +66,10 @@ class FrontierMathIngestor(BaseIngestor):
 
         # Create source record
         source = Source(
-            source_id=self.generate_source_id("https://epoch.ai/frontiermath"),
+            source_id=self.generate_source_id("https://epoch.ai/frontiermath/tiers-1-4"),
             source_type=SourceType.THIRD_PARTY_LEADERBOARD,
             source_title="Epoch AI FrontierMath Evaluations",
-            source_url="https://epoch.ai/frontiermath",
+            source_url="https://epoch.ai/frontiermath/tiers-1-4",
             retrieved_at=datetime.utcnow(),
             parse_method=ParseMethod.CSV_DOWNLOAD,
             raw_snapshot_path=str(raw_path),
