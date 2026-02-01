@@ -35,16 +35,26 @@ benchmarks:
     official_url: "https://epoch.ai/frontiermath"
     paper_url: "https://arxiv.org/abs/2411.04872"
 
-  arc_agi:
-    name: "ARC-AGI"
+  arc_agi_1:
+    name: "ARC-AGI 1"
     category: "reasoning"
-    description: "Abstraction and Reasoning Corpus - evaluates fluid intelligence."
+    description: "Original Abstraction and Reasoning Corpus evaluating fluid intelligence and novel problem solving."
     unit: "percent"
     scale_min: 0
     scale_max: 100
     higher_is_better: true
     official_url: "https://arcprize.org/"
-    notes: "Data pending - add ARC Prize leaderboard ingestor"
+    paper_url: "https://arxiv.org/abs/1911.01547"
+
+  arc_agi_2:
+    name: "ARC-AGI 2"
+    category: "reasoning"
+    description: "Updated ARC-AGI with harder tasks and improved evaluation methodology."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 100
+    higher_is_better: true
+    official_url: "https://arcprize.org/arc-agi-2"
 
   gpqa_diamond:
     name: "GPQA Diamond"

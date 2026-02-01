@@ -6,6 +6,7 @@ from .swe_bench_official import SWEBenchOfficialIngestor
 from .metr import METRIngestor
 from .frontier_math import FrontierMathIngestor
 from .epoch import EpochIngestor
+from .arc_agi import ARCAGI1Ingestor, ARCAGI2Ingestor
 
 # Registry of all available ingestors
 # Priority: Official sources first, then third-party
@@ -14,6 +15,8 @@ INGESTORS: dict[str, type[BaseIngestor]] = {
     "swe_bench_epoch": SWEBenchIngestor,  # Epoch AI fallback (Tier B)
     "metr_time_horizons": METRIngestor,
     "frontiermath_tier4": FrontierMathIngestor,
+    "arc_agi_1": ARCAGI1Ingestor,
+    "arc_agi_2": ARCAGI2Ingestor,
 }
 
 
@@ -36,6 +39,8 @@ __all__ = [
     "METRIngestor",
     "FrontierMathIngestor",
     "EpochIngestor",
+    "ARCAGI1Ingestor",
+    "ARCAGI2Ingestor",
     "INGESTORS",
     "get_ingestor",
     "get_all_ingestors",
