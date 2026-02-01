@@ -62,7 +62,10 @@ export function getResultsForModel(
 }
 
 // Format score with appropriate precision
-export function formatScore(score: number, unit: string): string {
+export function formatScore(score: number | null | undefined, unit: string): string {
+  if (score === null || score === undefined) {
+    return "—";
+  }
   if (unit === "percent") {
     return `${score.toFixed(1)}%`;
   }

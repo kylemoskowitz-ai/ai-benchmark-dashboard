@@ -114,7 +114,7 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
       )}
 
       {/* Progress bar */}
-      {benchmark.sota && benchmark.unit === "percent" && (
+      {benchmark.sota && benchmark.sota.score != null && benchmark.unit === "percent" && (
         <div className="mb-4">
           <div className="h-1.5 bg-base-100 rounded-full overflow-hidden">
             <div
