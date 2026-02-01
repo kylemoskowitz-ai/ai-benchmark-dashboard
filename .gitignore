@@ -51,3 +51,21 @@ htmlcov/
 
 # Ruff
 .ruff_cache/
+
+# Node modules
+node_modules/
+web/node_modules/
+
+# Next.js build output
+web/.next/
+web/out/
+
+# Environment files
+.env
+.env.local
+.env*.local
+
+# Caches
+data/cache/
+*.pyc
+__pycache__/

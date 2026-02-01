@@ -25,34 +25,29 @@ class ZeroBenchIngestor(BaseIngestor):
         benchmark_id="zerobench",
         name="ZeroBench",
         category="multimodal",
-        description="Zero-shot visual understanding benchmark for evaluating vision-language models.",
+        description="An 'impossible' visual benchmark for contemporary large multimodal models. Scores represent pass@5 accuracy - the percentage of tasks solved correctly in 5 attempts.",
         unit="percent",
         scale_min=0.0,
         scale_max=100.0,
         higher_is_better=True,
         official_url="https://zerobench.github.io/",
+        notes="Scores are pass@5 accuracy. This benchmark is designed to be extremely challenging.",
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch ZeroBench data by scraping the leaderboard.
+        """Fetch ZeroBench data from snapshot.
 
-        Scrapes zerobench.github.io and caches results locally.
-        Falls back to local snapshot if scraping fails.
+        The ZeroBench website uses client-side rendering, so we maintain
+        a curated snapshot from zerobench.github.io.
         """
-        # Try to scrape fresh data
-        scraped_data = scrape_zerobench()
-
-        if scraped_data:
-            # Write to CSV for parsing
-            return write_scraped_to_csv("zerobench", scraped_data)
-
-        # Fallback to local snapshot
+        # Use curated snapshot - site uses JS rendering
         snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "zerobench.csv"
         if snapshot_path.exists():
             return snapshot_path
 
         raise FileNotFoundError(
-            "ZeroBench: Failed to scrape leaderboard and no local snapshot available."
+            "ZeroBench snapshot not found. Please create data/snapshots/zerobench.csv "
+            "with data from https://zerobench.github.io/"
         )
 
     def parse(self, raw_path: Path) -> list[Result]:
@@ -110,10 +105,10 @@ class ZeroBenchIngestor(BaseIngestor):
         return results
 
     def _parse_float(self, value) -> float | None:
+        """Parse score - ZeroBench scores are already in percentage (0-100)."""
         if value is None or value == "":
             return None
         try:
-            v = float(value)
-            return v * 100 if v <= 1 else v
+            return float(value)
         except (ValueError, TypeError):
             return None

@@ -40,6 +40,7 @@ class ParseMethod(str, Enum):
     HTML_SCRAPE = "html_scrape"
     PDF_EXTRACT = "pdf_extract"
     MANUAL = "manual"
+    CURATED_SNAPSHOT = "curated_snapshot"
 
 
 class ModelStatus(str, Enum):

@@ -1,0 +1,77 @@
+import Link from "next/link";
+
+export function HeroSection() {
+  return (
+    <section className="relative overflow-hidden border-b border-base-200">
+      {/* Subtle gradient background */}
+      <div className="absolute inset-0 bg-gradient-subtle" />
+
+      {/* Decorative grid pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(to right, #fff 1px, transparent 1px),
+                           linear-gradient(to bottom, #fff 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
+
+      <div className="relative container-wide py-16 md:py-24">
+        <div className="max-w-3xl">
+          {/* Eyebrow */}
+          <div className="flex items-center gap-2 mb-4">
+            <div className="h-px w-8 bg-accent" />
+            <span className="text-caption uppercase tracking-wider text-accent font-medium">
+              Frontier AI Progress
+            </span>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="font-serif text-display text-base-900 mb-6">
+            Tracking the cutting edge of
+            <br />
+            <span className="text-accent">artificial intelligence</span>
+          </h1>
+
+          {/* Description */}
+          <p className="text-body-lg text-base-500 mb-8 max-w-2xl">
+            A curated dashboard of benchmark results from leading AI labs.
+            Monitoring capabilities in coding, reasoning, mathematics, and
+            real-world task completion.
+          </p>
+
+          {/* Quick stats */}
+          <div className="flex flex-wrap gap-8 md:gap-12">
+            <StatItem value="10" label="Benchmarks" />
+            <StatItem value="200+" label="Models" />
+            <StatItem value="700+" label="Results" />
+          </div>
+        </div>
+
+        {/* Decorative element - ascending bars */}
+        <div className="absolute right-8 bottom-8 hidden lg:flex items-end gap-2 opacity-20">
+          {[20, 35, 45, 60, 75, 85, 95].map((h, i) => (
+            <div
+              key={i}
+              className="w-3 bg-accent rounded-t"
+              style={{ height: `${h}px` }}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function StatItem({ value, label }: { value: string; label: string }) {
+  return (
+    <div>
+      <div className="font-mono text-display-sm font-medium text-base-900">
+        {value}
+      </div>
+      <div className="text-body-sm text-base-500 uppercase tracking-wide">
+        {label}
+      </div>
+    </div>
+  );
+}

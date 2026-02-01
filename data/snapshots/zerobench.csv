@@ -1,17 +1,15 @@
-model,provider,score,date
-Gemini 3 Pro,Google,19.0,2025-11-01
-GPT-5.2,OpenAI,18.0,2025-12-11
-Gemini 3 Flash,Google,13.0,2025-12-01
-o4-mini,OpenAI,10.0,2025-06-15
-Claude Opus 4.5,Anthropic,10.0,2025-11-01
-GPT-5 mini (high),OpenAI,9.0,2025-08-07
-Claude Opus 4.1 (Thinking),Anthropic,8.0,2025-08-05
-GPT-4.5,OpenAI,7.0,2025-02-01
-Claude Sonnet 4 (Thinking),Anthropic,6.0,2025-09-29
-Claude Sonnet 4,Anthropic,5.0,2025-06-01
-Gemini 2.5 Pro,Google,5.0,2025-03-25
-Grok 4,xAI,4.0,2025-07-01
-Claude Opus 4.1,Anthropic,4.0,2025-08-05
-Claude Sonnet 4.5,Anthropic,3.0,2025-09-29
-Gemini 2.5 Flash,Google,3.0,2025-04-01
-Claude 3.7 Sonnet,Anthropic,2.0,2025-02-24
+model,provider,score,date,notes
+Gemini 3 Pro,Google,19.0,2026-01-15,pass@5 score
+GPT-5.2,OpenAI,18.0,2025-12-11,pass@5 score
+Gemini 3 Flash,Google,13.0,2026-01-10,pass@5 score
+o4-mini,OpenAI,10.0,2025-06-01,pass@5 score
+Claude Opus 4.5,Anthropic,10.0,2025-11-24,pass@5 score
+Claude Opus 4.1 (Thinking),Anthropic,8.0,2025-08-05,pass@5 score
+GPT-5 (medium),OpenAI,7.0,2025-08-07,pass@5 score
+GPT-4.5,OpenAI,7.0,2025-02-27,pass@5 score
+o3,OpenAI,6.0,2025-04-16,pass@5 score
+Claude Sonnet 4 (Thinking),Anthropic,6.0,2025-09-29,pass@5 score
+Claude Sonnet 4,Anthropic,5.0,2025-09-29,pass@5 score
+Claude Opus 4,Anthropic,4.0,2025-05-22,pass@5 score
+Grok 4,xAI,4.0,2025-08-01,pass@5 score
+Claude Opus 4.1,Anthropic,4.0,2025-08-05,pass@5 score

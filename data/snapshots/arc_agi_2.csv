@@ -1,6 +1,36 @@
-model,provider,score,date,reasoning_effort
-o3,OpenAI,75.0,2025-02-01,high
-o4-mini,OpenAI,40.0,2025-07-01,high
-Claude Opus 4.5,Anthropic,15.0,2025-02-01,
-Gemini 3 Pro,Google,12.0,2025-08-01,
-GPT-5.2,OpenAI,35.0,2025-10-01,
+model,provider,score,date,notes
+GPT-5.2 Pro (High),OpenAI,54.2,2025-12-11,CoT reasoning
+Gemini 3 Pro (Refine.),Google,54.0,2026-01-15,Refinement approach by Poetiq
+GPT-5.2 (X-High),OpenAI,52.9,2025-12-11,CoT reasoning
+Gemini 3 Deep Think (Preview),Google,45.1,2026-01-01,CoT reasoning
+GPT-5.2 (High),OpenAI,43.3,2025-12-11,CoT reasoning
+GPT-5.2 Pro (Medium),OpenAI,38.5,2025-12-11,CoT reasoning
+Opus 4.5 (Thinking 64K),Anthropic,37.6,2025-11-24,CoT reasoning
+Gemini 3 Flash Preview (High),Google,33.6,2026-01-10,CoT reasoning
+Gemini 3 Pro,Google,31.1,2025-10-01,CoT reasoning
+Opus 4.5 (Thinking 32K),Anthropic,30.6,2025-11-24,CoT reasoning
+Grok 4 (Refine.),xAI,29.4,2025-08-01,Refinement by J. Berman
+NVARC,ARC Prize 2025,27.6,2025-09-01,Custom approach
+GPT-5.2 (Medium),OpenAI,26.7,2025-12-11,CoT reasoning
+Opus 4.5 (Thinking 16K),Anthropic,22.8,2025-11-24,CoT reasoning
+GPT-5 Pro,OpenAI,18.3,2025-08-07,CoT reasoning
+GPT-5.1 (Thinking High),OpenAI,17.6,2025-11-19,CoT reasoning
+Grok 4 (Thinking),xAI,16.0,2025-08-01,CoT reasoning
+Opus 4.5 (Thinking 8K),Anthropic,13.9,2025-11-24,CoT reasoning
+Claude Sonnet 4.5 (Thinking 32K),Anthropic,13.6,2025-09-29,CoT reasoning
+Gemini 3 Flash Preview (Medium),Google,12.8,2026-01-10,CoT reasoning
+GPT-5 (High),OpenAI,9.9,2025-08-07,CoT reasoning
+GPT-5.2 (Low),OpenAI,9.7,2025-12-11,CoT reasoning
+Claude Opus 4 (Thinking 16K),Anthropic,8.6,2025-05-22,CoT reasoning
+GPT-5 (Medium),OpenAI,7.5,2025-08-07,CoT reasoning
+Claude Sonnet 4.5 (Thinking 8K),Anthropic,6.9,2025-09-29,CoT reasoning
+o3 (High),OpenAI,6.5,2025-04-16,CoT reasoning
+o4-mini (High),OpenAI,6.1,2025-06-01,CoT reasoning
+Claude Sonnet 4 (Thinking 16K),Anthropic,5.9,2025-09-29,CoT reasoning
+Grok 4 (Fast Reasoning),xAI,5.3,2025-08-01,CoT reasoning
+o3-Pro (High),OpenAI,4.9,2025-04-16,CoT reasoning
+Gemini 2.5 Pro (Thinking 32K),Google,4.9,2025-03-01,CoT reasoning
+GPT-5 Mini (High),OpenAI,4.4,2025-08-07,CoT reasoning
+o3 (Preview Low),OpenAI,4.0,2024-12-20,CoT reasoning - high cost
+Claude Sonnet 4.5,Anthropic,3.8,2025-09-29,Base LLM
+Gemini 2.5 Pro (Preview),Google,3.8,2025-03-01,Base LLM

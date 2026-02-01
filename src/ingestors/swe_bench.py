@@ -5,7 +5,6 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
-from .epoch_fetcher import get_epoch_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -18,7 +17,7 @@ class SWEBenchIngestor(BaseIngestor):
     SWE-Bench evaluates AI models on real-world software engineering tasks
     from GitHub issues. The "Verified" subset contains human-verified test cases.
 
-    Data source: Epoch AI evaluations (automatically downloaded from epoch.ai)
+    Data source: Official swebench.com leaderboard (curated snapshot)
     """
 
     BENCHMARK_ID = "swe_bench_verified"
@@ -41,12 +40,14 @@ class SWEBenchIngestor(BaseIngestor):
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch SWE-Bench data from Epoch AI (auto-downloaded).
+        """Fetch SWE-Bench data from curated snapshot.
 
-        Downloads the benchmark_data.zip from Epoch AI if needed,
-        caches it locally, and returns path to the SWE-Bench CSV.
+        Returns path to the local snapshot CSV with data from swebench.com.
         """
-        return get_epoch_csv("swe_bench_verified.csv")
+        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "swe_bench_verified.csv"
+        if not snapshot_path.exists():
+            raise FileNotFoundError(f"SWE-Bench Verified snapshot not found: {snapshot_path}")
+        return snapshot_path
 
     def parse(self, raw_path: Path) -> list[Result]:
         """Parse SWE-Bench CSV into Result objects."""
@@ -54,14 +55,14 @@ class SWEBenchIngestor(BaseIngestor):
 
         # Create source record
         source = Source(
-            source_id=self.generate_source_id("https://epoch.ai/data/swe_bench_verified"),
-            source_type=SourceType.THIRD_PARTY_LEADERBOARD,
-            source_title="Epoch AI SWE-Bench Verified Evaluations",
-            source_url="https://epoch.ai/data/swe_bench_verified",
+            source_id=self.generate_source_id("https://www.swebench.com/"),
+            source_type=SourceType.OFFICIAL_LEADERBOARD,
+            source_title="SWE-Bench Official Leaderboard",
+            source_url="https://www.swebench.com/",
             retrieved_at=datetime.utcnow(),
-            parse_method=ParseMethod.CSV_DOWNLOAD,
+            parse_method=ParseMethod.CURATED_SNAPSHOT,
             raw_snapshot_path=str(raw_path),
-            notes="Epoch AI's standardized evaluations of models on SWE-Bench Verified",
+            notes="Official SWE-Bench Verified leaderboard results",
         )
         self.register_source(source)
 
@@ -69,12 +70,12 @@ class SWEBenchIngestor(BaseIngestor):
         for row in df.iter_rows(named=True):
             try:
                 # Parse model info
-                model_name = row.get("Model version", "")
+                model_name = row.get("model", "")
                 if not model_name:
                     continue
 
-                provider = row.get("Organization", "Unknown")
-                release_date = self.parse_date(row.get("Release date"))
+                provider = row.get("provider", "Unknown")
+                release_date = self.parse_date(row.get("date"))
 
                 # Create/register model
                 model_id = self.normalize_model_id(model_name, provider)
@@ -85,42 +86,25 @@ class SWEBenchIngestor(BaseIngestor):
                     family=self._infer_family(model_name),
                     release_date=release_date,
                     status=ModelStatus.VERIFIED,
-                    training_compute_flop=self._parse_float(row.get("Training compute (FLOP)")),
-                    training_compute_notes=row.get("Training compute notes"),
                     metadata={
-                        "country": row.get("Country", ""),
-                        "log_viewer": row.get("Log viewer", ""),
+                        "notes": row.get("notes", ""),
                     },
                 )
                 self.register_model(model)
 
-                # Parse score (convert from 0-1 to percentage if needed)
-                raw_score = self._parse_float(row.get("Best score (across scorers)"))
-                if raw_score is not None:
-                    # Epoch data is 0-1, convert to percentage
-                    score = raw_score * 100 if raw_score <= 1 else raw_score
-                else:
-                    score = None
-
-                # Parse stderr
-                stderr = self._parse_float(row.get("stderr"))
-                if stderr is not None and stderr <= 1:
-                    stderr = stderr * 100  # Convert to percentage
-
-                # Parse evaluation date
-                eval_date = self.parse_date(row.get("Started at"))
+                # Parse score (already in percentage)
+                score = self._parse_float(row.get("score"))
 
                 # Create result
                 result = Result(
-                    result_id=self.generate_result_id(model_id, eval_date or release_date),
+                    result_id=self.generate_result_id(model_id, release_date),
                     model_id=model_id,
                     benchmark_id=self.BENCHMARK_ID,
                     score=score,
-                    score_stderr=stderr,
-                    evaluation_date=eval_date,
+                    evaluation_date=release_date,
                     source_id=source.source_id,
-                    trust_tier=TrustTier.B,  # Epoch AI = semi-official
-                    evaluation_notes=f"Epoch AI evaluation. Log ID: {row.get('id', 'N/A')}",
+                    trust_tier=TrustTier.A,  # Official leaderboard
+                    evaluation_notes=row.get("notes", ""),
                 )
                 results.append(result)
 

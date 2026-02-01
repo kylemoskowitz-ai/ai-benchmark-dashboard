@@ -30,23 +30,29 @@ class METRIngestor(BaseIngestor):
         category="agentic",
         description=(
             "METR evaluates AI agents on long-horizon autonomous tasks. "
-            "The time horizon metric indicates task complexity the model can complete."
+            "The P50 time horizon (in minutes) indicates the median task complexity "
+            "a model can complete autonomously."
         ),
-        unit="hours",
+        unit="minutes",
         scale_min=0.0,
         scale_max=1000.0,  # Time horizons can be high
         higher_is_better=True,
         official_url="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
         paper_url="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
-        notes="Time horizon in hours. Higher = can complete more complex autonomous tasks.",
+        notes="P50 time horizon in minutes. Higher = can complete more complex autonomous tasks. Data from METR-Horizon-v1.1.",
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch METR data from Epoch AI (auto-downloaded).
+        """Fetch METR data from curated snapshot.
 
-        Downloads the benchmark_data.zip from Epoch AI if needed,
-        caches it locally, and returns path to the METR CSV.
+        Uses the latest METR-Horizon-v1.1 data from metr.org.
         """
+        # Use curated snapshot with v1.1 data
+        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "metr_time_horizons.csv"
+        if snapshot_path.exists():
+            return snapshot_path
+
+        # Fallback to Epoch data (older version)
         return get_epoch_csv("metr_time_horizons_external.csv")
 
     def parse(self, raw_path: Path) -> list[Result]:
@@ -55,26 +61,27 @@ class METRIngestor(BaseIngestor):
 
         # Create source record
         source = Source(
-            source_id=self.generate_source_id("https://metr.org/time-horizons"),
+            source_id=self.generate_source_id("https://metr.org/time-horizons-v1.1"),
             source_type=SourceType.OFFICIAL_PAPER,
-            source_title="METR Time Horizons Report",
+            source_title="METR Time Horizons v1.1",
             source_url="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
             retrieved_at=datetime.utcnow(),
             parse_method=ParseMethod.CSV_DOWNLOAD,
             raw_snapshot_path=str(raw_path),
-            notes="METR's evaluation of AI agent time horizons",
+            notes="METR-Horizon-v1.1 benchmark results. P50 time horizon in minutes.",
         )
         self.register_source(source)
 
         results = []
         for row in df.iter_rows(named=True):
             try:
-                model_name = row.get("Model version", "")
+                # Handle both snapshot format and Epoch format
+                model_name = row.get("model") or row.get("Model version", "")
                 if not model_name:
                     continue
 
-                provider = row.get("Organization", "Unknown")
-                release_date = self.parse_date(row.get("Release date"))
+                provider = row.get("provider") or row.get("Organization", "Unknown")
+                release_date = self.parse_date(row.get("date") or row.get("Release date"))
 
                 # Create/register model
                 model_id = self.normalize_model_id(model_name, provider)
@@ -85,24 +92,21 @@ class METRIngestor(BaseIngestor):
                     family=self._infer_family(model_name),
                     release_date=release_date,
                     status=ModelStatus.VERIFIED,
-                    training_compute_flop=self._parse_float(row.get("Training compute (FLOP)")),
-                    training_compute_notes=row.get("Training compute notes"),
-                    metadata={
-                        "country": row.get("Country", ""),
-                        "source_link": row.get("Source link", ""),
-                    },
                 )
                 self.register_model(model)
 
-                # Parse time horizon score
-                time_horizon = self._parse_float(row.get("Time horizon"))
+                # Parse time horizon score (P50 in minutes)
+                time_horizon = self._parse_float(row.get("score") or row.get("Time horizon"))
 
                 # Parse confidence intervals
-                ci_low = self._parse_float(row.get("CI_low"))
-                ci_high = self._parse_float(row.get("CI_high"))
+                ci_low = self._parse_float(row.get("score_ci_low") or row.get("CI_low"))
+                ci_high = self._parse_float(row.get("score_ci_high") or row.get("CI_high"))
 
                 # Additional score metrics
-                avg_score = self._parse_float(row.get("average_score"))
+                avg_score = self._parse_float(row.get("avg_score") or row.get("average_score"))
+
+                if time_horizon is None:
+                    continue
 
                 # Create result
                 result = Result(
@@ -112,13 +116,13 @@ class METRIngestor(BaseIngestor):
                     score=time_horizon,
                     score_ci_low=ci_low,
                     score_ci_high=ci_high,
-                    evaluation_date=release_date,  # Use release date as proxy
+                    evaluation_date=release_date,
                     source_id=source.source_id,
                     trust_tier=TrustTier.A,  # METR = official
                     evaluation_notes=(
-                        f"Time horizon: {time_horizon}h. "
+                        f"P50 time horizon: {time_horizon} min. "
                         f"Avg task score: {avg_score}. "
-                        f"Notes: {row.get('Notes', 'N/A')}"
+                        f"Notes: {row.get('notes', 'N/A')}"
                     ),
                 )
                 results.append(result)
