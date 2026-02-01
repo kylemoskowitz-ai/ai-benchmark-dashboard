@@ -1,9 +1,8 @@
-"""Overview page - frontier best-over-time across all benchmarks."""
+"""Overview page - frontier performance across benchmarks."""
 
 import streamlit as st
-import plotly.express as px
 import plotly.graph_objects as go
-from datetime import date, timedelta
+from datetime import date
 import polars as pl
 
 from src.db.queries import (
@@ -15,8 +14,7 @@ from src.db.queries import (
 
 def render_overview():
     """Render the overview page."""
-    st.title("AI Benchmark Progress Overview")
-    st.caption("Frontier performance across key benchmarks over time")
+    st.title("Overview")
 
     # Get data
     benchmarks = get_all_benchmarks()
@@ -25,35 +23,30 @@ def render_overview():
         st.warning("No benchmarks found. Run `make update-data` to load data.")
         return
 
-    # Key metrics row
     quality = get_data_quality_summary()
 
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.metric("Total Results", f"{quality['total_results']:,}")
-    with col2:
-        st.metric("Models Tracked", f"{quality['total_models']:,}")
-    with col3:
-        st.metric("Benchmarks", quality['total_benchmarks'])
-    with col4:
-        st.metric("Data Coverage", f"{100 - quality['missing_score_pct']:.1f}%")
+    # Key metrics - simple row
+    cols = st.columns(4)
+    cols[0].metric("Results", f"{quality['total_results']:,}")
+    cols[1].metric("Models", f"{quality['total_models']:,}")
+    cols[2].metric("Benchmarks", quality['total_benchmarks'])
+    cols[3].metric("Coverage", f"{100 - quality['missing_score_pct']:.0f}%")
 
     st.divider()
 
-    # Filters
-    col1, col2, col3 = st.columns([2, 2, 1])
-
-    # Build lookup dict for efficient formatting
+    # Benchmark selector
     benchmark_names = {
         row["benchmark_id"]: row["name"]
         for row in benchmarks.iter_rows(named=True)
     }
 
+    col1, col2, col3 = st.columns([3, 2, 1])
+
     with col1:
         selected_benchmarks = st.multiselect(
-            "Benchmarks to show",
-            options=benchmarks["benchmark_id"].to_list(),
-            default=benchmarks["benchmark_id"].to_list()[:5],
+            "Benchmarks",
+            options=list(benchmark_names.keys()),
+            default=list(benchmark_names.keys())[:5],
             format_func=lambda x: benchmark_names.get(x, x),
         )
 
@@ -61,21 +54,17 @@ def render_overview():
         date_range = st.date_input(
             "Date range",
             value=(date(2024, 1, 1), date.today()),
-            min_value=date(2023, 1, 1),
-            max_value=date.today(),
         )
 
     with col3:
-        normalize = st.checkbox("Normalize scores", value=False, help="Scale all benchmarks to 0-100%")
+        normalize = st.checkbox("Normalize", value=False)
 
-    # Get frontier results for each benchmark
     if not selected_benchmarks:
-        st.info("Select at least one benchmark to display.")
+        st.info("Select at least one benchmark.")
         return
 
-    # Prepare data for multi-benchmark frontier chart
+    # Gather frontier data
     all_frontiers = []
-
     trust_tiers = ["A", "B"] if st.session_state.get("official_only") else None
 
     for bench_id in selected_benchmarks:
@@ -88,99 +77,91 @@ def render_overview():
         if frontier.is_empty():
             continue
 
-        # Get benchmark metadata
         bench_meta = benchmarks.filter(pl.col("benchmark_id") == bench_id)
         bench_name = bench_meta["name"][0] if len(bench_meta) > 0 else bench_id
         scale_max = bench_meta["scale_max"][0] if len(bench_meta) > 0 else 100
 
-        # Add benchmark info
         frontier = frontier.with_columns([
             pl.lit(bench_name).alias("benchmark_name"),
             pl.lit(scale_max).alias("scale_max"),
         ])
 
-        # Normalize if requested
         if normalize and scale_max > 0:
             frontier = frontier.with_columns([
-                (pl.col("score") / scale_max * 100).alias("normalized_score")
+                (pl.col("score") / scale_max * 100).alias("display_score")
             ])
         else:
             frontier = frontier.with_columns([
-                pl.col("score").alias("normalized_score")
+                pl.col("score").alias("display_score")
             ])
 
         all_frontiers.append(frontier)
 
     if not all_frontiers:
-        st.warning("No data found for selected benchmarks and filters.")
+        st.warning("No data found for selected benchmarks.")
         return
 
-    # Combine all frontiers
     combined = pl.concat(all_frontiers, how="diagonal")
 
-    # Create frontier chart
-    st.subheader("Frontier Progress Over Time")
+    # Main chart - minimal styling
+    st.markdown("### Frontier Progress")
 
     fig = go.Figure()
 
-    for bench_name in combined["benchmark_name"].unique().to_list():
-        bench_data = combined.filter(pl.col("benchmark_name") == bench_name)
-        bench_data = bench_data.sort("effective_date")
+    # Muted color palette
+    colors = ['#4C78A8', '#F58518', '#54A24B', '#E45756', '#72B7B2', '#B279A2']
 
-        # Get dates and scores
-        dates = bench_data["effective_date"].to_list()
-        scores = bench_data["normalized_score"].to_list()
-        models = bench_data["model_name"].to_list()
-        trust = bench_data["trust_tier"].to_list()
-
-        # Create hover text with provenance
-        hover_text = [
-            f"<b>{model}</b><br>"
-            f"Score: {score:.1f}{'%' if normalize else ''}<br>"
-            f"Trust: {t}<br>"
-            f"Date: {d}"
-            for model, score, t, d in zip(models, scores, trust, dates)
-        ]
+    for i, bench_name in enumerate(combined["benchmark_name"].unique().to_list()):
+        bench_data = combined.filter(pl.col("benchmark_name") == bench_name).sort("effective_date")
 
         fig.add_trace(go.Scatter(
-            x=dates,
-            y=scores,
+            x=bench_data["effective_date"].to_list(),
+            y=bench_data["display_score"].to_list(),
             mode='lines+markers',
             name=bench_name,
-            hovertemplate="%{customdata}<extra></extra>",
-            customdata=hover_text,
-            line=dict(width=2),
-            marker=dict(size=8),
+            line=dict(width=2, color=colors[i % len(colors)]),
+            marker=dict(size=6),
+            hovertemplate=(
+                "<b>%{customdata[0]}</b><br>"
+                "Score: %{y:.1f}<br>"
+                "Date: %{x}<extra></extra>"
+            ),
+            customdata=[[m] for m in bench_data["model_name"].to_list()],
         ))
 
     fig.update_layout(
-        title="Best Performance Over Time (Frontier)",
-        xaxis_title="Date",
-        yaxis_title="Score" + (" (Normalized %)" if normalize else ""),
+        xaxis_title="",
+        yaxis_title="Score" + (" (%)" if normalize else ""),
         hovermode="closest",
+        height=420,
+        margin=dict(l=40, r=20, t=20, b=40),
         legend=dict(
             orientation="h",
             yanchor="bottom",
             y=1.02,
-            xanchor="right",
-            x=1
+            xanchor="left",
+            x=0,
+            font=dict(size=11),
         ),
-        height=500,
+        plot_bgcolor='white',
+        xaxis=dict(gridcolor='#f0f0f0', showline=True, linecolor='#ddd'),
+        yaxis=dict(gridcolor='#f0f0f0', showline=True, linecolor='#ddd'),
     )
 
     st.plotly_chart(fig, use_container_width=True)
 
-    # Export options
-    csv_data = combined.to_pandas().to_csv(index=False)
+    # Export
     st.download_button(
-        "📥 Export CSV",
-        csv_data,
+        "Export CSV",
+        combined.to_pandas().to_csv(index=False),
         "frontier_data.csv",
         "text/csv",
     )
 
-    # Recent records section
-    st.subheader("Recent Frontier Records")
+    st.divider()
+
+    # Recent records - clean table
+    st.markdown("### Recent Records")
 
     recent = combined.sort("effective_date", descending=True).head(10)
 
@@ -191,45 +172,9 @@ def render_overview():
             "benchmark_name",
             "score",
             "trust_tier",
-            "provider",
         ]).to_pandas()
 
-        display_df.columns = ["Date", "Model", "Benchmark", "Score", "Trust", "Provider"]
+        display_df.columns = ["Date", "Model", "Benchmark", "Score", "Tier"]
+        display_df["Score"] = display_df["Score"].round(2)
 
-        st.dataframe(
-            display_df,
-            hide_index=True,
-            use_container_width=True,
-        )
-
-    # Trust tier distribution
-    st.subheader("Data Quality Overview")
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        trust_dist = quality["trust_distribution"]
-        if not trust_dist.is_empty():
-            fig_trust = px.pie(
-                trust_dist.to_pandas(),
-                values="count",
-                names="trust_tier",
-                title="Trust Tier Distribution",
-                color="trust_tier",
-                color_discrete_map={"A": "#1a7f37", "B": "#9a6700", "C": "#6e7781"},
-            )
-            st.plotly_chart(fig_trust, use_container_width=True)
-
-    with col2:
-        coverage = quality["benchmark_coverage"]
-        if not coverage.is_empty():
-            fig_coverage = px.bar(
-                coverage.to_pandas(),
-                x="name",
-                y="result_count",
-                title="Results per Benchmark",
-                color="valid_scores",
-                labels={"name": "Benchmark", "result_count": "Results"},
-            )
-            fig_coverage.update_layout(xaxis_tickangle=-45)
-            st.plotly_chart(fig_coverage, use_container_width=True)
+        st.dataframe(display_df, hide_index=True, use_container_width=True)

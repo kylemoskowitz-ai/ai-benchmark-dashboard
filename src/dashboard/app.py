@@ -9,102 +9,120 @@ import sys
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# Page configuration - MUST be first Streamlit command
+# Page configuration
 st.set_page_config(
-    page_title="AI Benchmark Progress",
-    page_icon="📊",
+    page_title="AI Benchmark Tracker",
+    page_icon="◈",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
-# Custom CSS for clean, modern look
+# Minimal, clean CSS
 st.markdown("""
 <style>
-    /* Metric cards */
-    .stMetric {
-        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-        padding: 1rem;
-        border-radius: 0.75rem;
-        border: 1px solid #e9ecef;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .stMetric:hover {
-        box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-    }
-
-    /* Main container */
+    /* Reset and base */
     .block-container {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        max-width: 1200px;
+        padding: 2rem 3rem;
+        max-width: 1100px;
     }
 
-    /* Trust tier colors */
-    .trust-a { color: #1a7f37; font-weight: 600; }
-    .trust-b { color: #9a6700; font-weight: 600; }
-    .trust-c { color: #6e7781; font-weight: 600; }
+    /* Typography */
+    h1 {
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.25rem;
+    }
+    h2, h3 {
+        font-weight: 500;
+        color: #1a1a1a;
+        margin-top: 1.5rem;
+    }
 
-    /* Disclaimer box */
-    .disclaimer {
-        background-color: #fffbeb;
-        border-left: 4px solid #f59e0b;
-        padding: 1rem 1.25rem;
-        margin: 1rem 0;
+    /* Subtle metric styling */
+    [data-testid="stMetric"] {
+        background: #fafafa;
+        padding: 0.75rem 1rem;
+        border-radius: 6px;
+    }
+    [data-testid="stMetricValue"] {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    [data-testid="stMetricLabel"] {
+        font-size: 0.8rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    /* Sidebar */
+    section[data-testid="stSidebar"] {
+        background: #f8f8f8;
+        border-right: 1px solid #eee;
+    }
+    section[data-testid="stSidebar"] h1 {
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    /* Clean dividers */
+    hr {
+        border: none;
+        border-top: 1px solid #e8e8e8;
+        margin: 1.5rem 0;
+    }
+
+    /* Tables */
+    .stDataFrame {
+        font-size: 0.85rem;
+    }
+
+    /* Buttons */
+    .stDownloadButton > button {
+        background: white;
+        border: 1px solid #ddd;
+        color: #333;
+        font-size: 0.85rem;
+        padding: 0.4rem 0.8rem;
+    }
+    .stDownloadButton > button:hover {
+        background: #f5f5f5;
+        border-color: #ccc;
+    }
+
+    /* Expanders */
+    .streamlit-expanderHeader {
         font-size: 0.9rem;
-        border-radius: 0 0.5rem 0.5rem 0;
+        font-weight: 500;
+    }
+
+    /* Warning/info boxes */
+    .disclaimer {
+        background: #fffef5;
+        border-left: 3px solid #e6b800;
+        padding: 0.75rem 1rem;
+        margin: 1rem 0;
+        font-size: 0.85rem;
+        color: #665c00;
     }
 
     /* Footer */
     .footer {
-        font-size: 0.8rem;
-        color: #6b7280;
+        font-size: 0.75rem;
+        color: #888;
         text-align: center;
-        padding: 2rem 0 1rem 0;
-        border-top: 1px solid #e5e7eb;
-        margin-top: 2rem;
+        padding: 2rem 0 1rem;
+        margin-top: 3rem;
+        border-top: 1px solid #eee;
     }
 
-    /* Sidebar styling */
-    section[data-testid="stSidebar"] {
-        background-color: #fafbfc;
-    }
-    section[data-testid="stSidebar"] .stRadio > label {
-        font-weight: 500;
-    }
+    /* Hide hamburger menu and footer */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
 
-    /* Table improvements */
-    .stDataFrame {
-        border-radius: 0.5rem;
-        overflow: hidden;
-    }
-
-    /* Chart containers */
+    /* Chart styling */
     .stPlotlyChart {
-        border-radius: 0.5rem;
-        overflow: hidden;
-    }
-
-    /* Download button styling */
-    .stDownloadButton > button {
-        background-color: #f8f9fa;
-        border: 1px solid #d1d5db;
-        color: #374151;
-    }
-    .stDownloadButton > button:hover {
-        background-color: #e5e7eb;
-        border-color: #9ca3af;
-    }
-
-    /* Expander styling */
-    .streamlit-expanderHeader {
-        font-weight: 500;
-        color: #374151;
-    }
-
-    /* Divider */
-    hr {
-        border-color: #e5e7eb;
-        margin: 1.5rem 0;
+        background: white;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -120,58 +138,54 @@ def get_database_path() -> Path:
 
 def main():
     """Main dashboard application."""
-    # Check database exists
     db_path = get_database_path()
-    
+
     if not db_path.exists():
         st.error(f"Database not found at {db_path}")
-        st.info("Please run `make init-db` to initialize the database.")
+        st.info("Run `make init-db` to initialize the database.")
         return
 
     # Sidebar
     with st.sidebar:
-        st.title("📊 AI Benchmark Progress")
+        st.markdown("### ◈ AI Benchmark Tracker")
         st.caption("Data-quality-first tracking")
 
-        st.divider()
+        st.markdown("---")
 
-        # Navigation
         page = st.radio(
-            "Navigation",
+            "Navigate",
             [
-                "🏠 Overview",
-                "📈 Benchmark Explorer",
-                "🤖 Model Explorer",
-                "🔮 Projections",
-                "✅ Data Quality",
+                "Overview",
+                "Benchmark Explorer",
+                "Model Explorer",
+                "Projections",
+                "Data Quality",
             ],
             label_visibility="collapsed",
         )
 
-        st.divider()
+        st.markdown("---")
 
-        # Quick filters
-        st.subheader("Filters")
-
+        # Filters
+        st.markdown("##### Filters")
         official_only = st.checkbox(
             "Official sources only",
             value=False,
-            help="Show only Tier A (official) data sources"
+            help="Tier A sources only"
         )
         st.session_state["official_only"] = official_only
 
-        st.divider()
-
-        # Last update info
+        # Last update
+        st.markdown("---")
         try:
             from src.db.connection import get_last_update
             last_update = get_last_update()
             if last_update:
-                st.caption(f"Updated: {last_update.strftime('%b %d, %Y')}")
+                st.caption(f"Updated {last_update.strftime('%b %d, %Y')}")
         except Exception:
             pass
 
-    # Import page modules at top level for better error handling
+    # Import pages
     from src.dashboard.pages.overview import render_overview
     from src.dashboard.pages.benchmark_explorer import render_benchmark_explorer
     from src.dashboard.pages.model_explorer import render_model_explorer
@@ -180,26 +194,25 @@ def main():
 
     # Route to page
     try:
-        if "Overview" in page:
+        if page == "Overview":
             render_overview()
-        elif "Benchmark Explorer" in page:
+        elif page == "Benchmark Explorer":
             render_benchmark_explorer()
-        elif "Model Explorer" in page:
+        elif page == "Model Explorer":
             render_model_explorer()
-        elif "Projections" in page:
+        elif page == "Projections":
             render_projections()
-        elif "Data Quality" in page:
+        elif page == "Data Quality":
             render_data_quality()
     except Exception as e:
-        st.error("Something went wrong loading this page.")
-        with st.expander("Error details"):
+        st.error("Error loading page")
+        with st.expander("Details"):
             st.code(str(e))
 
     # Footer
     st.markdown("""
     <div class="footer">
-        <p>AI Benchmark Progress Dashboard | Data-quality-first tracking</p>
-        <p>Every data point has full provenance. Missing data is explicit, not interpolated.</p>
+        AI Benchmark Tracker · Every data point has provenance · Missing data is explicit
     </div>
     """, unsafe_allow_html=True)
 
