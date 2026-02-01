@@ -1,0 +1,10 @@
+model,provider,score,date,reasoning_effort
+o3,OpenAI,87.5,2024-12-20,high
+o3,OpenAI,75.7,2024-12-20,medium
+o3,OpenAI,32.4,2024-12-20,low
+o4-mini,OpenAI,50.0,2025-06-15,high
+Claude Opus 4.5,Anthropic,21.0,2025-01-30,
+Gemini 2.5 Pro,Google,8.0,2025-03-25,
+GPT-4o,OpenAI,5.0,2024-05-13,
+Claude 3.5 Sonnet,Anthropic,4.2,2024-06-20,
+Gemini 2.0 Flash,Google,4.0,2024-12-11,

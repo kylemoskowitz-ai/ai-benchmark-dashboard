@@ -1,0 +1,7 @@
+model,provider,score,date
+o3,OpenAI,8.5,2024-12-20
+GPT-5.2,OpenAI,12.0,2025-10-01
+Claude Opus 4.5,Anthropic,6.2,2025-01-30
+Gemini 3 Pro,Google,5.8,2025-08-01
+Claude 3.5 Sonnet,Anthropic,2.5,2024-06-20
+GPT-4o,OpenAI,2.0,2024-05-13

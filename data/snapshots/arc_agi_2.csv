@@ -1,0 +1,6 @@
+model,provider,score,date,reasoning_effort
+o3,OpenAI,75.0,2025-02-01,high
+o4-mini,OpenAI,40.0,2025-07-01,high
+Claude Opus 4.5,Anthropic,15.0,2025-02-01,
+Gemini 3 Pro,Google,12.0,2025-08-01,
+GPT-5.2,OpenAI,35.0,2025-10-01,

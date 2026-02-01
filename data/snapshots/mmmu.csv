@@ -1,0 +1,9 @@
+model,provider,score,date
+Gemini 3 Pro,Google,78.5,2025-08-01
+GPT-5.2,OpenAI,76.2,2025-10-01
+Claude Opus 4.5,Anthropic,72.4,2025-01-30
+o3,OpenAI,70.5,2024-12-20
+Gemini 2.5 Pro,Google,68.3,2025-03-25
+Claude 3.5 Sonnet,Anthropic,60.3,2024-06-20
+GPT-4o,OpenAI,58.1,2024-05-13
+Gemini 2.0 Flash,Google,55.8,2024-12-11
