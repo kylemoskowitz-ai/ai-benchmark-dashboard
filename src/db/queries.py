@@ -217,11 +217,21 @@ def get_all_sources() -> pl.DataFrame:
     with get_connection(read_only=True) as conn:
         return conn.execute("""
             SELECT
-                s.*,
+                s.source_id,
+                s.source_type,
+                s.source_title,
+                s.source_url,
+                s.retrieved_at,
+                s.parse_method,
+                s.raw_snapshot_path,
+                s.notes,
+                s.created_at,
                 COUNT(r.result_id) as result_count
             FROM sources s
             LEFT JOIN results r ON s.source_id = r.source_id
-            GROUP BY s.source_id
+            GROUP BY s.source_id, s.source_type, s.source_title, s.source_url,
+                     s.retrieved_at, s.parse_method, s.raw_snapshot_path,
+                     s.notes, s.created_at
             ORDER BY s.retrieved_at DESC
         """).pl()
 
