@@ -25,6 +25,14 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from src.ingestors.swe_bench_official import SWEBenchOfficialIngestor
 from src.ingestors.swe_bench import SWEBenchIngestor
+from src.ingestors.arc_agi import ARCAGI1Ingestor, ARCAGI2Ingestor
+from src.ingestors.metr import METRIngestor
+from src.ingestors.frontier_math import FrontierMathIngestor
+from src.ingestors.epoch_capabilities_index import EpochCapabilitiesIndexIngestor
+from src.ingestors.zerobench import ZeroBenchIngestor
+from src.ingestors.humanities_last_exam import HumanitiesLastExamIngestor
+from src.ingestors.remote_labor_index import RemoteLaborIndexIngestor
+from src.ingestors.mmmu import MMMUIngestor
 from src.ingestors.epoch import EpochIngestor
 
 logging.basicConfig(
@@ -36,19 +44,43 @@ logger = logging.getLogger(__name__)
 
 
 # Registry of available ingestors
+# Each benchmark can have multiple sources - Epoch AI auto-downloads, web scrapers, or manual snapshots
 INGESTORS = {
+    # Epoch AI sourced (auto-downloaded from epoch.ai/data/benchmark_data.zip)
     "swe_bench_verified": {
         "official": SWEBenchOfficialIngestor,
-        "epoch": SWEBenchIngestor,
+        "epoch": SWEBenchIngestor,  # Uses epoch_fetcher
+    },
+    "arc_agi_1": {
+        "epoch": ARCAGI1Ingestor,  # Uses epoch_fetcher
+    },
+    "arc_agi_2": {
+        "epoch": ARCAGI2Ingestor,  # Uses epoch_fetcher
+    },
+    "metr_time_horizons": {
+        "epoch": METRIngestor,  # Uses epoch_fetcher
+    },
+    "frontiermath_tier4": {
+        "epoch": FrontierMathIngestor,  # Uses epoch_fetcher
+    },
+    "epoch_capabilities_index": {
+        "epoch": EpochCapabilitiesIndexIngestor,  # Uses epoch_fetcher
     },
     "gpqa_diamond": {
         "epoch": lambda: EpochIngestor("gpqa_diamond"),
     },
-    "math_level_5": {
-        "epoch": lambda: EpochIngestor("math_level_5"),
+    # Web scraped sources
+    "zerobench": {
+        "scraper": ZeroBenchIngestor,  # Scrapes zerobench.github.io
     },
-    "aider_polyglot": {
-        "epoch": lambda: EpochIngestor("aider_polyglot"),
+    "humanities_last_exam": {
+        "scraper": HumanitiesLastExamIngestor,  # Scrapes scale.com
+    },
+    "remote_labor_index": {
+        "scraper": RemoteLaborIndexIngestor,  # Scrapes scale.com
+    },
+    "mmmu": {
+        "scraper": MMMUIngestor,  # Scrapes vals.ai
     },
 }
 
@@ -72,9 +104,9 @@ def refresh_benchmark(benchmark_id: str, dry_run: bool = False, prefer_official:
 
     # Determine order based on preference
     if prefer_official and "official" in sources:
-        order = ["official", "epoch"]
+        order = ["official", "epoch", "scraper"]
     else:
-        order = ["epoch", "official"]
+        order = ["epoch", "scraper", "official"]
 
     for source_type in order:
         if source_type not in sources:

@@ -14,19 +14,20 @@ from .remote_labor_index import RemoteLaborIndexIngestor
 from .epoch_capabilities_index import EpochCapabilitiesIndexIngestor
 
 # Registry of all available ingestors
-# Priority: Official sources first, then third-party
+# These use automated data fetching from Epoch AI or web scrapers
 INGESTORS: dict[str, type[BaseIngestor]] = {
-    "swe_bench_verified": SWEBenchOfficialIngestor,  # Official leaderboard (Tier A)
-    "swe_bench_epoch": SWEBenchIngestor,  # Epoch AI fallback (Tier B)
-    "metr_time_horizons": METRIngestor,
-    "frontiermath_tier4": FrontierMathIngestor,
-    "arc_agi_1": ARCAGI1Ingestor,
-    "arc_agi_2": ARCAGI2Ingestor,
-    "mmmu": MMMUIngestor,
-    "zerobench": ZeroBenchIngestor,
-    "humanities_last_exam": HumanitiesLastExamIngestor,
-    "remote_labor_index": RemoteLaborIndexIngestor,
-    "epoch_capabilities_index": EpochCapabilitiesIndexIngestor,
+    # Epoch AI sourced (auto-downloaded from epoch.ai/data/benchmark_data.zip)
+    "swe_bench_verified": SWEBenchIngestor,  # Epoch AI data
+    "metr_time_horizons": METRIngestor,  # Epoch AI data
+    "frontiermath_tier4": FrontierMathIngestor,  # Epoch AI data
+    "arc_agi_1": ARCAGI1Ingestor,  # Epoch AI data
+    "arc_agi_2": ARCAGI2Ingestor,  # Epoch AI data
+    "epoch_capabilities_index": EpochCapabilitiesIndexIngestor,  # Epoch AI data
+    # Web scraped sources
+    "zerobench": ZeroBenchIngestor,  # Scrapes zerobench.github.io
+    "humanities_last_exam": HumanitiesLastExamIngestor,  # Scrapes scale.com
+    "remote_labor_index": RemoteLaborIndexIngestor,  # Scrapes scale.com
+    "mmmu": MMMUIngestor,  # Scrapes vals.ai
 }
 
 

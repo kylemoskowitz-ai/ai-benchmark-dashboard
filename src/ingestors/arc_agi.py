@@ -2,10 +2,10 @@
 
 from datetime import datetime, date
 from pathlib import Path
-import httpx
 import polars as pl
 
 from .base import BaseIngestor
+from .epoch_fetcher import get_epoch_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -20,20 +20,12 @@ class ARCAGIBaseIngestor(BaseIngestor):
     VERSION = ""
 
     def fetch_raw(self) -> Path:
-        """Fetch ARC-AGI leaderboard data."""
-        # Try local snapshot first
-        snapshot_name = f"arc_agi_{self.VERSION}.csv"
-        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / snapshot_name
+        """Fetch ARC-AGI data from Epoch AI (auto-downloaded).
 
-        if snapshot_path.exists():
-            return snapshot_path
-
-        # Otherwise fetch from web
-        # Note: ARC Prize doesn't have a public API, so we rely on snapshots
-        raise FileNotFoundError(
-            f"ARC-AGI {self.VERSION} snapshot not found at {snapshot_path}. "
-            "Please download manually from arcprize.org."
-        )
+        Downloads the benchmark_data.zip from Epoch AI if needed,
+        caches it locally, and returns path to the ARC-AGI CSV.
+        """
+        return get_epoch_csv("arc_agi_external.csv")
 
     def parse(self, raw_path: Path) -> list[Result]:
         """Parse ARC-AGI CSV into Result objects."""
@@ -52,16 +44,17 @@ class ARCAGIBaseIngestor(BaseIngestor):
 
         results = []
 
-        # Expected columns: model, provider, score, date, reasoning_effort (optional)
+        # Epoch CSV columns: Model version, Score, Release date, Organization, Country, ...
         for row in df.iter_rows(named=True):
             try:
-                model_name = row.get("model") or row.get("Model") or ""
+                # Try Epoch column names first, then fallback to simpler names
+                model_name = row.get("Model version") or row.get("model") or row.get("Model") or ""
                 if not model_name:
                     continue
 
-                provider = row.get("provider") or row.get("Provider") or self._infer_provider(model_name)
-                score = self._parse_float(row.get("score") or row.get("Score"))
-                eval_date = self.parse_date(row.get("date") or row.get("Date"))
+                provider = row.get("Organization") or row.get("provider") or self._infer_provider(model_name)
+                score = self._parse_float(row.get("Score") or row.get("score"))
+                eval_date = self.parse_date(row.get("Release date") or row.get("date"))
                 reasoning_effort = row.get("reasoning_effort") or row.get("Reasoning Effort")
 
                 # Include reasoning effort in model name if present
@@ -118,7 +111,9 @@ class ARCAGIBaseIngestor(BaseIngestor):
         if value is None or value == "":
             return None
         try:
-            return float(value)
+            v = float(value)
+            # Convert from 0-1 scale to percentage if needed
+            return v * 100 if v <= 1 else v
         except (ValueError, TypeError):
             return None
 

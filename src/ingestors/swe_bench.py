@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .epoch_fetcher import get_epoch_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -17,7 +18,7 @@ class SWEBenchIngestor(BaseIngestor):
     SWE-Bench evaluates AI models on real-world software engineering tasks
     from GitHub issues. The "Verified" subset contains human-verified test cases.
 
-    Data source: Epoch AI evaluations (epoch.ai)
+    Data source: Epoch AI evaluations (automatically downloaded from epoch.ai)
     """
 
     BENCHMARK_ID = "swe_bench_verified"
@@ -39,30 +40,13 @@ class SWEBenchIngestor(BaseIngestor):
         notes="Score represents percentage of issues resolved correctly.",
     )
 
-    # Path to local snapshot (relative to project root or workspace)
-    SNAPSHOT_PATHS = [
-        Path("swe_bench_verified.csv"),  # In workspace root
-        Path("data/snapshots/swe_bench_verified.csv"),  # In project snapshots
-    ]
-
     def fetch_raw(self) -> Path:
-        """Load SWE-Bench data from local CSV snapshot.
+        """Fetch SWE-Bench data from Epoch AI (auto-downloaded).
 
-        The CSV is from Epoch AI's benchmark evaluations.
+        Downloads the benchmark_data.zip from Epoch AI if needed,
+        caches it locally, and returns path to the SWE-Bench CSV.
         """
-        # Get project root (this file is at src/ingestors/swe_bench.py)
-        project_root = Path(__file__).parent.parent.parent
-
-        # Try to find the snapshot
-        for rel_path in self.SNAPSHOT_PATHS:
-            # Check relative to project root
-            snapshot_path = project_root / rel_path
-            if snapshot_path.exists():
-                return snapshot_path
-
-        raise FileNotFoundError(
-            f"SWE-Bench snapshot not found in {project_root}. Tried: {self.SNAPSHOT_PATHS}"
-        )
+        return get_epoch_csv("swe_bench_verified.csv")
 
     def parse(self, raw_path: Path) -> list[Result]:
         """Parse SWE-Bench CSV into Result objects."""

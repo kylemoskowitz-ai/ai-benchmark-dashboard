@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .web_scraper import scrape_mmmu, write_scraped_to_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -12,7 +13,10 @@ from src.models.schemas import (
 
 
 class MMMUIngestor(BaseIngestor):
-    """Ingestor for MMMU benchmark."""
+    """Ingestor for MMMU benchmark.
+
+    Data source: Scraped from vals.ai (cached for 6 hours)
+    """
 
     BENCHMARK_ID = "mmmu"
     LEADERBOARD_URL = "https://www.vals.ai/benchmarks/mmmu"
@@ -31,15 +35,24 @@ class MMMUIngestor(BaseIngestor):
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch MMMU data from snapshot."""
-        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "mmmu.csv"
+        """Fetch MMMU data by scraping vals.ai.
 
+        Scrapes vals.ai/benchmarks/mmmu and caches results.
+        Falls back to local snapshot if scraping fails.
+        """
+        # Try to scrape fresh data
+        scraped_data = scrape_mmmu()
+
+        if scraped_data:
+            return write_scraped_to_csv("mmmu", scraped_data)
+
+        # Fallback to local snapshot
+        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "mmmu.csv"
         if snapshot_path.exists():
             return snapshot_path
 
         raise FileNotFoundError(
-            f"MMMU snapshot not found at {snapshot_path}. "
-            "Please download from mmmu-benchmark.github.io."
+            "MMMU: Failed to scrape leaderboard and no local snapshot available."
         )
 
     def parse(self, raw_path: Path) -> list[Result]:

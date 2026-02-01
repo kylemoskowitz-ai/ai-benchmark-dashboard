@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .epoch_fetcher import get_epoch_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -18,7 +19,7 @@ class FrontierMathIngestor(BaseIngestor):
     Tier 4 represents the most difficult problems, requiring
     graduate-level mathematical reasoning.
 
-    Data source: Epoch AI evaluations
+    Data source: Epoch AI (automatically downloaded from epoch.ai)
     """
 
     BENCHMARK_ID = "frontiermath_tier4"
@@ -41,24 +42,13 @@ class FrontierMathIngestor(BaseIngestor):
         notes="Tier 4 = hardest problems. Most models score <15%.",
     )
 
-    SNAPSHOT_PATHS = [
-        Path("frontiermath_tier_4.csv"),
-        Path("data/snapshots/frontiermath_tier_4.csv"),
-    ]
-
     def fetch_raw(self) -> Path:
-        """Load FrontierMath data from local CSV snapshot."""
-        # Get project root (this file is at src/ingestors/frontier_math.py)
-        project_root = Path(__file__).parent.parent.parent
+        """Fetch FrontierMath data from Epoch AI (auto-downloaded).
 
-        for rel_path in self.SNAPSHOT_PATHS:
-            snapshot_path = project_root / rel_path
-            if snapshot_path.exists():
-                return snapshot_path
-
-        raise FileNotFoundError(
-            f"FrontierMath snapshot not found in {project_root}. Tried: {self.SNAPSHOT_PATHS}"
-        )
+        Downloads the benchmark_data.zip from Epoch AI if needed,
+        caches it locally, and returns path to the FrontierMath CSV.
+        """
+        return get_epoch_csv("frontiermath_tier_4.csv")
 
     def parse(self, raw_path: Path) -> list[Result]:
         """Parse FrontierMath CSV into Result objects."""

@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .epoch_fetcher import get_epoch_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -12,7 +13,10 @@ from src.models.schemas import (
 
 
 class EpochCapabilitiesIndexIngestor(BaseIngestor):
-    """Ingestor for Epoch Capabilities Index benchmark."""
+    """Ingestor for Epoch Capabilities Index benchmark.
+
+    Data source: Epoch AI (automatically downloaded from epoch.ai)
+    """
 
     BENCHMARK_ID = "epoch_capabilities_index"
     LEADERBOARD_URL = "https://epoch.ai/benchmarks/eci"
@@ -30,16 +34,12 @@ class EpochCapabilitiesIndexIngestor(BaseIngestor):
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch Epoch Capabilities Index data from snapshot."""
-        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "epoch_capabilities_index.csv"
+        """Fetch Epoch Capabilities Index data from Epoch AI (auto-downloaded).
 
-        if snapshot_path.exists():
-            return snapshot_path
-
-        raise FileNotFoundError(
-            f"Epoch Capabilities Index snapshot not found at {snapshot_path}. "
-            "Please download from epoch.ai."
-        )
+        Downloads the benchmark_data.zip from Epoch AI if needed,
+        caches it locally, and returns path to the ECI CSV.
+        """
+        return get_epoch_csv("epoch_capabilities_index.csv")
 
     def parse(self, raw_path: Path) -> list[Result]:
         """Parse Epoch Capabilities Index CSV."""
@@ -58,15 +58,17 @@ class EpochCapabilitiesIndexIngestor(BaseIngestor):
 
         results = []
 
+        # Epoch CSV columns: Model version, ECI Score, Release date, Organization, ...
         for row in df.iter_rows(named=True):
             try:
-                model_name = row.get("model") or row.get("Model") or row.get("System") or ""
+                model_name = row.get("Model version") or row.get("model") or row.get("Model") or ""
                 if not model_name:
                     continue
 
-                provider = row.get("provider") or row.get("Organization") or self._infer_provider(model_name)
-                score = self._parse_float(row.get("score") or row.get("Score") or row.get("capabilities_index"))
-                eval_date = self.parse_date(row.get("date") or row.get("Publication date"))
+                provider = row.get("Organization") or row.get("provider") or self._infer_provider(model_name)
+                # ECI uses "ECI Score" column
+                score = self._parse_float(row.get("ECI Score") or row.get("score") or row.get("Score"))
+                eval_date = self.parse_date(row.get("Release date") or row.get("date"))
 
                 model_id = self.normalize_model_id(model_name, provider)
 

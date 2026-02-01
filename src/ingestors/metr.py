@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .epoch_fetcher import get_epoch_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -18,7 +19,7 @@ class METRIngestor(BaseIngestor):
     autonomous tasks. The "time horizon" metric indicates the task
     complexity (in hours) that a model can reliably complete.
 
-    Data source: METR reports and Epoch AI evaluations
+    Data source: Epoch AI (automatically downloaded from epoch.ai)
     """
 
     BENCHMARK_ID = "metr_time_horizons"
@@ -40,24 +41,13 @@ class METRIngestor(BaseIngestor):
         notes="Time horizon in hours. Higher = can complete more complex autonomous tasks.",
     )
 
-    SNAPSHOT_PATHS = [
-        Path("metr_time_horizons_external.csv"),
-        Path("data/snapshots/metr_time_horizons_external.csv"),
-    ]
-
     def fetch_raw(self) -> Path:
-        """Load METR data from local CSV snapshot."""
-        # Get project root (this file is at src/ingestors/metr.py)
-        project_root = Path(__file__).parent.parent.parent
+        """Fetch METR data from Epoch AI (auto-downloaded).
 
-        for rel_path in self.SNAPSHOT_PATHS:
-            snapshot_path = project_root / rel_path
-            if snapshot_path.exists():
-                return snapshot_path
-
-        raise FileNotFoundError(
-            f"METR snapshot not found in {project_root}. Tried: {self.SNAPSHOT_PATHS}"
-        )
+        Downloads the benchmark_data.zip from Epoch AI if needed,
+        caches it locally, and returns path to the METR CSV.
+        """
+        return get_epoch_csv("metr_time_horizons_external.csv")
 
     def parse(self, raw_path: Path) -> list[Result]:
         """Parse METR CSV into Result objects."""

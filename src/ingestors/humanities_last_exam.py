@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .web_scraper import scrape_scale_leaderboard, write_scraped_to_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -12,7 +13,10 @@ from src.models.schemas import (
 
 
 class HumanitiesLastExamIngestor(BaseIngestor):
-    """Ingestor for Humanities Last Exam benchmark."""
+    """Ingestor for Humanities Last Exam benchmark.
+
+    Data source: Scraped from Scale AI leaderboard (cached for 6 hours)
+    """
 
     BENCHMARK_ID = "humanities_last_exam"
     LEADERBOARD_URL = "https://scale.com/leaderboard/humanitys_last_exam_text_only"
@@ -30,15 +34,24 @@ class HumanitiesLastExamIngestor(BaseIngestor):
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch Humanities Last Exam data from snapshot."""
-        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "humanities_last_exam.csv"
+        """Fetch HLE data by scraping Scale AI leaderboard.
 
+        Scrapes scale.com/leaderboard/humanitys_last_exam_text_only and caches results.
+        Falls back to local snapshot if scraping fails.
+        """
+        # Try to scrape fresh data
+        scraped_data = scrape_scale_leaderboard("humanitys_last_exam_text_only")
+
+        if scraped_data:
+            return write_scraped_to_csv("humanities_last_exam", scraped_data)
+
+        # Fallback to local snapshot
+        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "humanities_last_exam.csv"
         if snapshot_path.exists():
             return snapshot_path
 
         raise FileNotFoundError(
-            f"Humanities Last Exam snapshot not found at {snapshot_path}. "
-            "Please download from lastexam.ai."
+            "Humanities Last Exam: Failed to scrape leaderboard and no local snapshot available."
         )
 
     def parse(self, raw_path: Path) -> list[Result]:

@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .web_scraper import scrape_zerobench, write_scraped_to_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -12,7 +13,10 @@ from src.models.schemas import (
 
 
 class ZeroBenchIngestor(BaseIngestor):
-    """Ingestor for ZeroBench."""
+    """Ingestor for ZeroBench.
+
+    Data source: Scraped from zerobench.github.io (cached for 6 hours)
+    """
 
     BENCHMARK_ID = "zerobench"
     LEADERBOARD_URL = "https://zerobench.github.io/"
@@ -30,15 +34,25 @@ class ZeroBenchIngestor(BaseIngestor):
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch ZeroBench data from snapshot."""
-        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "zerobench.csv"
+        """Fetch ZeroBench data by scraping the leaderboard.
 
+        Scrapes zerobench.github.io and caches results locally.
+        Falls back to local snapshot if scraping fails.
+        """
+        # Try to scrape fresh data
+        scraped_data = scrape_zerobench()
+
+        if scraped_data:
+            # Write to CSV for parsing
+            return write_scraped_to_csv("zerobench", scraped_data)
+
+        # Fallback to local snapshot
+        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "zerobench.csv"
         if snapshot_path.exists():
             return snapshot_path
 
         raise FileNotFoundError(
-            f"ZeroBench snapshot not found at {snapshot_path}. "
-            "Please download from zerobench.github.io."
+            "ZeroBench: Failed to scrape leaderboard and no local snapshot available."
         )
 
     def parse(self, raw_path: Path) -> list[Result]:

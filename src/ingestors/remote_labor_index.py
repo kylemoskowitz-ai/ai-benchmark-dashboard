@@ -5,6 +5,7 @@ from pathlib import Path
 import polars as pl
 
 from .base import BaseIngestor
+from .web_scraper import scrape_scale_leaderboard, write_scraped_to_csv
 from src.models.schemas import (
     Result, Source, Model, Benchmark,
     TrustTier, SourceType, ParseMethod, ModelStatus
@@ -12,7 +13,10 @@ from src.models.schemas import (
 
 
 class RemoteLaborIndexIngestor(BaseIngestor):
-    """Ingestor for Remote Labor Index benchmark."""
+    """Ingestor for Remote Labor Index benchmark.
+
+    Data source: Scraped from Scale AI leaderboard (cached for 6 hours)
+    """
 
     BENCHMARK_ID = "remote_labor_index"
     LEADERBOARD_URL = "https://scale.com/leaderboard/rli"
@@ -30,15 +34,24 @@ class RemoteLaborIndexIngestor(BaseIngestor):
     )
 
     def fetch_raw(self) -> Path:
-        """Fetch Remote Labor Index data from snapshot."""
-        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "remote_labor_index.csv"
+        """Fetch RLI data by scraping Scale AI leaderboard.
 
+        Scrapes scale.com/leaderboard/rli and caches results.
+        Falls back to local snapshot if scraping fails.
+        """
+        # Try to scrape fresh data
+        scraped_data = scrape_scale_leaderboard("rli")
+
+        if scraped_data:
+            return write_scraped_to_csv("remote_labor_index", scraped_data)
+
+        # Fallback to local snapshot
+        snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "remote_labor_index.csv"
         if snapshot_path.exists():
             return snapshot_path
 
         raise FileNotFoundError(
-            f"Remote Labor Index snapshot not found at {snapshot_path}. "
-            "Please download from metr.org."
+            "Remote Labor Index: Failed to scrape leaderboard and no local snapshot available."
         )
 
     def parse(self, raw_path: Path) -> list[Result]:
