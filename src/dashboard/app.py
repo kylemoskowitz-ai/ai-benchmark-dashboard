@@ -1,128 +1,198 @@
-"""Main Streamlit dashboard application."""
+"""Main Streamlit dashboard application - Redesigned."""
 
 import os
 import streamlit as st
 from pathlib import Path
 import sys
 
-# Add project root to path
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-# Page configuration
 st.set_page_config(
     page_title="AI Benchmark Tracker",
     page_icon="◈",
     layout="wide",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="collapsed",
 )
 
-# Minimal, clean CSS
+# Academic minimalist CSS
 st.markdown("""
 <style>
-    /* Reset and base */
+    /* Import serif font */
+    @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=Inter:wght@400;500;600&family=JetBrains+Mono&display=swap');
+
+    /* Base layout */
     .block-container {
-        padding: 2rem 3rem;
-        max-width: 1100px;
+        padding: 1.5rem 3rem 2rem;
+        max-width: 1200px;
+    }
+
+    /* Hide default sidebar */
+    section[data-testid="stSidebar"] {
+        display: none;
     }
 
     /* Typography */
-    h1 {
+    h1, h2, h3 {
+        font-family: 'Source Serif 4', Georgia, serif !important;
         font-weight: 600;
-        letter-spacing: -0.02em;
-        margin-bottom: 0.25rem;
+        letter-spacing: -0.01em;
+        color: #1A1A1A;
     }
-    h2, h3 {
-        font-weight: 500;
-        color: #1a1a1a;
-        margin-top: 1.5rem;
+    h1 { font-size: 2rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.5rem; margin-top: 2rem; }
+    h3 { font-size: 1.15rem; margin-top: 1.5rem; }
+
+    p, li, label, .stMarkdown {
+        font-family: 'Inter', -apple-system, sans-serif !important;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #333;
     }
 
-    /* Subtle metric styling */
+    /* Metrics */
     [data-testid="stMetric"] {
-        background: #fafafa;
-        padding: 0.75rem 1rem;
-        border-radius: 6px;
+        background: #FFFFFF;
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        border: 1px solid #E8E8E8;
     }
     [data-testid="stMetricValue"] {
-        font-size: 1.5rem;
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 1.75rem;
         font-weight: 600;
+        color: #1A1A1A;
     }
     [data-testid="stMetricLabel"] {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.75rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    [data-testid="stMetricDelta"] {
+        font-family: 'JetBrains Mono', monospace !important;
+    }
+
+    /* Cards */
+    .benchmark-card {
+        background: #FFFFFF;
+        border: 1px solid #E8E8E8;
+        border-radius: 8px;
+        padding: 1.25rem;
+        transition: box-shadow 0.2s;
+    }
+    .benchmark-card:hover {
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .benchmark-card h4 {
+        font-family: 'Source Serif 4', serif;
+        font-size: 1rem;
+        margin: 0 0 0.5rem 0;
+        color: #1A1A1A;
+    }
+    .benchmark-card .score {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #4C5C78;
+    }
+    .benchmark-card .model {
+        font-size: 0.85rem;
+        color: #666;
+        margin-top: 0.5rem;
+    }
+    .benchmark-card .date {
+        font-size: 0.75rem;
+        color: #999;
+    }
+
+    /* Tables */
+    .stDataFrame {
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.85rem;
+    }
+    .stDataFrame th {
+        background: #F8F9FA !important;
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 0.05em;
+    }
+
+    /* Charts */
+    .stPlotlyChart {
+        background: #FFFFFF;
+        border: 1px solid #E8E8E8;
+        border-radius: 8px;
+        padding: 1rem;
+    }
+
+    /* Buttons */
+    .stButton > button {
+        font-family: 'Inter', sans-serif !important;
+        background: #FFFFFF;
+        border: 1px solid #DDD;
+        color: #333;
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        transition: all 0.2s;
+    }
+    .stButton > button:hover {
+        background: #F5F5F5;
+        border-color: #BBB;
+    }
+    .stDownloadButton > button {
+        background: #FFFFFF;
+        border: 1px solid #DDD;
+    }
+
+    /* Select boxes */
+    .stSelectbox label, .stMultiSelect label {
         font-size: 0.8rem;
         color: #666;
         text-transform: uppercase;
         letter-spacing: 0.03em;
     }
 
-    /* Sidebar */
-    section[data-testid="stSidebar"] {
-        background: #f8f8f8;
-        border-right: 1px solid #eee;
-    }
-    section[data-testid="stSidebar"] h1 {
-        font-size: 1.1rem;
-        color: #333;
-    }
-
-    /* Clean dividers */
+    /* Dividers */
     hr {
         border: none;
-        border-top: 1px solid #e8e8e8;
-        margin: 1.5rem 0;
-    }
-
-    /* Tables */
-    .stDataFrame {
-        font-size: 0.85rem;
-    }
-
-    /* Buttons */
-    .stDownloadButton > button {
-        background: white;
-        border: 1px solid #ddd;
-        color: #333;
-        font-size: 0.85rem;
-        padding: 0.4rem 0.8rem;
-    }
-    .stDownloadButton > button:hover {
-        background: #f5f5f5;
-        border-color: #ccc;
-    }
-
-    /* Expanders */
-    .streamlit-expanderHeader {
-        font-size: 0.9rem;
-        font-weight: 500;
-    }
-
-    /* Warning/info boxes */
-    .disclaimer {
-        background: #fffef5;
-        border-left: 3px solid #e6b800;
-        padding: 0.75rem 1rem;
-        margin: 1rem 0;
-        font-size: 0.85rem;
-        color: #665c00;
+        border-top: 1px solid #E8E8E8;
+        margin: 2rem 0;
     }
 
     /* Footer */
     .footer {
+        font-family: 'Inter', sans-serif;
         font-size: 0.75rem;
         color: #888;
         text-align: center;
         padding: 2rem 0 1rem;
         margin-top: 3rem;
-        border-top: 1px solid #eee;
+        border-top: 1px solid #E8E8E8;
     }
 
-    /* Hide hamburger menu and footer */
+    /* Hide Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
 
-    /* Chart styling */
-    .stPlotlyChart {
-        background: white;
+    /* Tabs styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 2rem;
+        border-bottom: 1px solid #E8E8E8;
+    }
+    .stTabs [data-baseweb="tab"] {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
+        color: #666;
+        padding: 0.75rem 0;
+        border-bottom: 2px solid transparent;
+    }
+    .stTabs [aria-selected="true"] {
+        color: #1A1A1A;
+        border-bottom-color: #4C5C78;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -145,38 +215,13 @@ def main():
         st.info("Run `make init-db` to initialize the database.")
         return
 
-    # Sidebar
-    with st.sidebar:
+    # Header with navigation
+    col_logo, col_nav, col_meta = st.columns([2, 6, 2])
+
+    with col_logo:
         st.markdown("### ◈ AI Benchmark Tracker")
-        st.caption("Data-quality-first tracking")
 
-        st.markdown("---")
-
-        page = st.radio(
-            "Navigate",
-            [
-                "Overview",
-                "Benchmark Explorer",
-                "Model Explorer",
-                "Projections",
-                "Data Quality",
-            ],
-            label_visibility="collapsed",
-        )
-
-        st.markdown("---")
-
-        # Filters
-        st.markdown("##### Filters")
-        official_only = st.checkbox(
-            "Official sources only",
-            value=False,
-            help="Tier A sources only"
-        )
-        st.session_state["official_only"] = official_only
-
-        # Last update
-        st.markdown("---")
+    with col_meta:
         try:
             from src.db.connection import get_last_update
             last_update = get_last_update()
@@ -185,34 +230,45 @@ def main():
         except Exception:
             pass
 
-    # Import pages
-    from src.dashboard.pages.overview import render_overview
-    from src.dashboard.pages.benchmark_explorer import render_benchmark_explorer
-    from src.dashboard.pages.model_explorer import render_model_explorer
-    from src.dashboard.pages.projections import render_projections
-    from src.dashboard.pages.data_quality import render_data_quality
+    # Tab-based navigation
+    tabs = st.tabs(["Progress", "Explorer", "Projections", "Admin"])
 
-    # Route to page
+    # Import pages - these will be created in subsequent tasks
+    # For now, show placeholder content
     try:
-        if page == "Overview":
-            render_overview()
-        elif page == "Benchmark Explorer":
-            render_benchmark_explorer()
-        elif page == "Model Explorer":
-            render_model_explorer()
-        elif page == "Projections":
-            render_projections()
-        elif page == "Data Quality":
-            render_data_quality()
+        with tabs[0]:
+            try:
+                from src.dashboard.pages.progress import render_progress
+                render_progress()
+            except ImportError:
+                st.info("Progress page coming soon...")
+        with tabs[1]:
+            try:
+                from src.dashboard.pages.explorer import render_explorer
+                render_explorer()
+            except ImportError:
+                st.info("Explorer page coming soon...")
+        with tabs[2]:
+            try:
+                from src.dashboard.pages.projections import render_projections
+                render_projections()
+            except ImportError:
+                st.info("Projections page coming soon...")
+        with tabs[3]:
+            try:
+                from src.dashboard.pages.admin import render_admin
+                render_admin()
+            except ImportError:
+                st.info("Admin page coming soon...")
     except Exception as e:
         st.error("Error loading page")
         with st.expander("Details"):
-            st.code(str(e))
+            st.exception(e)
 
     # Footer
     st.markdown("""
     <div class="footer">
-        AI Benchmark Tracker · Every data point has provenance · Missing data is explicit
+        Every data point has a source · Missing data is explicit · <a href="https://github.com/kylemoskowitz-ai/ai-benchmark-dashboard" style="color:#666;">GitHub</a>
     </div>
     """, unsafe_allow_html=True)
 
