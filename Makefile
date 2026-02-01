@@ -1,4 +1,4 @@
-.PHONY: run update-data init-db validate test clean export-csv api help
+.PHONY: run update-data refresh-data init-db validate test clean export-csv api help
 
 # Configuration
 PYTHON ?= python3
@@ -13,9 +13,10 @@ help:
 	@echo ""
 	@echo "  make run              Start Streamlit dashboard"
 	@echo "  make api              Start FastAPI server"
-	@echo "  make update-data      Update all benchmarks"
-	@echo "  make update-data BENCHMARK=swe_bench  Update single benchmark"
-	@echo "  make update-data DRY_RUN=1            Dry run (no DB changes)"
+	@echo "  make refresh-data     Refresh from official sources (recommended)"
+	@echo "  make update-data      Update from all sources"
+	@echo "  make update-data BENCHMARK=swe_bench_verified  Update single benchmark"
+	@echo "  make refresh-data DRY_RUN=1  Dry run (no DB changes)"
 	@echo "  make init-db          Initialize database with seed data"
 	@echo "  make validate         Run data integrity checks"
 	@echo "  make test             Run test suite"
@@ -50,6 +51,21 @@ ifdef BENCHMARK
 		$(if $(filter 1,$(DRY_RUN)),--dry-run,)
 else
 	$(PYTHON) -m scripts.update_data \
+		$(if $(filter 1,$(DRY_RUN)),--dry-run,)
+endif
+
+# Refresh data from official sources (prioritizes official leaderboards)
+refresh-data:
+	@echo "Refreshing data from official sources..."
+ifeq ($(DRY_RUN),1)
+	@echo "(Dry run mode - no database changes)"
+endif
+ifdef BENCHMARK
+	$(PYTHON) -m src.cli.refresh_data \
+		--benchmark $(BENCHMARK) \
+		$(if $(filter 1,$(DRY_RUN)),--dry-run,)
+else
+	$(PYTHON) -m src.cli.refresh_data \
 		$(if $(filter 1,$(DRY_RUN)),--dry-run,)
 endif
 

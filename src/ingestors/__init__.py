@@ -2,18 +2,18 @@
 
 from .base import BaseIngestor
 from .swe_bench import SWEBenchIngestor
+from .swe_bench_official import SWEBenchOfficialIngestor
 from .metr import METRIngestor
 from .frontier_math import FrontierMathIngestor
 from .epoch import EpochIngestor
 
 # Registry of all available ingestors
+# Priority: Official sources first, then third-party
 INGESTORS: dict[str, type[BaseIngestor]] = {
-    "swe_bench_verified": SWEBenchIngestor,
+    "swe_bench_verified": SWEBenchOfficialIngestor,  # Official leaderboard (Tier A)
+    "swe_bench_epoch": SWEBenchIngestor,  # Epoch AI fallback (Tier B)
     "metr_time_horizons": METRIngestor,
     "frontiermath_tier4": FrontierMathIngestor,
-    # "epoch": EpochIngestor,  # Generic template - use for custom benchmarks
-    # TODO: Add more ingestors
-    # "arc_agi": ARCAGIIngestor,
 }
 
 
@@ -32,6 +32,7 @@ def get_all_ingestors() -> list[BaseIngestor]:
 __all__ = [
     "BaseIngestor",
     "SWEBenchIngestor",
+    "SWEBenchOfficialIngestor",
     "METRIngestor",
     "FrontierMathIngestor",
     "EpochIngestor",
