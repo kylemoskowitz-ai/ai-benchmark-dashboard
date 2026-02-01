@@ -1,8 +1,17 @@
 model,provider,score,date
-GPT-5.2,OpenAI,45.2,2025-10-01
-Gemini 3 Pro,Google,42.8,2025-08-01
-Claude Opus 4.5,Anthropic,38.5,2025-01-30
-o4-mini,OpenAI,35.0,2025-06-15
-Gemini 2.5 Pro,Google,28.3,2025-03-25
-Claude 3.5 Sonnet,Anthropic,22.1,2024-06-20
-GPT-4o,OpenAI,18.5,2024-05-13
+Gemini 3 Pro,Google,19.0,2025-11-01
+GPT-5.2,OpenAI,18.0,2025-12-11
+Gemini 3 Flash,Google,13.0,2025-12-01
+o4-mini,OpenAI,10.0,2025-06-15
+Claude Opus 4.5,Anthropic,10.0,2025-11-01
+GPT-5 mini (high),OpenAI,9.0,2025-08-07
+Claude Opus 4.1 (Thinking),Anthropic,8.0,2025-08-05
+GPT-4.5,OpenAI,7.0,2025-02-01
+Claude Sonnet 4 (Thinking),Anthropic,6.0,2025-09-29
+Claude Sonnet 4,Anthropic,5.0,2025-06-01
+Gemini 2.5 Pro,Google,5.0,2025-03-25
+Grok 4,xAI,4.0,2025-07-01
+Claude Opus 4.1,Anthropic,4.0,2025-08-05
+Claude Sonnet 4.5,Anthropic,3.0,2025-09-29
+Gemini 2.5 Flash,Google,3.0,2025-04-01
+Claude 3.7 Sonnet,Anthropic,2.0,2025-02-24

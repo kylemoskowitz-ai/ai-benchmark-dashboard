@@ -15,18 +15,18 @@ class EpochCapabilitiesIndexIngestor(BaseIngestor):
     """Ingestor for Epoch Capabilities Index benchmark."""
 
     BENCHMARK_ID = "epoch_capabilities_index"
-    LEADERBOARD_URL = "https://epoch.ai/data/notable-ai-models"
+    LEADERBOARD_URL = "https://epoch.ai/benchmarks/eci"
 
     BENCHMARK_META = Benchmark(
         benchmark_id="epoch_capabilities_index",
         name="Epoch Capabilities Index",
         category="general",
-        description="Composite index of frontier AI capabilities across multiple benchmarks.",
-        unit="percent",
+        description="Composite index of frontier AI capabilities. GPT-4 baseline = 100, higher values indicate stronger capability.",
+        unit="index",
         scale_min=0.0,
-        scale_max=100.0,
+        scale_max=200.0,
         higher_is_better=True,
-        official_url="https://epoch.ai/",
+        official_url="https://epoch.ai/benchmarks/eci",
     )
 
     def fetch_raw(self) -> Path:
@@ -99,7 +99,6 @@ class EpochCapabilitiesIndexIngestor(BaseIngestor):
         if value is None or value == "":
             return None
         try:
-            v = float(value)
-            return v * 100 if v <= 1 else v
+            return float(value)
         except (ValueError, TypeError):
             return None

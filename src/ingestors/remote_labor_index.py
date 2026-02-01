@@ -21,10 +21,10 @@ class RemoteLaborIndexIngestor(BaseIngestor):
         benchmark_id="remote_labor_index",
         name="Remote Labor Index",
         category="agentic",
-        description="Evaluates AI systems on remote labor tasks measuring practical work capability.",
-        unit="hours",
+        description="Measures automation rate - percentage of real remote work tasks where AI deliverable matches human quality.",
+        unit="percent",
         scale_min=0.0,
-        scale_max=1000.0,
+        scale_max=100.0,
         higher_is_better=True,
         official_url="https://scale.com/leaderboard/rli",
     )

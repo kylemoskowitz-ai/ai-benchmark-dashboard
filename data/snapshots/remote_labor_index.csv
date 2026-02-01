@@ -1,7 +1,11 @@
 model,provider,score,date
-o3,OpenAI,8.5,2024-12-20
-GPT-5.2,OpenAI,12.0,2025-10-01
-Claude Opus 4.5,Anthropic,6.2,2025-01-30
-Gemini 3 Pro,Google,5.8,2025-08-01
-Claude 3.5 Sonnet,Anthropic,2.5,2024-06-20
-GPT-4o,OpenAI,2.0,2024-05-13
+Claude Opus 4.5 (Thinking),Anthropic,3.75,2025-11-01
+Manus 1.5,DeepSeek,2.50,2025-10-01
+GPT-5.2 (medium),OpenAI,2.50,2025-12-11
+Manus 1.0,DeepSeek,2.50,2025-06-01
+Claude Sonnet 4.5,Anthropic,2.08,2025-09-29
+GPT-5.2 (easy),OpenAI,2.08,2025-12-11
+GPT-5,OpenAI,1.67,2025-08-07
+ChatGPT agent,OpenAI,1.25,2025-05-01
+Gemini 3 Pro Preview,Google,1.25,2025-11-01
+Gemini 2.5 Pro Preview,Google,0.83,2025-06-05

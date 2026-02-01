@@ -1,7 +1,39 @@
 model,provider,score,date
-o3,OpenAI,65.8,2024-12-20
-Claude Opus 4.5,Anthropic,58.2,2025-01-30
-GPT-5.2,OpenAI,62.5,2025-10-01
-Gemini 3 Pro,Google,55.3,2025-08-01
-Claude 3.5 Sonnet,Anthropic,42.1,2024-06-20
-GPT-4o,OpenAI,38.5,2024-05-13
+Gemini 3 Pro Preview,Google,37.72,2025-11-01
+GPT-5 Pro,OpenAI,33.32,2025-10-06
+GPT-5.2,OpenAI,28.50,2025-12-11
+GPT-5,OpenAI,26.32,2025-08-07
+Claude Opus 4.5 (Thinking),Anthropic,26.32,2025-11-01
+GPT-5.1 Thinking,OpenAI,24.65,2025-09-01
+Gemini 2.5 Pro Preview,Google,22.06,2025-03-01
+o3 (high),OpenAI,20.57,2024-12-20
+o3 (medium),OpenAI,19.78,2024-12-20
+GPT-5 Mini,OpenAI,19.74,2025-08-07
+o4-mini (high),OpenAI,18.90,2025-06-15
+Gemini 2.5 Pro,Google,18.38,2025-03-25
+Qwen3-235B-A22B Thinking,Alibaba,15.43,2025-05-01
+Claude Sonnet 4.5 (Thinking),Anthropic,14.09,2025-09-29
+DeepSeek-R1 (0528),DeepSeek,14.04,2025-05-28
+Claude Opus 4.5,Anthropic,13.90,2025-11-01
+DeepSeek-V3.1,DeepSeek,12.88,2025-03-01
+Gemini 2.5 Flash,Google,12.58,2025-04-01
+Qwen3-235B-A22B,Alibaba,11.75,2025-05-01
+Claude Opus 4.1 (Thinking),Anthropic,11.26,2025-08-05
+Claude Opus 4 (Thinking),Anthropic,10.80,2025-04-01
+o3 Mini (medium),OpenAI,10.31,2024-12-20
+DeepSeek R1,DeepSeek,8.54,2025-01-20
+Claude 3.7 Sonnet (Thinking),Anthropic,7.89,2025-02-24
+o1,OpenAI,7.75,2024-12-01
+o1 Pro,OpenAI,7.71,2024-12-17
+Claude Sonnet 4.5,Anthropic,7.65,2025-09-29
+Claude Sonnet 4 (Thinking),Anthropic,7.60,2025-06-01
+Claude Opus 4.1,Anthropic,7.37,2025-08-05
+Gemini 2.0 Flash Thinking,Google,6.55,2025-01-01
+Claude Opus 4,Anthropic,6.26,2025-04-01
+GPT-4.5 Preview,OpenAI,5.80,2025-02-01
+Claude Sonnet 4,Anthropic,5.42,2025-06-01
+Llama 4 Maverick,Meta,5.34,2025-04-05
+GPT-4.1,OpenAI,4.97,2025-04-14
+DeepSeek V3,DeepSeek,4.55,2025-03-01
+Claude 3.5 Sonnet,Anthropic,4.32,2024-10-22
+GPT-4o,OpenAI,2.32,2024-11-01

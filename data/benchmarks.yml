@@ -100,19 +100,19 @@ benchmarks:
   remote_labor_index:
     name: "Remote Labor Index"
     category: "agentic"
-    description: "Evaluates AI systems on remote labor tasks measuring practical work capability."
-    unit: "hours"
+    description: "Measures automation rate - percentage of real remote work tasks where AI deliverable matches human quality."
+    unit: "percent"
     scale_min: 0
-    scale_max: 1000
+    scale_max: 100
     higher_is_better: true
     official_url: "https://scale.com/leaderboard/rli"
 
   epoch_capabilities_index:
     name: "Epoch Capabilities Index"
     category: "general"
-    description: "Composite index of frontier AI capabilities across multiple benchmarks."
-    unit: "percent"
+    description: "Composite index of frontier AI capabilities. GPT-4 baseline = 100, higher values indicate stronger capability."
+    unit: "index"
     scale_min: 0
-    scale_max: 100
+    scale_max: 200
     higher_is_better: true
-    official_url: "https://epoch.ai/"
+    official_url: "https://epoch.ai/benchmarks/eci"

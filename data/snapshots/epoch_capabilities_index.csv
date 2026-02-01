@@ -1,10 +1,3 @@
 model,provider,score,date
-o3,OpenAI,82.5,2024-12-20
-GPT-5.2,OpenAI,85.2,2025-10-01
-Claude Opus 4.5,Anthropic,78.8,2025-01-30
-Gemini 3 Pro,Google,76.5,2025-08-01
-Gemini 2.5 Pro,Google,72.3,2025-03-25
-Claude 3.5 Sonnet,Anthropic,68.5,2024-06-20
-GPT-4o,OpenAI,65.2,2024-05-13
-DeepSeek-V3,DeepSeek,71.0,2024-12-26
-Kimi K2.5 Thinking,Moonshot,74.2,2025-05-01
+GPT-5,OpenAI,150,2025-08-07
+Claude 3.5 Sonnet,Anthropic,130,2024-10-22
