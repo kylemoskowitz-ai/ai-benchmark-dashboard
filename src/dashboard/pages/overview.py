@@ -43,14 +43,18 @@ def render_overview():
     # Filters
     col1, col2, col3 = st.columns([2, 2, 1])
 
+    # Build lookup dict for efficient formatting
+    benchmark_names = {
+        row["benchmark_id"]: row["name"]
+        for row in benchmarks.iter_rows(named=True)
+    }
+
     with col1:
         selected_benchmarks = st.multiselect(
             "Benchmarks to show",
             options=benchmarks["benchmark_id"].to_list(),
             default=benchmarks["benchmark_id"].to_list()[:5],
-            format_func=lambda x: benchmarks.filter(
-                pl.col("benchmark_id") == x
-            )["name"][0] if len(benchmarks.filter(pl.col("benchmark_id") == x)) > 0 else x,
+            format_func=lambda x: benchmark_names.get(x, x),
         )
 
     with col2:
@@ -167,16 +171,13 @@ def render_overview():
     st.plotly_chart(fig, use_container_width=True)
 
     # Export options
-    col1, col2 = st.columns([1, 4])
-    with col1:
-        if st.button("📥 Export CSV"):
-            csv = combined.to_pandas().to_csv(index=False)
-            st.download_button(
-                "Download CSV",
-                csv,
-                "frontier_data.csv",
-                "text/csv",
-            )
+    csv_data = combined.to_pandas().to_csv(index=False)
+    st.download_button(
+        "📥 Export CSV",
+        csv_data,
+        "frontier_data.csv",
+        "text/csv",
+    )
 
     # Recent records section
     st.subheader("Recent Frontier Records")

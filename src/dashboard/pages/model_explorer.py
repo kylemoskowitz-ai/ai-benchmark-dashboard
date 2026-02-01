@@ -147,49 +147,48 @@ def render_model_explorer():
     # Detailed results table with provenance
     st.subheader("Detailed Results with Provenance")
 
-    for row in results.iter_rows(named=True):
-        with st.container():
-            col1, col2, col3, col4 = st.columns([2, 1, 1, 2])
+    # Prepare display dataframe
+    display_results = results.select([
+        "benchmark_name",
+        "category",
+        "score",
+        "score_stderr",
+        "trust_tier",
+        "source_title",
+        "source_url",
+    ]).to_pandas()
 
-            with col1:
-                st.write(f"**{row['benchmark_name']}**")
-                st.caption(row.get("category", ""))
+    # Format score column
+    display_results["Score"] = display_results.apply(
+        lambda r: f"{r['score']:.2f}" + (f" ± {r['score_stderr']:.2f}" if r['score_stderr'] else "")
+        if r['score'] is not None else "—",
+        axis=1
+    )
 
-            with col2:
-                score_str = f"{row['score']:.2f}" if row.get("score") is not None else "—"
-                if row.get("score_stderr"):
-                    score_str += f" ± {row['score_stderr']:.2f}"
-                st.write(f"Score: **{score_str}**")
+    # Format trust tier with emoji
+    tier_map = {"A": "🟢 A", "B": "🟡 B", "C": "⚪ C"}
+    display_results["Trust"] = display_results["trust_tier"].map(lambda t: tier_map.get(t, "⚪ C"))
 
-            with col3:
-                tier = row.get("trust_tier", "C")
-                tier_colors = {"A": "🟢", "B": "🟡", "C": "⚪"}
-                st.write(f"{tier_colors.get(tier, '⚪')} Tier {tier}")
+    # Select and rename columns for display
+    display_results = display_results[[
+        "benchmark_name", "category", "Score", "Trust", "source_title"
+    ]]
+    display_results.columns = ["Benchmark", "Category", "Score", "Trust", "Source"]
 
-            with col4:
-                source_url = row.get("source_url", "")
-                source_title = row.get("source_title", "Unknown source")
-                if source_url:
-                    st.write(f"[{source_title}]({source_url})")
-                else:
-                    st.write(source_title)
-
-            if row.get("evaluation_notes"):
-                st.caption(f"📝 {row['evaluation_notes'][:100]}...")
-
-            st.divider()
+    st.dataframe(
+        display_results,
+        hide_index=True,
+        use_container_width=True,
+    )
 
     # Export
-    col1, col2 = st.columns([1, 4])
-    with col1:
-        if st.button("📥 Export Model Data"):
-            csv = results.to_pandas().to_csv(index=False)
-            st.download_button(
-                "Download CSV",
-                csv,
-                f"{selected_model.replace(':', '_')}_results.csv",
-                "text/csv",
-            )
+    csv_data = results.to_pandas().to_csv(index=False)
+    st.download_button(
+        "📥 Export Model Data",
+        csv_data,
+        f"{selected_model.replace(':', '_')}_results.csv",
+        "text/csv",
+    )
 
     # Compare with other models
     st.subheader("Compare Models")
@@ -233,7 +232,3 @@ def render_model_explorer():
             )
             fig_compare.update_layout(xaxis_tickangle=-45)
             st.plotly_chart(fig_compare, use_container_width=True)
-
-
-# Run when loaded as standalone Streamlit page
-render_model_explorer()

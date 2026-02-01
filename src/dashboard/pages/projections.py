@@ -307,10 +307,6 @@ def render_projections():
     st.divider()
     st.markdown(f"""
     <div class="disclaimer">
-    ⚠️ **Remember:** {DISCLAIMER}
+    {DISCLAIMER}
     </div>
     """, unsafe_allow_html=True)
-
-
-# Run when loaded as standalone Streamlit page
-render_projections()

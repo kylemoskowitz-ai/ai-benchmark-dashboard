@@ -208,12 +208,13 @@ def render_data_quality():
                 for line in reversed(lines):
                     try:
                         entry = json.loads(line.strip())
+                        reason = entry.get("reason", "")
                         changelog_entries.append({
                             "Timestamp": entry.get("timestamp", ""),
                             "Action": entry.get("action", ""),
                             "Table": entry.get("table", ""),
                             "Record": entry.get("record_id", ""),
-                            "Reason": (entry.get("reason", "")[:50] + "...") if entry.get("reason") and len(entry.get("reason", "")) > 50 else entry.get("reason", ""),
+                            "Reason": (reason[:50] + "...") if reason and len(reason) > 50 else reason,
                         })
                     except json.JSONDecodeError:
                         continue
@@ -292,7 +293,3 @@ overrides:
     reason: "Corrected per official errata"
     date: "2024-03-15"
             """, language="yaml")
-
-
-# Run when loaded as standalone Streamlit page
-render_data_quality()

@@ -223,11 +223,10 @@ def render_benchmark_explorer():
     st.dataframe(display_df, hide_index=True, use_container_width=True)
 
     # Export
-    if st.button("📥 Export Results"):
-        csv = results.to_pandas().to_csv(index=False)
-        st.download_button(
-            "Download CSV",
-            csv,
-            f"{selected_benchmark}_results.csv",
-            "text/csv",
-        )
+    csv_data = results.to_pandas().to_csv(index=False)
+    st.download_button(
+        "📥 Export Results",
+        csv_data,
+        f"{selected_benchmark}_results.csv",
+        "text/csv",
+    )
