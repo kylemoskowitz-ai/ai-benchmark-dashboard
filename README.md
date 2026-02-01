@@ -3,15 +3,20 @@
 A **data-quality-first** dashboard for tracking AI model benchmark performance over time.
 Every plotted point has full provenance; missing/unverified data is explicit.
 
-## Benchmarks Tracked
+## Benchmarks Tracked (10 Total)
 
 | Benchmark | Category | Source |
 |-----------|----------|--------|
-| SWE-Bench Verified | Coding | swe-bench.com |
-| ARC-AGI | Reasoning | arcprize.org |
 | Epoch Capabilities Index | General | epoch.ai |
+| ARC-AGI 1 | Reasoning | arcprize.org |
+| ARC-AGI 2 | Reasoning | arcprize.org |
+| Humanities Last Exam | Reasoning | scale.com |
 | METR Time Horizons | Agentic | metr.org |
-| FrontierMath (Level 4) | Mathematics | epochai.org/frontiermath |
+| Remote Labor Index | Agentic | scale.com |
+| ZeroBench | Multimodal | zerobench.github.io |
+| MMMU | Multimodal | vals.ai |
+| SWE-Bench Verified | Coding | swebench.com |
+| FrontierMath (Tier 4) | Mathematics | epoch.ai
 
 ## Quick Start
 
@@ -141,11 +146,12 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md#adding-a-new-benchmark-ingestor)
 
 ## Dashboard Pages
 
-1. **Overview**: Frontier best-over-time, key metrics
-2. **Benchmark Explorer**: Deep dive into single benchmark
-3. **Model Explorer**: All results for a model
-4. **Projections**: Trend forecasts with uncertainty
-5. **Data Quality**: Coverage, missingness, provenance browser
+The dashboard uses a streamlined 4-page tab-based navigation:
+
+1. **Progress**: Landing page with hero metrics, frontier tracking chart, and benchmark cards showing current state-of-the-art
+2. **Explorer**: Unified benchmark and model exploration with filtering by provider, category, and trust tier
+3. **Projections**: Mathematical forecasting with linear regression, saturation (logistic), and power law models with uncertainty visualization
+4. **Admin**: Data refresh controls, quality monitoring, changelog viewer, and CSV exports
 
 ## Configuration
 
@@ -166,4 +172,3 @@ BACKUP_RETENTION_DAYS=30
 ## License
 
 MIT
-# Streamlit Cloud Deployment
