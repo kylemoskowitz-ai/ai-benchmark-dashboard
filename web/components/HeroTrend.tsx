@@ -78,8 +78,8 @@ export function HeroTrend() {
   const latest = trend[trend.length - 1]?.score;
   const includedCount = percentBenchmarks.length;
   const subtitle = includedCount
-    ? `Avg SOTA % across ${includedCount} percent benchmarks`
-    : "Avg SOTA % across percent benchmarks";
+    ? `Avg SOTA as % of benchmark max (${includedCount} benchmarks)`
+    : "Avg SOTA as % of benchmark max";
 
   return (
     <div className="card card-muted shadow-soft">
@@ -91,8 +91,9 @@ export function HeroTrend() {
           <div className="mt-2 font-mono text-title-lg text-base-900">
             {latest != null ? `${latest.toFixed(1)}%` : "—"}
           </div>
-          <div className="text-body-sm text-base-500 mt-1">
-            {subtitle}
+          <div className="text-body-sm text-base-500 mt-1">{subtitle}</div>
+          <div className="text-caption text-base-400 mt-1">
+            100 = benchmark ceiling
           </div>
         </div>
         <div className="opacity-80">

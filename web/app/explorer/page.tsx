@@ -38,6 +38,7 @@ function ExplorerContent() {
   const [activeBenchmark, setActiveBenchmark] = useState<string | null>(null);
   const [selectedModels, setSelectedModels] = useState<string[]>([]);
   const [selectedResult, setSelectedResult] = useState<Result | null>(null);
+  const [modelQuery, setModelQuery] = useState("");
   const [filters, setFilters] = useState<Filters>({
     providers: [],
     trust: [],
@@ -141,6 +142,22 @@ function ExplorerContent() {
     return Array.from(set).sort();
   }, [results, activeBenchmark]);
 
+  const filteredModelOptions = useMemo(() => {
+    if (!modelQuery) return modelOptions;
+    const q = modelQuery.toLowerCase();
+    return modelOptions.filter((m) => m.toLowerCase().includes(q));
+  }, [modelOptions, modelQuery]);
+
+  const toggleModelSelection = (model: string) => {
+    setSelectedModels((prev) => {
+      if (prev.includes(model)) {
+        return prev.filter((m) => m !== model);
+      }
+      if (prev.length >= 5) return prev;
+      return [...prev, model];
+    });
+  };
+
   const comparisonData = useMemo(() => {
     if (!selectedModels.length) return [];
     return buildComparisonTable(selectedModels, benchmarks, results);
@@ -213,25 +230,31 @@ function ExplorerContent() {
 
             <label className="block">
               <span className="text-body-sm text-base-500">Provider</span>
-              <select
-                multiple
-                className="mt-2 w-full px-3 py-2 bg-base-50 border border-base-200 rounded-lg text-base-900"
-                value={filters.providers}
-                onChange={(e) =>
-                  setFilters({
-                    ...filters,
-                    providers: Array.from(e.target.selectedOptions).map(
-                      (o) => o.value
-                    ),
-                  })
-                }
-              >
-                {providers.map((p) => (
-                  <option key={p} value={p}>
-                    {p}
-                  </option>
-                ))}
-              </select>
+              <div className="mt-2 space-y-2">
+                {providers.map((provider) => {
+                  const active = filters.providers.includes(provider);
+                  return (
+                    <label
+                      key={provider}
+                      className="flex items-center gap-2 text-body-sm text-base-500"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={active}
+                        onChange={() =>
+                          setFilters({
+                            ...filters,
+                            providers: active
+                              ? filters.providers.filter((p) => p !== provider)
+                              : [...filters.providers, provider],
+                          })
+                        }
+                      />
+                      {provider}
+                    </label>
+                  );
+                })}
+              </div>
             </label>
 
             <label className="block">
@@ -479,27 +502,84 @@ function ExplorerContent() {
                 {selectedModels.length}/5 selected
               </div>
             </div>
-            <div className="mt-4">
-              <select
-                multiple
-                className="w-full px-3 py-2 bg-base-50 border border-base-200 rounded-lg text-base-900"
-                value={selectedModels}
-                onChange={(e) => {
-                  const next = Array.from(e.target.selectedOptions).map(
-                    (o) => o.value
-                  );
-                  setSelectedModels(next.slice(0, 5));
-                }}
-              >
-                {modelOptions.map((m) => (
-                  <option key={m} value={m}>
-                    {m}
-                  </option>
+            <div className="mt-4 space-y-3">
+              <div className="flex flex-wrap gap-2">
+                {selectedModels.length === 0 && (
+                  <span className="text-caption text-base-400">
+                    No models selected yet
+                  </span>
+                )}
+                {selectedModels.map((model) => (
+                  <button
+                    key={model}
+                    type="button"
+                    className="chip chip-strong"
+                    onClick={() => toggleModelSelection(model)}
+                    title="Remove model"
+                  >
+                    {model}
+                  </button>
                 ))}
-              </select>
+              </div>
+
+              <div className="flex flex-wrap items-center gap-2">
+                <input
+                  className="flex-1 min-w-[200px] px-3 py-2 bg-base-50 border border-base-200 rounded-lg text-base-900"
+                  placeholder="Search models..."
+                  value={modelQuery}
+                  onChange={(e) => setModelQuery(e.target.value)}
+                />
+                <button
+                  type="button"
+                  className="px-3 py-2 rounded-lg text-body-sm bg-base-50 text-base-500 border border-base-200 hover:bg-base-100"
+                  disabled={!selectedModels.length}
+                  onClick={() => setSelectedModels([])}
+                >
+                  Clear
+                </button>
+              </div>
+
+              <div className="scroll-panel max-h-48">
+                {filteredModelOptions.map((model) => {
+                  const selected = selectedModels.includes(model);
+                  return (
+                    <button
+                      key={model}
+                      type="button"
+                      className={`w-full text-left px-3 py-2 rounded-md text-body-sm transition-colors ${
+                        selected
+                          ? "bg-accent/15 text-base-900 border border-accent/40"
+                          : "text-base-500 hover:bg-base-100"
+                      }`}
+                      onClick={() => toggleModelSelection(model)}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span
+                            className={`h-2 w-2 rounded-full ${
+                              selected ? "bg-accent" : "bg-base-200"
+                            }`}
+                          />
+                          <span className="font-medium">{model}</span>
+                        </div>
+                        {selected && (
+                          <span className="text-caption text-accent">
+                            Selected
+                          </span>
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
+                {filteredModelOptions.length === 0 && (
+                  <div className="px-3 py-3 text-body-sm text-base-400">
+                    No models match that search.
+                  </div>
+                )}
+              </div>
             </div>
             {comparisonData.length > 0 && (
-              <div className="mt-4 overflow-x-auto">
+              <div className="mt-4 overflow-x-auto comparison-scroll">
                 <table className="data-table">
                   <thead>
                     <tr>

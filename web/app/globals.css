@@ -375,6 +375,34 @@ button:active {
   display: none;
 }
 
+/* Themed scroll areas */
+.scroll-panel {
+  max-height: 12rem;
+  overflow-y: auto;
+  border: 1px solid var(--color-base-200);
+  border-radius: 0.5rem;
+  background-color: var(--color-base-50);
+  padding: 0.25rem;
+  scrollbar-color: color-mix(in srgb, var(--color-accent) 55%, transparent) transparent;
+}
+
+.scroll-panel::-webkit-scrollbar,
+.comparison-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb,
+.comparison-scroll::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-accent) 55%, transparent);
+  border-radius: 999px;
+}
+
+.scroll-panel::-webkit-scrollbar-track,
+.comparison-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
 .container-narrow {
   max-width: 56rem;
   margin-left: auto;

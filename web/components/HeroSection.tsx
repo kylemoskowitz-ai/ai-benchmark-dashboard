@@ -3,7 +3,7 @@ import { HeroTrend } from "@/components/HeroTrend";
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden border-b border-base-200">
+    <section className="relative overflow-hidden">
       {/* Subtle gradient background */}
       <div className="absolute inset-0 bg-gradient-subtle" />
 

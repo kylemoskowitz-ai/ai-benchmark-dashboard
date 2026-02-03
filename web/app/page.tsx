@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { BenchmarkCards } from "@/components/BenchmarkCards";
 import { HeroSection } from "@/components/HeroSection";
+import { MomentumSection } from "@/components/MomentumSection";
 import { ProgressDashboard } from "@/components/ProgressDashboard";
 
 export default function ProgressPage() {
@@ -8,6 +9,8 @@ export default function ProgressPage() {
     <div className="animate-fade-in">
       {/* Hero Section */}
       <HeroSection />
+
+      <MomentumSection />
 
       <Suspense
         fallback={
