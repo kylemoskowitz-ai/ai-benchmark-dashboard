@@ -1,6 +1,13 @@
 {
   "arc_agi_1": [
     {
+      "date": "2024-05-13",
+      "score": 5.0,
+      "model_id": "openai:gpt-4o",
+      "model_name": "GPT-4o",
+      "provider": "OpenAI"
+    },
+    {
       "date": "2024-09-12",
       "score": 14.000000000000002,
       "model_id": "openai:o1-mini-2024-09-12_medium",
@@ -29,135 +36,51 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2025-01-31",
-      "score": 34.5,
-      "model_id": "openai:o3-mini-2025-01-31_high",
-      "model_name": "o3-mini-2025-01-31_high",
+      "date": "2024-12-20",
+      "score": 32.4,
+      "model_id": "openai:o3__low_",
+      "model_name": "o3 (low)",
       "provider": "OpenAI"
     },
     {
-      "date": "2025-04-16",
-      "score": 53.800000000000004,
-      "model_id": "openai:o3-2025-04-16_medium",
-      "model_name": "o3-2025-04-16_medium",
+      "date": "2024-12-20",
+      "score": 75.7,
+      "model_id": "openai:o3__medium_",
+      "model_name": "o3 (medium)",
       "provider": "OpenAI"
     },
     {
-      "date": "2025-04-16",
-      "score": 60.8,
-      "model_id": "openai:o3-2025-04-16_high",
-      "model_name": "o3-2025-04-16_high",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-08-07",
-      "score": 65.7,
-      "model_id": "openai:gpt-5-2025-08-07_high",
-      "model_name": "gpt-5-2025-08-07_high",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-10-07",
-      "score": 70.19999999999999,
-      "model_id": "openai:gpt-5-pro-2025-10-06_high",
-      "model_name": "gpt-5-pro-2025-10-06_high",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-11-13",
-      "score": 72.8,
-      "model_id": "openai:gpt-5.1-2025-11-13_high",
-      "model_name": "gpt-5.1-2025-11-13_high",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-11-18",
-      "score": 75.0,
-      "model_id": "google_deepmind:gemini-3-pro-preview",
-      "model_name": "gemini-3-pro-preview",
-      "provider": "Google DeepMind"
-    },
-    {
-      "date": "2025-11-24",
-      "score": 75.8,
-      "model_id": "anthropic:claude-opus-4-5-20251101_32k",
-      "model_name": "claude-opus-4-5-20251101_32K",
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2025-11-24",
-      "score": 80.0,
-      "model_id": "anthropic:claude-opus-4-5-20251101_64k",
-      "model_name": "claude-opus-4-5-20251101_64K",
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2025-12-11",
-      "score": 86.2,
-      "model_id": "openai:gpt-5.2-2025-12-11_xhigh",
-      "model_name": "gpt-5.2-2025-12-11_xhigh",
+      "date": "2024-12-20",
+      "score": 87.5,
+      "model_id": "openai:o3__high_",
+      "model_name": "o3 (high)",
       "provider": "OpenAI"
     }
   ],
   "arc_agi_2": [
     {
-      "date": "2024-10-22",
-      "score": 8.0,
-      "model_id": "anthropic:claude_3.5_sonnet",
-      "model_name": "Claude 3.5 Sonnet",
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2024-12-05",
-      "score": 12.0,
-      "model_id": "openai:o1__high_",
-      "model_name": "o1 (high)",
+      "date": "2024-12-20",
+      "score": 4.0,
+      "model_id": "openai:o3__preview_low_",
+      "model_name": "o3 (Preview Low)",
       "provider": "OpenAI"
     },
     {
-      "date": "2025-08-01",
-      "score": 16.0,
-      "model_id": "xai:grok_4__thinking_",
-      "model_name": "Grok 4 (Thinking)",
-      "provider": "xAI"
-    },
-    {
-      "date": "2025-08-01",
-      "score": 29.4,
-      "model_id": "xai:grok_4__refine._",
-      "model_name": "Grok 4 (Refine.)",
-      "provider": "xAI"
-    },
-    {
-      "date": "2025-10-01",
-      "score": 31.1,
-      "model_id": "google:gemini_3_pro",
-      "model_name": "Gemini 3 Pro",
-      "provider": "Google"
-    },
-    {
-      "date": "2025-11-24",
-      "score": 37.6,
-      "model_id": "anthropic:opus_4.5__thinking_64k_",
-      "model_name": "Opus 4.5 (Thinking 64K)",
+      "date": "2025-02-01",
+      "score": 15.0,
+      "model_id": "anthropic:claude_opus_4.5",
+      "model_name": "Claude Opus 4.5",
       "provider": "Anthropic"
     },
     {
-      "date": "2025-12-11",
-      "score": 54.2,
-      "model_id": "openai:gpt-5.2_pro__high_",
-      "model_name": "GPT-5.2 Pro (High)",
+      "date": "2025-02-01",
+      "score": 75.0,
+      "model_id": "openai:o3__high_",
+      "model_name": "o3 (high)",
       "provider": "OpenAI"
     }
   ],
   "epoch_capabilities_index": [
-    {
-      "date": "2025-08-07",
-      "score": 150.0,
-      "model_id": "openai:gpt-5-2025-08-07_medium",
-      "model_name": "gpt-5-2025-08-07_medium",
-      "provider": "OpenAI"
-    },
     {
       "date": "2025-08-07",
       "score": 150.0,
@@ -175,8 +98,22 @@
     {
       "date": "2025-08-07",
       "score": 150.0,
+      "model_id": "openai:gpt-5-2025-08-07_medium",
+      "model_name": "gpt-5-2025-08-07_medium",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-08-07",
+      "score": 150.0,
       "model_id": "openai:gpt-5-2025-08-07_minimal",
       "model_name": "gpt-5-2025-08-07_minimal",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-08-07",
+      "score": 150.0,
+      "model_id": "openai:gpt-5",
+      "model_name": "GPT-5",
       "provider": "OpenAI"
     },
     {
@@ -198,15 +135,22 @@
     {
       "date": "2025-07-01",
       "score": 0.0,
-      "model_id": "anthropic:claude-opus-4-20250514",
-      "model_name": "claude-opus-4-20250514",
-      "provider": "Anthropic"
+      "model_id": "xai:grok-3-beta",
+      "model_name": "grok-3-beta",
+      "provider": "xAI"
     },
     {
       "date": "2025-07-01",
       "score": 0.0,
-      "model_id": "anthropic:claude-sonnet-4-20250514",
-      "model_name": "claude-sonnet-4-20250514",
+      "model_id": "openai:gpt-4.1-2025-04-14",
+      "model_name": "gpt-4.1-2025-04-14",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 0.0,
+      "model_id": "anthropic:claude-3-5-sonnet-20241022",
+      "model_name": "claude-3-5-sonnet-20241022",
       "provider": "Anthropic"
     },
     {
@@ -219,23 +163,37 @@
     {
       "date": "2025-07-01",
       "score": 0.0,
-      "model_id": "anthropic:claude-3-5-sonnet-20241022",
-      "model_name": "claude-3-5-sonnet-20241022",
+      "model_id": "anthropic:claude-sonnet-4-20250514",
+      "model_name": "claude-sonnet-4-20250514",
       "provider": "Anthropic"
     },
     {
       "date": "2025-07-01",
       "score": 0.0,
-      "model_id": "openai:gpt-4.1-2025-04-14",
-      "model_name": "gpt-4.1-2025-04-14",
+      "model_id": "anthropic:claude-opus-4-20250514",
+      "model_name": "claude-opus-4-20250514",
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 2.083333333333333,
+      "model_id": "openai:o3-2025-04-16_high",
+      "model_name": "o3-2025-04-16_high",
       "provider": "OpenAI"
     },
     {
       "date": "2025-07-01",
-      "score": 0.0,
-      "model_id": "xai:grok-3-beta",
-      "model_name": "grok-3-beta",
-      "provider": "xAI"
+      "score": 4.166666666666666,
+      "model_id": "openai:o3-mini-2025-01-31_high",
+      "model_name": "o3-mini-2025-01-31_high",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 4.166666666666666,
+      "model_id": "anthropic:claude-opus-4-20250514_27k",
+      "model_name": "claude-opus-4-20250514_27K",
+      "provider": "Anthropic"
     },
     {
       "date": "2025-07-01",
@@ -304,9 +262,9 @@
     },
     {
       "date": "2024-12-20",
-      "score": 19.78,
-      "model_id": "openai:o3__medium_",
-      "model_name": "o3 (medium)",
+      "score": 10.31,
+      "model_id": "openai:o3_mini__medium_",
+      "model_name": "o3 Mini (medium)",
       "provider": "OpenAI"
     },
     {
@@ -354,24 +312,17 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2023-11-06",
-      "score": 3.6,
-      "model_id": "openai:gpt_4_1106",
-      "model_name": "gpt_4_1106",
+      "date": "2023-03-14",
+      "score": 5.364045,
+      "model_id": "openai:gpt-4-0314",
+      "model_name": "gpt-4-0314",
       "provider": "OpenAI"
     },
     {
-      "date": "2024-03-04",
-      "score": 3.6,
-      "model_id": "anthropic:claude_3_opus",
-      "model_name": "claude_3_opus",
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2024-05-13",
-      "score": 6.4,
-      "model_id": "openai:gpt_4o",
-      "model_name": "gpt_4o",
+      "date": "2023-11-06",
+      "score": 8.557433,
+      "model_id": "openai:gpt-4-1106-preview",
+      "model_name": "gpt-4-1106-preview",
       "provider": "OpenAI"
     },
     {
@@ -382,6 +333,13 @@
       "provider": "Anthropic"
     },
     {
+      "date": "2024-06-20",
+      "score": 18.21683,
+      "model_id": "anthropic:claude-3-5-sonnet-20240620",
+      "model_name": "claude-3-5-sonnet-20240620",
+      "provider": "Anthropic"
+    },
+    {
       "date": "2024-09-12",
       "score": 19.4,
       "model_id": "openai:o1_preview",
@@ -389,10 +347,17 @@
       "provider": "OpenAI"
     },
     {
+      "date": "2024-09-12",
+      "score": 22.221357,
+      "model_id": "openai:o1-preview-2024-09-12",
+      "model_name": "o1-preview-2024-09-12",
+      "provider": "OpenAI"
+    },
+    {
       "date": "2024-10-22",
-      "score": 19.8,
-      "model_id": "anthropic:claude_3_5_sonnet_20241022",
-      "model_name": "claude_3_5_sonnet_20241022",
+      "score": 28.983512,
+      "model_id": "anthropic:claude-3-5-sonnet-20241022",
+      "model_name": "claude-3-5-sonnet-20241022",
       "provider": "Anthropic"
     },
     {
@@ -403,11 +368,32 @@
       "provider": "OpenAI"
     },
     {
+      "date": "2024-12-17",
+      "score": 39.206576,
+      "model_id": "openai:o1-2024-12-17_medium",
+      "model_name": "o1-2024-12-17_medium",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-02-24",
+      "score": 54.226342,
+      "model_id": "anthropic:claude-3-7-sonnet-20250219_32k",
+      "model_name": "claude-3-7-sonnet-20250219_32K",
+      "provider": "Anthropic"
+    },
+    {
       "date": "2025-02-24",
       "score": 59.8,
       "model_id": "anthropic:claude_3_7_sonnet",
       "model_name": "claude_3_7_sonnet",
       "provider": "Anthropic"
+    },
+    {
+      "date": "2025-04-16",
+      "score": 91.271355,
+      "model_id": "openai:o3-2025-04-16_medium",
+      "model_name": "o3-2025-04-16_medium",
+      "provider": "OpenAI"
     },
     {
       "date": "2025-04-16",
@@ -544,6 +530,13 @@
   ],
   "zerobench": [
     {
+      "date": "2025-02-01",
+      "score": 7.0,
+      "model_id": "openai:gpt-4.5",
+      "model_name": "GPT-4.5",
+      "provider": "OpenAI"
+    },
+    {
       "date": "2025-02-27",
       "score": 7.0,
       "model_id": "openai:gpt-4.5",
@@ -558,18 +551,25 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2025-11-24",
+      "date": "2025-06-15",
+      "score": 10.0,
+      "model_id": "openai:o4-mini",
+      "model_name": "o4-mini",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-11-01",
       "score": 10.0,
       "model_id": "anthropic:claude_opus_4.5",
       "model_name": "Claude Opus 4.5",
       "provider": "Anthropic"
     },
     {
-      "date": "2025-12-11",
-      "score": 18.0,
-      "model_id": "openai:gpt-5.2",
-      "model_name": "GPT-5.2",
-      "provider": "OpenAI"
+      "date": "2025-11-01",
+      "score": 19.0,
+      "model_id": "google:gemini_3_pro",
+      "model_name": "Gemini 3 Pro",
+      "provider": "Google"
     },
     {
       "date": "2026-01-15",
