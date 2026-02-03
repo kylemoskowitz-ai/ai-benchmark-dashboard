@@ -2,19 +2,25 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import type { Benchmark } from "@/lib/types";
+import type { Benchmark, FrontierPoint } from "@/lib/types";
 import { formatScore, formatDate } from "@/lib/data";
 import { PROVIDER_COLORS, CATEGORY_LABELS } from "@/lib/types";
+import { getLatestDelta } from "@/lib/analysis";
+import { Sparkline } from "@/components/Sparkline";
 
 export function BenchmarkCards() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
   const [loading, setLoading] = useState(true);
+  const [frontier, setFrontier] = useState<Record<string, FrontierPoint[]>>({});
 
   useEffect(() => {
-    fetch("/data/benchmarks.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setBenchmarks(data);
+    Promise.all([
+      fetch("/data/benchmarks.json").then((res) => res.json()),
+      fetch("/data/frontier.json").then((res) => res.json()),
+    ])
+      .then(([benchData, frontierData]) => {
+        setBenchmarks(benchData);
+        setFrontier(frontierData);
         setLoading(false);
       })
       .catch((err) => {
@@ -36,17 +42,35 @@ export function BenchmarkCards() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {benchmarks.map((benchmark) => (
-        <BenchmarkCard key={benchmark.id} benchmark={benchmark} />
+        <BenchmarkCard
+          key={benchmark.id}
+          benchmark={benchmark}
+          frontierPoints={frontier[benchmark.id] || []}
+        />
       ))}
     </div>
   );
 }
 
-function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
+function BenchmarkCard({
+  benchmark,
+  frontierPoints,
+}: {
+  benchmark: Benchmark;
+  frontierPoints: FrontierPoint[];
+}) {
   const providerColor =
     PROVIDER_COLORS[benchmark.sota?.provider || "Unknown"] ||
     PROVIDER_COLORS.Unknown;
   const hasScore = benchmark.sota?.score != null;
+  const delta = frontierPoints?.length ? getLatestDelta(frontierPoints) : null;
+  const rawDelta = delta?.delta ?? null;
+  const deltaValue =
+    rawDelta != null
+      ? benchmark.higher_is_better
+        ? rawDelta
+        : -rawDelta
+      : null;
 
   const progress =
     hasScore &&
@@ -68,9 +92,21 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
         <div>
-          <span className="text-caption uppercase tracking-wider text-base-500">
-            {CATEGORY_LABELS[benchmark.category] || benchmark.category}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="text-caption uppercase tracking-wider text-base-500">
+              {CATEGORY_LABELS[benchmark.category] || benchmark.category}
+            </span>
+            {deltaValue != null && (
+              <span
+                className={`chip ${
+                  deltaValue >= 0 ? "chip-accent" : "chip-strong"
+                }`}
+              >
+                {deltaValue >= 0 ? "+" : ""}
+                {deltaValue.toFixed(2)}
+              </span>
+            )}
+          </div>
           <h3 className="font-serif text-title-sm text-base-900 mt-1 group-hover:text-accent transition-colors">
             {benchmark.name}
           </h3>
@@ -113,6 +149,18 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
       ) : (
         <div className="mb-4">
           <div className="text-body text-base-400 italic">No data yet</div>
+        </div>
+      )}
+
+      {/* Sparkline */}
+      {frontierPoints && frontierPoints.length > 1 && (
+        <div className="mb-4">
+          <Sparkline
+            points={frontierPoints.slice(-12)}
+            width={160}
+            height={40}
+            stroke="var(--color-accent)"
+          />
         </div>
       )}
 

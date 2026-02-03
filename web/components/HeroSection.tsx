@@ -1,4 +1,5 @@
 import { HeroStats } from "@/components/HeroStats";
+import { HeroTrend } from "@/components/HeroTrend";
 
 export function HeroSection() {
   return (
@@ -17,7 +18,8 @@ export function HeroSection() {
       />
 
       <div className="relative container-wide py-16 md:py-24">
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 items-start">
+          <div className="lg:col-span-3">
           {/* Eyebrow */}
           <div className="flex items-center gap-2 mb-4">
             <div className="h-px w-8 bg-accent" />
@@ -42,6 +44,12 @@ export function HeroSection() {
 
           {/* Quick stats */}
           <HeroStats />
+          </div>
+
+          {/* Trend card */}
+          <div className="lg:col-span-2">
+            <HeroTrend />
+          </div>
         </div>
 
         {/* Decorative element - ascending bars */}

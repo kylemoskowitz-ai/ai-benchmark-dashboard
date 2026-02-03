@@ -1,0 +1,103 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import type { Benchmark, FrontierPoint } from "@/lib/types";
+import { normalizeScore } from "@/lib/analysis";
+import { parseDate } from "@/lib/data";
+import { Sparkline } from "@/components/Sparkline";
+
+type TrendPoint = { date: string; score: number };
+
+export function HeroTrend() {
+  const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
+  const [frontier, setFrontier] = useState<Record<string, FrontierPoint[]>>({});
+
+  useEffect(() => {
+    Promise.all([
+      fetch("/data/benchmarks.json").then((r) => r.json()),
+      fetch("/data/frontier.json").then((r) => r.json()),
+    ])
+      .then(([benchData, frontierData]) => {
+        setBenchmarks(benchData);
+        setFrontier(frontierData);
+      })
+      .catch(() => {
+        setBenchmarks([]);
+        setFrontier({});
+      });
+  }, []);
+
+  const trend = useMemo(() => {
+    if (!benchmarks.length) return [];
+    const byId = new Map(benchmarks.map((b) => [b.id, b]));
+    const allDates = new Set<string>();
+    Object.values(frontier).forEach((points) => {
+      points.forEach((p) => {
+        if (p.date) allDates.add(p.date);
+      });
+    });
+    const sortedDates = Array.from(allDates).sort(
+      (a, b) =>
+        (parseDate(a)?.getTime() ?? 0) - (parseDate(b)?.getTime() ?? 0)
+    );
+
+    const latest: Record<string, number> = {};
+    const result: TrendPoint[] = [];
+
+    for (const date of sortedDates) {
+      for (const [benchmarkId, points] of Object.entries(frontier)) {
+        const point = points.find((p) => p.date === date);
+        if (point && point.score != null) {
+          latest[benchmarkId] = point.score;
+        }
+      }
+      const normalized: number[] = [];
+      for (const [benchmarkId, score] of Object.entries(latest)) {
+        const benchmark = byId.get(benchmarkId);
+        if (!benchmark) continue;
+        const value = normalizeScore(score, benchmark);
+        if (value != null) normalized.push(value);
+      }
+      if (normalized.length > 0) {
+        const avg =
+          normalized.reduce((a, b) => a + b, 0) / normalized.length;
+        result.push({ date, score: avg });
+      }
+    }
+    return result.slice(-24);
+  }, [benchmarks, frontier]);
+
+  const latest = trend[trend.length - 1]?.score;
+
+  return (
+    <div className="card card-muted shadow-soft">
+      <div className="flex items-center justify-between">
+        <div>
+          <div className="text-caption uppercase tracking-wider text-base-500">
+            Frontier Index
+          </div>
+          <div className="mt-2 font-mono text-title-lg text-base-900">
+            {latest != null ? latest.toFixed(1) : "—"}
+          </div>
+          <div className="text-body-sm text-base-500 mt-1">
+            Avg normalized SOTA across benchmarks
+          </div>
+        </div>
+        <div className="opacity-80">
+          <Sparkline
+            points={trend.map((t) => ({
+              date: t.date,
+              score: t.score,
+              model_id: "",
+              model_name: "",
+              provider: "",
+            }))}
+            width={140}
+            height={48}
+            stroke="var(--color-accent)"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}

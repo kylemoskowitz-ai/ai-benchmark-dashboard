@@ -105,7 +105,7 @@ export function getRelativeTime(dateStr: string): string {
   return `${Math.floor(diffDays / 365)} years ago`;
 }
 
-function parseDate(dateStr: string | null | undefined): Date | null {
+export function parseDate(dateStr: string | null | undefined): Date | null {
   if (!dateStr) return null;
   // Handle date-only strings in local time to avoid timezone shifts.
   if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {

@@ -1,12 +1,26 @@
 import { Suspense } from "react";
 import { BenchmarkCards } from "@/components/BenchmarkCards";
 import { HeroSection } from "@/components/HeroSection";
+import { ProgressDashboard } from "@/components/ProgressDashboard";
 
 export default function ProgressPage() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
       <HeroSection />
+
+      <Suspense
+        fallback={
+          <section className="container-wide py-12">
+            <div className="animate-pulse space-y-4">
+              <div className="h-10 bg-base-50 rounded w-1/3" />
+              <div className="h-64 bg-base-50 rounded" />
+            </div>
+          </section>
+        }
+      >
+        <ProgressDashboard />
+      </Suspense>
 
       {/* Benchmark Cards Grid */}
       <section className="container-wide py-12">

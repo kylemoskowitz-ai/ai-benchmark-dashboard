@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { DensityToggle } from "@/components/DensityToggle";
 
 const navItems = [
   { href: "/", label: "Progress" },
@@ -37,7 +38,7 @@ export function Navigation() {
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-6">
             {navItems.map((item) => {
               const isActive = mounted && (
                 item.href === "/"
@@ -55,6 +56,7 @@ export function Navigation() {
                 </Link>
               );
             })}
+            <DensityToggle />
           </div>
         </nav>
       </div>
