@@ -3,7 +3,7 @@
     "id": "arc_agi_1",
     "name": "ARC-AGI 1",
     "category": "reasoning",
-    "description": "Original Abstraction and Reasoning Corpus evaluating fluid intelligence and novel problem solving. Scores are accuracy on the semi-private evaluation set.",
+    "description": "Original Abstraction and Reasoning Corpus evaluating fluid intelligence and novel problem solving.",
     "unit": "percent",
     "scale": {
       "min": 0.0,
@@ -12,20 +12,20 @@
     "higher_is_better": true,
     "official_url": "https://arcprize.org/leaderboard",
     "paper_url": "https://arxiv.org/abs/1911.01547",
-    "notes": "Scores from ARC Prize leaderboard (official). Expressed as percentage (0-100).",
+    "notes": null,
     "sota": {
-      "score": 86.2,
-      "model_id": "openai:gpt-5.2-2025-12-11_xhigh",
-      "model_name": "gpt-5.2-2025-12-11_xhigh",
+      "score": 87.5,
+      "model_id": "openai:o3__high_",
+      "model_name": "o3 (High)",
       "provider": "OpenAI",
-      "date": "2025-12-11"
+      "date": "2024-12-20"
     }
   },
   {
     "id": "arc_agi_2",
     "name": "ARC-AGI 2",
     "category": "reasoning",
-    "description": "Updated ARC-AGI with harder tasks and improved evaluation methodology.",
+    "description": "Updated ARC-AGI with harder tasks and improved evaluation methodology. Requires both high adaptability and high efficiency.",
     "unit": "percent",
     "scale": {
       "min": 0.0,
@@ -34,13 +34,13 @@
     "higher_is_better": true,
     "official_url": "https://arcprize.org/leaderboard",
     "paper_url": null,
-    "notes": null,
+    "notes": "Scraped from ARC Prize leaderboard. ARC-2 is significantly harder than ARC-1.",
     "sota": {
-      "score": 75.0,
-      "model_id": "openai:o3__high_",
-      "model_name": "o3 (high)",
+      "score": 54.2,
+      "model_id": "openai:gpt-5.2_pro__high_",
+      "model_name": "GPT-5.2 Pro (High)",
       "provider": "OpenAI",
-      "date": "2025-02-01"
+      "date": "2025-12-11"
     }
   },
   {
