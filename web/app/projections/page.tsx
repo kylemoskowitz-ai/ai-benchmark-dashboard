@@ -131,7 +131,7 @@ export default function ProjectionsPage() {
                   disabled={!projection}
                   className={`flex-1 px-3 py-2 rounded-lg text-body-sm transition-colors ${
                     selectedModel === model
-                      ? "bg-accent text-base font-medium"
+                      ? "bg-accent text-base-900 font-medium"
                       : projection
                       ? "bg-base-50 text-base-500 hover:bg-base-100"
                       : "bg-base-50 text-base-300 cursor-not-allowed"

@@ -132,6 +132,8 @@ class ArtifactGenerator:
             try:
                 results = get_results_for_benchmark(benchmark_id)
                 if not results.is_empty():
+                    results = results.filter(pl.col("score").is_not_null())
+                if not results.is_empty():
                     # Sort by score (descending if higher is better)
                     sorted_results = results.sort(
                         "score",

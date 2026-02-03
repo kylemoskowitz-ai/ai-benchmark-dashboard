@@ -76,7 +76,7 @@ function ExplorerContent() {
               onClick={() => setActiveBenchmark(benchmark.id)}
               className={`px-4 py-2 rounded-lg text-body-sm whitespace-nowrap transition-colors ${
                 activeBenchmark === benchmark.id
-                  ? "bg-accent text-base font-medium"
+                  ? "bg-accent text-base-900 font-medium"
                   : "bg-base-50 text-base-500 hover:bg-base-100 hover:text-base-700"
               }`}
             >

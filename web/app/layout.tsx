@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Serif, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
+import { LastUpdated } from "@/components/LastUpdated";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ["latin"],
@@ -54,7 +55,7 @@ export default function RootLayout({
             <div className="container-wide text-center text-body-sm text-base-500">
               <p>Data sourced from official benchmarks, Epoch AI, and community evaluations.</p>
               <p className="mt-2 text-base-400">
-                Last updated: <span className="font-mono" id="last-updated" suppressHydrationWarning>—</span>
+                Last updated: <LastUpdated />
               </p>
             </div>
           </footer>

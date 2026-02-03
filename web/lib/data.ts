@@ -80,8 +80,8 @@ export function formatScore(score: number | null | undefined, unit: string): str
 
 // Format date for display
 export function formatDate(dateStr: string): string {
-  if (!dateStr) return "—";
-  const date = new Date(dateStr);
+  const date = parseDate(dateStr);
+  if (!date) return "—";
   return date.toLocaleDateString("en-US", {
     year: "numeric",
     month: "short",
@@ -91,8 +91,8 @@ export function formatDate(dateStr: string): string {
 
 // Get relative time (e.g., "2 days ago")
 export function getRelativeTime(dateStr: string): string {
-  if (!dateStr) return "";
-  const date = new Date(dateStr);
+  const date = parseDate(dateStr);
+  if (!date) return "";
   const now = new Date();
   const diffMs = now.getTime() - date.getTime();
   const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
@@ -103,4 +103,15 @@ export function getRelativeTime(dateStr: string): string {
   if (diffDays < 30) return `${Math.floor(diffDays / 7)} weeks ago`;
   if (diffDays < 365) return `${Math.floor(diffDays / 30)} months ago`;
   return `${Math.floor(diffDays / 365)} years ago`;
+}
+
+function parseDate(dateStr: string | null | undefined): Date | null {
+  if (!dateStr) return null;
+  // Handle date-only strings in local time to avoid timezone shifts.
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+    const [year, month, day] = dateStr.split("-").map(Number);
+    return new Date(year, month - 1, day);
+  }
+  const date = new Date(dateStr);
+  return Number.isNaN(date.getTime()) ? null : date;
 }

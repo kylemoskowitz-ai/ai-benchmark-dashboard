@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { HeroStats } from "@/components/HeroStats";
 
 export function HeroSection() {
   return (
@@ -41,11 +41,7 @@ export function HeroSection() {
           </p>
 
           {/* Quick stats */}
-          <div className="flex flex-wrap gap-8 md:gap-12">
-            <StatItem value="10" label="Benchmarks" />
-            <StatItem value="200+" label="Models" />
-            <StatItem value="700+" label="Results" />
-          </div>
+          <HeroStats />
         </div>
 
         {/* Decorative element - ascending bars */}
@@ -60,18 +56,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  );
-}
-
-function StatItem({ value, label }: { value: string; label: string }) {
-  return (
-    <div>
-      <div className="font-mono text-display-sm font-medium text-base-900">
-        {value}
-      </div>
-      <div className="text-body-sm text-base-500 uppercase tracking-wide">
-        {label}
-      </div>
-    </div>
   );
 }

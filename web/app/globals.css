@@ -3,7 +3,7 @@
 /* Tailwind v4: Define custom theme using @theme */
 @theme {
   /* Colors - using zinc as base */
-  --color-base-DEFAULT: #0a0a0b;
+  --color-base: #0a0a0b;
   --color-base-50: #18181b;
   --color-base-100: #27272a;
   --color-base-200: #3f3f46;
@@ -16,7 +16,7 @@
   --color-base-900: #fafafa;
 
   /* Gold accent */
-  --color-accent-DEFAULT: #c9a227;
+  --color-accent: #c9a227;
   --color-accent-50: #fefce8;
   --color-accent-100: #fef9c3;
   --color-accent-200: #fef08a;
@@ -84,7 +84,7 @@
 
 /* Base styles */
 html {
-  background-color: var(--color-base-DEFAULT);
+  background-color: var(--color-base);
   color: var(--color-base-900);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -92,13 +92,13 @@ html {
 }
 
 body {
-  background-color: var(--color-base-DEFAULT);
+  background-color: var(--color-base);
   min-height: 100vh;
   font-feature-settings: "kern" 1, "liga" 1;
 }
 
 ::selection {
-  background-color: color-mix(in srgb, var(--color-accent-DEFAULT) 30%, transparent);
+  background-color: color-mix(in srgb, var(--color-accent) 30%, transparent);
   color: var(--color-accent-50);
 }
 
@@ -118,7 +118,7 @@ body {
 .bg-gradient-subtle {
   background: linear-gradient(
     180deg,
-    var(--color-base-DEFAULT) 0%,
+    var(--color-base) 0%,
     var(--color-base-50) 100%
   );
 }
@@ -160,7 +160,7 @@ body {
   font-family: var(--font-mono);
   font-size: var(--text-display-sm);
   font-weight: 500;
-  color: var(--color-accent-DEFAULT);
+  color: var(--color-accent);
 }
 
 .stat-label {
@@ -194,7 +194,7 @@ body {
   left: 0;
   right: 0;
   height: 2px;
-  background-color: var(--color-accent-DEFAULT);
+  background-color: var(--color-accent);
 }
 
 /* Utilities */
@@ -210,7 +210,7 @@ body {
 }
 
 .glow-accent {
-  box-shadow: 0 0 40px -10px var(--color-accent-DEFAULT);
+  box-shadow: 0 0 40px -10px var(--color-accent);
 }
 
 .scrollbar-hide {

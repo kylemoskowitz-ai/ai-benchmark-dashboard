@@ -58,11 +58,11 @@
     "paper_url": null,
     "notes": null,
     "sota": {
-      "score": null,
-      "model_id": "openai:gpt2-xl",
-      "model_name": "gpt2-xl",
-      "provider": "OpenAI",
-      "date": "2019-11-05"
+      "score": 153.8060795990362,
+      "model_id": "google_deepmind:gemini-3-pro-preview",
+      "model_name": "gemini-3-pro-preview",
+      "provider": "Google DeepMind",
+      "date": "2025-11-18"
     }
   },
   {

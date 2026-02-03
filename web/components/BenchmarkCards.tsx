@@ -33,16 +33,6 @@ export function BenchmarkCards() {
     );
   }
 
-  // Group benchmarks by category
-  const categories = new Map<string, Benchmark[]>();
-  benchmarks.forEach((b) => {
-    const cat = b.category || "other";
-    if (!categories.has(cat)) {
-      categories.set(cat, []);
-    }
-    categories.get(cat)!.push(b);
-  });
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {benchmarks.map((benchmark) => (
@@ -56,11 +46,24 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
   const providerColor =
     PROVIDER_COLORS[benchmark.sota?.provider || "Unknown"] ||
     PROVIDER_COLORS.Unknown;
+  const hasScore = benchmark.sota?.score != null;
+
+  const progress =
+    hasScore &&
+    benchmark.unit === "percent" &&
+    benchmark.scale?.max != null
+      ? clamp(
+          ((benchmark.sota?.score ?? 0) - (benchmark.scale?.min ?? 0)) /
+            Math.max(benchmark.scale.max - (benchmark.scale?.min ?? 0), 1),
+          0,
+          1
+        )
+      : null;
 
   return (
     <Link
       href={`/explorer/?benchmark=${benchmark.id}`}
-      className="card group cursor-pointer hover:border-accent/50 hover:glow-accent/10"
+      className="card group cursor-pointer hover:border-accent/50 hover:glow-accent"
     >
       {/* Header */}
       <div className="flex items-start justify-between mb-4">
@@ -92,10 +95,10 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
       </div>
 
       {/* SOTA Score */}
-      {benchmark.sota ? (
+      {hasScore ? (
         <div className="mb-4">
           <div className="stat-value">
-            {formatScore(benchmark.sota.score, benchmark.unit)}
+            {formatScore(benchmark.sota?.score, benchmark.unit)}
           </div>
           <div className="flex items-center gap-2 mt-1">
             <div
@@ -103,7 +106,7 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
               style={{ backgroundColor: providerColor }}
             />
             <span className="text-body-sm text-base-600">
-              {benchmark.sota.model_name}
+              {benchmark.sota?.model_name}
             </span>
           </div>
         </div>
@@ -114,16 +117,13 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
       )}
 
       {/* Progress bar */}
-      {benchmark.sota && benchmark.sota.score != null && benchmark.unit === "percent" && (
+      {progress != null && (
         <div className="mb-4">
           <div className="h-1.5 bg-base-100 rounded-full overflow-hidden">
             <div
               className="h-full bg-accent rounded-full transition-all duration-500"
               style={{
-                width: `${Math.min(
-                  (benchmark.sota.score / benchmark.scale.max) * 100,
-                  100
-                )}%`,
+                width: `${progress * 100}%`,
               }}
             />
           </div>
@@ -149,4 +149,8 @@ function BenchmarkCard({ benchmark }: { benchmark: Benchmark }) {
       )}
     </Link>
   );
+}
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(Math.max(value, min), max);
 }
