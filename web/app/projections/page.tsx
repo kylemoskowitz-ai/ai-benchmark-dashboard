@@ -99,8 +99,7 @@ export default function ProjectionsPage() {
   );
 
   const pointsUsed = historySeries?.length ?? 0;
-  const fitR2 =
-    currentProjections?.[selectedModel as keyof BenchmarkProjections]?.r_squared;
+  const fitR2 = selectedProjection?.r_squared;
   const maeEstimate = useMemo(
     () => estimateMaeFromR2(historyPointsForMetrics || [], fitR2),
     [historyPointsForMetrics, fitR2]
