@@ -64,13 +64,6 @@ function ExplorerContent() {
       .catch(() => setLoading(false));
   }, [selectedBenchmark]);
 
-  useEffect(() => {
-    if (!activeBenchmark) return;
-    if (!visibleBenchmarks.find((b) => b.id === activeBenchmark)) {
-      setActiveBenchmark(visibleBenchmarks[0]?.id ?? null);
-    }
-  }, [visibleBenchmarks, activeBenchmark]);
-
   const currentBenchmark = benchmarks.find((b) => b.id === activeBenchmark);
 
   const providers = useMemo(() => {
@@ -87,6 +80,13 @@ function ExplorerContent() {
     if (filters.category === "all") return benchmarks;
     return benchmarks.filter((b) => b.category === filters.category);
   }, [benchmarks, filters.category]);
+
+  useEffect(() => {
+    if (!activeBenchmark) return;
+    if (!visibleBenchmarks.find((b) => b.id === activeBenchmark)) {
+      setActiveBenchmark(visibleBenchmarks[0]?.id ?? null);
+    }
+  }, [visibleBenchmarks, activeBenchmark]);
 
   const benchmarkResults = useMemo(() => {
     if (!activeBenchmark) return [];
