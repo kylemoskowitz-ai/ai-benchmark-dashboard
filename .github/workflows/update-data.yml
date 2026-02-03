@@ -1,0 +1,67 @@
+name: Update Benchmark Data
+
+on:
+  workflow_dispatch:
+    inputs:
+      benchmark:
+        description: "Optional benchmark id to update (e.g., swe_bench_verified)"
+        required: false
+        default: ""
+      dry_run:
+        description: "Run update without writing to DB or committing changes"
+        required: false
+        type: boolean
+        default: false
+  schedule:
+    # Weekly on Monday at 14:00 UTC (adjust if you want a different local time)
+    - cron: "0 14 * * 1"
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install .
+
+      - name: Update benchmark data
+        run: |
+          if [ -n "${{ inputs.benchmark }}" ]; then
+            python -m scripts.update_data --benchmark "${{ inputs.benchmark }}" ${{ inputs.dry_run && '--dry-run' || '' }}
+          else
+            python -m scripts.update_data ${{ inputs.dry_run && '--dry-run' || '' }}
+          fi
+
+      - name: Generate frontend artifacts
+        if: ${{ !inputs.dry_run }}
+        run: |
+          python - <<'PY'
+          from src.export.generate_artifacts import generate_all_artifacts
+          generate_all_artifacts()
+          PY
+
+      - name: Commit and push updates
+        if: ${{ !inputs.dry_run }}
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/benchmark.duckdb data/changelog.jsonl web/public/data/*.json
+          git commit -m "Update benchmark data [skip ci]"
+          git push
