@@ -3,6 +3,7 @@ import { IBM_Plex_Serif, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { LastUpdated } from "@/components/LastUpdated";
+import { PointerTracker } from "@/components/PointerTracker";
 
 const ibmPlexSerif = IBM_Plex_Serif({
   subsets: ["latin"],
@@ -46,6 +47,7 @@ export default function RootLayout({
       className={`${ibmPlexSerif.variable} ${ibmPlexSans.variable} ${ibmPlexMono.variable}`}
     >
       <body className="font-sans">
+        <PointerTracker />
         <div className="min-h-screen flex flex-col">
           <Navigation />
           <main className="flex-1">

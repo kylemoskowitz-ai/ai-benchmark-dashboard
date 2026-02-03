@@ -61,6 +61,19 @@ export default function ProjectionsPage() {
   const currentProjections = selectedBenchmark
     ? projections[selectedBenchmark]
     : null;
+  const historySeries = currentProjections?.history?.length
+    ? currentProjections.history
+    : currentFrontier.map((point) => ({
+        date: point.date,
+        value: point.score,
+      }));
+  const historyPointsForMetrics: FrontierPoint[] = historySeries.map((point) => ({
+    date: point.date,
+    score: point.value,
+    model_id: "",
+    model_name: "",
+    provider: "",
+  }));
   const availableModels = useMemo(() => {
     if (!currentProjections) return [];
     return (["logistic", "linear", "power_law"] as const).filter(
@@ -68,8 +81,8 @@ export default function ProjectionsPage() {
     );
   }, [currentProjections]);
   const bestModel = useMemo(
-    () => getBestProjectionModel(currentProjections),
-    [currentProjections]
+    () => getBestProjectionModel(currentProjections, currentBenchmark || undefined),
+    [currentProjections, currentBenchmark]
   );
   const selectedForecast =
     currentProjections?.[selectedModel as keyof BenchmarkProjections]?.forecast ||
@@ -78,19 +91,19 @@ export default function ProjectionsPage() {
 
   // Prepare chart data
   const chartData = prepareChartData(
-    currentFrontier || [],
+    historySeries,
     currentProjections,
     selectedModel,
     pace,
     viewMode
   );
 
-  const pointsUsed = currentFrontier?.length ?? 0;
+  const pointsUsed = historySeries?.length ?? 0;
   const fitR2 =
     currentProjections?.[selectedModel as keyof BenchmarkProjections]?.r_squared;
   const maeEstimate = useMemo(
-    () => estimateMaeFromR2(currentFrontier || [], fitR2),
-    [currentFrontier, fitR2]
+    () => estimateMaeFromR2(historyPointsForMetrics || [], fitR2),
+    [historyPointsForMetrics, fitR2]
   );
 
   useEffect(() => {
@@ -126,7 +139,7 @@ export default function ProjectionsPage() {
     ? currentProjections?.[bestModel as keyof BenchmarkProjections] || null
     : null;
   const futureOutlook = buildFutureOutlook({
-    frontier: currentFrontier || [],
+    frontier: historyPointsForMetrics || [],
     projection: bestProjection?.forecast || [],
     unit: currentBenchmark?.unit || "percent",
   });
@@ -519,7 +532,7 @@ function ModelExplanation({
 }
 
 function prepareChartData(
-  frontier: FrontierPoint[],
+  history: { date: string; value: number }[],
   projections: BenchmarkProjections | null,
   modelType: string,
   pace: number,
@@ -549,12 +562,12 @@ function prepareChartData(
   > = {};
 
   // Add historical data
-  frontier.forEach((point) => {
+  history.forEach((point) => {
     if (point.date) {
       data[point.date] = {
         date: point.date,
         date_ts: toTimestamp(point.date),
-        actual: point.score,
+        actual: point.value,
       };
     }
   });
@@ -655,7 +668,7 @@ function BenchmarkForecastList({
   const items = benchmarks
     .filter((b) => b.unit === "percent")
     .map((b) => {
-      const bestModel = getBestProjectionModel(projections[b.id]);
+      const bestModel = getBestProjectionModel(projections[b.id], b);
       const proj = bestModel ? projections[b.id]?.[bestModel] : null;
       if (!proj?.forecast?.length) return null;
       const target = b.scale?.max ?? 100;
@@ -690,18 +703,35 @@ function BenchmarkForecastList({
 }
 
 function getBestProjectionModel(
-  projections: BenchmarkProjections | null
+  projections: BenchmarkProjections | null,
+  benchmark?: Benchmark
 ): "linear" | "logistic" | "power_law" | null {
   if (!projections) return null;
   const candidates = (["logistic", "power_law", "linear"] as const).filter(
     (key) => projections[key]
   );
   if (!candidates.length) return null;
-  return candidates.reduce((best, key) => {
+  const bestByR2 = candidates.reduce((best, key) => {
     const bestR2 = projections[best]?.r_squared ?? -Infinity;
     const nextR2 = projections[key]?.r_squared ?? -Infinity;
     return nextR2 > bestR2 ? key : best;
   });
+  const unit = benchmark?.unit || "percent";
+  if (unit === "percent" && projections.logistic) {
+    const logisticR2 = projections.logistic.r_squared ?? -Infinity;
+    const bestR2 = projections[bestByR2]?.r_squared ?? -Infinity;
+    if (bestByR2 === "logistic" || bestR2 - logisticR2 <= 0.05) {
+      return "logistic";
+    }
+  }
+  if (unit !== "percent" && projections.linear) {
+    const linearR2 = projections.linear.r_squared ?? -Infinity;
+    const bestR2 = projections[bestByR2]?.r_squared ?? -Infinity;
+    if (bestByR2 === "linear" || bestR2 - linearR2 <= 0.05) {
+      return "linear";
+    }
+  }
+  return bestByR2;
 }
 
 function buildFutureOutlook({

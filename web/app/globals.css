@@ -2,31 +2,31 @@
 
 /* Tailwind v4: Define custom theme using @theme */
 @theme {
-  /* Colors - deep aurora base */
-  --color-base: #070a12;
-  --color-base-50: #0f1522;
-  --color-base-100: #161e2e;
-  --color-base-200: #242f44;
-  --color-base-300: #343f58;
-  --color-base-400: #5b6478;
-  --color-base-500: #8b93a6;
-  --color-base-600: #b4b9c7;
-  --color-base-700: #d5d9e2;
-  --color-base-800: #eef0f6;
-  --color-base-900: #f9fafc;
+  /* Colors - using zinc as base */
+  --color-base: #0a0a0b;
+  --color-base-50: #18181b;
+  --color-base-100: #27272a;
+  --color-base-200: #3f3f46;
+  --color-base-300: #52525b;
+  --color-base-400: #71717a;
+  --color-base-500: #a1a1aa;
+  --color-base-600: #d4d4d8;
+  --color-base-700: #e4e4e7;
+  --color-base-800: #f4f4f5;
+  --color-base-900: #fafafa;
 
-  /* Aurora accent */
-  --color-accent: #3dd6c6;
-  --color-accent-50: #e9fffb;
-  --color-accent-100: #c6fff6;
-  --color-accent-200: #94f9ee;
-  --color-accent-300: #62f0e4;
-  --color-accent-400: #3dd6c6;
-  --color-accent-500: #2bb9ad;
-  --color-accent-600: #1f9a93;
-  --color-accent-700: #187d79;
-  --color-accent-800: #14635f;
-  --color-accent-900: #0b3f3d;
+  /* Gold accent */
+  --color-accent: #c9a227;
+  --color-accent-50: #fefce8;
+  --color-accent-100: #fef9c3;
+  --color-accent-200: #fef08a;
+  --color-accent-300: #fde047;
+  --color-accent-400: #facc15;
+  --color-accent-500: #c9a227;
+  --color-accent-600: #a16207;
+  --color-accent-700: #854d0e;
+  --color-accent-800: #713f12;
+  --color-accent-900: #422006;
 
   /* Font families */
   --font-serif: var(--font-ibm-plex-serif), Georgia, serif;
@@ -93,9 +93,9 @@
   }
 
   @keyframes aurora {
-    0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.55; }
-    50% { transform: translate3d(-2%, -3%, 0) scale(1.05); opacity: 0.75; }
-    100% { transform: translate3d(2%, 1%, 0) scale(1.02); opacity: 0.6; }
+    0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.5; }
+    50% { transform: translate3d(-1.5%, -2%, 0) scale(1.04); opacity: 0.7; }
+    100% { transform: translate3d(1.5%, 1%, 0) scale(1.02); opacity: 0.6; }
   }
 
   @keyframes drift {
@@ -126,11 +126,11 @@ body::before {
   position: fixed;
   inset: -20% -10%;
   background:
-    radial-gradient(45% 45% at 20% 20%, rgba(61, 214, 198, 0.2), transparent 60%),
-    radial-gradient(40% 40% at 80% 30%, rgba(118, 148, 255, 0.18), transparent 65%),
-    radial-gradient(35% 35% at 50% 85%, rgba(255, 198, 100, 0.12), transparent 70%);
-  filter: blur(30px);
-  opacity: 0.6;
+    radial-gradient(45% 45% at 15% 20%, rgba(201, 162, 39, 0.18), transparent 60%),
+    radial-gradient(40% 40% at 80% 18%, rgba(234, 179, 8, 0.14), transparent 65%),
+    radial-gradient(35% 35% at 50% 85%, rgba(120, 70, 25, 0.16), transparent 70%);
+  filter: blur(40px);
+  opacity: 0.5;
   z-index: -2;
   animation: aurora 24s ease-in-out infinite alternate;
 }
@@ -139,15 +139,16 @@ body::after {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(
-      rgba(255, 255, 255, 0.08) 1px,
-      transparent 1px
-    );
-  background-size: 120px 120px;
-  opacity: 0.08;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    radial-gradient(rgba(201, 162, 39, 0.08) 1px, transparent 1px);
+  background-size: 140px 140px, 220px 220px;
+  background-position: 0 0, 60px 80px;
+  opacity: 0.12;
   z-index: -1;
   pointer-events: none;
-  animation: drift 60s linear infinite;
+  animation: drift 80s linear infinite;
+  transform: translate3d(0, calc(var(--scroll-y, 0px) * 0.02), 0);
 }
 
 ::selection {
@@ -163,12 +164,32 @@ body::after {
   padding: var(--card-padding);
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
   box-shadow: 0 10px 30px -24px rgba(0, 0, 0, 0.7);
+  position: relative;
+  overflow: hidden;
 }
 
 .card:hover {
   border-color: var(--color-base-300);
   transform: translateY(-2px);
   box-shadow: 0 16px 36px -26px rgba(0, 0, 0, 0.8);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    500px circle at var(--pointer-x, 50%) var(--pointer-y, 20%),
+    rgba(201, 162, 39, 0.08),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.card:hover::after {
+  opacity: 1;
 }
 
 .card-muted {
@@ -273,6 +294,18 @@ button {
 
 button:active {
   transform: translateY(1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+
+  .card,
+  button {
+    transition: none;
+  }
 }
 
 /* Utilities */

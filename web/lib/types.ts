@@ -75,12 +75,19 @@ export interface ProjectionPoint {
 export interface Projection {
   forecast: ProjectionPoint[];
   r_squared: number;
+  points_used?: number;
+}
+
+export interface HistoryPoint {
+  date: string;
+  value: number;
 }
 
 export interface BenchmarkProjections {
   linear?: Projection;
   logistic?: Projection;
   power_law?: Projection;
+  history?: HistoryPoint[];
 }
 
 // Provider color mapping

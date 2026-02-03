@@ -92,10 +92,10 @@ def power_law_projection(
         b_init = 0.5  # Typical sublinear exponent
         c_init = min(y)
 
-        # Bounds: a > 0, 0 < b < 2, c can be anything
+        # Bounds: a > 0, 0 < b <= 1 (sublinear), c can be anything
         bounds = (
             [0.0, 0.01, -1000],  # Lower bounds
-            [y_range * 10, 2.0, max(y) * 2],  # Upper bounds
+            [y_range * 10, 1.0, max(y) * 2],  # Upper bounds
         )
 
         with warnings.catch_warnings():

@@ -276,28 +276,66 @@ class ArtifactGenerator:
             benchmark_id = bench_row["benchmark_id"]
             unit = bench_row.get("unit", "percent")
             scale_max = bench_row.get("scale_max", 100)
+            higher_is_better = bench_row.get("higher_is_better", True)
 
             try:
-                frontier = get_frontier_results(benchmark_id)
-
-                if frontier.is_empty() or len(frontier) < 3:
+                results = get_results_for_benchmark(benchmark_id)
+                if results.is_empty():
                     continue
 
-                # Add benchmark_id column for the projection functions
-                frontier = frontier.with_columns(pl.lit(benchmark_id).alias("benchmark_id"))
+                # Build a dense history series (daily max/min, then cumulative frontier)
+                results = results.with_columns(
+                    pl.coalesce(
+                        pl.col("evaluation_date"),
+                        pl.col("model_release_date"),
+                    ).alias("effective_date")
+                ).filter(pl.col("effective_date").is_not_null())
+
+                if results.is_empty():
+                    continue
+
+                agg_expr = pl.col("score").max().alias("score") if higher_is_better else pl.col("score").min().alias("score")
+                history = (
+                    results
+                    .group_by("effective_date")
+                    .agg(agg_expr)
+                    .sort("effective_date")
+                )
+
+                if higher_is_better:
+                    history = history.with_columns(pl.col("score").cum_max().alias("score"))
+                else:
+                    history = history.with_columns(pl.col("score").cum_min().alias("score"))
+
+                if len(history) < 8:
+                    continue
+
+                history = history.with_columns(pl.lit(benchmark_id).alias("benchmark_id"))
+
+                history_points = [
+                    {"date": row["effective_date"], "value": row["score"]}
+                    for row in history.iter_rows(named=True)
+                ]
 
                 benchmark_projections = {}
+                benchmark_projections["history"] = history_points
 
                 # Linear projection
                 try:
                     linear_result = linear_projection(
-                        frontier,
+                        history,
                         score_col="score",
                         date_col="effective_date",
-                        window_months=24,
+                        window_months=36,
                         forecast_months=60,
                     )
                     if linear_result:
+                        linear_values = linear_result.forecast_values
+                        ci_low = linear_result.ci_80_low
+                        ci_high = linear_result.ci_80_high
+                        if scale_max is not None:
+                            linear_values = [min(v, scale_max) for v in linear_values]
+                            ci_high = [min(v, scale_max) for v in ci_high]
                         benchmark_projections["linear"] = {
                             "forecast": [
                                 {
@@ -308,12 +346,13 @@ class ArtifactGenerator:
                                 }
                                 for d, v, cl, ch in zip(
                                     linear_result.forecast_dates,
-                                    linear_result.forecast_values,
-                                    linear_result.ci_80_low,
-                                    linear_result.ci_80_high,
+                                    linear_values,
+                                    ci_low,
+                                    ci_high,
                                 )
                             ],
                             "r_squared": linear_result.r_squared,
+                            "points_used": len(history),
                         }
                 except Exception as e:
                     logger.debug(f"Linear projection failed for {benchmark_id}: {e}")
@@ -322,10 +361,10 @@ class ArtifactGenerator:
                 if unit == "percent" and scale_max == 100:
                     try:
                         sat_result = saturation_projection(
-                            frontier,
+                            history,
                             score_col="score",
                             date_col="effective_date",
-                            window_months=24,
+                            window_months=36,
                             forecast_months=60,
                             saturation_value=100.0,
                         )
@@ -346,6 +385,7 @@ class ArtifactGenerator:
                                     )
                                 ],
                                 "r_squared": sat_result.r_squared,
+                                "points_used": len(history),
                             }
                     except Exception as e:
                         logger.debug(f"Saturation projection failed for {benchmark_id}: {e}")
@@ -353,17 +393,18 @@ class ArtifactGenerator:
                 # Power law projection
                 try:
                     pl_result = power_law_projection(
-                        frontier,
+                        history,
                         score_col="score",
                         date_col="effective_date",
-                        window_months=24,
+                        window_months=36,
                         forecast_months=60,
+                        ceiling=scale_max,
                     )
                     if pl_result:
                         forecast_values = pl_result.forecast_values
                         ci_high = pl_result.ci_80_high
                         # Cap at saturation for percentage benchmarks
-                        if unit == "percent":
+                        if scale_max is not None:
                             forecast_values = [min(v, scale_max) for v in forecast_values]
                             ci_high = [min(v, scale_max) for v in ci_high]
 
@@ -383,6 +424,7 @@ class ArtifactGenerator:
                                 )
                             ],
                             "r_squared": pl_result.r_squared,
+                            "points_used": len(history),
                         }
                 except Exception as e:
                     logger.debug(f"Power law projection failed for {benchmark_id}: {e}")
