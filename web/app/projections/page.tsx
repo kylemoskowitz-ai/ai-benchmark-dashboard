@@ -572,7 +572,10 @@ function prepareChartData(
   });
 
   // Add forecast data (pace-adjusted)
-  const projection = projections?.[modelType as keyof BenchmarkProjections];
+  const projection = getProjection(
+    projections,
+    modelType as "linear" | "logistic" | "power_law"
+  );
   if (projection?.forecast) {
     const adjusted = applyPace(projection.forecast, pace);
     adjusted.forEach((point) => {
