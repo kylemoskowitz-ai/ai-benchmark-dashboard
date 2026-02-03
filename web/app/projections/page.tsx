@@ -19,6 +19,7 @@ import { CATEGORY_LABELS } from "@/lib/types";
 import { estimateMaeFromR2 } from "@/lib/analysis";
 
 export default function ProjectionsPage() {
+  type ProjectionModel = "linear" | "logistic" | "power_law";
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
   const [frontier, setFrontier] = useState<Record<string, FrontierPoint[]>>({});
   const [projections, setProjections] = useState<
@@ -27,7 +28,7 @@ export default function ProjectionsPage() {
   const [selectedBenchmark, setSelectedBenchmark] = useState<string | null>(
     null
   );
-  const [selectedModel, setSelectedModel] = useState<string>("logistic");
+  const [selectedModel, setSelectedModel] = useState<ProjectionModel>("logistic");
   const [pace, setPace] = useState<number>(1);
   const [viewMode, setViewMode] = useState<"score" | "speed">("score");
   const [loading, setLoading] = useState(true);
@@ -74,7 +75,7 @@ export default function ProjectionsPage() {
     model_name: "",
     provider: "",
   }));
-  const availableModels = useMemo(() => {
+  const availableModels = useMemo<ProjectionModel[]>(() => {
     if (!currentProjections) return [];
     return (["logistic", "linear", "power_law"] as const).filter(
       (model) => currentProjections[model]
