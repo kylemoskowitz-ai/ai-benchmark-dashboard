@@ -63,5 +63,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/benchmark.duckdb data/changelog.jsonl web/public/data/*.json
-          git commit -m "Update benchmark data [skip ci]"
+          git commit -m "Update benchmark data"
           git push
