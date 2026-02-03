@@ -55,17 +55,6 @@ export default function ProjectionsPage() {
       });
   }, []);
 
-  if (loading) {
-    return (
-      <div className="container-wide py-12">
-        <div className="animate-pulse space-y-4">
-          <div className="h-10 bg-base-50 rounded w-1/3" />
-          <div className="h-96 bg-base-50 rounded" />
-        </div>
-      </div>
-    );
-  }
-
   const currentBenchmark = benchmarks.find((b) => b.id === selectedBenchmark);
   const currentFrontier = selectedBenchmark ? frontier[selectedBenchmark] : [];
   const currentProjections = selectedBenchmark
@@ -92,6 +81,17 @@ export default function ProjectionsPage() {
     () => estimateMaeFromR2(currentFrontier || [], fitR2),
     [currentFrontier, fitR2]
   );
+
+  if (loading) {
+    return (
+      <div className="container-wide py-12">
+        <div className="animate-pulse space-y-4">
+          <div className="h-10 bg-base-50 rounded w-1/3" />
+          <div className="h-96 bg-base-50 rounded" />
+        </div>
+      </div>
+    );
+  }
 
   const modelLabels: Record<string, string> = {
     linear: "Linear",
