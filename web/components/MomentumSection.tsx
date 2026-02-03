@@ -62,14 +62,14 @@ export function MomentumSection() {
 
   if (loading) {
     return (
-      <section className="container-wide -mt-6 md:-mt-10 pb-12 relative z-10">
+      <section className="container-wide py-12">
         <div className="card card-muted shadow-soft animate-pulse h-24" />
       </section>
     );
   }
 
   return (
-    <section className="container-wide -mt-6 md:-mt-10 pb-12 relative z-10">
+    <section className="container-wide py-12">
       <div className="card card-muted shadow-soft">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div>
