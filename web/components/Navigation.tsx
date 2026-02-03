@@ -38,7 +38,7 @@ export function Navigation() {
           </Link>
 
           {/* Navigation Links */}
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-3 sm:gap-6">
             {navItems.map((item) => {
               const isActive = mounted && (
                 item.href === "/"

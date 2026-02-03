@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import {
   LineChart,
   Line,
@@ -31,6 +31,7 @@ export default function ProjectionsPage() {
   const [pace, setPace] = useState<number>(1);
   const [viewMode, setViewMode] = useState<"score" | "speed">("score");
   const [loading, setLoading] = useState(true);
+  const lastBenchmarkRef = useRef<string | null>(null);
 
   useEffect(() => {
     Promise.all([
@@ -60,6 +61,16 @@ export default function ProjectionsPage() {
   const currentProjections = selectedBenchmark
     ? projections[selectedBenchmark]
     : null;
+  const availableModels = useMemo(() => {
+    if (!currentProjections) return [];
+    return (["logistic", "linear", "power_law"] as const).filter(
+      (model) => currentProjections[model]
+    );
+  }, [currentProjections]);
+  const bestModel = useMemo(
+    () => getBestProjectionModel(currentProjections),
+    [currentProjections]
+  );
   const selectedForecast =
     currentProjections?.[selectedModel as keyof BenchmarkProjections]?.forecast ||
     [];
@@ -82,6 +93,18 @@ export default function ProjectionsPage() {
     [currentFrontier, fitR2]
   );
 
+  useEffect(() => {
+    if (!currentProjections || !bestModel) return;
+    if (selectedBenchmark !== lastBenchmarkRef.current) {
+      lastBenchmarkRef.current = selectedBenchmark;
+      setSelectedModel(bestModel);
+      return;
+    }
+    if (!currentProjections[selectedModel as keyof BenchmarkProjections]) {
+      setSelectedModel(bestModel);
+    }
+  }, [selectedBenchmark, currentProjections, bestModel, selectedModel]);
+
   if (loading) {
     return (
       <div className="container-wide py-12">
@@ -99,6 +122,15 @@ export default function ProjectionsPage() {
     power_law: "Power Law",
   };
 
+  const bestProjection = bestModel
+    ? currentProjections?.[bestModel as keyof BenchmarkProjections] || null
+    : null;
+  const futureOutlook = buildFutureOutlook({
+    frontier: currentFrontier || [],
+    projection: bestProjection?.forecast || [],
+    unit: currentBenchmark?.unit || "percent",
+  });
+
   return (
     <div className="container-wide py-12">
       {/* Header */}
@@ -113,7 +145,7 @@ export default function ProjectionsPage() {
 
       {/* Controls */}
       <div className="flex flex-col gap-6 mb-8">
-        <div className="flex flex-col md:flex-row gap-4">
+        <div className="flex flex-col lg:flex-row gap-4">
         {/* Benchmark selector */}
         <div className="flex-1">
           <label className="block text-body-sm text-base-500 mb-2">
@@ -135,13 +167,14 @@ export default function ProjectionsPage() {
         </div>
 
         {/* Model selector */}
-        <div className="w-full md:w-64">
+        <div className="w-full lg:w-80">
           <label className="block text-body-sm text-base-500 mb-2">
             Projection Model
           </label>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {(["logistic", "linear", "power_law"] as const).map((model) => {
               const projection = currentProjections?.[model];
+              const isBest = bestModel === model;
               return (
                 <button
                   key={model}
@@ -155,11 +188,23 @@ export default function ProjectionsPage() {
                       : "bg-base-50 text-base-300 cursor-not-allowed"
                   }`}
                 >
-                  {modelLabels[model]}
+                  <div className="flex items-center justify-center gap-2">
+                    <span>{modelLabels[model]}</span>
+                    {isBest && (
+                      <span className="chip chip-accent text-[10px] px-2 py-0.5">
+                        Best
+                      </span>
+                    )}
+                  </div>
                 </button>
               );
             })}
           </div>
+          {!availableModels.length && (
+            <div className="mt-2 text-caption text-base-400">
+              Projections require at least 3 frontier data points.
+            </div>
+          )}
         </div>
         </div>
 
@@ -247,13 +292,16 @@ export default function ProjectionsPage() {
           </div>
         </div>
 
-        <div className="h-96">
+        <div className="h-[320px] sm:h-[360px] lg:h-96">
           {chartData.length > 0 ? (
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
                 <XAxis
-                  dataKey="date"
+                  dataKey="date_ts"
+                  type="number"
+                  scale="time"
+                  domain={["dataMin", "dataMax"]}
                   stroke="#71717a"
                   tickFormatter={(d) =>
                     new Date(d).toLocaleDateString("en-US", {
@@ -288,7 +336,15 @@ export default function ProjectionsPage() {
                       : formatScore(value, currentBenchmark?.unit || "percent"),
                     name,
                   ]}
-                  labelFormatter={(d) => formatDate(d)}
+                  labelFormatter={(d) =>
+                    typeof d === "number"
+                      ? new Date(d).toLocaleDateString("en-US", {
+                          year: "numeric",
+                          month: "short",
+                          day: "numeric",
+                        })
+                      : formatDate(d)
+                  }
                 />
                 <Legend />
 
@@ -364,7 +420,38 @@ export default function ProjectionsPage() {
             </div>
           )}
         </div>
-        <div className="card lg:col-span-2">
+        <div className="card">
+          <h3 className="font-serif text-title-sm text-base-900 mb-4">
+            Best-Fit Outlook
+          </h3>
+          {futureOutlook.length ? (
+            <div className="space-y-2">
+              {futureOutlook.map((row) => (
+                <div
+                  key={row.label}
+                  className="flex items-center justify-between text-body-sm text-base-500"
+                >
+                  <span>{row.label}</span>
+                  <span className="font-mono text-base-900">
+                    {row.value != null
+                      ? formatScore(row.value, currentBenchmark?.unit || "percent")
+                      : "—"}
+                  </span>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-body-sm text-base-500">
+              Best-fit projection data not available yet.
+            </div>
+          )}
+          {bestModel && (
+            <div className="mt-4 text-caption text-base-400">
+              Model: {modelLabels[bestModel]} (auto-selected)
+            </div>
+          )}
+        </div>
+        <div className="card lg:col-span-1">
           <h3 className="font-serif text-title-sm text-base-900 mb-4">
             Benchmarks Closest to Saturation
           </h3>
@@ -439,6 +526,7 @@ function prepareChartData(
   viewMode: "score" | "speed"
 ): Array<{
   date: string;
+  date_ts: number;
   actual?: number;
   forecast?: number;
   ci_low?: number;
@@ -450,6 +538,7 @@ function prepareChartData(
     string,
     {
       date: string;
+      date_ts: number;
       actual?: number;
       forecast?: number;
       ci_low?: number;
@@ -464,6 +553,7 @@ function prepareChartData(
     if (point.date) {
       data[point.date] = {
         date: point.date,
+        date_ts: toTimestamp(point.date),
         actual: point.score,
       };
     }
@@ -482,6 +572,7 @@ function prepareChartData(
         } else {
           data[point.date] = {
             date: point.date,
+            date_ts: toTimestamp(point.date),
             forecast: point.value,
             ci_low: point.ci_low,
             ci_high: point.ci_high,
@@ -492,15 +583,14 @@ function prepareChartData(
   }
 
   // Add speed metrics (per month)
-  const ordered = Object.values(data).sort(
-    (a, b) => new Date(a.date).getTime() - new Date(b.date).getTime()
-  );
+  const ordered = Object.values(data)
+    .filter((point) => Number.isFinite(point.date_ts))
+    .sort((a, b) => a.date_ts - b.date_ts);
   for (let i = 1; i < ordered.length; i += 1) {
     const prev = ordered[i - 1];
     const curr = ordered[i];
     const months =
-      (new Date(curr.date).getTime() - new Date(prev.date).getTime()) /
-      (1000 * 60 * 60 * 24 * 30.44);
+      (curr.date_ts - prev.date_ts) / (1000 * 60 * 60 * 24 * 30.44);
     if (months > 0) {
       if (prev.actual != null && curr.actual != null) {
         curr.actual_speed = (curr.actual - prev.actual) / months;
@@ -565,10 +655,8 @@ function BenchmarkForecastList({
   const items = benchmarks
     .filter((b) => b.unit === "percent")
     .map((b) => {
-      const proj =
-        projections[b.id]?.logistic ||
-        projections[b.id]?.power_law ||
-        projections[b.id]?.linear;
+      const bestModel = getBestProjectionModel(projections[b.id]);
+      const proj = bestModel ? projections[b.id]?.[bestModel] : null;
       if (!proj?.forecast?.length) return null;
       const target = b.scale?.max ?? 100;
       const hit = proj.forecast.find((p) => p.value >= target * 0.9);
@@ -599,4 +687,97 @@ function BenchmarkForecastList({
       )}
     </div>
   );
+}
+
+function getBestProjectionModel(
+  projections: BenchmarkProjections | null
+): "linear" | "logistic" | "power_law" | null {
+  if (!projections) return null;
+  const candidates = (["logistic", "power_law", "linear"] as const).filter(
+    (key) => projections[key]
+  );
+  if (!candidates.length) return null;
+  return candidates.reduce((best, key) => {
+    const bestR2 = projections[best]?.r_squared ?? -Infinity;
+    const nextR2 = projections[key]?.r_squared ?? -Infinity;
+    return nextR2 > bestR2 ? key : best;
+  });
+}
+
+function buildFutureOutlook({
+  frontier,
+  projection,
+  unit,
+}: {
+  frontier: FrontierPoint[];
+  projection: { date: string; value: number; ci_low: number; ci_high: number }[];
+  unit: string;
+}) {
+  if (!projection.length || !frontier.length) return [];
+  const lastDate = getLatestDate(frontier.map((p) => p.date));
+  if (!lastDate) return [];
+  const intervals = [
+    { label: "3 months", months: 3 },
+    { label: "6 months", months: 6 },
+    { label: "1 year", months: 12 },
+    { label: "2 years", months: 24 },
+    { label: "5 years", months: 60 },
+  ];
+  return intervals.map((interval) => {
+    const target = addMonths(lastDate, interval.months);
+    const value = interpolateForecast(projection, target);
+    return {
+      label: interval.label,
+      value: value != null ? value : null,
+      unit,
+    };
+  });
+}
+
+function interpolateForecast(
+  projection: { date: string; value: number }[],
+  targetDate: Date
+) {
+  const targetTs = targetDate.getTime();
+  const points = projection
+    .map((p) => ({
+      ts: toTimestamp(p.date),
+      value: p.value,
+    }))
+    .filter((p) => Number.isFinite(p.ts))
+    .sort((a, b) => a.ts - b.ts);
+
+  if (!points.length) return null;
+  if (targetTs <= points[0].ts) return points[0].value;
+  if (targetTs >= points[points.length - 1].ts) return null;
+
+  for (let i = 1; i < points.length; i += 1) {
+    const prev = points[i - 1];
+    const curr = points[i];
+    if (targetTs <= curr.ts) {
+      const span = curr.ts - prev.ts;
+      const ratio = span > 0 ? (targetTs - prev.ts) / span : 0;
+      return prev.value + ratio * (curr.value - prev.value);
+    }
+  }
+  return null;
+}
+
+function getLatestDate(dates: string[]) {
+  const timestamps = dates
+    .map((d) => toTimestamp(d))
+    .filter((ts) => Number.isFinite(ts));
+  if (!timestamps.length) return null;
+  return new Date(Math.max(...timestamps));
+}
+
+function addMonths(date: Date, months: number) {
+  const next = new Date(date);
+  next.setMonth(next.getMonth() + months);
+  return next;
+}
+
+function toTimestamp(date: string) {
+  const parsed = new Date(date);
+  return Number.isNaN(parsed.getTime()) ? NaN : parsed.getTime();
 }

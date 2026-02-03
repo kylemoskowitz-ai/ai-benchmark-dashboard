@@ -295,7 +295,7 @@ class ArtifactGenerator:
                         score_col="score",
                         date_col="effective_date",
                         window_months=24,
-                        forecast_months=12,
+                        forecast_months=60,
                     )
                     if linear_result:
                         benchmark_projections["linear"] = {
@@ -326,7 +326,7 @@ class ArtifactGenerator:
                             score_col="score",
                             date_col="effective_date",
                             window_months=24,
-                            forecast_months=12,
+                            forecast_months=60,
                             saturation_value=100.0,
                         )
                         if sat_result:
@@ -357,7 +357,7 @@ class ArtifactGenerator:
                         score_col="score",
                         date_col="effective_date",
                         window_months=24,
-                        forecast_months=12,
+                        forecast_months=60,
                     )
                     if pl_result:
                         forecast_values = pl_result.forecast_values
