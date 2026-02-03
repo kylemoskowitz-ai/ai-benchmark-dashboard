@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { DensityToggle } from "@/components/DensityToggle";
 
 const navItems = [
   { href: "/", label: "Progress" },
@@ -56,7 +55,6 @@ export function Navigation() {
                 </Link>
               );
             })}
-            <DensityToggle />
           </div>
         </nav>
       </div>

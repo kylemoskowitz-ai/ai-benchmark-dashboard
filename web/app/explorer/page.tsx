@@ -191,8 +191,8 @@ function ExplorerContent() {
       </div>
 
       {/* Benchmark Tabs */}
-      <div className="mb-8 overflow-x-auto scrollbar-hide">
-        <div className="flex gap-2 pb-2">
+      <div className="mb-8 overflow-x-auto scrollbar-x">
+        <div className="flex gap-2 pb-2 min-w-max">
           {visibleBenchmarks.map((benchmark) => (
             <button
               key={benchmark.id}

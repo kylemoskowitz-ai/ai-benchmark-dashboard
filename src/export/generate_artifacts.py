@@ -320,13 +320,23 @@ class ArtifactGenerator:
                 benchmark_projections = {}
                 benchmark_projections["history"] = history_points
 
+                # Determine window to include full history by default
+                history_dates = history.get_column("effective_date").to_list()
+                max_date = max(history_dates)
+                min_date = min(history_dates)
+                if isinstance(max_date, str):
+                    max_date = date.fromisoformat(max_date)
+                if isinstance(min_date, str):
+                    min_date = date.fromisoformat(min_date)
+                window_months = max(12, int((max_date - min_date).days / 30) + 1)
+
                 # Linear projection
                 try:
                     linear_result = linear_projection(
                         history,
                         score_col="score",
                         date_col="effective_date",
-                        window_months=36,
+                        window_months=window_months,
                         forecast_months=60,
                     )
                     if linear_result:
@@ -364,7 +374,7 @@ class ArtifactGenerator:
                             history,
                             score_col="score",
                             date_col="effective_date",
-                            window_months=36,
+                            window_months=window_months,
                             forecast_months=60,
                             saturation_value=100.0,
                         )
@@ -396,7 +406,7 @@ class ArtifactGenerator:
                         history,
                         score_col="score",
                         date_col="effective_date",
-                        window_months=36,
+                        window_months=window_months,
                         forecast_months=60,
                         ceiling=scale_max,
                     )
