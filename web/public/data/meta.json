@@ -1,10 +1,10 @@
 {
-  "last_updated": "2026-02-03T01:37:30.034183",
-  "generated_at": "2026-02-03T01:37:31.537697",
+  "last_updated": "2026-02-03T02:54:30.074698",
+  "generated_at": "2026-02-03T02:54:31.320640",
   "schema_version": "1.0",
   "counts": {
     "benchmarks": 10,
-    "models": 626,
-    "results": 841
+    "models": 153,
+    "results": 218
   }
 }

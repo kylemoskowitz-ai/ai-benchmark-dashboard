@@ -12,20 +12,20 @@
     "higher_is_better": true,
     "official_url": "https://arcprize.org/leaderboard",
     "paper_url": "https://arxiv.org/abs/1911.01547",
-    "notes": "Scores from ARC Prize leaderboard via Epoch AI. Expressed as percentage (0-100).",
+    "notes": "Scores from ARC Prize leaderboard (official). Expressed as percentage (0-100).",
     "sota": {
-      "score": 87.5,
-      "model_id": "openai:o3__high_",
-      "model_name": "o3 (high)",
+      "score": 86.2,
+      "model_id": "openai:gpt-5.2-2025-12-11_xhigh",
+      "model_name": "gpt-5.2-2025-12-11_xhigh",
       "provider": "OpenAI",
-      "date": "2024-12-20"
+      "date": "2025-12-11"
     }
   },
   {
     "id": "arc_agi_2",
     "name": "ARC-AGI 2",
     "category": "reasoning",
-    "description": "Updated ARC-AGI with harder tasks and improved evaluation methodology. Requires both high adaptability and high efficiency.",
+    "description": "Updated ARC-AGI with harder tasks and improved evaluation methodology.",
     "unit": "percent",
     "scale": {
       "min": 0.0,
@@ -34,7 +34,7 @@
     "higher_is_better": true,
     "official_url": "https://arcprize.org/leaderboard",
     "paper_url": null,
-    "notes": "Scraped from ARC Prize leaderboard. ARC-2 is significantly harder than ARC-1.",
+    "notes": null,
     "sota": {
       "score": 75.0,
       "model_id": "openai:o3__high_",
@@ -58,11 +58,11 @@
     "paper_url": null,
     "notes": null,
     "sota": {
-      "score": 153.8060795990362,
-      "model_id": "google_deepmind:gemini-3-pro-preview",
-      "model_name": "gemini-3-pro-preview",
-      "provider": "Google DeepMind",
-      "date": "2025-11-18"
+      "score": 150.0,
+      "model_id": "openai:gpt-5",
+      "model_name": "GPT-5",
+      "provider": "OpenAI",
+      "date": "2025-08-07"
     }
   },
   {
@@ -80,11 +80,11 @@
     "paper_url": "https://arxiv.org/abs/2411.04872",
     "notes": "Tier 4 = hardest problems. Most models score <15%.",
     "sota": {
-      "score": 31.3,
-      "model_id": "openai:gpt-5.2-pro-2025-12-11-webapp",
-      "model_name": "gpt-5.2-pro-2025-12-11-webapp",
+      "score": 12.5,
+      "model_id": "openai:gpt-5-pro-2025-10-06_high",
+      "model_name": "gpt-5-pro-2025-10-06_high",
       "provider": "OpenAI",
-      "date": "2025-12-24"
+      "date": "2025-10-09"
     }
   },
   {
@@ -113,8 +113,8 @@
     "id": "metr_time_horizons",
     "name": "METR Time Horizons",
     "category": "agentic",
-    "description": "METR evaluates AI agents on long-horizon autonomous tasks. The P50 time horizon (in minutes) indicates the median task complexity a model can complete autonomously.",
-    "unit": "minutes",
+    "description": "METR evaluates AI agents on long-horizon autonomous tasks. The time horizon metric indicates task complexity the model can complete.",
+    "unit": "hours",
     "scale": {
       "min": 0.0,
       "max": 1000.0
@@ -122,13 +122,13 @@
     "higher_is_better": true,
     "official_url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
     "paper_url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
-    "notes": "P50 time horizon in minutes. Higher = can complete more complex autonomous tasks. Data from METR-Horizon-v1.1.",
+    "notes": "Time horizon in hours. Higher = can complete more complex autonomous tasks.",
     "sota": {
-      "score": 320.4,
-      "model_id": "anthropic:claude_opus_4_5",
-      "model_name": "claude_opus_4_5",
-      "provider": "Anthropic",
-      "date": "2025-11-24"
+      "score": 137.318539,
+      "model_id": "openai:gpt-5-2025-08-07_medium",
+      "model_name": "gpt-5-2025-08-07_medium",
+      "provider": "OpenAI",
+      "date": "2025-08-07"
     }
   },
   {
@@ -190,18 +190,18 @@
     "paper_url": "https://arxiv.org/abs/2310.06770",
     "notes": "Score represents percentage of issues resolved correctly.",
     "sota": {
-      "score": 74.4,
-      "model_id": "anthropic:claude_4.5_opus_medium__20251101_",
-      "model_name": "Claude 4.5 Opus medium (20251101)",
-      "provider": "Anthropic",
-      "date": "2025-11-24"
+      "score": 66.5,
+      "model_id": "openai:gpt-5.2-2025-11-12",
+      "model_name": "gpt-5.2-2025-11-12",
+      "provider": "OpenAI",
+      "date": "2025-11-15"
     }
   },
   {
     "id": "zerobench",
     "name": "ZeroBench",
     "category": "multimodal",
-    "description": "An 'impossible' visual benchmark for contemporary large multimodal models. Scores represent pass@5 accuracy - the percentage of tasks solved correctly in 5 attempts.",
+    "description": "Zero-shot visual understanding benchmark for evaluating vision-language models.",
     "unit": "percent",
     "scale": {
       "min": 0.0,
@@ -210,7 +210,7 @@
     "higher_is_better": true,
     "official_url": "https://zerobench.github.io/",
     "paper_url": null,
-    "notes": "Scores are pass@5 accuracy. This benchmark is designed to be extremely challenging.",
+    "notes": null,
     "sota": {
       "score": 19.0,
       "model_id": "google:gemini_3_pro",
