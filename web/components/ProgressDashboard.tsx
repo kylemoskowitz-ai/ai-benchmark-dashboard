@@ -2,9 +2,9 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { Benchmark, FrontierPoint, Result, Meta } from "@/lib/types";
-import { formatDate, parseDate } from "@/lib/data";
+import { formatDate, parseDate, formatScore } from "@/lib/data";
 import {
-  computeSlopePerYear,
+  computeNormalizedSlopePerYear,
   getLatestDelta,
   normalizeScore,
   summarizeTrustTiers,
@@ -44,7 +44,7 @@ export function ProgressDashboard() {
   const slopes = useMemo(() => {
     return benchmarks.map((benchmark) => {
       const points = frontier[benchmark.id] || [];
-      const slope = computeSlopePerYear(points);
+      const slope = computeNormalizedSlopePerYear(points, benchmark);
       return { benchmark, slope };
     });
   }, [benchmarks, frontier]);
@@ -119,8 +119,8 @@ export function ProgressDashboard() {
 
   return (
     <>
-      <section className="container-wide py-8">
-        <div className="card card-muted shadow-soft sticky top-20">
+      <section className="container-wide py-6 -mt-6 lg:-mt-10">
+        <div className="card card-muted shadow-soft">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <div className="text-caption uppercase tracking-wider text-base-500">
@@ -128,6 +128,9 @@ export function ProgressDashboard() {
               </div>
               <div className="mt-2 font-serif text-title text-base-900">
                 Momentum across the frontier
+              </div>
+              <div className="text-body-sm text-base-500 mt-1">
+                Based on normalized progress (0–100) per benchmark
               </div>
             </div>
             <div className="flex flex-wrap gap-6">
@@ -138,10 +141,11 @@ export function ProgressDashboard() {
                 </div>
               </div>
               <div>
-                <div className="text-caption text-base-400">Median improvement / yr</div>
+                <div className="text-caption text-base-400">Median progress / yr</div>
                 <div className="font-mono text-title-sm text-base-900">
-                  {medianSlope != null ? medianSlope.toFixed(2) : "—"}
+                  {medianSlope != null ? `${medianSlope.toFixed(2)} pts` : "—"}
                 </div>
+                <div className="text-caption text-base-400 mt-1">normalized points</div>
               </div>
               <div>
                 <div className="text-caption text-base-400">Total results</div>
@@ -175,7 +179,7 @@ export function ProgressDashboard() {
             value={leaders[0]?.benchmark.name ?? "—"}
             sub={
               leaders[0]?.slope != null
-                ? `${leaders[0].slope.toFixed(2)} / yr`
+                ? `${leaders[0].slope.toFixed(2)} pts/yr`
                 : "—"
             }
           />
@@ -184,7 +188,7 @@ export function ProgressDashboard() {
             value={laggards[0]?.benchmark.name ?? "—"}
             sub={
               laggards[0]?.slope != null
-                ? `${laggards[0].slope.toFixed(2)} / yr`
+                ? `${laggards[0].slope.toFixed(2)} pts/yr`
                 : "—"
             }
           />
@@ -274,7 +278,7 @@ export function ProgressDashboard() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benchmarks.map((b) => {
             const points = frontier[b.id] || [];
-            const slope = computeSlopePerYear(points);
+            const slope = computeNormalizedSlopePerYear(points, b);
             const normalized = normalizeScore(b.sota?.score, b);
             return (
               <div key={b.id} className="card">
@@ -287,17 +291,24 @@ export function ProgressDashboard() {
                       {b.name}
                     </div>
                   </div>
-                  {normalized != null && (
-                    <div className="font-mono text-body-sm text-accent">
-                      {normalized.toFixed(1)}
+                  <div className="text-right">
+                    <div className="font-mono text-body-sm text-base-900">
+                      {b.sota?.score != null
+                        ? formatScore(b.sota.score, b.unit)
+                        : "—"}
                     </div>
-                  )}
+                    {normalized != null && (
+                      <div className="text-caption text-base-400">
+                        {normalized.toFixed(0)}% of ceiling
+                      </div>
+                    )}
+                  </div>
                 </div>
                 <div className="mt-4">
                   <Sparkline points={points.slice(-12)} width={200} height={40} />
                 </div>
                 <div className="mt-3 text-caption text-base-400">
-                  {slope != null ? `${slope.toFixed(2)} / yr` : "—"} · Updated{" "}
+                  {slope != null ? `${slope.toFixed(2)} pts/yr` : "—"} · Updated{" "}
                   {formatDate(b.sota?.date || "")}
                 </div>
               </div>
@@ -333,7 +344,7 @@ export function ProgressDashboard() {
                       </div>
                     </td>
                     <td className="text-right text-base-500">
-                      {entry.slope != null ? entry.slope.toFixed(2) : "—"} / yr
+                      {entry.slope != null ? entry.slope.toFixed(2) : "—"} pts/yr
                     </td>
                   </tr>
                 ))}
@@ -357,7 +368,7 @@ export function ProgressDashboard() {
                       </div>
                     </td>
                     <td className="text-right text-base-500">
-                      {entry.slope != null ? entry.slope.toFixed(2) : "—"} / yr
+                      {entry.slope != null ? entry.slope.toFixed(2) : "—"} pts/yr
                     </td>
                   </tr>
                 ))}

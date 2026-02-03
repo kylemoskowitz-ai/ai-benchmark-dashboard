@@ -27,9 +27,16 @@ export function HeroTrend() {
       });
   }, []);
 
+  const percentBenchmarks = useMemo(
+    () => benchmarks.filter((b) => b.unit === "percent"),
+    [benchmarks]
+  );
+
   const trend = useMemo(() => {
+    const included = percentBenchmarks;
+    if (!included.length) return [];
     if (!benchmarks.length) return [];
-    const byId = new Map(benchmarks.map((b) => [b.id, b]));
+    const byId = new Map(included.map((b) => [b.id, b]));
     const allDates = new Set<string>();
     Object.values(frontier).forEach((points) => {
       points.forEach((p) => {
@@ -46,6 +53,7 @@ export function HeroTrend() {
 
     for (const date of sortedDates) {
       for (const [benchmarkId, points] of Object.entries(frontier)) {
+        if (!byId.has(benchmarkId)) continue;
         const point = points.find((p) => p.date === date);
         if (point && point.score != null) {
           latest[benchmarkId] = point.score;
@@ -65,9 +73,13 @@ export function HeroTrend() {
       }
     }
     return result.slice(-24);
-  }, [benchmarks, frontier]);
+  }, [benchmarks, frontier, percentBenchmarks]);
 
   const latest = trend[trend.length - 1]?.score;
+  const includedCount = percentBenchmarks.length;
+  const subtitle = includedCount
+    ? `Avg SOTA % across ${includedCount} percent benchmarks`
+    : "Avg SOTA % across percent benchmarks";
 
   return (
     <div className="card card-muted shadow-soft">
@@ -77,10 +89,10 @@ export function HeroTrend() {
             Frontier Index
           </div>
           <div className="mt-2 font-mono text-title-lg text-base-900">
-            {latest != null ? latest.toFixed(1) : "—"}
+            {latest != null ? `${latest.toFixed(1)}%` : "—"}
           </div>
           <div className="text-body-sm text-base-500 mt-1">
-            Avg normalized SOTA across benchmarks
+            {subtitle}
           </div>
         </div>
         <div className="opacity-80">

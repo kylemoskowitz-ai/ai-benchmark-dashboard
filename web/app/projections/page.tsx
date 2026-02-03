@@ -203,7 +203,7 @@ export default function ProjectionsPage() {
                   <div className="flex items-center justify-center gap-2">
                     <span>{modelLabels[model]}</span>
                     {isBest && (
-                      <span className="chip chip-accent text-[10px] px-2 py-0.5">
+                      <span className="chip chip-contrast text-[10px] px-2 py-0.5">
                         Best
                       </span>
                     )}

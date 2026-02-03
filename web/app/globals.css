@@ -349,6 +349,12 @@ button:active {
   background-color: var(--color-base-100);
 }
 
+.chip-contrast {
+  background-color: var(--color-base-900);
+  color: var(--color-base);
+  border-color: transparent;
+}
+
 .divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--color-base-200), transparent);

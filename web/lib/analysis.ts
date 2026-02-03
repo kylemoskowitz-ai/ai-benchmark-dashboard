@@ -31,6 +31,27 @@ export function computeSlopePerYear(points: FrontierPoint[]): number | null {
   return slope * msPerYear;
 }
 
+export function computeNormalizedSlopePerYear(
+  points: FrontierPoint[],
+  benchmark: Benchmark
+): number | null {
+  if (points.length < 2) return null;
+  const xs: number[] = [];
+  const ys: number[] = [];
+  for (const p of points) {
+    const date = parseDate(p.date);
+    if (!date || p.score == null) continue;
+    const normalized = normalizeScore(p.score, benchmark);
+    if (normalized == null) continue;
+    xs.push(date.getTime());
+    ys.push(normalized);
+  }
+  if (xs.length < 2) return null;
+  const { slope } = linearRegression(xs, ys);
+  const msPerYear = 365.25 * 24 * 60 * 60 * 1000;
+  return slope * msPerYear;
+}
+
 export function linearRegression(xs: number[], ys: number[]) {
   const n = xs.length;
   const xMean = xs.reduce((a, b) => a + b, 0) / n;
