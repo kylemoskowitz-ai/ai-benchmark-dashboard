@@ -352,6 +352,23 @@ def insert_results(results: list[Result]) -> int:
     return len(results)
 
 
+def delete_results_for_benchmark(benchmark_id: str) -> int:
+    """Delete all results for a benchmark.
+
+    Returns:
+        Number of rows deleted (best effort).
+    """
+    with get_connection() as conn:
+        result = conn.execute(
+            "DELETE FROM results WHERE benchmark_id = ?",
+            [benchmark_id],
+        )
+        conn.commit()
+
+    # DuckDB doesn't reliably expose rowcount across versions.
+    return getattr(result, "rowcount", 0) or 0
+
+
 def get_unique_providers() -> list[str]:
     """Get list of unique providers."""
     with get_connection(read_only=True) as conn:

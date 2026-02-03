@@ -20,8 +20,8 @@ INGESTORS: dict[str, type[BaseIngestor]] = {
     "swe_bench_verified": SWEBenchIngestor,  # Epoch AI data
     "metr_time_horizons": METRIngestor,  # Epoch AI data
     "frontiermath_tier4": FrontierMathIngestor,  # Epoch AI data
-    "arc_agi_1": ARCAGI1Ingestor,  # Epoch AI data
-    "arc_agi_2": ARCAGI2Ingestor,  # Epoch AI data
+    "arc_agi_1": ARCAGI1Ingestor,  # ARC Prize leaderboard
+    "arc_agi_2": ARCAGI2Ingestor,  # ARC Prize leaderboard
     "epoch_capabilities_index": EpochCapabilitiesIndexIngestor,  # Epoch AI data
     # Web scraped sources
     "zerobench": ZeroBenchIngestor,  # Scrapes zerobench.github.io

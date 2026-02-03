@@ -36,6 +36,7 @@ class BaseIngestor(ABC):
 
     BENCHMARK_ID: str = ""
     BENCHMARK_META: Benchmark | None = None
+    CLEAR_EXISTING_RESULTS: bool = False
 
     def __init__(self):
         self.sources: dict[str, Source] = {}
@@ -136,6 +137,8 @@ class BaseIngestor(ABC):
         try:
             from src.db import insert_results, insert_source, insert_model
             from src.db.queries import insert_benchmark
+            if self.CLEAR_EXISTING_RESULTS:
+                from src.db.queries import delete_results_for_benchmark
 
             # Insert benchmark metadata
             if self.BENCHMARK_META:
@@ -148,6 +151,10 @@ class BaseIngestor(ABC):
             # Insert models
             for model in self.models.values():
                 insert_model(model)
+
+            if self.CLEAR_EXISTING_RESULTS:
+                deleted = delete_results_for_benchmark(self.BENCHMARK_ID)
+                logger.info("Cleared %s existing results for %s", deleted, self.BENCHMARK_ID)
 
             # Insert results
             inserted = insert_results(validated)

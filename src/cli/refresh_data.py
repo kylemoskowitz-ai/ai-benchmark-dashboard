@@ -52,10 +52,10 @@ INGESTORS = {
         "epoch": SWEBenchIngestor,  # Uses epoch_fetcher
     },
     "arc_agi_1": {
-        "epoch": ARCAGI1Ingestor,  # Uses epoch_fetcher
+        "official": ARCAGI1Ingestor,  # ARC Prize leaderboard
     },
     "arc_agi_2": {
-        "epoch": ARCAGI2Ingestor,  # Uses epoch_fetcher
+        "official": ARCAGI2Ingestor,  # ARC Prize leaderboard
     },
     "metr_time_horizons": {
         "epoch": METRIngestor,  # Uses epoch_fetcher
