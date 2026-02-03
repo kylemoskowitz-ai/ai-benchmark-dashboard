@@ -119,7 +119,7 @@ export function ProgressDashboard() {
 
   return (
     <>
-      <section className="container-wide py-6 -mt-6 lg:-mt-10">
+      <section className="container-wide py-10">
         <div className="card card-muted shadow-soft">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
