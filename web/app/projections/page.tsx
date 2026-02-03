@@ -84,9 +84,8 @@ export default function ProjectionsPage() {
     () => getBestProjectionModel(currentProjections, currentBenchmark || undefined),
     [currentProjections, currentBenchmark]
   );
-  const selectedForecast =
-    currentProjections?.[selectedModel as keyof BenchmarkProjections]?.forecast ||
-    [];
+  const selectedProjection = getProjection(currentProjections, selectedModel);
+  const selectedForecast = selectedProjection?.forecast || [];
   const adjustedForecast = applyPace(selectedForecast, pace);
 
   // Prepare chart data
@@ -136,7 +135,7 @@ export default function ProjectionsPage() {
   };
 
   const bestProjection = bestModel
-    ? currentProjections?.[bestModel as keyof BenchmarkProjections] || null
+    ? getProjection(currentProjections, bestModel)
     : null;
   const futureOutlook = buildFutureOutlook({
     frontier: historyPointsForMetrics || [],
@@ -700,6 +699,14 @@ function BenchmarkForecastList({
       )}
     </div>
   );
+}
+
+function getProjection(
+  projections: BenchmarkProjections | null,
+  model: "linear" | "logistic" | "power_law"
+) {
+  if (!projections) return null;
+  return projections[model] || null;
 }
 
 function getBestProjectionModel(
