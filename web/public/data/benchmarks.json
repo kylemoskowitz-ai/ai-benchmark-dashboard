@@ -14,7 +14,7 @@
     "paper_url": "https://arxiv.org/abs/1911.01547",
     "notes": "Scores from ARC Prize leaderboard (official). Expressed as percentage (0-100).",
     "sota": {
-      "score": 90.5,
+      "score": 97.61,
       "model_id": "openai:gpt-5-2-pro-2025-12-11-xhigh",
       "model_name": "gpt-5-2-pro-2025-12-11-xhigh",
       "model_display": "GPT-5.2 Pro X-High",
@@ -40,13 +40,13 @@
     "paper_url": null,
     "notes": "Scraped from ARC Prize leaderboard. ARC-2 is significantly harder than ARC-1.",
     "sota": {
-      "score": 54.16,
-      "model_id": "openai:gpt-5-2-pro-2025-12-11-high",
-      "model_name": "gpt-5-2-pro-2025-12-11-high",
-      "model_display": "GPT-5.2 Pro High",
+      "score": 59.809999999999995,
+      "model_id": "openai:gpt-5-2-2025-12-11-thinking-xhigh",
+      "model_name": "gpt-5-2-2025-12-11-thinking-xhigh",
+      "model_display": "GPT-5.2 Thinking X-High",
       "model_group": "gpt-5-2",
       "model_family": "GPT",
-      "model_variant": "Pro High",
+      "model_variant": "Thinking X-High",
       "provider": "OpenAI",
       "date": null
     }
