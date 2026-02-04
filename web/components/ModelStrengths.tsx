@@ -20,6 +20,7 @@ type TopModel = {
   label: string;
   overall: number;
   totals: Record<string, { sum: number; count: number }>;
+  coverage: number;
 };
 
 export function ModelStrengths() {
@@ -108,14 +109,28 @@ export function ModelStrengths() {
       return { category, best };
     });
 
+    const minCategories = Math.min(3, Math.max(1, categories.length));
     const topModels = models
-      .map((model) => ({
-        label: model.label,
-        overall: model.overall.count
-          ? model.overall.sum / model.overall.count
-          : 0,
-        totals: model.totals,
-      }))
+      .map((model) => {
+        const categoryAverages = categories.map((category) => {
+          const stat = model.totals[category];
+          return stat && stat.count ? stat.sum / stat.count : null;
+        });
+        const coverage = categoryAverages.filter((v) => v != null).length;
+        const overall =
+          coverage > 0
+            ? categoryAverages
+                .filter((v): v is number => v != null)
+                .reduce((a, b) => a + b, 0) / coverage
+            : 0;
+        return {
+          label: model.label,
+          overall,
+          totals: model.totals,
+          coverage,
+        };
+      })
+      .filter((model) => model.coverage >= minCategories)
       .sort((a, b) => b.overall - a.overall)
       .slice(0, 5);
 
