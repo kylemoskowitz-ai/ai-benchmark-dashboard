@@ -11,6 +11,17 @@ type ModelStat = {
   overall: { sum: number; count: number };
 };
 
+type CategoryLeader = {
+  category: string;
+  best: { label: string; score: number } | null;
+};
+
+type TopModel = {
+  label: string;
+  overall: number;
+  totals: Record<string, { sum: number; count: number }>;
+};
+
 export function ModelStrengths() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
   const [results, setResults] = useState<Result[]>([]);
@@ -34,7 +45,10 @@ export function ModelStrengths() {
     return Array.from(set);
   }, [benchmarks]);
 
-  const stats = useMemo(() => {
+  const stats = useMemo((): {
+    categoryLeaders: CategoryLeader[];
+    topModels: TopModel[];
+  } => {
     const byModel = new Map<string, ModelStat>();
     const benchmarkById = new Map(benchmarks.map((b) => [b.id, b]));
 
@@ -81,8 +95,8 @@ export function ModelStrengths() {
     });
 
     const models = Array.from(byModel.values());
-    const categoryLeaders = categories.map((category) => {
-      let best: { label: string; score: number } | null = null;
+    const categoryLeaders: CategoryLeader[] = categories.map((category) => {
+      let best: CategoryLeader["best"] = null;
       models.forEach((model) => {
         const stat = model.totals[category];
         if (!stat || stat.count === 0) return;
