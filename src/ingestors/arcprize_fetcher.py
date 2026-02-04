@@ -36,13 +36,13 @@ CANDIDATE_JSON_URLS = [
 
 PREFERRED_DATASET_ORDER = {
     "arc_agi_1": [
-        "v1_public_eval",
         "v1_semi_private",
+        "v1_public_eval",
         "v1_private_eval",
     ],
     "arc_agi_2": [
-        "v2_public_eval",
         "v2_semi_private",
+        "v2_public_eval",
         "v2_private_eval",
     ],
 }
