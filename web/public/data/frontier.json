@@ -5,6 +5,10 @@
       "score": 150.0,
       "model_id": "openai:gpt-5-2025-08-07_low",
       "model_name": "gpt-5-2025-08-07_low",
+      "model_display": "GPT-5.2025 Low",
+      "model_group": "gpt-5-2025",
+      "model_family": "GPT",
+      "model_variant": "Low",
       "provider": "OpenAI"
     },
     {
@@ -12,13 +16,10 @@
       "score": 150.0,
       "model_id": "openai:gpt-5-2025-08-07_minimal",
       "model_name": "gpt-5-2025-08-07_minimal",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-08-07",
-      "score": 150.0,
-      "model_id": "openai:gpt-5-2025-08-07_medium",
-      "model_name": "gpt-5-2025-08-07_medium",
+      "model_display": "GPT-5.2025",
+      "model_group": "gpt-5-2025",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -26,6 +27,21 @@
       "score": 150.0,
       "model_id": "openai:gpt-5",
       "model_name": "GPT-5",
+      "model_display": "GPT-5",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": null,
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-08-07",
+      "score": 150.0,
+      "model_id": "openai:gpt-5-2025-08-07_medium",
+      "model_name": "gpt-5-2025-08-07_medium",
+      "model_display": "GPT-5.2025 Medium",
+      "model_group": "gpt-5-2025",
+      "model_family": "GPT",
+      "model_variant": "Medium",
       "provider": "OpenAI"
     },
     {
@@ -33,6 +49,10 @@
       "score": 150.0,
       "model_id": "openai:gpt-5-2025-08-07_high",
       "model_name": "gpt-5-2025-08-07_high",
+      "model_display": "GPT-5.2025 High",
+      "model_group": "gpt-5-2025",
+      "model_family": "GPT",
+      "model_variant": "High",
       "provider": "OpenAI"
     },
     {
@@ -40,6 +60,10 @@
       "score": 150.57774312166458,
       "model_id": "openai:gpt-5-pro-2025-10-06_high",
       "model_name": "gpt-5-pro-2025-10-06_high",
+      "model_display": "GPT-2025.10 Pro High",
+      "model_group": "gpt-2025-10",
+      "model_family": "GPT",
+      "model_variant": "Pro High",
       "provider": "OpenAI"
     },
     {
@@ -47,6 +71,10 @@
       "score": 153.78645237477718,
       "model_id": "google_deepmind:gemini-3-pro-preview",
       "model_name": "gemini-3-pro-preview",
+      "model_display": "Gemini 3 Pro Preview",
+      "model_group": "gemini-3-pro",
+      "model_family": "Gemini 3 Pro",
+      "model_variant": "Preview",
       "provider": "Google DeepMind"
     }
   ],
@@ -56,6 +84,10 @@
       "score": 0.0,
       "model_id": "xai:grok-3-beta",
       "model_name": "grok-3-beta",
+      "model_display": "Grok 3 Beta",
+      "model_group": "grok-3",
+      "model_family": "Grok 3",
+      "model_variant": "Beta",
       "provider": "xAI"
     },
     {
@@ -63,6 +95,10 @@
       "score": 0.0,
       "model_id": "openai:gpt-4.1-2025-04-14",
       "model_name": "gpt-4.1-2025-04-14",
+      "model_display": "GPT-4.1",
+      "model_group": "gpt-4-1",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -70,6 +106,10 @@
       "score": 0.0,
       "model_id": "anthropic:claude-3-5-sonnet-20241022",
       "model_name": "claude-3-5-sonnet-20241022",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -77,6 +117,10 @@
       "score": 0.0,
       "model_id": "anthropic:claude-3-5-sonnet-20240620",
       "model_name": "claude-3-5-sonnet-20240620",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -84,6 +128,10 @@
       "score": 0.0,
       "model_id": "anthropic:claude-sonnet-4-20250514",
       "model_name": "claude-sonnet-4-20250514",
+      "model_display": "Claude Sonnet 4",
+      "model_group": "claude-sonnet-4",
+      "model_family": "Claude Sonnet 4",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -91,6 +139,10 @@
       "score": 0.0,
       "model_id": "anthropic:claude-opus-4-20250514",
       "model_name": "claude-opus-4-20250514",
+      "model_display": "Claude Opus 4",
+      "model_group": "claude-opus-4",
+      "model_family": "Claude Opus 4",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -98,6 +150,10 @@
       "score": 2.083333333333333,
       "model_id": "openai:o3-2025-04-16_high",
       "model_name": "o3-2025-04-16_high",
+      "model_display": "O3 High",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "High",
       "provider": "OpenAI"
     },
     {
@@ -105,6 +161,10 @@
       "score": 4.166666666666666,
       "model_id": "openai:o3-mini-2025-01-31_high",
       "model_name": "o3-mini-2025-01-31_high",
+      "model_display": "O3 Mini High",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "Mini High",
       "provider": "OpenAI"
     },
     {
@@ -112,6 +172,10 @@
       "score": 4.166666666666666,
       "model_id": "anthropic:claude-opus-4-20250514_27k",
       "model_name": "claude-opus-4-20250514_27K",
+      "model_display": "Claude Opus 4.20250514 27K",
+      "model_group": "claude-opus-4-20250514",
+      "model_family": "Claude Opus 4.20250514",
+      "model_variant": "27K",
       "provider": "Anthropic"
     },
     {
@@ -119,6 +183,10 @@
       "score": 6.25,
       "model_id": "openai:o4-mini-2025-04-16_high",
       "model_name": "o4-mini-2025-04-16_high",
+      "model_display": "O4 Mini High",
+      "model_group": "o4",
+      "model_family": "O4",
+      "model_variant": "Mini High",
       "provider": "OpenAI"
     },
     {
@@ -126,6 +194,10 @@
       "score": 10.4,
       "model_id": "google_google_deepmind:gemini-2.5-deep-think-2025-08-01-webapp",
       "model_name": "gemini-2.5-deep-think-2025-08-01-webapp",
+      "model_display": "Gemini 2.5",
+      "model_group": "gemini-2-5",
+      "model_family": "Gemini 2.5",
+      "model_variant": null,
       "provider": "Google,Google DeepMind"
     },
     {
@@ -133,6 +205,10 @@
       "score": 14.6,
       "model_id": "openai:gpt-5-pro-2025-10-06_high",
       "model_name": "gpt-5-pro-2025-10-06_high",
+      "model_display": "GPT-2025.10 Pro High",
+      "model_group": "gpt-2025-10",
+      "model_family": "GPT",
+      "model_variant": "Pro High",
       "provider": "OpenAI"
     },
     {
@@ -140,6 +216,10 @@
       "score": 18.75,
       "model_id": "google_deepmind:gemini-3-pro-preview",
       "model_name": "gemini-3-pro-preview",
+      "model_display": "Gemini 3 Pro Preview",
+      "model_group": "gemini-3-pro",
+      "model_family": "Gemini 3 Pro",
+      "model_variant": "Preview",
       "provider": "Google DeepMind"
     },
     {
@@ -147,6 +227,10 @@
       "score": 18.8,
       "model_id": "openai:gpt-5.2-2025-12-11_high",
       "model_name": "gpt-5.2-2025-12-11_high",
+      "model_display": "GPT-5.2 High",
+      "model_group": "gpt-5-2",
+      "model_family": "GPT",
+      "model_variant": "High",
       "provider": "OpenAI"
     },
     {
@@ -154,6 +238,10 @@
       "score": 18.8,
       "model_id": "openai:gpt-5.2-2025-12-11_xhigh",
       "model_name": "gpt-5.2-2025-12-11_xhigh",
+      "model_display": "GPT-5.2 X-High",
+      "model_group": "gpt-5-2",
+      "model_family": "GPT",
+      "model_variant": "X-High",
       "provider": "OpenAI"
     },
     {
@@ -161,6 +249,10 @@
       "score": 31.3,
       "model_id": "openai:gpt-5.2-pro-2025-12-11-webapp",
       "model_name": "gpt-5.2-pro-2025-12-11-webapp",
+      "model_display": "GPT-5.2 Pro",
+      "model_group": "gpt-5-2",
+      "model_family": "GPT",
+      "model_variant": "Pro",
       "provider": "OpenAI"
     }
   ],
@@ -170,6 +262,10 @@
       "score": 4.32,
       "model_id": "anthropic:claude_3.5_sonnet",
       "model_name": "Claude 3.5 Sonnet",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -177,6 +273,10 @@
       "score": 7.75,
       "model_id": "openai:o1",
       "model_name": "o1",
+      "model_display": "O1",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -184,6 +284,10 @@
       "score": 10.31,
       "model_id": "openai:o3_mini__medium_",
       "model_name": "o3 Mini (medium)",
+      "model_display": "O3 Mini Medium",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "Mini Medium",
       "provider": "OpenAI"
     },
     {
@@ -191,6 +295,10 @@
       "score": 20.57,
       "model_id": "openai:o3__high_",
       "model_name": "o3 (high)",
+      "model_display": "O3 High",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "High",
       "provider": "OpenAI"
     },
     {
@@ -198,6 +306,10 @@
       "score": 22.06,
       "model_id": "google:gemini_2.5_pro_preview",
       "model_name": "Gemini 2.5 Pro Preview",
+      "model_display": "Gemini 2.5 Pro Preview",
+      "model_group": "gemini-2-5-pro",
+      "model_family": "Gemini 2.5 Pro",
+      "model_variant": "Preview",
       "provider": "Google"
     },
     {
@@ -205,6 +317,10 @@
       "score": 26.32,
       "model_id": "openai:gpt-5",
       "model_name": "GPT-5",
+      "model_display": "GPT-5",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -212,6 +328,10 @@
       "score": 33.32,
       "model_id": "openai:gpt-5_pro",
       "model_name": "GPT-5 Pro",
+      "model_display": "GPT-5 Pro",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": "Pro",
       "provider": "OpenAI"
     },
     {
@@ -219,6 +339,10 @@
       "score": 37.72,
       "model_id": "google:gemini_3_pro_preview",
       "model_name": "Gemini 3 Pro Preview",
+      "model_display": "Gemini 3 Pro Preview",
+      "model_group": "gemini-3-pro",
+      "model_family": "Gemini 3 Pro",
+      "model_variant": "Preview",
       "provider": "Google"
     }
   ],
@@ -228,6 +352,10 @@
       "score": 3.5,
       "model_id": "openai:gpt_4",
       "model_name": "gpt_4",
+      "model_display": "GPT-4",
+      "model_group": "gpt-4",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -235,6 +363,10 @@
       "score": 5.364045,
       "model_id": "openai:gpt-4-0314",
       "model_name": "gpt-4-0314",
+      "model_display": "GPT-4.0314",
+      "model_group": "gpt-4-0314",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -242,6 +374,10 @@
       "score": 8.557433,
       "model_id": "openai:gpt-4-1106-preview",
       "model_name": "gpt-4-1106-preview",
+      "model_display": "GPT-4.1106 Preview",
+      "model_group": "gpt-4-1106",
+      "model_family": "GPT",
+      "model_variant": "Preview",
       "provider": "OpenAI"
     },
     {
@@ -249,6 +385,10 @@
       "score": 10.8,
       "model_id": "anthropic:claude_3_5_sonnet_20240620",
       "model_name": "claude_3_5_sonnet_20240620",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -256,6 +396,10 @@
       "score": 18.21683,
       "model_id": "anthropic:claude-3-5-sonnet-20240620",
       "model_name": "claude-3-5-sonnet-20240620",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -263,6 +407,10 @@
       "score": 19.4,
       "model_id": "openai:o1_preview",
       "model_name": "o1_preview",
+      "model_display": "O1 Preview",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "Preview",
       "provider": "OpenAI"
     },
     {
@@ -270,6 +418,10 @@
       "score": 22.221357,
       "model_id": "openai:o1-preview-2024-09-12",
       "model_name": "o1-preview-2024-09-12",
+      "model_display": "O1 Preview",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "Preview",
       "provider": "OpenAI"
     },
     {
@@ -277,6 +429,10 @@
       "score": 28.983512,
       "model_id": "anthropic:claude-3-5-sonnet-20241022",
       "model_name": "claude-3-5-sonnet-20241022",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -284,6 +440,10 @@
       "score": 37.9,
       "model_id": "openai:o1",
       "model_name": "o1",
+      "model_display": "O1",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -291,6 +451,10 @@
       "score": 39.206576,
       "model_id": "openai:o1-2024-12-17_medium",
       "model_name": "o1-2024-12-17_medium",
+      "model_display": "O1 Medium",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "Medium",
       "provider": "OpenAI"
     },
     {
@@ -298,6 +462,10 @@
       "score": 54.226342,
       "model_id": "anthropic:claude-3-7-sonnet-20250219_32k",
       "model_name": "claude-3-7-sonnet-20250219_32K",
+      "model_display": "Claude Sonnet 3.7 32K",
+      "model_group": "claude-sonnet-3-7",
+      "model_family": "Claude Sonnet 3.7",
+      "model_variant": "32K",
       "provider": "Anthropic"
     },
     {
@@ -305,6 +473,10 @@
       "score": 59.8,
       "model_id": "anthropic:claude_3_7_sonnet",
       "model_name": "claude_3_7_sonnet",
+      "model_display": "Claude Sonnet 3.7",
+      "model_group": "claude-sonnet-3-7",
+      "model_family": "Claude Sonnet 3.7",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -312,6 +484,10 @@
       "score": 91.271355,
       "model_id": "openai:o3-2025-04-16_medium",
       "model_name": "o3-2025-04-16_medium",
+      "model_display": "O3 Medium",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "Medium",
       "provider": "OpenAI"
     },
     {
@@ -319,6 +495,10 @@
       "score": 120.7,
       "model_id": "openai:o3",
       "model_name": "o3",
+      "model_display": "O3",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -326,6 +506,10 @@
       "score": 214.0,
       "model_id": "openai:gpt_5",
       "model_name": "gpt_5",
+      "model_display": "GPT-5",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -333,6 +517,10 @@
       "score": 320.4,
       "model_id": "anthropic:claude_opus_4_5",
       "model_name": "claude_opus_4_5",
+      "model_display": "Claude Opus 4.5",
+      "model_group": "claude-opus-4-5",
+      "model_family": "Claude Opus 4.5",
+      "model_variant": null,
       "provider": "Anthropic"
     }
   ],
@@ -342,6 +530,10 @@
       "score": 87.51,
       "model_id": "google:gemini_3_pro",
       "model_name": "Gemini 3 Pro",
+      "model_display": "Gemini 3 Pro",
+      "model_group": "gemini-3-pro",
+      "model_family": "Gemini 3 Pro",
+      "model_variant": null,
       "provider": "Google"
     },
     {
@@ -349,6 +541,10 @@
       "score": 87.63,
       "model_id": "google:gemini_3_flash",
       "model_name": "Gemini 3 Flash",
+      "model_display": "Gemini 3 Flash",
+      "model_group": "gemini-3-flash",
+      "model_family": "Gemini 3 Flash",
+      "model_variant": null,
       "provider": "Google"
     }
   ],
@@ -358,6 +554,10 @@
       "score": 1.25,
       "model_id": "openai:chatgpt_agent",
       "model_name": "ChatGPT agent",
+      "model_display": "Chatgpt Agent",
+      "model_group": "chatgpt-agent",
+      "model_family": null,
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -365,6 +565,10 @@
       "score": 2.5,
       "model_id": "deepseek:manus_1.0",
       "model_name": "Manus 1.0",
+      "model_display": "Manus 1.0",
+      "model_group": "manus-1-0",
+      "model_family": null,
+      "model_variant": null,
       "provider": "DeepSeek"
     },
     {
@@ -372,6 +576,10 @@
       "score": 2.5,
       "model_id": "deepseek:manus_1.5",
       "model_name": "Manus 1.5",
+      "model_display": "Manus 1.5",
+      "model_group": "manus-1-5",
+      "model_family": null,
+      "model_variant": null,
       "provider": "DeepSeek"
     },
     {
@@ -379,6 +587,10 @@
       "score": 3.75,
       "model_id": "anthropic:claude_opus_4.5__thinking_",
       "model_name": "Claude Opus 4.5 (Thinking)",
+      "model_display": "Claude Opus 4.5 Thinking",
+      "model_group": "claude-opus-4-5",
+      "model_family": "Claude Opus 4.5",
+      "model_variant": "Thinking",
       "provider": "Anthropic"
     }
   ],
@@ -388,6 +600,10 @@
       "score": 34.599999999999994,
       "model_id": "openai:o4-mini-2025-04-16_medium",
       "model_name": "o4-mini-2025-04-16_medium",
+      "model_display": "O4 Mini Medium",
+      "model_group": "o4",
+      "model_family": "O4",
+      "model_variant": "Mini Medium",
       "provider": "OpenAI"
     },
     {
@@ -395,6 +611,10 @@
       "score": 52.2,
       "model_id": "anthropic:claude-3-7-sonnet-20250219",
       "model_name": "claude-3-7-sonnet-20250219",
+      "model_display": "Claude Sonnet 3.7",
+      "model_group": "claude-sonnet-3-7",
+      "model_family": "Claude Sonnet 3.7",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -402,6 +622,10 @@
       "score": 60.6,
       "model_id": "anthropic:claude-sonnet-4-20250514",
       "model_name": "claude-sonnet-4-20250514",
+      "model_display": "Claude Sonnet 4",
+      "model_group": "claude-sonnet-4",
+      "model_family": "Claude Sonnet 4",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -409,6 +633,10 @@
       "score": 62.2,
       "model_id": "anthropic:claude-opus-4-20250514",
       "model_name": "claude-opus-4-20250514",
+      "model_display": "Claude Opus 4",
+      "model_group": "claude-opus-4",
+      "model_family": "Claude Opus 4",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -416,6 +644,10 @@
       "score": 64.93,
       "model_id": "anthropic:claude_4_sonnet__20250514_",
       "model_name": "Claude 4 Sonnet (20250514)",
+      "model_display": "Claude Sonnet 4",
+      "model_group": "claude-sonnet-4",
+      "model_family": "Claude Sonnet 4",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -423,6 +655,10 @@
       "score": 67.6,
       "model_id": "anthropic:claude_4_opus__20250514_",
       "model_name": "Claude 4 Opus (20250514)",
+      "model_display": "Claude Opus 4",
+      "model_group": "claude-opus-4",
+      "model_family": "Claude Opus 4",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -430,6 +666,10 @@
       "score": 70.6,
       "model_id": "anthropic:claude_4.5_sonnet__20250929_",
       "model_name": "Claude 4.5 Sonnet (20250929)",
+      "model_display": "Claude Sonnet 4.5",
+      "model_group": "claude-sonnet-4-5",
+      "model_family": "Claude Sonnet 4.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -437,6 +677,10 @@
       "score": 74.2,
       "model_id": "google:gemini_3_pro_preview__2025-11-18_",
       "model_name": "Gemini 3 Pro Preview (2025-11-18)",
+      "model_display": "Gemini 3 Pro Preview",
+      "model_group": "gemini-3-pro",
+      "model_family": "Gemini 3 Pro",
+      "model_variant": "Preview",
       "provider": "Google"
     },
     {
@@ -444,6 +688,10 @@
       "score": 74.4,
       "model_id": "anthropic:claude_4.5_opus_medium__20251101_",
       "model_name": "Claude 4.5 Opus medium (20251101)",
+      "model_display": "Claude Opus 4.5 Medium",
+      "model_group": "claude-opus-4-5",
+      "model_family": "Claude Opus 4.5",
+      "model_variant": "Medium",
       "provider": "Anthropic"
     }
   ],
@@ -453,6 +701,10 @@
       "score": 7.0,
       "model_id": "openai:gpt-4.5",
       "model_name": "GPT-4.5",
+      "model_display": "GPT-4.5",
+      "model_group": "gpt-4-5",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -460,6 +712,10 @@
       "score": 7.0,
       "model_id": "openai:gpt-4.5",
       "model_name": "GPT-4.5",
+      "model_display": "GPT-4.5",
+      "model_group": "gpt-4-5",
+      "model_family": "GPT",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -467,6 +723,10 @@
       "score": 10.0,
       "model_id": "openai:o4-mini",
       "model_name": "o4-mini",
+      "model_display": "O4 Mini",
+      "model_group": "o4",
+      "model_family": "O4",
+      "model_variant": "Mini",
       "provider": "OpenAI"
     },
     {
@@ -474,6 +734,10 @@
       "score": 10.0,
       "model_id": "openai:o4-mini",
       "model_name": "o4-mini",
+      "model_display": "O4 Mini",
+      "model_group": "o4",
+      "model_family": "O4",
+      "model_variant": "Mini",
       "provider": "OpenAI"
     },
     {
@@ -481,6 +745,10 @@
       "score": 10.0,
       "model_id": "anthropic:claude_opus_4.5",
       "model_name": "Claude Opus 4.5",
+      "model_display": "Claude Opus 4.5",
+      "model_group": "claude-opus-4-5",
+      "model_family": "Claude Opus 4.5",
+      "model_variant": null,
       "provider": "Anthropic"
     },
     {
@@ -488,6 +756,10 @@
       "score": 19.0,
       "model_id": "google:gemini_3_pro",
       "model_name": "Gemini 3 Pro",
+      "model_display": "Gemini 3 Pro",
+      "model_group": "gemini-3-pro",
+      "model_family": "Gemini 3 Pro",
+      "model_variant": null,
       "provider": "Google"
     },
     {
@@ -495,6 +767,10 @@
       "score": 19.0,
       "model_id": "google:gemini_3_pro",
       "model_name": "Gemini 3 Pro",
+      "model_display": "Gemini 3 Pro",
+      "model_group": "gemini-3-pro",
+      "model_family": "Gemini 3 Pro",
+      "model_variant": null,
       "provider": "Google"
     }
   ]
