@@ -20,10 +20,12 @@ import httpx
 logger = logging.getLogger(__name__)
 
 ARC_PRIZE_LEADERBOARD_URL = "https://arcprize.org/leaderboard"
+CANDIDATE_EVAL_URL = "https://arcprize.org/media/data/leaderboard/evaluations.json"
 CACHE_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "arcprize"
 CACHE_EXPIRY_HOURS = 6
 
 CANDIDATE_JSON_URLS = [
+    CANDIDATE_EVAL_URL,
     "https://arcprize.org/leaderboard.json",
     "https://arcprize.org/leaderboard-data.json",
     "https://arcprize.org/api/leaderboard",
@@ -33,6 +35,7 @@ CANDIDATE_JSON_URLS = [
 ]
 
 MODEL_KEYS = (
+    "modelId",
     "model",
     "model_name",
     "modelName",
@@ -130,7 +133,7 @@ def _cache_is_fresh(snapshot_path: Path) -> bool:
     return age < timedelta(hours=CACHE_EXPIRY_HOURS)
 
 
-def _fetch_payload() -> tuple[dict[str, Any], str, str]:
+def _fetch_payload() -> tuple[Any, str, str]:
     headers = {
         "User-Agent": "Mozilla/5.0 (compatible; ai-benchmark-dashboard/1.0)",
         "Accept": "text/html,application/json;q=0.9,*/*;q=0.8",
@@ -228,10 +231,15 @@ def _normalize_entry(entry: dict[str, Any], path: Iterable[str]) -> dict[str, An
     if model is None or score is None:
         return None
 
+    display = entry.get("display")
+    if display is False:
+        return None
+
     provider = _first_value(entry, PROVIDER_KEYS)
     date = _first_value(entry, DATE_KEYS)
     notes = _first_value(entry, NOTES_KEYS)
     effort = _first_value(entry, EFFORT_KEYS)
+    dataset_id = entry.get("datasetId") or entry.get("dataset_id") or entry.get("dataset")
 
     context = " ".join(str(p) for p in path if p)
     benchmark_hint = entry.get("benchmark") or entry.get("track") or entry.get("leaderboard")
@@ -243,6 +251,7 @@ def _normalize_entry(entry: dict[str, Any], path: Iterable[str]) -> dict[str, An
         "date": str(date).strip() if date else None,
         "notes": str(notes).strip() if notes else None,
         "reasoning_effort": str(effort).strip() if effort else None,
+        "dataset_id": str(dataset_id).strip() if dataset_id else None,
         "benchmark_hint": str(benchmark_hint).strip() if benchmark_hint else None,
         "context": context,
     }
@@ -295,11 +304,13 @@ def _group_by_benchmark(entries: list[dict[str, Any]]) -> dict[str, list[dict[st
     elif unclassified:
         logger.warning("Dropped %d ARC Prize entries without benchmark metadata", len(unclassified))
 
+    grouped = _filter_preferred_datasets(grouped)
     return grouped
 
 
 def _infer_benchmark_id(entry: dict[str, Any]) -> str | None:
     haystack_parts = [
+        entry.get("dataset_id"),
         entry.get("benchmark_hint"),
         entry.get("context"),
         entry.get("notes"),
@@ -311,8 +322,32 @@ def _infer_benchmark_id(entry: dict[str, Any]) -> str | None:
     if re.search(r"arc[-\s]?agi\s*1|arc[-\s]?agi-?1|arc\s*1", haystack):
         return "arc_agi_1"
 
+    if "v2_" in haystack:
+        return "arc_agi_2"
+    if "v1_" in haystack:
+        return "arc_agi_1"
+
     # If reasoning effort is present, it's likely ARC-AGI 1.
     if entry.get("reasoning_effort"):
         return "arc_agi_1"
 
     return None
+
+
+def _filter_preferred_datasets(grouped: dict[str, list[dict[str, Any]]]) -> dict[str, list[dict[str, Any]]]:
+    preferred = {
+        "arc_agi_1": {"v1_semi_private"},
+        "arc_agi_2": {"v2_semi_private"},
+    }
+    for benchmark_id, entries in grouped.items():
+        preferred_ids = preferred.get(benchmark_id)
+        if not preferred_ids:
+            continue
+        filtered = [
+            e
+            for e in entries
+            if (e.get("dataset_id") or "").lower() in preferred_ids
+        ]
+        if filtered:
+            grouped[benchmark_id] = filtered
+    return grouped
