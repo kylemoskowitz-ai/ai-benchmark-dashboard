@@ -29,6 +29,10 @@ export interface Benchmark {
     score: number;
     model_id: string;
     model_name: string;
+    model_display?: string;
+    model_group?: string;
+    model_family?: string;
+    model_variant?: string;
     provider: string;
     date: string;
   };
@@ -37,8 +41,11 @@ export interface Benchmark {
 export interface Model {
   id: string;
   name: string;
+  display_name?: string;
+  group?: string;
   provider: string;
   family?: string;
+  variant?: string;
   release_date?: string;
   parameters?: number;
 }
@@ -48,6 +55,10 @@ export interface Result {
   benchmark_id: string;
   model_id: string;
   model_name: string;
+  model_display?: string;
+  model_group?: string;
+  model_family?: string;
+  model_variant?: string;
   provider: string;
   score: number;
   score_stderr?: number;
@@ -62,6 +73,10 @@ export interface FrontierPoint {
   score: number;
   model_id: string;
   model_name: string;
+  model_display?: string;
+  model_group?: string;
+  model_family?: string;
+  model_variant?: string;
   provider: string;
 }
 

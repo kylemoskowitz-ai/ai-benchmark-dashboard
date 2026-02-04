@@ -142,7 +142,7 @@ function BenchmarkCard({
               style={{ backgroundColor: providerColor }}
             />
             <span className="text-body-sm text-base-600">
-              {benchmark.sota?.model_name}
+              {benchmark.sota?.model_display ?? benchmark.sota?.model_name}
             </span>
           </div>
         </div>

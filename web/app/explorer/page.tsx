@@ -51,6 +51,11 @@ function ExplorerContent() {
   });
   const [loading, setLoading] = useState(true);
 
+  const getModelLabel = (result: Result) =>
+    getResultModelLabel(result);
+  const getModelKey = (result: Result) =>
+    getResultModelKey(result);
+
   useEffect(() => {
     Promise.all([
       fetch("/data/benchmarks.json").then((r) => r.json()),
@@ -107,7 +112,10 @@ function ExplorerContent() {
 
     if (filters.search) {
       const q = filters.search.toLowerCase();
-      filtered = filtered.filter((r) => r.model_name.toLowerCase().includes(q));
+      filtered = filtered.filter((r) => {
+        const label = getModelLabel(r).toLowerCase();
+        return label.includes(q) || r.model_name.toLowerCase().includes(q);
+      });
     }
 
     if (filters.startDate) {
@@ -134,19 +142,29 @@ function ExplorerContent() {
   }, [activeBenchmark, results, filters, currentBenchmark]);
 
   const modelOptions = useMemo(() => {
-    const set = new Set(
-      results
-        .filter((r) => r.benchmark_id === activeBenchmark)
-        .map((r) => r.model_name)
-    );
-    return Array.from(set).sort();
+    const map = new Map<string, string>();
+    results
+      .filter((r) => r.benchmark_id === activeBenchmark)
+      .forEach((r) => {
+        const key = getModelKey(r);
+        if (!map.has(key)) {
+          map.set(key, getModelLabel(r));
+        }
+      });
+    return Array.from(map.entries())
+      .map(([key, label]) => ({ key, label }))
+      .sort((a, b) => a.label.localeCompare(b.label));
   }, [results, activeBenchmark]);
 
   const filteredModelOptions = useMemo(() => {
     if (!modelQuery) return modelOptions;
     const q = modelQuery.toLowerCase();
-    return modelOptions.filter((m) => m.toLowerCase().includes(q));
+    return modelOptions.filter((m) => m.label.toLowerCase().includes(q));
   }, [modelOptions, modelQuery]);
+
+  const modelLabelMap = useMemo(() => {
+    return new Map(modelOptions.map((opt) => [opt.key, opt.label]));
+  }, [modelOptions]);
 
   const toggleModelSelection = (model: string) => {
     setSelectedModels((prev) => {
@@ -450,7 +468,7 @@ function ExplorerContent() {
                             }}
                           />
                           <span className="font-medium text-base-900">
-                            {result.model_name}
+                            {getModelLabel(result)}
                           </span>
                         </div>
                       </td>
@@ -509,7 +527,7 @@ function ExplorerContent() {
                     No models selected yet
                   </span>
                 )}
-                {selectedModels.map((model) => (
+            {selectedModels.map((model) => (
                   <button
                     key={model}
                     type="button"
@@ -517,7 +535,7 @@ function ExplorerContent() {
                     onClick={() => toggleModelSelection(model)}
                     title="Remove model"
                   >
-                    {model}
+                    {modelLabelMap.get(model) || model}
                   </button>
                 ))}
               </div>
@@ -541,17 +559,17 @@ function ExplorerContent() {
 
               <div className="scroll-panel max-h-48">
                 {filteredModelOptions.map((model) => {
-                  const selected = selectedModels.includes(model);
+                  const selected = selectedModels.includes(model.key);
                   return (
                     <button
-                      key={model}
+                      key={model.key}
                       type="button"
                       className={`w-full text-left px-3 py-2 rounded-md text-body-sm transition-colors ${
                         selected
                           ? "bg-accent/15 text-base-900 border border-accent/40"
                           : "text-base-500 hover:bg-base-100"
                       }`}
-                      onClick={() => toggleModelSelection(model)}
+                      onClick={() => toggleModelSelection(model.key)}
                     >
                       <div className="flex items-center justify-between gap-2">
                         <div className="flex items-center gap-2">
@@ -560,7 +578,7 @@ function ExplorerContent() {
                               selected ? "bg-accent" : "bg-base-200"
                             }`}
                           />
-                          <span className="font-medium">{model}</span>
+                          <span className="font-medium">{model.label}</span>
                         </div>
                         {selected && (
                           <span className="text-caption text-accent">
@@ -594,7 +612,7 @@ function ExplorerContent() {
                   <tbody>
                     {comparisonData.map((row) => (
                       <tr key={row.model}>
-                        <td className="font-medium text-base-900">{row.model}</td>
+                        <td className="font-medium text-base-900">{row.label}</td>
                         {row.scores.map((score, idx) => (
                           <td
                             key={`${row.model}-${idx}`}
@@ -692,7 +710,7 @@ function ExplorerContent() {
                 Result details
               </div>
               <div className="mt-2 font-serif text-title text-base-900">
-                {selectedResult.model_name}
+                {getModelLabel(selectedResult)}
               </div>
               <div className="mt-2 text-body-sm text-base-500">
                 {selectedResult.provider}
@@ -744,41 +762,55 @@ function buildComparisonTable(
   return models.map((model) => {
     const scores = benchmarks.map((benchmark) => {
       const record = results
-        .filter((r) => r.model_name === model && r.benchmark_id === benchmark.id)
+        .filter(
+          (r) =>
+            getResultModelKey(r) === model &&
+            r.benchmark_id === benchmark.id
+        )
         .sort((a, b) =>
           benchmark.higher_is_better ? b.score - a.score : a.score - b.score
         )[0];
       return record ? normalizeScore(record.score, benchmark) : null;
     });
-    return { model, scores };
+    const labelResult = results.find((r) => getResultModelKey(r) === model);
+    return {
+      model,
+      label: labelResult ? getResultModelLabel(labelResult) : model,
+      scores,
+    };
   });
 }
 
 function buildTimeSeries(benchmark: Benchmark, results: Result[]) {
-  const byModel = new Map<string, Result[]>();
+  const byModel = new Map<string, { label: string; rows: Result[] }>();
   results
     .filter((r) => r.benchmark_id === benchmark.id)
     .forEach((r) => {
-      if (!byModel.has(r.model_name)) byModel.set(r.model_name, []);
-      byModel.get(r.model_name)!.push(r);
+      const key = getResultModelKey(r);
+      const label = getResultModelLabel(r);
+      if (!byModel.has(key)) {
+        byModel.set(key, { label, rows: [] });
+      }
+      byModel.get(key)!.rows.push(r);
     });
 
   const topModels = Array.from(byModel.entries())
-    .map(([model, entries]) => ({
+    .map(([model, entry]) => ({
       model,
+      label: entry.label,
       best: benchmark.higher_is_better
-        ? Math.max(...entries.map((e) => e.score))
-        : Math.min(...entries.map((e) => e.score)),
+        ? Math.max(...entry.rows.map((e) => e.score))
+        : Math.min(...entry.rows.map((e) => e.score)),
     }))
     .sort((a, b) =>
       benchmark.higher_is_better ? b.best - a.best : a.best - b.best
     )
     .slice(0, 5)
-    .map((m) => m.model);
+    .map((m) => ({ key: m.model, label: m.label }));
 
   const dates = new Set<string>();
   topModels.forEach((model) => {
-    byModel.get(model)?.forEach((r) => dates.add(r.date));
+    byModel.get(model.key)?.rows.forEach((r) => dates.add(r.date));
   });
 
   const sortedDates = Array.from(dates).sort(
@@ -790,14 +822,22 @@ function buildTimeSeries(benchmark: Benchmark, results: Result[]) {
     const row: Record<string, any> = { date };
     topModels.forEach((model) => {
       const entry = byModel
-        .get(model)
-        ?.find((r) => r.date === date);
+        .get(model.key)
+        ?.rows.find((r) => r.date === date);
       if (entry) {
-        row[model] = entry.score;
+        row[model.label] = entry.score;
       }
     });
     return row;
   });
+}
+
+function getResultModelLabel(result: Result) {
+  return result.model_display || result.model_name;
+}
+
+function getResultModelKey(result: Result) {
+  return result.model_group || getResultModelLabel(result);
 }
 
 function stringToColor(input: string) {

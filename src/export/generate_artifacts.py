@@ -29,6 +29,7 @@ from src.db.queries import (
     get_results_for_benchmark,
     get_frontier_results,
 )
+from src.utils.model_normalization import normalize_model_name
 from src.projections import linear_projection, saturation_projection, power_law_projection
 
 logger = logging.getLogger(__name__)
@@ -140,10 +141,16 @@ class ArtifactGenerator:
                         descending=higher_is_better
                     )
                     best = sorted_results.row(0, named=True)
+                    raw_name = best.get("model_name", best["model_id"])
+                    norm = normalize_model_name(raw_name, best.get("provider"))
                     sota = {
                         "score": best["score"],
                         "model_id": best["model_id"],
-                        "model_name": best.get("model_name", best["model_id"]),
+                        "model_name": raw_name,
+                        "model_display": norm["display"],
+                        "model_group": norm["group"],
+                        "model_family": norm["family"],
+                        "model_variant": norm["variant"],
                         "provider": best.get("provider", "Unknown"),
                         "date": best.get("evaluation_date") or best.get("model_release_date"),
                     }
@@ -180,11 +187,15 @@ class ArtifactGenerator:
 
         models = []
         for row in self.models_df.iter_rows(named=True):
+            norm = normalize_model_name(row.get("name"), row.get("provider"))
             models.append({
                 "id": row["model_id"],
                 "name": row["name"],
+                "display_name": norm["display"],
+                "group": norm["group"],
+                "family": row.get("family") or norm["family"],
+                "variant": norm["variant"],
                 "provider": row["provider"],
-                "family": row.get("family"),
                 "release_date": row.get("release_date"),
                 "parameters": row.get("parameter_count"),
             })
@@ -207,12 +218,18 @@ class ArtifactGenerator:
                 for row in bench_results.iter_rows(named=True):
                     # Use evaluation_date if available, else model_release_date
                     result_date = row.get("evaluation_date") or row.get("model_release_date")
+                    raw_name = row.get("model_name", row["model_id"])
+                    norm = normalize_model_name(raw_name, row.get("provider"))
 
                     results.append({
                         "id": row["result_id"],
                         "benchmark_id": benchmark_id,
                         "model_id": row["model_id"],
-                        "model_name": row.get("model_name", row["model_id"]),
+                        "model_name": raw_name,
+                        "model_display": norm["display"],
+                        "model_group": norm["group"],
+                        "model_family": norm["family"],
+                        "model_variant": norm["variant"],
                         "provider": row.get("provider", "Unknown"),
                         "score": row["score"],
                         "score_stderr": row.get("score_stderr"),
@@ -247,11 +264,17 @@ class ArtifactGenerator:
                 for row in frontier.iter_rows(named=True):
                     point_date = row.get("effective_date") or row.get("evaluation_date") or row.get("model_release_date")
                     if point_date and row["score"] is not None:
+                        raw_name = row.get("model_name", row["model_id"])
+                        norm = normalize_model_name(raw_name, row.get("provider"))
                         points.append({
                             "date": point_date,
                             "score": row["score"],
                             "model_id": row["model_id"],
-                            "model_name": row.get("model_name", row["model_id"]),
+                            "model_name": raw_name,
+                            "model_display": norm["display"],
+                            "model_group": norm["group"],
+                            "model_family": norm["family"],
+                            "model_variant": norm["variant"],
                             "provider": row.get("provider", "Unknown"),
                         })
 
@@ -328,7 +351,12 @@ class ArtifactGenerator:
                     max_date = date.fromisoformat(max_date)
                 if isinstance(min_date, str):
                     min_date = date.fromisoformat(min_date)
-                window_months = max(12, int((max_date - min_date).days / 30) + 1)
+                total_months = max(1, int((max_date - min_date).days / 30) + 1)
+                window_months = max(12, total_months)
+
+                # METR time horizons show step changes; fit to recent history for better alignment.
+                if benchmark_id == "metr_time_horizons":
+                    window_months = max(12, min(total_months, 24))
 
                 # Linear projection
                 try:

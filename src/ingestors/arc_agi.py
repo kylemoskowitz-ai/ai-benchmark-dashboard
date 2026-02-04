@@ -23,6 +23,32 @@ from src.models.schemas import (
 
 logger = logging.getLogger(__name__)
 
+MODEL_NAME_ALLOW_PATTERN = re.compile(
+    r"\b(gpt|claude|opus|sonnet|haiku|gemini|deepseek|qwen|llama|mistral|mixtral|grok|codex|magistral|kimi|r1|o\d)\b",
+    re.IGNORECASE,
+)
+MODEL_NAME_BLOCKLIST = (
+    "human",
+    "panel",
+    "baseline",
+    "mturker",
+    "stem_grad",
+    "stem grad",
+    "student",
+    "teacher",
+    "oracle",
+    "average",
+)
+
+
+def _is_valid_model_name(model_name: str) -> bool:
+    if not model_name:
+        return False
+    name = model_name.strip().lower()
+    if any(bad in name for bad in MODEL_NAME_BLOCKLIST):
+        return False
+    return MODEL_NAME_ALLOW_PATTERN.search(name) is not None
+
 
 def _map_parse_method(value: str | None) -> ParseMethod:
     if value == "api":
@@ -124,7 +150,7 @@ class ARCAGI1Ingestor(BaseIngestor):
                     or row.get("model_name")
                     or ""
                 )
-                if not model_name:
+                if not model_name or not _is_valid_model_name(model_name):
                     continue
 
                 provider = row.get("provider") or row.get("Organization") or self._infer_provider(model_name)
@@ -175,7 +201,7 @@ class ARCAGI1Ingestor(BaseIngestor):
     def _parse_arcprize_entry(self, entry: dict, source_id: str) -> Result | None:
         try:
             model_name = entry.get("model") or entry.get("name") or entry.get("Model version")
-            if not model_name:
+            if not model_name or not _is_valid_model_name(model_name):
                 return None
 
             provider = entry.get("provider") or entry.get("organization") or self._infer_provider(model_name)
@@ -339,7 +365,7 @@ class ARCAGI2Ingestor(BaseIngestor):
         """Parse a JSON leaderboard entry."""
         try:
             model_name = entry.get("model") or entry.get("name") or entry.get("Model version")
-            if not model_name:
+            if not model_name or not _is_valid_model_name(model_name):
                 return None
 
             provider = entry.get("organization") or entry.get("provider") or self._infer_provider(model_name)
@@ -381,7 +407,7 @@ class ARCAGI2Ingestor(BaseIngestor):
         """Parse a CSV row."""
         try:
             model_name = row.get("model") or row.get("Model") or row.get("Model version")
-            if not model_name:
+            if not model_name or not _is_valid_model_name(model_name):
                 return None
 
             provider = row.get("provider") or row.get("Organization") or self._infer_provider(model_name)

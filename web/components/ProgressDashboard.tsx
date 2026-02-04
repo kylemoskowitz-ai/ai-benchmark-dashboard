@@ -11,6 +11,7 @@ import {
 } from "@/lib/analysis";
 import { CategoryIcon } from "@/components/CategoryIcon";
 import { Sparkline } from "@/components/Sparkline";
+import { ModelStrengths } from "@/components/ModelStrengths";
 
 type SlopeEntry = {
   benchmark: Benchmark;
@@ -73,13 +74,23 @@ export function ProgressDashboard() {
   const trust = useMemo(() => summarizeTrustTiers(results), [results]);
 
   const sotaWins = useMemo(() => {
-    const counts = new Map<string, number>();
+    const counts = new Map<string, { label: string; count: number }>();
     benchmarks.forEach((b) => {
-      const model = b.sota?.model_name;
-      if (model) counts.set(model, (counts.get(model) || 0) + 1);
+      const key =
+        b.sota?.model_group ||
+        b.sota?.model_display ||
+        b.sota?.model_name;
+      const label = b.sota?.model_display || b.sota?.model_name;
+      if (!key || !label) return;
+      const existing = counts.get(key);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        counts.set(key, { label, count: 1 });
+      }
     });
-    const top = Array.from(counts.entries()).sort((a, b) => b[1] - a[1])[0];
-    return top ? { model: top[0], count: top[1] } : null;
+    const top = Array.from(counts.values()).sort((a, b) => b.count - a.count)[0];
+    return top ? { model: top.label, count: top.count } : null;
   }, [benchmarks]);
 
   if (loading) {
@@ -141,6 +152,8 @@ export function ProgressDashboard() {
         </div>
       </section>
 
+      <ModelStrengths />
+
       <section className="container-wide py-12">
         <div className="mb-8 flex items-center justify-between">
           <div>
@@ -170,7 +183,9 @@ export function ProgressDashboard() {
                   : "—"}
               </div>
               <div className="text-body-sm text-base-500 mt-1">
-                {item.benchmark.sota?.model_name ?? "—"}
+                {item.benchmark.sota?.model_display ??
+                  item.benchmark.sota?.model_name ??
+                  "—"}
               </div>
               <div className="mt-4 text-caption text-base-400">
                 Updated {formatDate(item.delta?.to.date || "")}
