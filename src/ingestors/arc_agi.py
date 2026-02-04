@@ -23,10 +23,6 @@ from src.models.schemas import (
 
 logger = logging.getLogger(__name__)
 
-MODEL_NAME_ALLOW_PATTERN = re.compile(
-    r"\b(gpt|claude|opus|sonnet|haiku|gemini|deepseek|qwen|llama|mistral|mixtral|grok|codex|magistral|kimi|r1|o\d)\b",
-    re.IGNORECASE,
-)
 MODEL_NAME_BLOCKLIST = (
     "human",
     "panel",
@@ -38,6 +34,7 @@ MODEL_NAME_BLOCKLIST = (
     "teacher",
     "oracle",
     "average",
+    "grader",
 )
 
 
@@ -47,7 +44,7 @@ def _is_valid_model_name(model_name: str) -> bool:
     name = model_name.strip().lower()
     if any(bad in name for bad in MODEL_NAME_BLOCKLIST):
         return False
-    return MODEL_NAME_ALLOW_PATTERN.search(name) is not None
+    return True
 
 
 def _map_parse_method(value: str | None) -> ParseMethod:

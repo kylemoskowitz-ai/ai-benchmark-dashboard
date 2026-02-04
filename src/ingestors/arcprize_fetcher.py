@@ -34,6 +34,19 @@ CANDIDATE_JSON_URLS = [
     "https://arcprize.org/api/leaderboard?version=2",
 ]
 
+PREFERRED_DATASET_ORDER = {
+    "arc_agi_1": [
+        "v1_public_eval",
+        "v1_semi_private",
+        "v1_private_eval",
+    ],
+    "arc_agi_2": [
+        "v2_public_eval",
+        "v2_semi_private",
+        "v2_private_eval",
+    ],
+}
+
 MODEL_KEYS = (
     "modelId",
     "model",
@@ -335,19 +348,24 @@ def _infer_benchmark_id(entry: dict[str, Any]) -> str | None:
 
 
 def _filter_preferred_datasets(grouped: dict[str, list[dict[str, Any]]]) -> dict[str, list[dict[str, Any]]]:
-    preferred = {
-        "arc_agi_1": {"v1_semi_private"},
-        "arc_agi_2": {"v2_semi_private"},
-    }
     for benchmark_id, entries in grouped.items():
-        preferred_ids = preferred.get(benchmark_id)
-        if not preferred_ids:
+        order = PREFERRED_DATASET_ORDER.get(benchmark_id)
+        if not order:
             continue
-        filtered = [
-            e
-            for e in entries
-            if (e.get("dataset_id") or "").lower() in preferred_ids
-        ]
-        if filtered:
-            grouped[benchmark_id] = filtered
+        by_dataset: dict[str, list[dict[str, Any]]] = {}
+        for entry in entries:
+            dataset = (entry.get("dataset_id") or "").lower()
+            if dataset:
+                by_dataset.setdefault(dataset, []).append(entry)
+
+        for dataset_id in order:
+            if dataset_id in by_dataset and by_dataset[dataset_id]:
+                grouped[benchmark_id] = by_dataset[dataset_id]
+                logger.info(
+                    "ARC Prize %s using dataset %s (%d entries)",
+                    benchmark_id,
+                    dataset_id,
+                    len(by_dataset[dataset_id]),
+                )
+                break
     return grouped
