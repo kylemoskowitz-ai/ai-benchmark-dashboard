@@ -37,6 +37,8 @@ MODEL_NAME_BLOCKLIST = (
     "grader",
 )
 
+MODEL_DATE_PATTERN = re.compile(r"(20\d{2})[-_/](\d{2})[-_/](\d{2})")
+
 
 def _is_valid_model_name(model_name: str) -> bool:
     if not model_name:
@@ -45,6 +47,17 @@ def _is_valid_model_name(model_name: str) -> bool:
     if any(bad in name for bad in MODEL_NAME_BLOCKLIST):
         return False
     return True
+
+
+def _extract_date_from_name(model_name: str) -> date | None:
+    match = MODEL_DATE_PATTERN.search(model_name)
+    if not match:
+        return None
+    try:
+        year, month, day = (int(match.group(1)), int(match.group(2)), int(match.group(3)))
+        return date(year, month, day)
+    except ValueError:
+        return None
 
 
 def _map_parse_method(value: str | None) -> ParseMethod:
@@ -152,7 +165,7 @@ class ARCAGI1Ingestor(BaseIngestor):
 
                 provider = row.get("provider") or row.get("Organization") or self._infer_provider(model_name)
                 raw_score = self._parse_float(row.get("score") or row.get("Score"))
-                eval_date = self.parse_date(row.get("date") or row.get("Release date"))
+                eval_date = self.parse_date(row.get("date") or row.get("Release date")) or _extract_date_from_name(model_name)
 
                 if raw_score is None:
                     continue
@@ -207,7 +220,7 @@ class ARCAGI1Ingestor(BaseIngestor):
                 return None
 
             score = _score_to_percent(float(raw_score))
-            eval_date = self.parse_date(entry.get("date"))
+            eval_date = self.parse_date(entry.get("date")) or _extract_date_from_name(model_name)
             model_id = self.normalize_model_id(model_name, provider)
 
             model = Model(
@@ -373,7 +386,7 @@ class ARCAGI2Ingestor(BaseIngestor):
 
             score = _score_to_percent(float(raw_score))
 
-            eval_date = self.parse_date(entry.get("date") or entry.get("release_date"))
+            eval_date = self.parse_date(entry.get("date") or entry.get("release_date")) or _extract_date_from_name(model_name)
             model_id = self.normalize_model_id(model_name, provider)
 
             model = Model(
@@ -415,7 +428,7 @@ class ARCAGI2Ingestor(BaseIngestor):
 
             score = _score_to_percent(float(raw_score))
 
-            eval_date = self.parse_date(row.get("date") or row.get("Release date"))
+            eval_date = self.parse_date(row.get("date") or row.get("Release date")) or _extract_date_from_name(model_name)
             model_id = self.normalize_model_id(model_name, provider)
 
             model = Model(

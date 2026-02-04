@@ -168,13 +168,11 @@ export default function ProjectionsPage() {
             onChange={(e) => setSelectedBenchmark(e.target.value)}
             className="w-full px-4 py-2 bg-base-50 border border-base-200 rounded-lg text-base-900 focus:outline-none focus:border-accent"
           >
-            {benchmarks
-              .filter((b) => projections[b.id])
-              .map((b) => (
+            {benchmarks.map((b) => (
                 <option key={b.id} value={b.id}>
                   {b.name}
                 </option>
-              ))}
+            ))}
           </select>
         </div>
 

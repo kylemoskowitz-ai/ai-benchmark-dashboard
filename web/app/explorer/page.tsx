@@ -27,6 +27,7 @@ type Filters = {
   endDate: string;
   onlyOfficial: boolean;
   normalize: boolean;
+  metrVersion: string;
 };
 
 function ExplorerContent() {
@@ -48,6 +49,7 @@ function ExplorerContent() {
     endDate: "",
     onlyOfficial: false,
     normalize: false,
+    metrVersion: "all",
   });
   const [loading, setLoading] = useState(true);
 
@@ -108,6 +110,13 @@ function ExplorerContent() {
 
     if (filters.onlyOfficial) {
       filtered = filtered.filter((r) => r.trust_tier === "A");
+    }
+
+    if (
+      currentBenchmark?.id === "metr_time_horizons" &&
+      filters.metrVersion !== "all"
+    ) {
+      filtered = filtered.filter((r) => r.subset === filters.metrVersion);
     }
 
     if (filters.search) {
@@ -291,6 +300,23 @@ function ExplorerContent() {
                 ))}
               </select>
             </label>
+
+            {currentBenchmark?.id === "metr_time_horizons" && (
+              <label className="block">
+                <span className="text-body-sm text-base-500">METR Version</span>
+                <select
+                  className="mt-2 w-full px-3 py-2 bg-base-50 border border-base-200 rounded-lg text-base-900"
+                  value={filters.metrVersion}
+                  onChange={(e) =>
+                    setFilters({ ...filters, metrVersion: e.target.value })
+                  }
+                >
+                  <option value="all">All versions</option>
+                  <option value="v1.1">v1.1</option>
+                  <option value="v1.0">v1.0</option>
+                </select>
+              </label>
+            )}
 
             <label className="block">
               <span className="text-body-sm text-base-500">Trust tier</span>
