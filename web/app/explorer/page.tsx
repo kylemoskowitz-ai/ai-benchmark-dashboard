@@ -408,8 +408,10 @@ function ExplorerContent() {
                 <div>
                   <span className="text-base-400">Scale:</span>{" "}
                   <span className="font-mono">
-                    {currentBenchmark.scale.min} – {currentBenchmark.scale.max}{" "}
-                    {currentBenchmark.unit}
+                    {currentBenchmark.scale.min} –{" "}
+                    {currentBenchmark.scale.max != null
+                      ? `${currentBenchmark.scale.max} ${currentBenchmark.unit}`
+                      : "Open-ended"}
                   </span>
                 </div>
                 <div>
@@ -438,6 +440,9 @@ function ExplorerContent() {
                     {filters.normalize ? "Score (0-100)" : "Score"}
                   </th>
                   <th className="text-right">Date</th>
+                  {currentBenchmark?.id === "metr_time_horizons" && (
+                    <th className="text-right">Version</th>
+                  )}
                   <th className="text-center">Trust</th>
                 </tr>
               </thead>
@@ -489,6 +494,11 @@ function ExplorerContent() {
                       <td className="text-right text-base-500">
                         {formatDate(result.date)}
                       </td>
+                      {currentBenchmark?.id === "metr_time_horizons" && (
+                        <td className="text-right text-base-500">
+                          {result.subset || "—"}
+                        </td>
+                      )}
                       <td className="text-center">
                         <TrustBadge tier={result.trust_tier} />
                       </td>
@@ -726,6 +736,9 @@ function ExplorerContent() {
                   </span>
                 </div>
                 <div>Date: {formatDate(selectedResult.date)}</div>
+                {currentBenchmark?.id === "metr_time_horizons" && (
+                  <div>Version: {selectedResult.subset || "—"}</div>
+                )}
                 <div>
                   Trust: <TrustBadge tier={selectedResult.trust_tier} />
                 </div>

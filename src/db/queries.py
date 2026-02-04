@@ -32,6 +32,7 @@ def get_results_for_benchmark(
     providers: list[str] | None = None,
     trust_tiers: list[str] | None = None,
     official_only: bool = False,
+    subset: str | None = None,
 ) -> pl.DataFrame:
     """Get results for a benchmark with filters."""
     query = """
@@ -73,6 +74,10 @@ def get_results_for_benchmark(
     if official_only:
         query += " AND r.trust_tier = 'A'"
 
+    if subset:
+        query += " AND r.subset = ?"
+        params.append(subset)
+
     query += " ORDER BY COALESCE(r.evaluation_date, m.release_date) ASC"
 
     with get_connection(read_only=True) as conn:
@@ -106,6 +111,7 @@ def get_frontier_results(
     benchmark_id: str,
     min_date: date | None = None,
     trust_tiers: list[str] | None = None,
+    subset: str | None = None,
 ) -> pl.DataFrame:
     """Get frontier (best-over-time) results for a benchmark.
 
@@ -116,6 +122,7 @@ def get_frontier_results(
         benchmark_id,
         min_date=min_date,
         trust_tiers=trust_tiers,
+        subset=subset,
     )
 
     if results.is_empty():

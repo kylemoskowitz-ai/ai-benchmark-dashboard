@@ -7,7 +7,8 @@ export function normalizeScore(
 ): number | null {
   if (score == null) return null;
   const min = benchmark.scale?.min ?? 0;
-  const max = benchmark.scale?.max ?? 100;
+  const max = benchmark.scale?.max;
+  if (max == null) return null;
   const range = Math.max(max - min, 1e-6);
   const raw = benchmark.higher_is_better
     ? (score - min) / range

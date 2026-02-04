@@ -19,7 +19,7 @@ export interface Benchmark {
   unit: string;
   scale: {
     min: number;
-    max: number;
+    max: number | null;
   };
   higher_is_better: boolean;
   official_url?: string;
@@ -63,6 +63,8 @@ export interface Result {
   score: number;
   score_stderr?: number;
   date: string;
+  subset?: string;
+  harness_version?: string;
   trust_tier: "A" | "B" | "C";
   source_url?: string;
   source_type?: string;

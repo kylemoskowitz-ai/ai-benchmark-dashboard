@@ -157,6 +157,10 @@ class ArtifactGenerator:
             except Exception as e:
                 logger.warning(f"Failed to get SOTA for {benchmark_id}: {e}")
 
+            scale_max = row.get("scale_max", 100)
+            if benchmark_id == "epoch_capabilities_index":
+                scale_max = None
+
             benchmark_data = {
                 "id": benchmark_id,
                 "name": row["name"],
@@ -165,7 +169,7 @@ class ArtifactGenerator:
                 "unit": row.get("unit", "percent"),
                 "scale": {
                     "min": row.get("scale_min", 0),
-                    "max": row.get("scale_max", 100),
+                    "max": scale_max,
                 },
                 "higher_is_better": higher_is_better,
                 "official_url": row.get("official_url"),
@@ -234,6 +238,8 @@ class ArtifactGenerator:
                         "score": row["score"],
                         "score_stderr": row.get("score_stderr"),
                         "date": result_date,
+                        "subset": row.get("subset"),
+                        "harness_version": row.get("harness_version"),
                         "trust_tier": row.get("trust_tier", "B"),
                         "source_url": row.get("source_url"),
                         "source_type": row.get("source_type"),
@@ -255,7 +261,12 @@ class ArtifactGenerator:
             benchmark_id = bench_row["benchmark_id"]
 
             try:
-                frontier = get_frontier_results(benchmark_id)
+                if benchmark_id == "metr_time_horizons":
+                    frontier = get_frontier_results(benchmark_id, subset="v1.1")
+                    if frontier.is_empty():
+                        frontier = get_frontier_results(benchmark_id)
+                else:
+                    frontier = get_frontier_results(benchmark_id)
 
                 if frontier.is_empty():
                     continue
@@ -305,6 +316,11 @@ class ArtifactGenerator:
                 results = get_results_for_benchmark(benchmark_id)
                 if results.is_empty():
                     continue
+
+                if benchmark_id == "metr_time_horizons" and "subset" in results.columns:
+                    v11 = results.filter(pl.col("subset") == "v1.1")
+                    if not v11.is_empty():
+                        results = v11
 
                 # Build a dense history series (daily max/min, then cumulative frontier)
                 results = results.with_columns(

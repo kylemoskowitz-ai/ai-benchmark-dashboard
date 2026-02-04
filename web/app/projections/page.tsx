@@ -327,7 +327,12 @@ export default function ProjectionsPage() {
                   domain={
                     viewMode === "speed"
                       ? ["auto", "auto"]
-                      : [0, currentBenchmark?.scale.max || 100]
+                      : [
+                          0,
+                          currentBenchmark?.scale.max != null
+                            ? currentBenchmark.scale.max
+                            : "auto",
+                        ]
                   }
                   tickFormatter={(v) =>
                     viewMode === "speed"

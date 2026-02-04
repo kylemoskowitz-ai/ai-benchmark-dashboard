@@ -78,6 +78,8 @@ class METRIngestor(BaseIngestor):
     def _parse_csv(self, raw_path: Path) -> list[Result]:
         df = pl.read_csv(raw_path)
 
+        subset = "v1.0" if "external" in raw_path.name else "v1.1"
+
         # Create source record
         source = Source(
             source_id=self.generate_source_id("https://metr.org/time-horizons-v1.1"),
@@ -136,9 +138,11 @@ class METRIngestor(BaseIngestor):
                     score_ci_low=ci_low,
                     score_ci_high=ci_high,
                     evaluation_date=release_date,
+                    subset=subset,
                     source_id=source.source_id,
                     trust_tier=TrustTier.A,  # METR = official
                     evaluation_notes=(
+                        f"Version: {subset}. "
                         f"P50 time horizon: {time_horizon} min. "
                         f"Avg task score: {avg_score}. "
                         f"Notes: {row.get('notes', 'N/A')}"
@@ -154,8 +158,7 @@ class METRIngestor(BaseIngestor):
 
     def _parse_json(self, raw_path: Path) -> list[Result]:
         payload = json.loads(raw_path.read_text())
-        data = payload.get("benchmark") if isinstance(payload, dict) else None
-        if not data or not isinstance(data, dict):
+        if not isinstance(payload, dict):
             return []
 
         source = Source(
@@ -170,63 +173,76 @@ class METRIngestor(BaseIngestor):
         )
         self.register_source(source)
 
-        results = []
-        results_map = data.get("results", {})
-        if not isinstance(results_map, dict):
-            return results
+        results: list[Result] = []
+        benchmarks = payload.get("benchmarks")
+        if isinstance(benchmarks, dict):
+            versioned = benchmarks
+        else:
+            data = payload.get("benchmark") if isinstance(payload, dict) else None
+            versioned = {"v1.1": data} if isinstance(data, dict) else {}
 
-        for model_key, entry in results_map.items():
-            try:
-                metrics = entry.get("metrics", {}) if isinstance(entry, dict) else {}
-                p50 = metrics.get("p50_horizon_length", {}) if isinstance(metrics, dict) else {}
-                avg = metrics.get("average_score", {}) if isinstance(metrics, dict) else {}
-                time_horizon = self._parse_float(p50.get("estimate"))
-                if time_horizon is None:
-                    continue
-
-                ci_low = self._parse_float(p50.get("ci_low"))
-                ci_high = self._parse_float(p50.get("ci_high"))
-                avg_score = self._parse_float(avg.get("estimate"))
-                is_sota = metrics.get("is_sota") if isinstance(metrics, dict) else None
-
-                model_name = model_key
-                provider = self._infer_provider(model_name)
-                release_date = self.parse_date(entry.get("release_date") if isinstance(entry, dict) else None)
-
-                model_id = self.normalize_model_id(model_name, provider)
-                model = Model(
-                    model_id=model_id,
-                    name=model_name,
-                    provider=provider,
-                    family=self._infer_family(model_name),
-                    release_date=release_date,
-                    status=ModelStatus.VERIFIED,
-                )
-                self.register_model(model)
-
-                notes = [
-                    f"P50 time horizon: {time_horizon} min.",
-                    f"Avg task score: {avg_score}.",
-                ]
-                if is_sota is not None:
-                    notes.append(f"SOTA: {is_sota}.")
-
-                result = Result(
-                    result_id=self.generate_result_id(model_id, release_date),
-                    model_id=model_id,
-                    benchmark_id=self.BENCHMARK_ID,
-                    score=time_horizon,
-                    score_ci_low=ci_low,
-                    score_ci_high=ci_high,
-                    evaluation_date=release_date,
-                    source_id=source.source_id,
-                    trust_tier=TrustTier.A,
-                    evaluation_notes=" ".join(notes),
-                )
-                results.append(result)
-            except Exception as e:
-                self.log_warning(f"Failed to parse METR entry {model_key}: {e}")
+        for version_label, data in versioned.items():
+            if not isinstance(data, dict):
                 continue
+            results_map = data.get("results", {})
+            if not isinstance(results_map, dict):
+                continue
+            version = self._infer_version(data.get("benchmark_name")) or version_label
+
+            for model_key, entry in results_map.items():
+                try:
+                    metrics = entry.get("metrics", {}) if isinstance(entry, dict) else {}
+                    p50 = metrics.get("p50_horizon_length", {}) if isinstance(metrics, dict) else {}
+                    avg = metrics.get("average_score", {}) if isinstance(metrics, dict) else {}
+                    time_horizon = self._parse_float(p50.get("estimate"))
+                    if time_horizon is None:
+                        continue
+
+                    ci_low = self._parse_float(p50.get("ci_low"))
+                    ci_high = self._parse_float(p50.get("ci_high"))
+                    avg_score = self._parse_float(avg.get("estimate"))
+                    is_sota = metrics.get("is_sota") if isinstance(metrics, dict) else None
+
+                    model_name = model_key
+                    provider = self._infer_provider(model_name)
+                    release_date = self.parse_date(entry.get("release_date") if isinstance(entry, dict) else None)
+
+                    model_id = self.normalize_model_id(model_name, provider)
+                    model = Model(
+                        model_id=model_id,
+                        name=model_name,
+                        provider=provider,
+                        family=self._infer_family(model_name),
+                        release_date=release_date,
+                        status=ModelStatus.VERIFIED,
+                    )
+                    self.register_model(model)
+
+                    notes = [
+                        f"Version: {version}.",
+                        f"P50 time horizon: {time_horizon} min.",
+                        f"Avg task score: {avg_score}.",
+                    ]
+                    if is_sota is not None:
+                        notes.append(f"SOTA: {is_sota}.")
+
+                    result = Result(
+                        result_id=self.generate_result_id(model_id, release_date),
+                        model_id=model_id,
+                        benchmark_id=self.BENCHMARK_ID,
+                        score=time_horizon,
+                        score_ci_low=ci_low,
+                        score_ci_high=ci_high,
+                        evaluation_date=release_date,
+                        subset=version,
+                        source_id=source.source_id,
+                        trust_tier=TrustTier.A,
+                        evaluation_notes=" ".join(notes),
+                    )
+                    results.append(result)
+                except Exception as e:
+                    self.log_warning(f"Failed to parse METR entry {model_key}: {e}")
+                    continue
 
         return results
 
@@ -238,23 +254,27 @@ class METRIngestor(BaseIngestor):
         response.raise_for_status()
         html = response.text
 
-        data = self._extract_benchmark_data(html)
+        data = self._extract_benchmark_versions(html)
         if not data:
             return None
 
         payload = {
             "retrieved_at": datetime.utcnow().isoformat(),
             "source_url": self.METR_URL,
-            "benchmark": data,
+            "benchmarks": data,
         }
         snapshot_path.write_text(json.dumps(payload, indent=2, ensure_ascii=True))
         return snapshot_path
 
-    def _extract_benchmark_data(self, html: str) -> dict | None:
-        data = self._extract_js_object(html, "benchmarkDataV1_1")
-        if data:
-            return data
-        return self._extract_js_object(html, "benchmarkDataV1")
+    def _extract_benchmark_versions(self, html: str) -> dict[str, dict]:
+        versions: dict[str, dict] = {}
+        data_v1_1 = self._extract_js_object(html, "benchmarkDataV1_1")
+        if data_v1_1:
+            versions["v1.1"] = data_v1_1
+        data_v1 = self._extract_js_object(html, "benchmarkDataV1")
+        if data_v1:
+            versions["v1.0"] = data_v1
+        return versions
 
     def _extract_js_object(self, html: str, var_name: str) -> dict | None:
         pattern = re.compile(rf"const\\s+{re.escape(var_name)}\\s*=\\s*", re.M)
@@ -294,6 +314,15 @@ class METRIngestor(BaseIngestor):
                             return None
         return None
 
+    def _infer_version(self, benchmark_name: str | None) -> str | None:
+        if not benchmark_name:
+            return None
+        name = benchmark_name.lower()
+        if "v1.1" in name:
+            return "v1.1"
+        if "v1.0" in name or "v1" in name:
+            return "v1.0"
+        return None
     def _infer_family(self, model_name: str) -> str | None:
         """Infer model family from name."""
         name_lower = model_name.lower()
