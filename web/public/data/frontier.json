@@ -359,25 +359,36 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2023-03-14",
-      "score": 5.364045,
-      "model_id": "openai:gpt-4-0314",
-      "model_name": "gpt-4-0314",
-      "model_display": "GPT-4.0314",
-      "model_group": "gpt-4-0314",
+      "date": "2023-11-06",
+      "score": 3.6,
+      "model_id": "openai:gpt_4_1106",
+      "model_name": "gpt_4_1106",
+      "model_display": "GPT-4.1106",
+      "model_group": "gpt-4-1106",
       "model_family": "GPT",
       "model_variant": null,
       "provider": "OpenAI"
     },
     {
-      "date": "2023-11-06",
-      "score": 8.557433,
-      "model_id": "openai:gpt-4-1106-preview",
-      "model_name": "gpt-4-1106-preview",
-      "model_display": "GPT-4.1106 Preview",
-      "model_group": "gpt-4-1106",
+      "date": "2024-03-04",
+      "score": 3.6,
+      "model_id": "anthropic:claude_3_opus",
+      "model_name": "claude_3_opus",
+      "model_display": "Claude Opus 3",
+      "model_group": "claude-opus-3",
+      "model_family": "Claude Opus 3",
+      "model_variant": null,
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2024-05-13",
+      "score": 6.4,
+      "model_id": "openai:gpt_4o",
+      "model_name": "gpt_4o",
+      "model_display": "GPT-4o",
+      "model_group": "gpt-4o",
       "model_family": "GPT",
-      "model_variant": "Preview",
+      "model_variant": null,
       "provider": "OpenAI"
     },
     {
@@ -385,17 +396,6 @@
       "score": 10.8,
       "model_id": "anthropic:claude_3_5_sonnet_20240620",
       "model_name": "claude_3_5_sonnet_20240620",
-      "model_display": "Claude Sonnet 3.5",
-      "model_group": "claude-sonnet-3-5",
-      "model_family": "Claude Sonnet 3.5",
-      "model_variant": null,
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2024-06-20",
-      "score": 18.21683,
-      "model_id": "anthropic:claude-3-5-sonnet-20240620",
-      "model_name": "claude-3-5-sonnet-20240620",
       "model_display": "Claude Sonnet 3.5",
       "model_group": "claude-sonnet-3-5",
       "model_family": "Claude Sonnet 3.5",
@@ -414,21 +414,10 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2024-09-12",
-      "score": 22.221357,
-      "model_id": "openai:o1-preview-2024-09-12",
-      "model_name": "o1-preview-2024-09-12",
-      "model_display": "O1 Preview",
-      "model_group": "o1",
-      "model_family": "O1",
-      "model_variant": "Preview",
-      "provider": "OpenAI"
-    },
-    {
       "date": "2024-10-22",
-      "score": 28.983512,
-      "model_id": "anthropic:claude-3-5-sonnet-20241022",
-      "model_name": "claude-3-5-sonnet-20241022",
+      "score": 19.8,
+      "model_id": "anthropic:claude_3_5_sonnet_20241022",
+      "model_name": "claude_3_5_sonnet_20241022",
       "model_display": "Claude Sonnet 3.5",
       "model_group": "claude-sonnet-3-5",
       "model_family": "Claude Sonnet 3.5",
@@ -447,28 +436,6 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2024-12-17",
-      "score": 39.206576,
-      "model_id": "openai:o1-2024-12-17_medium",
-      "model_name": "o1-2024-12-17_medium",
-      "model_display": "O1 Medium",
-      "model_group": "o1",
-      "model_family": "O1",
-      "model_variant": "Medium",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-02-24",
-      "score": 54.226342,
-      "model_id": "anthropic:claude-3-7-sonnet-20250219_32k",
-      "model_name": "claude-3-7-sonnet-20250219_32K",
-      "model_display": "Claude Sonnet 3.7 32K",
-      "model_group": "claude-sonnet-3-7",
-      "model_family": "Claude Sonnet 3.7",
-      "model_variant": "32K",
-      "provider": "Anthropic"
-    },
-    {
       "date": "2025-02-24",
       "score": 59.8,
       "model_id": "anthropic:claude_3_7_sonnet",
@@ -478,17 +445,6 @@
       "model_family": "Claude Sonnet 3.7",
       "model_variant": null,
       "provider": "Anthropic"
-    },
-    {
-      "date": "2025-04-16",
-      "score": 91.271355,
-      "model_id": "openai:o3-2025-04-16_medium",
-      "model_name": "o3-2025-04-16_medium",
-      "model_display": "O3 Medium",
-      "model_group": "o3",
-      "model_family": "O3",
-      "model_variant": "Medium",
-      "provider": "OpenAI"
     },
     {
       "date": "2025-04-16",

@@ -59,7 +59,7 @@
     "unit": "index",
     "scale": {
       "min": 0.0,
-      "max": 200.0
+      "max": null
     },
     "higher_is_better": true,
     "official_url": "https://epoch.ai/benchmarks/eci",
