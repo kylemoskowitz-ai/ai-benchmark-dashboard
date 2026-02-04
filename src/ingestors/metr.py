@@ -1,8 +1,11 @@
 """METR Time Horizons benchmark ingestor."""
 
+import json
+import re
 from datetime import datetime
 from pathlib import Path
 import polars as pl
+import httpx
 
 from .base import BaseIngestor
 from .epoch_fetcher import get_epoch_csv
@@ -23,6 +26,8 @@ class METRIngestor(BaseIngestor):
     """
 
     BENCHMARK_ID = "metr_time_horizons"
+    METR_URL = "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
+    CACHE_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "metr"
 
     BENCHMARK_META = Benchmark(
         benchmark_id="metr_time_horizons",
@@ -47,6 +52,14 @@ class METRIngestor(BaseIngestor):
 
         Uses the latest METR-Horizon-v1.1 data from metr.org.
         """
+        # Try live METR blog JSON (v1.1 embedded in page)
+        try:
+            raw = self._fetch_metr_json()
+            if raw:
+                return raw
+        except Exception as e:
+            self.log_warning(f"METR live fetch failed: {e}")
+
         # Use curated snapshot with v1.1 data
         snapshot_path = Path(__file__).parent.parent.parent / "data" / "snapshots" / "metr_time_horizons.csv"
         if snapshot_path.exists():
@@ -56,7 +69,13 @@ class METRIngestor(BaseIngestor):
         return get_epoch_csv("metr_time_horizons_external.csv")
 
     def parse(self, raw_path: Path) -> list[Result]:
-        """Parse METR CSV into Result objects."""
+        """Parse METR data into Result objects."""
+        if raw_path.suffix == ".json":
+            return self._parse_json(raw_path)
+
+        return self._parse_csv(raw_path)
+
+    def _parse_csv(self, raw_path: Path) -> list[Result]:
         df = pl.read_csv(raw_path)
 
         # Create source record
@@ -64,7 +83,7 @@ class METRIngestor(BaseIngestor):
             source_id=self.generate_source_id("https://metr.org/time-horizons-v1.1"),
             source_type=SourceType.OFFICIAL_PAPER,
             source_title="METR Time Horizons v1.1",
-            source_url="https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+            source_url=self.METR_URL,
             retrieved_at=datetime.utcnow(),
             parse_method=ParseMethod.CSV_DOWNLOAD,
             raw_snapshot_path=str(raw_path),
@@ -80,7 +99,7 @@ class METRIngestor(BaseIngestor):
                 if not model_name:
                     continue
 
-                provider = row.get("provider") or row.get("Organization", "Unknown")
+                provider = row.get("provider") or row.get("Organization") or self._infer_provider(model_name)
                 release_date = self.parse_date(row.get("date") or row.get("Release date"))
 
                 # Create/register model
@@ -132,6 +151,148 @@ class METRIngestor(BaseIngestor):
                 continue
 
         return results
+
+    def _parse_json(self, raw_path: Path) -> list[Result]:
+        payload = json.loads(raw_path.read_text())
+        data = payload.get("benchmark") if isinstance(payload, dict) else None
+        if not data or not isinstance(data, dict):
+            return []
+
+        source = Source(
+            source_id=self.generate_source_id(self.METR_URL),
+            source_type=SourceType.OFFICIAL_PAPER,
+            source_title="METR Time Horizons (embedded data)",
+            source_url=self.METR_URL,
+            retrieved_at=datetime.utcnow(),
+            parse_method=ParseMethod.HTML_SCRAPE,
+            raw_snapshot_path=str(raw_path),
+            notes="METR-Horizon-v1.1 benchmark results. P50 time horizon in minutes.",
+        )
+        self.register_source(source)
+
+        results = []
+        results_map = data.get("results", {})
+        if not isinstance(results_map, dict):
+            return results
+
+        for model_key, entry in results_map.items():
+            try:
+                metrics = entry.get("metrics", {}) if isinstance(entry, dict) else {}
+                p50 = metrics.get("p50_horizon_length", {}) if isinstance(metrics, dict) else {}
+                avg = metrics.get("average_score", {}) if isinstance(metrics, dict) else {}
+                time_horizon = self._parse_float(p50.get("estimate"))
+                if time_horizon is None:
+                    continue
+
+                ci_low = self._parse_float(p50.get("ci_low"))
+                ci_high = self._parse_float(p50.get("ci_high"))
+                avg_score = self._parse_float(avg.get("estimate"))
+                is_sota = metrics.get("is_sota") if isinstance(metrics, dict) else None
+
+                model_name = model_key
+                provider = self._infer_provider(model_name)
+                release_date = self.parse_date(entry.get("release_date") if isinstance(entry, dict) else None)
+
+                model_id = self.normalize_model_id(model_name, provider)
+                model = Model(
+                    model_id=model_id,
+                    name=model_name,
+                    provider=provider,
+                    family=self._infer_family(model_name),
+                    release_date=release_date,
+                    status=ModelStatus.VERIFIED,
+                )
+                self.register_model(model)
+
+                notes = [
+                    f"P50 time horizon: {time_horizon} min.",
+                    f"Avg task score: {avg_score}.",
+                ]
+                if is_sota is not None:
+                    notes.append(f"SOTA: {is_sota}.")
+
+                result = Result(
+                    result_id=self.generate_result_id(model_id, release_date),
+                    model_id=model_id,
+                    benchmark_id=self.BENCHMARK_ID,
+                    score=time_horizon,
+                    score_ci_low=ci_low,
+                    score_ci_high=ci_high,
+                    evaluation_date=release_date,
+                    source_id=source.source_id,
+                    trust_tier=TrustTier.A,
+                    evaluation_notes=" ".join(notes),
+                )
+                results.append(result)
+            except Exception as e:
+                self.log_warning(f"Failed to parse METR entry {model_key}: {e}")
+                continue
+
+        return results
+
+    def _fetch_metr_json(self) -> Path | None:
+        self.CACHE_DIR.mkdir(parents=True, exist_ok=True)
+        snapshot_path = self.CACHE_DIR / "metr_time_horizons.json"
+
+        response = httpx.get(self.METR_URL, timeout=30.0)
+        response.raise_for_status()
+        html = response.text
+
+        data = self._extract_benchmark_data(html)
+        if not data:
+            return None
+
+        payload = {
+            "retrieved_at": datetime.utcnow().isoformat(),
+            "source_url": self.METR_URL,
+            "benchmark": data,
+        }
+        snapshot_path.write_text(json.dumps(payload, indent=2, ensure_ascii=True))
+        return snapshot_path
+
+    def _extract_benchmark_data(self, html: str) -> dict | None:
+        data = self._extract_js_object(html, "benchmarkDataV1_1")
+        if data:
+            return data
+        return self._extract_js_object(html, "benchmarkDataV1")
+
+    def _extract_js_object(self, html: str, var_name: str) -> dict | None:
+        pattern = re.compile(rf"const\\s+{re.escape(var_name)}\\s*=\\s*", re.M)
+        match = pattern.search(html)
+        if not match:
+            return None
+        start = html.find("{", match.end())
+        if start == -1:
+            return None
+
+        depth = 0
+        in_string = False
+        escape = False
+        for idx in range(start, len(html)):
+            ch = html[idx]
+            if in_string:
+                if escape:
+                    escape = False
+                elif ch == "\\":
+                    escape = True
+                elif ch == '"':
+                    in_string = False
+                continue
+            else:
+                if ch == '"':
+                    in_string = True
+                    continue
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth == 0:
+                        blob = html[start : idx + 1]
+                        try:
+                            return json.loads(blob)
+                        except json.JSONDecodeError:
+                            return None
+        return None
 
     def _infer_family(self, model_name: str) -> str | None:
         """Infer model family from name."""
