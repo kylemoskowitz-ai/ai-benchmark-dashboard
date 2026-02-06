@@ -12,6 +12,11 @@ from .zerobench import ZeroBenchIngestor
 from .humanities_last_exam import HumanitiesLastExamIngestor
 from .remote_labor_index import RemoteLaborIndexIngestor
 from .epoch_capabilities_index import EpochCapabilitiesIndexIngestor
+from .impact_signals import (
+    AIJobPostingsShareIngestor,
+    GenAIJobPostingsShareIngestor,
+    LaborProductivityIndexIngestor,
+)
 
 # Registry of all available ingestors
 # These use automated data fetching from Epoch AI or web scrapers
@@ -27,6 +32,9 @@ INGESTORS: dict[str, type[BaseIngestor]] = {
     "zerobench": ZeroBenchIngestor,  # Scrapes zerobench.github.io
     "humanities_last_exam": HumanitiesLastExamIngestor,  # Scrapes scale.com
     "remote_labor_index": RemoteLaborIndexIngestor,  # Scrapes scale.com
+    "ai_job_postings_share": AIJobPostingsShareIngestor,  # Indeed Hiring Lab AI tracker
+    "genai_job_postings_share": GenAIJobPostingsShareIngestor,  # Indeed Hiring Lab AI tracker
+    "labor_productivity_index": LaborProductivityIndexIngestor,  # FRED OPHNFB
     "mmmu": MMMUIngestor,  # Scrapes vals.ai
 }
 
@@ -57,6 +65,9 @@ __all__ = [
     "HumanitiesLastExamIngestor",
     "RemoteLaborIndexIngestor",
     "EpochCapabilitiesIndexIngestor",
+    "AIJobPostingsShareIngestor",
+    "GenAIJobPostingsShareIngestor",
+    "LaborProductivityIndexIngestor",
     "INGESTORS",
     "get_ingestor",
     "get_all_ingestors",

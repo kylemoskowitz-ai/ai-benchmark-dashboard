@@ -7,6 +7,7 @@ import { parseDate } from "@/lib/data";
 import { Sparkline } from "@/components/Sparkline";
 
 type TrendPoint = { date: string; score: number };
+const EXCLUDED_CATEGORIES = new Set(["impact", "economy"]);
 
 export function HeroTrend() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
@@ -27,15 +28,23 @@ export function HeroTrend() {
       });
   }, []);
 
-  const percentBenchmarks = useMemo(
-    () => benchmarks.filter((b) => b.unit === "percent" && b.scale?.max != null),
+  const capabilityBenchmarks = useMemo(
+    () => benchmarks.filter((b) => !EXCLUDED_CATEGORIES.has(b.category)),
     [benchmarks]
+  );
+
+  const percentBenchmarks = useMemo(
+    () =>
+      capabilityBenchmarks.filter(
+        (b) => b.unit === "percent" && b.scale?.max != null
+      ),
+    [capabilityBenchmarks]
   );
 
   const trend = useMemo(() => {
     const included = percentBenchmarks;
     if (!included.length) return [];
-    if (!benchmarks.length) return [];
+    if (!capabilityBenchmarks.length) return [];
     const byId = new Map(included.map((b) => [b.id, b]));
     const allDates = new Set<string>();
     Object.values(frontier).forEach((points) => {
@@ -73,7 +82,7 @@ export function HeroTrend() {
       }
     }
     return result.slice(-24);
-  }, [benchmarks, frontier, percentBenchmarks]);
+  }, [capabilityBenchmarks, frontier, percentBenchmarks]);
 
   const latest = trend[trend.length - 1]?.score;
   const includedCount = percentBenchmarks.length;

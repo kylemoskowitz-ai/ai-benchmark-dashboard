@@ -107,6 +107,36 @@ benchmarks:
     higher_is_better: true
     official_url: "https://scale.com/leaderboard/rli"
 
+  ai_job_postings_share:
+    name: "AI Job Posting Share (US)"
+    category: "impact"
+    description: "Share of US job postings requiring AI-related skills (Indeed Hiring Lab)."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 10
+    higher_is_better: true
+    official_url: "https://github.com/hiring-lab/ai-tracker"
+
+  genai_job_postings_share:
+    name: "GenAI Job Posting Share (US)"
+    category: "impact"
+    description: "Share of US job postings explicitly requiring GenAI skills (Indeed Hiring Lab)."
+    unit: "percent"
+    scale_min: 0
+    scale_max: 6
+    higher_is_better: true
+    official_url: "https://github.com/hiring-lab/ai-tracker"
+
+  labor_productivity_index:
+    name: "US Labor Productivity (Index)"
+    category: "economy"
+    description: "BLS nonfarm business labor productivity index (FRED OPHNFB)."
+    unit: "index"
+    scale_min: 80
+    scale_max: 140
+    higher_is_better: true
+    official_url: "https://fred.stlouisfed.org/series/OPHNFB"
+
   epoch_capabilities_index:
     name: "Epoch Capabilities Index"
     category: "general"

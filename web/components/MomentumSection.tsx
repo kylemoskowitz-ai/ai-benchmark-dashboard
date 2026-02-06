@@ -9,6 +9,7 @@ type SlopeEntry = {
   benchmark: Benchmark;
   slope: number | null;
 };
+const EXCLUDED_CATEGORIES = new Set(["impact", "economy"]);
 
 export function MomentumSection() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
@@ -32,7 +33,10 @@ export function MomentumSection() {
   }, []);
 
   const slopes = useMemo<SlopeEntry[]>(() => {
-    return benchmarks.map((benchmark) => {
+    const capabilityBenchmarks = benchmarks.filter(
+      (benchmark) => !EXCLUDED_CATEGORIES.has(benchmark.category)
+    );
+    return capabilityBenchmarks.map((benchmark) => {
       const points = frontier[benchmark.id] || [];
       const slope = computeNormalizedSlopePerYear(points, benchmark);
       return { benchmark, slope };
@@ -54,10 +58,12 @@ export function MomentumSection() {
   const recentUpdated = useMemo(() => {
     const cutoff = new Date();
     cutoff.setDate(cutoff.getDate() - 90);
-    return benchmarks.filter((b) => {
-      const date = parseDate(b.sota?.date);
-      return date ? date >= cutoff : false;
-    }).length;
+    return benchmarks
+      .filter((b) => !EXCLUDED_CATEGORIES.has(b.category))
+      .filter((b) => {
+        const date = parseDate(b.sota?.date);
+        return date ? date >= cutoff : false;
+      }).length;
   }, [benchmarks]);
 
   if (loading) {

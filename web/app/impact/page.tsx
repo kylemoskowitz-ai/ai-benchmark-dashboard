@@ -46,6 +46,15 @@ const QUARTER_OPTIONS = [
   { label: "Last 20 quarters", value: 20 },
 ];
 
+const IMPACT_BENCHMARK_IDS = new Set([
+  "remote_labor_index",
+  "ai_job_postings_share",
+  "genai_job_postings_share",
+  "labor_productivity_index",
+]);
+
+const IMPACT_CATEGORIES = new Set(["impact", "economy"]);
+
 export default function ImpactPage() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
   const [results, setResults] = useState<Result[]>([]);
@@ -72,14 +81,11 @@ export default function ImpactPage() {
       .catch(() => setLoading(false));
   }, []);
 
-  const benchmarkById = useMemo(
-    () => new Map(benchmarks.map((b) => [b.id, b])),
-    [benchmarks]
-  );
-
   const latestMetrics = useMemo(() => {
-    const percentBenchmarks = benchmarks.filter((b) => b.unit === "percent");
-    const capabilityValues = percentBenchmarks
+    const capabilityBenchmarks = benchmarks.filter(isCapabilityBenchmark);
+    const impactBenchmarks = benchmarks.filter(isImpactBenchmark);
+
+    const capabilityValues = capabilityBenchmarks
       .map((benchmark) => {
         const latest = getLatestFrontierScore(frontier[benchmark.id] || []);
         if (latest == null) return null;
@@ -91,14 +97,17 @@ export default function ImpactPage() {
       ? capabilityValues.reduce((a, b) => a + b, 0) / capabilityValues.length
       : null;
 
-    const impactBenchmark = benchmarks.find((b) => b.id === "remote_labor_index");
-    const impactLatest = impactBenchmark
-      ? getLatestFrontierScore(frontier[impactBenchmark.id] || [])
+    const impactValues = impactBenchmarks
+      .map((benchmark) => {
+        const latest = getLatestFrontierScore(frontier[benchmark.id] || []);
+        if (latest == null) return null;
+        return normalizeScore(latest, benchmark);
+      })
+      .filter((v): v is number => v != null);
+
+    const impactIndex = impactValues.length
+      ? impactValues.reduce((a, b) => a + b, 0) / impactValues.length
       : null;
-    const impactIndex =
-      impactBenchmark && impactLatest != null
-        ? normalizeScore(impactLatest, impactBenchmark)
-        : null;
 
     const metrRows = results.filter(
       (r) => r.benchmark_id === "metr_time_horizons" && (!r.subset || r.subset === "v1.1")
@@ -162,20 +171,18 @@ export default function ImpactPage() {
       list.sort((a, b) => a.parsedDate.getTime() - b.parsedDate.getTime())
     );
 
-    const percentBenchmarks = benchmarks.filter((b) => b.unit === "percent");
-    const impactBenchmark = benchmarkById.get("remote_labor_index");
+    const capabilityBenchmarks = benchmarks.filter(isCapabilityBenchmark);
+    const impactBenchmarks = benchmarks.filter(isImpactBenchmark);
 
     return sortedKeys.map((quarterKey) => {
       const quarterEnd = getQuarterEnd(quarterKey);
 
       const capabilityValues: number[] = [];
-      for (const benchmark of percentBenchmarks) {
-        const rows = (byBenchmark.get(benchmark.id) || []).filter(
-          (row) => row.parsedDate <= quarterEnd
-        );
-        const bestScore = getBestScore(rows, benchmark.higher_is_better);
-        if (bestScore == null) continue;
-        const normalized = normalizeScore(bestScore, benchmark);
+      for (const benchmark of capabilityBenchmarks) {
+        const rows = byBenchmark.get(benchmark.id) || [];
+        const latestScore = getLatestScoreAsOf(rows, quarterEnd);
+        if (latestScore == null) continue;
+        const normalized = normalizeScore(latestScore, benchmark);
         if (normalized != null) capabilityValues.push(normalized);
       }
 
@@ -184,25 +191,24 @@ export default function ImpactPage() {
           ? capabilityValues.reduce((a, b) => a + b, 0) / capabilityValues.length
           : null;
 
-      let impact: number | null = null;
-      if (impactBenchmark) {
-        const impactRows = (byBenchmark.get(impactBenchmark.id) || []).filter(
-          (row) => row.parsedDate <= quarterEnd
-        );
-        const impactScore = getBestScore(
-          impactRows,
-          impactBenchmark.higher_is_better
-        );
-        if (impactScore != null) {
-          impact = normalizeScore(impactScore, impactBenchmark);
-        }
+      const impactValues: number[] = [];
+      for (const benchmark of impactBenchmarks) {
+        const rows = byBenchmark.get(benchmark.id) || [];
+        const latestScore = getLatestScoreAsOf(rows, quarterEnd);
+        if (latestScore == null) continue;
+        const normalized = normalizeScore(latestScore, benchmark);
+        if (normalized != null) impactValues.push(normalized);
       }
 
+      const impact =
+        impactValues.length > 0
+          ? impactValues.reduce((a, b) => a + b, 0) / impactValues.length
+          : null;
+
       const metrRows = (byBenchmark.get("metr_time_horizons") || []).filter(
-        (row) =>
-          row.parsedDate <= quarterEnd && (!row.subset || row.subset === "v1.1")
+        (row) => !row.subset || row.subset === "v1.1"
       );
-      const autonomyScore = getBestScore(metrRows, true);
+      const autonomyScore = getLatestScoreAsOf(metrRows, quarterEnd);
       const autonomyHours = autonomyScore != null ? autonomyScore / 60 : null;
 
       const inQuarter = rowsWithDate.filter(
@@ -224,7 +230,7 @@ export default function ImpactPage() {
         providers: uniqueProviders,
       };
     });
-  }, [benchmarks, benchmarkById, results]);
+  }, [benchmarks, results]);
 
   const visibleQuarterSeries = useMemo(() => {
     return quarterSeries.slice(-windowSize);
@@ -279,6 +285,30 @@ export default function ImpactPage() {
       })),
     [categorySummary]
   );
+
+  const impactSignals = useMemo(() => {
+    return benchmarks
+      .filter(isImpactBenchmark)
+      .map((benchmark) => {
+        const latest = getLatestFrontierScore(frontier[benchmark.id] || []);
+        if (latest == null) return null;
+        const normalized = normalizeScore(latest, benchmark);
+        return {
+          id: benchmark.id,
+          name: benchmark.name,
+          value: latest,
+          unit: benchmark.unit,
+          normalized,
+        };
+      })
+      .filter((entry): entry is {
+        id: string;
+        name: string;
+        value: number;
+        unit: string;
+        normalized: number | null;
+      } => entry != null);
+  }, [benchmarks, frontier]);
 
   const headline = useMemo(() => {
     const latest = visibleQuarterSeries[visibleQuarterSeries.length - 1];
@@ -366,12 +396,12 @@ export default function ImpactPage() {
               ? latestMetrics.impactIndex.toFixed(1)
               : "—"
           }
-          subtitle="Remote labor adoption proxy"
+          subtitle="Composite of labor-demand and productivity signals"
         />
         <MetricCard
           title="Capability-Impact Gap"
           value={latestMetrics.gap != null ? latestMetrics.gap.toFixed(1) : "—"}
-          subtitle="Positive means impact lags capability"
+          subtitle="Positive means capabilities are ahead of measured impact"
         />
         <MetricCard
           title="Autonomy Horizon"
@@ -395,6 +425,43 @@ export default function ImpactPage() {
           value={latestMetrics.newModelFamilies.toLocaleString("en-US")}
           subtitle="Distinct model groups with recent benchmark activity"
         />
+      </div>
+
+      <div className="card">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="font-serif text-title text-base-900">
+            Impact Signal Breakdown
+          </h2>
+          <span className="text-caption text-base-400">
+            Latest values and normalized readiness
+          </span>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+          {impactSignals.map((signal) => (
+            <div
+              key={signal.id}
+              className="rounded-lg border border-base-200 bg-base-50 px-4 py-4"
+            >
+              <div className="text-caption uppercase tracking-wider text-base-500">
+                {signal.name}
+              </div>
+              <div className="mt-2 font-mono text-title-sm text-base-900">
+                {signal.value.toFixed(signal.unit === "percent" ? 2 : 1)}
+                {signal.unit === "percent" ? "%" : ""}
+              </div>
+              <div className="text-body-sm text-base-500 mt-1">
+                {signal.normalized != null
+                  ? `${signal.normalized.toFixed(1)} / 100 normalized`
+                  : "Not normalized"}
+              </div>
+            </div>
+          ))}
+          {!impactSignals.length && (
+            <div className="text-body-sm text-base-500">
+              No impact-series data available yet.
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="card card-muted">
@@ -635,6 +702,31 @@ function getBestScore(rows: Result[], higherIsBetter: boolean): number | null {
     .filter((score): score is number => score != null);
   if (!scores.length) return null;
   return higherIsBetter ? Math.max(...scores) : Math.min(...scores);
+}
+
+function getLatestScoreAsOf(
+  rows: (Result & { parsedDate: Date })[],
+  cutoff: Date
+): number | null {
+  if (!rows.length) return null;
+  for (let i = rows.length - 1; i >= 0; i -= 1) {
+    const row = rows[i];
+    if (row.parsedDate <= cutoff && row.score != null) {
+      return row.score;
+    }
+  }
+  return null;
+}
+
+function isImpactBenchmark(benchmark: Benchmark): boolean {
+  return (
+    IMPACT_BENCHMARK_IDS.has(benchmark.id) ||
+    IMPACT_CATEGORIES.has(benchmark.category)
+  );
+}
+
+function isCapabilityBenchmark(benchmark: Benchmark): boolean {
+  return benchmark.scale?.max != null && !isImpactBenchmark(benchmark);
 }
 
 function toQuarterKey(d: Date): string {

@@ -17,6 +17,7 @@ type SlopeEntry = {
   benchmark: Benchmark;
   slope: number | null;
 };
+const EXCLUDED_CATEGORIES = new Set(["impact", "economy"]);
 
 export function ProgressDashboard() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
@@ -40,7 +41,10 @@ export function ProgressDashboard() {
   }, []);
 
   const slopes = useMemo(() => {
-    return benchmarks.map((benchmark) => {
+    const capabilityBenchmarks = benchmarks.filter(
+      (benchmark) => !EXCLUDED_CATEGORIES.has(benchmark.category)
+    );
+    return capabilityBenchmarks.map((benchmark) => {
       const points = frontier[benchmark.id] || [];
       const slope = computeNormalizedSlopePerYear(points, benchmark);
       return { benchmark, slope };
@@ -59,6 +63,7 @@ export function ProgressDashboard() {
 
   const latestDeltas = useMemo(() => {
     return benchmarks
+      .filter((b) => !EXCLUDED_CATEGORIES.has(b.category))
       .map((b) => {
         const delta = getLatestDelta(frontier[b.id] || []);
         return { benchmark: b, delta };
@@ -75,7 +80,9 @@ export function ProgressDashboard() {
 
   const sotaWins = useMemo(() => {
     const counts = new Map<string, { label: string; count: number }>();
-    benchmarks.forEach((b) => {
+    benchmarks
+      .filter((b) => !EXCLUDED_CATEGORIES.has(b.category))
+      .forEach((b) => {
       const key =
         b.sota?.model_group ||
         b.sota?.model_display ||
@@ -228,7 +235,9 @@ export function ProgressDashboard() {
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {benchmarks.map((b) => {
+          {benchmarks
+            .filter((b) => !EXCLUDED_CATEGORIES.has(b.category))
+            .map((b) => {
             const points = frontier[b.id] || [];
             const slope = computeNormalizedSlopePerYear(points, b);
             const normalized = normalizeScore(b.sota?.score, b);

@@ -23,6 +23,8 @@ type TopModel = {
   coverage: number;
 };
 
+const EXCLUDED_CATEGORIES = new Set(["impact", "economy"]);
+
 function getAggregateIdentity(result: Result): { key: string; label: string } {
   const provider = (result.provider || "Unknown").trim();
   const family = (
@@ -55,7 +57,11 @@ export function ModelStrengths() {
   }, []);
 
   const categories = useMemo(() => {
-    const set = new Set(benchmarks.map((b) => b.category));
+    const set = new Set(
+      benchmarks
+        .filter((b) => !EXCLUDED_CATEGORIES.has(b.category))
+        .map((b) => b.category)
+    );
     return Array.from(set);
   }, [benchmarks]);
 
@@ -63,11 +69,13 @@ export function ModelStrengths() {
     categoryLeaders: CategoryLeader[];
     topModels: TopModel[];
   } => {
+    const capabilityBenchmarks = benchmarks.filter(
+      (benchmark) => !EXCLUDED_CATEGORIES.has(benchmark.category)
+    );
     const byModel = new Map<string, ModelStat>();
-    const benchmarkById = new Map(benchmarks.map((b) => [b.id, b]));
     const dynamicRanges = new Map<string, { min: number; max: number }>();
 
-    benchmarks.forEach((benchmark) => {
+    capabilityBenchmarks.forEach((benchmark) => {
       if (benchmark.scale?.max != null) return;
       const values = results
         .filter((r) => r.benchmark_id === benchmark.id)
@@ -80,7 +88,7 @@ export function ModelStrengths() {
       });
     });
 
-    benchmarks.forEach((benchmark) => {
+    capabilityBenchmarks.forEach((benchmark) => {
       const bestByModel = new Map<string, Result>();
       results
         .filter((r) => r.benchmark_id === benchmark.id)

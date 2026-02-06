@@ -134,6 +134,8 @@ export const CATEGORY_LABELS: Record<string, string> = {
   multimodal: "Multimodal",
   agents: "Agents",
   agentic: "Agentic",
+  impact: "Impact",
+  economy: "Economy",
   knowledge: "Knowledge",
   composite: "Composite",
 };

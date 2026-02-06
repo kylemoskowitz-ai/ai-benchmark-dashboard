@@ -8,6 +8,8 @@ import { PROVIDER_COLORS, CATEGORY_LABELS } from "@/lib/types";
 import { getLatestDelta } from "@/lib/analysis";
 import { Sparkline } from "@/components/Sparkline";
 
+const EXCLUDED_CATEGORIES = new Set(["impact", "economy"]);
+
 export function BenchmarkCards() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
   const [loading, setLoading] = useState(true);
@@ -41,7 +43,9 @@ export function BenchmarkCards() {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {benchmarks.map((benchmark) => (
+      {benchmarks
+        .filter((benchmark) => !EXCLUDED_CATEGORIES.has(benchmark.category))
+        .map((benchmark) => (
         <BenchmarkCard
           key={benchmark.id}
           benchmark={benchmark}
