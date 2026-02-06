@@ -7568,6 +7568,17 @@
     "parameters": null
   },
   {
+    "id": "unknown:codex-mini-latest",
+    "name": "codex-mini-latest",
+    "display_name": "Codex Mini Latest",
+    "group": "codex-mini-latest",
+    "family": null,
+    "variant": null,
+    "provider": "Unknown",
+    "release_date": null,
+    "parameters": null
+  },
+  {
     "id": "anthropic:claude_3.7",
     "name": "Claude 3.7",
     "display_name": "Claude 3.7",
@@ -7575,17 +7586,6 @@
     "family": "Claude 3.7",
     "variant": null,
     "provider": "Anthropic",
-    "release_date": null,
-    "parameters": null
-  },
-  {
-    "id": "xai:grok-3-openrouter",
-    "name": "grok-3-openrouter",
-    "display_name": "Grok 3",
-    "group": "grok-3",
-    "family": "Grok 3",
-    "variant": null,
-    "provider": "xAI",
     "release_date": null,
     "parameters": null
   },
@@ -7887,13 +7887,13 @@
     "parameters": null
   },
   {
-    "id": "openai:code-davinci-002",
-    "name": "code-davinci-002",
-    "display_name": "Code Davinci 002",
-    "group": "code-davinci-002",
-    "family": null,
+    "id": "public_economic_data:us_labor_market",
+    "name": "US Labor Market",
+    "display_name": "Us Labor Market",
+    "group": "us-labor-market",
+    "family": "Economic signal",
     "variant": null,
-    "provider": "OpenAI",
+    "provider": "Public Economic Data",
     "release_date": null,
     "parameters": null
   },
@@ -8019,13 +8019,24 @@
     "parameters": null
   },
   {
-    "id": "unknown:codex-mini-latest",
-    "name": "codex-mini-latest",
-    "display_name": "Codex Mini Latest",
-    "group": "codex-mini-latest",
+    "id": "openai:code-davinci-002",
+    "name": "code-davinci-002",
+    "display_name": "Code Davinci 002",
+    "group": "code-davinci-002",
     "family": null,
     "variant": null,
-    "provider": "Unknown",
+    "provider": "OpenAI",
+    "release_date": null,
+    "parameters": null
+  },
+  {
+    "id": "xai:grok-3-openrouter",
+    "name": "grok-3-openrouter",
+    "display_name": "Grok 3",
+    "group": "grok-3",
+    "family": "Grok 3",
+    "variant": null,
+    "provider": "xAI",
     "release_date": null,
     "parameters": null
   }

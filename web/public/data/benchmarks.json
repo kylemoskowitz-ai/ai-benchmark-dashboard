@@ -1,5 +1,31 @@
 [
   {
+    "id": "ai_job_postings_share",
+    "name": "AI Job Posting Share (US)",
+    "category": "impact",
+    "description": "Share of US job postings requiring AI-related skills (Indeed Hiring Lab).",
+    "unit": "percent",
+    "scale": {
+      "min": 0.0,
+      "max": 10.0
+    },
+    "higher_is_better": true,
+    "official_url": "https://github.com/hiring-lab/ai-tracker",
+    "paper_url": null,
+    "notes": "US labor-demand diffusion proxy. Higher values imply broader employer demand for AI skills.",
+    "sota": {
+      "score": 4.04918059407337,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data",
+      "date": "2025-11-30"
+    }
+  },
+  {
     "id": "arc_agi_1",
     "name": "ARC-AGI 1",
     "category": "reasoning",
@@ -102,6 +128,21 @@
       "provider": "OpenAI",
       "date": "2025-12-24"
     }
+  },
+  {
+    "id": "genai_job_postings_share",
+    "name": "GenAI Job Posting Share (US)",
+    "category": "impact",
+    "description": "Share of US job postings explicitly requiring GenAI skills (Indeed Hiring Lab).",
+    "unit": "percent",
+    "scale": {
+      "min": 0.0,
+      "max": 6.0
+    },
+    "higher_is_better": true,
+    "official_url": "https://github.com/hiring-lab/ai-tracker",
+    "paper_url": null,
+    "notes": "Narrower labor-demand diffusion proxy focused on generative AI skills."
   },
   {
     "id": "humanities_last_exam",
@@ -232,6 +273,21 @@
       "provider": "Anthropic",
       "date": "2025-11-24"
     }
+  },
+  {
+    "id": "labor_productivity_index",
+    "name": "US Labor Productivity (Index)",
+    "category": "economy",
+    "description": "BLS nonfarm business labor productivity index (FRED series OPHNFB).",
+    "unit": "index",
+    "scale": {
+      "min": 80.0,
+      "max": 140.0
+    },
+    "higher_is_better": true,
+    "official_url": "https://fred.stlouisfed.org/series/OPHNFB",
+    "paper_url": null,
+    "notes": "Quarterly macroeconomic adoption proxy. Higher values indicate greater output per hour."
   },
   {
     "id": "zerobench",
