@@ -49,7 +49,7 @@ function ExplorerContent() {
     endDate: "",
     onlyOfficial: false,
     normalize: false,
-    metrVersion: "all",
+    metrVersion: "v1.1",
   });
   const [loading, setLoading] = useState(true);
 
@@ -876,7 +876,7 @@ function getResultModelLabel(result: Result) {
 }
 
 function getResultModelKey(result: Result) {
-  return result.model_group || getResultModelLabel(result);
+  return result.model_id || result.model_group || getResultModelLabel(result);
 }
 
 function stringToColor(input: string) {

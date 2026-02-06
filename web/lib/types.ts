@@ -128,9 +128,12 @@ export const PROVIDER_COLORS: Record<string, string> = {
 export const CATEGORY_LABELS: Record<string, string> = {
   coding: "Coding",
   reasoning: "Reasoning",
+  general: "General",
   math: "Mathematics",
+  mathematics: "Mathematics",
   multimodal: "Multimodal",
   agents: "Agents",
+  agentic: "Agentic",
   knowledge: "Knowledge",
   composite: "Composite",
 };

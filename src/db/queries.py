@@ -1,11 +1,36 @@
 """Database query functions."""
 
-from datetime import date
+from datetime import date, datetime
 from typing import Any
+import re
 import polars as pl
 
 from .connection import get_connection
 from src.models.schemas import Result, Source, Model, Benchmark
+
+MODEL_DATE_PATTERNS = (
+    re.compile(r"(20\d{2})[-_/](\d{2})[-_/](\d{2})"),
+    re.compile(r"(?<!\d)(20\d{2})(\d{2})(\d{2})(?!\d)"),
+)
+
+
+def _infer_date_from_model_name(model_name: str | None) -> date | None:
+    if not model_name:
+        return None
+    for pattern in MODEL_DATE_PATTERNS:
+        match = pattern.search(model_name)
+        if not match:
+            continue
+        try:
+            year, month, day = (
+                int(match.group(1)),
+                int(match.group(2)),
+                int(match.group(3)),
+            )
+            return datetime(year, month, day).date()
+        except ValueError:
+            continue
+    return None
 
 
 def get_all_benchmarks() -> pl.DataFrame:
@@ -138,10 +163,22 @@ def get_frontier_results(
     higher_is_better = bench_info[0] if bench_info else True
 
     # Calculate frontier
-    # Use release_date as the date for frontier calculation
-    results = results.with_columns([
+    results = results.with_columns(
         pl.coalesce(pl.col("evaluation_date"), pl.col("model_release_date")).alias("effective_date")
-    ])
+    )
+    if "model_name" in results.columns:
+        results = results.with_columns(
+            pl.when(pl.col("effective_date").is_null())
+            .then(
+                pl.col("model_name").map_elements(
+                    _infer_date_from_model_name,
+                    return_dtype=pl.Date,
+                )
+            )
+            .otherwise(pl.col("effective_date"))
+            .alias("effective_date")
+        )
+    results = results.filter(pl.col("effective_date").is_not_null())
 
     # Sort by date and calculate running max/min
     results = results.sort("effective_date")

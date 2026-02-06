@@ -28,7 +28,7 @@ export function HeroTrend() {
   }, []);
 
   const percentBenchmarks = useMemo(
-    () => benchmarks.filter((b) => b.unit === "percent"),
+    () => benchmarks.filter((b) => b.unit === "percent" && b.scale?.max != null),
     [benchmarks]
   );
 
@@ -78,8 +78,8 @@ export function HeroTrend() {
   const latest = trend[trend.length - 1]?.score;
   const includedCount = percentBenchmarks.length;
   const subtitle = includedCount
-    ? `Avg SOTA as % of benchmark max (${includedCount} benchmarks)`
-    : "Avg SOTA as % of benchmark max";
+    ? `Avg SOTA % across ${includedCount} bounded benchmarks`
+    : "Avg SOTA % across bounded benchmarks";
 
   return (
     <div className="card card-muted shadow-soft">

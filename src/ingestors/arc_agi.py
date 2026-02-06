@@ -38,6 +38,12 @@ MODEL_NAME_BLOCKLIST = (
 )
 
 MODEL_DATE_PATTERN = re.compile(r"(20\d{2})[-_/](\d{2})[-_/](\d{2})")
+MODEL_DATE_COMPACT_PATTERN = re.compile(r"(?<!\d)(20\d{2})(\d{2})(\d{2})(?!\d)")
+MODEL_ALLOWLIST_PATTERN = re.compile(
+    r"^(?:openai|anthropic|google|meta|xai|mistral|deepseek|alibaba|moonshot)?[-_ ]*"
+    r"(gpt|o[1-9]\d*|claude|gemini|grok|deepseek|qwen|llama|mistral|mixtral|kimi|magistral|codex|trm)\b",
+    re.IGNORECASE,
+)
 
 
 def _is_valid_model_name(model_name: str) -> bool:
@@ -46,11 +52,15 @@ def _is_valid_model_name(model_name: str) -> bool:
     name = model_name.strip().lower()
     if any(bad in name for bad in MODEL_NAME_BLOCKLIST):
         return False
+    if not MODEL_ALLOWLIST_PATTERN.match(name):
+        return False
     return True
 
 
 def _extract_date_from_name(model_name: str) -> date | None:
     match = MODEL_DATE_PATTERN.search(model_name)
+    if not match:
+        match = MODEL_DATE_COMPACT_PATTERN.search(model_name)
     if not match:
         return None
     try:
@@ -72,6 +82,17 @@ def _score_to_percent(score: float) -> float:
     return score * 100 if score <= 1 else score
 
 
+def _with_effort_suffix(model_name: str, effort: str | None) -> str:
+    if not effort:
+        return model_name
+    effort_text = str(effort).strip()
+    if not effort_text:
+        return model_name
+    if effort_text.lower() in model_name.lower():
+        return model_name
+    return f"{model_name} ({effort_text})"
+
+
 class ARCAGI1Ingestor(BaseIngestor):
     """Ingestor for ARC-AGI 1 (original).
 
@@ -87,14 +108,14 @@ class ARCAGI1Ingestor(BaseIngestor):
         benchmark_id="arc_agi_1",
         name="ARC-AGI 1",
         category="reasoning",
-        description="Original Abstraction and Reasoning Corpus evaluating fluid intelligence and novel problem solving. Scores are accuracy on the semi-private evaluation set.",
+        description="Original Abstraction and Reasoning Corpus evaluating fluid intelligence and novel problem solving. Scores are accuracy on the official ARC Prize ARC-AGI 1 evaluation split.",
         unit="percent",
         scale_min=0.0,
         scale_max=100.0,
         higher_is_better=True,
         official_url="https://arcprize.org/leaderboard",
         paper_url="https://arxiv.org/abs/1911.01547",
-        notes="Scores from ARC Prize leaderboard (official). Expressed as percentage (0-100).",
+        notes="Scores from ARC Prize leaderboard (official), preferring ARC-AGI 1 semi-private split when available.",
     )
 
     def fetch_raw(self) -> Path:
@@ -166,6 +187,8 @@ class ARCAGI1Ingestor(BaseIngestor):
                 provider = row.get("provider") or row.get("Organization") or self._infer_provider(model_name)
                 raw_score = self._parse_float(row.get("score") or row.get("Score"))
                 eval_date = self.parse_date(row.get("date") or row.get("Release date")) or _extract_date_from_name(model_name)
+                reasoning_effort = row.get("reasoning_effort")
+                model_name = _with_effort_suffix(model_name, reasoning_effort)
 
                 if raw_score is None:
                     continue
@@ -183,7 +206,6 @@ class ARCAGI1Ingestor(BaseIngestor):
                 )
                 self.register_model(model)
 
-                reasoning_effort = row.get("reasoning_effort")
                 notes = row.get("Notes") or row.get("notes")
                 note_parts = ["ARC-AGI 1 official result"]
                 if reasoning_effort:
@@ -197,6 +219,7 @@ class ARCAGI1Ingestor(BaseIngestor):
                     benchmark_id=self.BENCHMARK_ID,
                     score=score,
                     evaluation_date=eval_date,
+                    subset=(row.get("dataset_id") or row.get("datasetId") or "").lower() or None,
                     source_id=source.source_id,
                     trust_tier=trust_tier,
                     evaluation_notes=". ".join(note_parts),
@@ -220,6 +243,8 @@ class ARCAGI1Ingestor(BaseIngestor):
                 return None
 
             score = _score_to_percent(float(raw_score))
+            reasoning_effort = entry.get("reasoning_effort")
+            model_name = _with_effort_suffix(model_name, reasoning_effort)
             eval_date = self.parse_date(entry.get("date")) or _extract_date_from_name(model_name)
             model_id = self.normalize_model_id(model_name, provider)
 
@@ -234,8 +259,8 @@ class ARCAGI1Ingestor(BaseIngestor):
             self.register_model(model)
 
             note_parts = ["ARC-AGI 1 official result"]
-            if entry.get("reasoning_effort"):
-                note_parts.append(f"effort={entry['reasoning_effort']}")
+            if reasoning_effort:
+                note_parts.append(f"effort={reasoning_effort}")
             if entry.get("notes"):
                 note_parts.append(str(entry["notes"]))
 
@@ -245,6 +270,7 @@ class ARCAGI1Ingestor(BaseIngestor):
                 benchmark_id=self.BENCHMARK_ID,
                 score=score,
                 evaluation_date=eval_date,
+                subset=(entry.get("dataset_id") or "").lower() or None,
                 source_id=source_id,
                 trust_tier=TrustTier.A,
                 evaluation_notes=". ".join(note_parts),
@@ -301,7 +327,7 @@ class ARCAGI2Ingestor(BaseIngestor):
         scale_max=100.0,
         higher_is_better=True,
         official_url="https://arcprize.org/leaderboard",
-        notes="Scraped from ARC Prize leaderboard. ARC-2 is significantly harder than ARC-1.",
+        notes="Scores from ARC Prize leaderboard (official), preferring ARC-AGI 2 semi-private split when available.",
     )
 
     def fetch_raw(self) -> Path:
@@ -385,6 +411,8 @@ class ARCAGI2Ingestor(BaseIngestor):
                 return None
 
             score = _score_to_percent(float(raw_score))
+            reasoning_effort = entry.get("reasoning_effort")
+            model_name = _with_effort_suffix(model_name, reasoning_effort)
 
             eval_date = self.parse_date(entry.get("date") or entry.get("release_date")) or _extract_date_from_name(model_name)
             model_id = self.normalize_model_id(model_name, provider)
@@ -405,6 +433,7 @@ class ARCAGI2Ingestor(BaseIngestor):
                 benchmark_id=self.BENCHMARK_ID,
                 score=score,
                 evaluation_date=eval_date,
+                subset=(entry.get("dataset_id") or "").lower() or None,
                 source_id=source_id,
                 trust_tier=TrustTier.A,
                 evaluation_notes="ARC-AGI 2 official result",
@@ -427,6 +456,7 @@ class ARCAGI2Ingestor(BaseIngestor):
                 return None
 
             score = _score_to_percent(float(raw_score))
+            model_name = _with_effort_suffix(model_name, row.get("reasoning_effort"))
 
             eval_date = self.parse_date(row.get("date") or row.get("Release date")) or _extract_date_from_name(model_name)
             model_id = self.normalize_model_id(model_name, provider)
@@ -447,6 +477,7 @@ class ARCAGI2Ingestor(BaseIngestor):
                 benchmark_id=self.BENCHMARK_ID,
                 score=score,
                 evaluation_date=eval_date,
+                subset=(row.get("dataset_id") or row.get("datasetId") or "").lower() or None,
                 source_id=source_id,
                 trust_tier=TrustTier.A,
                 evaluation_notes="ARC-AGI 2 official result"

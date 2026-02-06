@@ -153,26 +153,47 @@ def _fetch_payload() -> tuple[Any, str, str]:
     }
 
     with httpx.Client(timeout=30.0, follow_redirects=True, headers=headers) as client:
-        response = client.get(ARC_PRIZE_LEADERBOARD_URL)
-        response.raise_for_status()
-        html = response.text
-
-        payload = _extract_json_from_html(html)
-        if payload is not None:
-            return payload, "html_scrape", ARC_PRIZE_LEADERBOARD_URL
-
+        # Prefer explicit JSON endpoints first so we avoid scraping incidental
+        # page payload objects that may contain non-leaderboard "score" fields.
         for url in CANDIDATE_JSON_URLS:
             try:
                 res = client.get(url)
                 if res.status_code != 200:
                     continue
                 data = res.json()
-                if data:
+                if data and _looks_like_arc_payload(data):
                     return data, "api", url
             except Exception:
                 continue
 
+        response = client.get(ARC_PRIZE_LEADERBOARD_URL)
+        response.raise_for_status()
+        html = response.text
+
+        payload = _extract_json_from_html(html)
+        if payload is not None and _looks_like_arc_payload(payload):
+            return payload, "html_scrape", ARC_PRIZE_LEADERBOARD_URL
+
     raise RuntimeError("ARC Prize leaderboard payload not found")
+
+
+def _looks_like_arc_payload(payload: Any) -> bool:
+    if isinstance(payload, list):
+        return any(
+            isinstance(item, dict)
+            and (
+                ("datasetId" in item or "dataset_id" in item)
+                and any(key in item for key in ("modelId", "model", "model_name"))
+                and any(key in item for key in ("score", "accuracy", "acc"))
+            )
+            for item in payload
+        )
+    if isinstance(payload, dict):
+        if isinstance(payload.get("evaluations"), list):
+            return _looks_like_arc_payload(payload["evaluations"])
+        if isinstance(payload.get("benchmarks"), dict):
+            return True
+    return _payload_has_keywords(payload)
 
 
 def _extract_json_from_html(html: str) -> dict[str, Any] | None:
@@ -215,6 +236,18 @@ def _payload_has_keywords(payload: Any) -> bool:
 def _extract_entries(payload: Any) -> list[dict[str, Any]]:
     entries: list[dict[str, Any]] = []
 
+    if isinstance(payload, dict) and isinstance(payload.get("evaluations"), list):
+        payload = payload["evaluations"]
+
+    if isinstance(payload, list):
+        for item in payload:
+            if isinstance(item, dict) and _looks_like_entry(item):
+                normalized = _normalize_entry(item, ["evaluations"])
+                if normalized:
+                    entries.append(normalized)
+        if entries:
+            return entries
+
     def walk(obj: Any, path: list[str]) -> None:
         if isinstance(obj, dict):
             if _looks_like_entry(obj):
@@ -256,6 +289,13 @@ def _normalize_entry(entry: dict[str, Any], path: Iterable[str]) -> dict[str, An
 
     context = " ".join(str(p) for p in path if p)
     benchmark_hint = entry.get("benchmark") or entry.get("track") or entry.get("leaderboard")
+
+    if not dataset_id:
+        heuristic = " ".join(
+            v for v in [str(benchmark_hint) if benchmark_hint else "", context, str(notes) if notes else ""]
+        ).lower()
+        if not re.search(r"arc[-\s]?agi|v1_|v2_|arc\s*[12]", heuristic):
+            return None
 
     return {
         "model": str(model).strip(),
@@ -360,12 +400,24 @@ def _filter_preferred_datasets(grouped: dict[str, list[dict[str, Any]]]) -> dict
 
         for dataset_id in order:
             if dataset_id in by_dataset and by_dataset[dataset_id]:
-                grouped[benchmark_id] = by_dataset[dataset_id]
+                grouped[benchmark_id] = _dedupe_models(by_dataset[dataset_id])
                 logger.info(
                     "ARC Prize %s using dataset %s (%d entries)",
                     benchmark_id,
                     dataset_id,
-                    len(by_dataset[dataset_id]),
+                    len(grouped[benchmark_id]),
                 )
                 break
     return grouped
+
+
+def _dedupe_models(entries: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    deduped: dict[str, dict[str, Any]] = {}
+    for entry in entries:
+        model = str(entry.get("model") or "").strip().lower()
+        if not model:
+            continue
+        existing = deduped.get(model)
+        if existing is None or float(entry.get("score", float("-inf"))) > float(existing.get("score", float("-inf"))):
+            deduped[model] = entry
+    return list(deduped.values())

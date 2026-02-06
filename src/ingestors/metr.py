@@ -28,6 +28,7 @@ class METRIngestor(BaseIngestor):
     BENCHMARK_ID = "metr_time_horizons"
     METR_URL = "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/"
     CACHE_DIR = Path(__file__).parent.parent.parent / "data" / "cache" / "metr"
+    CLEAR_EXISTING_RESULTS = True
 
     BENCHMARK_META = Benchmark(
         benchmark_id="metr_time_horizons",
@@ -277,7 +278,7 @@ class METRIngestor(BaseIngestor):
         return versions
 
     def _extract_js_object(self, html: str, var_name: str) -> dict | None:
-        pattern = re.compile(rf"const\\s+{re.escape(var_name)}\\s*=\\s*", re.M)
+        pattern = re.compile(rf"const\s+{re.escape(var_name)}\s*=\s*", re.M)
         match = pattern.search(html)
         if not match:
             return None

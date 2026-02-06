@@ -23,6 +23,19 @@ type TopModel = {
   coverage: number;
 };
 
+function getAggregateIdentity(result: Result): { key: string; label: string } {
+  const provider = (result.provider || "Unknown").trim();
+  const family = (
+    result.model_family ||
+    result.model_group ||
+    result.model_display ||
+    result.model_name
+  ).trim();
+  const key = `${provider.toLowerCase()}::${family.toLowerCase()}`;
+  const label = result.model_family ? `${provider} ${result.model_family}` : family;
+  return { key, label };
+}
+
 export function ModelStrengths() {
   const [benchmarks, setBenchmarks] = useState<Benchmark[]>([]);
   const [results, setResults] = useState<Result[]>([]);
@@ -52,13 +65,27 @@ export function ModelStrengths() {
   } => {
     const byModel = new Map<string, ModelStat>();
     const benchmarkById = new Map(benchmarks.map((b) => [b.id, b]));
+    const dynamicRanges = new Map<string, { min: number; max: number }>();
+
+    benchmarks.forEach((benchmark) => {
+      if (benchmark.scale?.max != null) return;
+      const values = results
+        .filter((r) => r.benchmark_id === benchmark.id)
+        .map((r) => r.score)
+        .filter((v): v is number => v != null);
+      if (values.length < 2) return;
+      dynamicRanges.set(benchmark.id, {
+        min: Math.min(...values),
+        max: Math.max(...values),
+      });
+    });
 
     benchmarks.forEach((benchmark) => {
       const bestByModel = new Map<string, Result>();
       results
         .filter((r) => r.benchmark_id === benchmark.id)
         .forEach((r) => {
-          const key = r.model_group || r.model_display || r.model_name;
+          const { key } = getAggregateIdentity(r);
           const existing = bestByModel.get(key);
           if (!existing) {
             bestByModel.set(key, r);
@@ -72,9 +99,17 @@ export function ModelStrengths() {
         });
 
       bestByModel.forEach((result) => {
-        const key = result.model_group || result.model_display || result.model_name;
-        const label = result.model_display || result.model_name;
-        const normalized = normalizeScore(result.score, benchmark);
+        const { key, label } = getAggregateIdentity(result);
+        let normalized = normalizeScore(result.score, benchmark);
+        if (normalized == null) {
+          const dynamic = dynamicRanges.get(benchmark.id);
+          if (dynamic && dynamic.max > dynamic.min) {
+            const ratio = benchmark.higher_is_better
+              ? (result.score - dynamic.min) / (dynamic.max - dynamic.min)
+              : (dynamic.max - result.score) / (dynamic.max - dynamic.min);
+            normalized = Math.max(0, Math.min(100, ratio * 100));
+          }
+        }
         if (normalized == null) return;
 
         if (!byModel.has(key)) {
@@ -109,8 +144,8 @@ export function ModelStrengths() {
       return { category, best };
     });
 
-    const minCategories = Math.min(3, Math.max(1, categories.length));
-    const topModels = models
+    const minCategories = Math.max(2, Math.ceil(categories.length / 2));
+    const rankedModels = models
       .map((model) => {
         const categoryAverages = categories.map((category) => {
           const stat = model.totals[category];
@@ -130,9 +165,22 @@ export function ModelStrengths() {
           coverage,
         };
       })
-      .filter((model) => model.coverage >= minCategories)
-      .sort((a, b) => b.overall - a.overall)
-      .slice(0, 5);
+      .sort((a, b) => {
+        if (b.coverage !== a.coverage) return b.coverage - a.coverage;
+        return b.overall - a.overall;
+      });
+
+    const broadCoverage = rankedModels.filter(
+      (model) => model.coverage >= minCategories
+    );
+    const mediumCoverage = rankedModels.filter((model) => model.coverage >= 2);
+    const topModels = (
+      broadCoverage.length >= 5
+        ? broadCoverage
+        : mediumCoverage.length
+        ? mediumCoverage
+        : rankedModels
+    ).slice(0, 5);
 
     return { categoryLeaders, topModels };
   }, [benchmarks, results, categories]);

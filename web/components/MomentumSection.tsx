@@ -62,17 +62,17 @@ export function MomentumSection() {
 
   if (loading) {
     return (
-      <section className="container-wide py-12">
+      <section className="container-wide pt-12 pb-12">
         <div className="card card-muted shadow-soft animate-pulse h-24" />
       </section>
     );
   }
 
   return (
-    <section className="container-wide py-12">
+    <section className="container-wide pt-12 pb-12">
       <div className="card card-muted shadow-soft">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div>
+        <div className="grid grid-cols-1 xl:grid-cols-5 gap-6 xl:items-center">
+          <div className="xl:col-span-2">
             <div className="text-caption uppercase tracking-wider text-base-500">
               Insights Since Last Update
             </div>
@@ -80,11 +80,14 @@ export function MomentumSection() {
               Momentum across the frontier
             </div>
             <div className="text-body-sm text-base-500 mt-1">
-              Median annual SOTA gain on a 0–100 normalized scale
+              Median annual SOTA gain on a 0-100 normalized scale
+            </div>
+            <div className="mt-3 text-caption text-base-400">
+              Computed from frontier trend slopes across benchmarks.
             </div>
           </div>
-          <div className="flex flex-wrap gap-6">
-            <div>
+          <div className="xl:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div className="rounded-lg border border-base-200 bg-base-50 px-4 py-3">
               <div className="text-caption text-base-400">
                 Benchmarks updated (90d)
               </div>
@@ -92,7 +95,7 @@ export function MomentumSection() {
                 {recentUpdated}
               </div>
             </div>
-            <div>
+            <div className="rounded-lg border border-base-200 bg-base-50 px-4 py-3">
               <div className="text-caption text-base-400">
                 Median improvement / yr
               </div>
@@ -103,7 +106,7 @@ export function MomentumSection() {
                 normalized points
               </div>
             </div>
-            <div>
+            <div className="rounded-lg border border-base-200 bg-base-50 px-4 py-3">
               <div className="text-caption text-base-400">Total results</div>
               <div className="font-mono text-title-sm text-base-900">
                 {results.length ? results.length.toLocaleString("en-US") : "—"}

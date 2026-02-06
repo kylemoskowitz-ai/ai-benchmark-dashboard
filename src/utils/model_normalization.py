@@ -6,8 +6,8 @@ import re
 from typing import Any
 
 DATE_PATTERNS = [
-    r"\b20\d{2}[-_/]?\d{2}[-_/]?\d{2}\b",
-    r"\b20\d{6}\b",
+    r"(?<!\d)20\d{2}[-_/]\d{2}[-_/]\d{2}(?!\d)",
+    r"(?<!\d)20\d{6}(?!\d)",
 ]
 
 TOKEN_MAP = {
@@ -45,6 +45,8 @@ TOKEN_MAP = {
     "max": "Max",
     "beta": "Beta",
     "alpha": "Alpha",
+    "k2": "K2",
+    "k2.5": "K2.5",
 }
 
 VARIANT_TOKENS = {
@@ -67,6 +69,7 @@ VARIANT_TOKENS = {
     "max",
     "beta",
     "alpha",
+    "x",
 }
 
 
@@ -98,8 +101,10 @@ def normalize_model_name(raw: str | None, provider: str | None = None) -> dict[s
         return _normalize_gemini(tokens)
     if "deepseek" in tokens:
         return _normalize_deepseek(tokens)
-    if "qwen" in tokens:
+    if any(t == "qwen" or t.startswith("qwen") for t in tokens):
         return _normalize_qwen(tokens)
+    if "kimi" in tokens or any(t.startswith("kimi") for t in tokens):
+        return _normalize_kimi(tokens)
     if "llama" in tokens:
         return _normalize_llama(tokens)
     if "mistral" in tokens or "mixtral" in tokens:
@@ -187,7 +192,16 @@ def _normalize_deepseek(tokens: list[str]) -> dict[str, Any]:
 
 
 def _normalize_qwen(tokens: list[str]) -> dict[str, Any]:
-    version, used = _extract_version(tokens, anchor="qwen")
+    used: set[str] = set()
+    anchor = "qwen"
+    inline = next((t for t in tokens if t.startswith("qwen") and t != "qwen"), None)
+    if inline and re.fullmatch(r"qwen\d+(\.\d+)?", inline):
+        anchor = "qwen"
+        version = inline.replace("qwen", "", 1)
+        used.add(inline)
+    else:
+        version, extracted = _extract_version(tokens, anchor="qwen")
+        used |= extracted
     size = next((t for t in tokens if re.fullmatch(r"\d+b", t)), None)
     canonical_parts = ["Qwen"]
     if version:
@@ -197,6 +211,28 @@ def _normalize_qwen(tokens: list[str]) -> dict[str, Any]:
         used.add(size)
     canonical = " ".join(canonical_parts)
     variants = _extract_variants(tokens, used | {"qwen"})
+    return _finalize(canonical, variants, canonical)
+
+
+def _normalize_kimi(tokens: list[str]) -> dict[str, Any]:
+    used: set[str] = set()
+    if "kimi" in tokens:
+        used.add("kimi")
+    inline = next((t for t in tokens if t.startswith("kimi") and t != "kimi"), None)
+    version = None
+    if inline:
+        suffix = inline.replace("kimi", "", 1).strip("-_ ")
+        if suffix:
+            version = suffix.upper()
+            used.add(inline)
+    if version is None:
+        version = next((t.upper() for t in tokens if re.fullmatch(r"k\d+(\.\d+)?", t)), None)
+        if version:
+            used.add(version.lower())
+    canonical = "Kimi"
+    if version:
+        canonical = f"Kimi {version}"
+    variants = _extract_variants(tokens, used | {"kimi"})
     return _finalize(canonical, variants, canonical)
 
 
@@ -244,7 +280,12 @@ def _extract_version(tokens: list[str], anchor: str | None = None, allow_letter:
 
     # Combine two digit tokens into decimal (e.g., 4 5 -> 4.5)
     for i in range(len(candidates) - 1):
-        if candidates[i].isdigit() and candidates[i + 1].isdigit():
+        if (
+            candidates[i].isdigit()
+            and candidates[i + 1].isdigit()
+            and len(candidates[i]) <= 2
+            and len(candidates[i + 1]) <= 2
+        ):
             version = f"{candidates[i]}.{candidates[i + 1]}"
             used.update({candidates[i], candidates[i + 1]})
             return version, used
@@ -260,11 +301,19 @@ def _extract_version(tokens: list[str], anchor: str | None = None, allow_letter:
 
 def _extract_variants(tokens: list[str], used: set[str]) -> list[str]:
     variants: list[str] = []
-    for token in tokens:
+    i = 0
+    while i < len(tokens):
+        token = tokens[i]
         if token in used:
+            i += 1
+            continue
+        if token == "x" and i + 1 < len(tokens) and tokens[i + 1] == "high":
+            variants.append("X-High")
+            i += 2
             continue
         if token in VARIANT_TOKENS or re.fullmatch(r"\d+k", token) or re.fullmatch(r"\d+b", token):
             variants.append(_title_case_token(token))
+        i += 1
     return variants
 
 

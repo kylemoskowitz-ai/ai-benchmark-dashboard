@@ -264,6 +264,8 @@ class BaseIngestor(ABC):
     def _infer_provider(self, model_name: str) -> str:
         """Infer provider from model name."""
         name_lower = model_name.lower()
+        # Normalize separators so matching works for both hyphenated and underscored names.
+        name_norm = re.sub(r"[_\s]+", "-", name_lower)
 
         provider_patterns = {
             "OpenAI": ["gpt-", "o1-", "o3-", "o4-", "davinci", "text-"],
@@ -280,7 +282,7 @@ class BaseIngestor(ABC):
 
         for provider, patterns in provider_patterns.items():
             for pattern in patterns:
-                if pattern in name_lower:
+                if pattern in name_norm:
                     return provider
 
         return "Unknown"

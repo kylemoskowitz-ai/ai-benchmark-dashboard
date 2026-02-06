@@ -18,6 +18,7 @@ import logging
 from datetime import datetime, date
 from pathlib import Path
 from typing import Any
+import re
 
 import polars as pl
 import numpy as np
@@ -36,6 +37,29 @@ logger = logging.getLogger(__name__)
 
 # Output directory for JSON artifacts
 OUTPUT_DIR = Path(__file__).parent.parent.parent / "web" / "public" / "data"
+MODEL_DATE_PATTERNS = (
+    re.compile(r"(20\d{2})[-_/](\d{2})[-_/](\d{2})"),
+    re.compile(r"(?<!\d)(20\d{2})(\d{2})(\d{2})(?!\d)"),
+)
+
+
+def _infer_date_from_model_name(model_name: str | None) -> date | None:
+    if not model_name:
+        return None
+    for pattern in MODEL_DATE_PATTERNS:
+        match = pattern.search(model_name)
+        if not match:
+            continue
+        try:
+            year, month, day = (
+                int(match.group(1)),
+                int(match.group(2)),
+                int(match.group(3)),
+            )
+            return date(year, month, day)
+        except ValueError:
+            continue
+    return None
 
 
 class DateEncoder(json.JSONEncoder):
@@ -132,6 +156,10 @@ class ArtifactGenerator:
             sota = None
             try:
                 results = get_results_for_benchmark(benchmark_id)
+                if benchmark_id == "metr_time_horizons" and "subset" in results.columns:
+                    metr_v11 = results.filter(pl.col("subset") == "v1.1")
+                    if not metr_v11.is_empty():
+                        results = metr_v11
                 if not results.is_empty():
                     results = results.filter(pl.col("score").is_not_null())
                 if not results.is_empty():
@@ -328,7 +356,20 @@ class ArtifactGenerator:
                         pl.col("evaluation_date"),
                         pl.col("model_release_date"),
                     ).alias("effective_date")
-                ).filter(pl.col("effective_date").is_not_null())
+                )
+                if "model_name" in results.columns:
+                    results = results.with_columns(
+                        pl.when(pl.col("effective_date").is_null())
+                        .then(
+                            pl.col("model_name").map_elements(
+                                _infer_date_from_model_name,
+                                return_dtype=pl.Date,
+                            )
+                        )
+                        .otherwise(pl.col("effective_date"))
+                        .alias("effective_date")
+                    )
+                results = results.filter(pl.col("effective_date").is_not_null())
 
                 if results.is_empty():
                     continue
@@ -346,7 +387,7 @@ class ArtifactGenerator:
                 else:
                     history = history.with_columns(pl.col("score").cum_min().alias("score"))
 
-                if len(history) < 8:
+                if len(history) < 3:
                     continue
 
                 history = history.with_columns(pl.lit(benchmark_id).alias("benchmark_id"))
