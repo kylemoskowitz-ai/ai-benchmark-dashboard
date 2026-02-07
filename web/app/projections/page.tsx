@@ -44,11 +44,19 @@ export default function ProjectionsPage() {
         setBenchmarks(benchData);
         setFrontier(frontierData);
         setProjections(projData);
-        // Select first benchmark with projections
+        // Select first benchmark with projection history, falling back to frontier history.
         const firstWithProjections = benchData.find(
           (b: Benchmark) => projData[b.id]
         );
-        setSelectedBenchmark(firstWithProjections?.id || null);
+        const firstWithFrontier = benchData.find(
+          (b: Benchmark) => Array.isArray(frontierData[b.id]) && frontierData[b.id].length > 0
+        );
+        setSelectedBenchmark(
+          firstWithProjections?.id ||
+            firstWithFrontier?.id ||
+            benchData[0]?.id ||
+            null
+        );
         setLoading(false);
       })
       .catch((err) => {
@@ -58,6 +66,14 @@ export default function ProjectionsPage() {
   }, []);
 
   const currentBenchmark = benchmarks.find((b) => b.id === selectedBenchmark);
+  const benchmarkOptions = useMemo(() => {
+    const withData = benchmarks.filter((b) => {
+      const hasProjectionHistory = Boolean(projections[b.id]?.history?.length);
+      const hasFrontierHistory = Boolean(frontier[b.id]?.length);
+      return hasProjectionHistory || hasFrontierHistory;
+    });
+    return withData.length ? withData : benchmarks;
+  }, [benchmarks, frontier, projections]);
   const currentFrontier = selectedBenchmark ? frontier[selectedBenchmark] : [];
   const currentProjections = selectedBenchmark
     ? projections[selectedBenchmark]
@@ -117,6 +133,14 @@ export default function ProjectionsPage() {
     }
   }, [selectedBenchmark, currentProjections, bestModel, selectedModel]);
 
+  useEffect(() => {
+    if (!selectedBenchmark) return;
+    const inOptions = benchmarkOptions.some((b) => b.id === selectedBenchmark);
+    if (!inOptions) {
+      setSelectedBenchmark(benchmarkOptions[0]?.id ?? null);
+    }
+  }, [selectedBenchmark, benchmarkOptions]);
+
   if (loading) {
     return (
       <div className="container-wide py-12">
@@ -168,7 +192,7 @@ export default function ProjectionsPage() {
             onChange={(e) => setSelectedBenchmark(e.target.value)}
             className="w-full px-4 py-2 bg-base-50 border border-base-200 rounded-lg text-base-900 focus:outline-none focus:border-accent"
           >
-            {benchmarks.map((b) => (
+            {benchmarkOptions.map((b) => (
                 <option key={b.id} value={b.id}>
                   {b.name}
                 </option>

@@ -5,6 +5,7 @@ from __future__ import annotations
 from datetime import datetime
 from pathlib import Path
 from typing import Iterable
+import math
 
 import httpx
 import polars as pl
@@ -89,16 +90,51 @@ class _ExternalImpactBase(BaseIngestor):
         self.register_model(model)
         return model_id
 
-    @staticmethod
-    def _to_percent(value: float) -> float:
-        # Indeed shares are sometimes reported as fractions (0-1).
-        return value * 100.0 if value <= 1.0 else value
+    def validate(self, results: list[Result]) -> list[Result]:
+        """Validate impact signals with flexible upper bounds.
+
+        These series can exceed display-scale assumptions over time, so we only
+        enforce non-negative finite values and required provenance.
+        """
+        validated: list[Result] = []
+        for r in results:
+            try:
+                if r.score is not None and (not math.isfinite(r.score) or r.score < 0):
+                    self.log_warning(f"Invalid score {r.score} for {r.model_id}")
+                    continue
+                if not r.source_id:
+                    self.log_error(f"Missing source_id for {r.model_id}")
+                    continue
+                validated.append(r)
+            except Exception as exc:
+                self.log_error(f"Validation error for {r.model_id}: {exc}")
+        return validated
 
     @staticmethod
     def _clean_date(date_text: str | None) -> str | None:
         if not date_text:
             return None
         return str(date_text).strip()
+
+    def _normalize_share_value(self, value: float) -> float:
+        """Normalize share values without over-scaling.
+
+        Prefer raw values when they are already within a plausible UI scale.
+        Only apply x100 if raw looks implausible but the scaled value does.
+        """
+        bench_max = self.BENCHMARK_META.scale_max if self.BENCHMARK_META else None
+        raw = float(value)
+        scaled = raw * 100.0
+
+        if bench_max is None:
+            return raw
+
+        tolerance_max = bench_max * 1.25
+        if 0 <= raw <= tolerance_max:
+            return raw
+        if 0 <= scaled <= tolerance_max:
+            return scaled
+        return raw
 
     @staticmethod
     def _find_first_column(columns: Iterable[str], names: set[str]) -> str | None:
@@ -179,7 +215,7 @@ class _IndeedPostingShareIngestor(_ExternalImpactBase):
             if eval_date is None or score is None:
                 continue
 
-            value = self._to_percent(float(score))
+            value = self._normalize_share_value(float(score))
             results.append(
                 Result(
                     result_id=self.generate_result_id(model_id, eval_date),

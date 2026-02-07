@@ -66,7 +66,20 @@ function ExplorerContent() {
       .then(([benchData, resultsData]) => {
         setBenchmarks(benchData);
         setResults(resultsData);
-        setActiveBenchmark(selectedBenchmark || (benchData[0]?.id ?? null));
+        const withDataIds = new Set(
+          (resultsData as Result[]).map((r) => r.benchmark_id)
+        );
+        const firstWithData = (benchData as Benchmark[]).find((b) =>
+          withDataIds.has(b.id)
+        );
+        const selectedStillValid = selectedBenchmark
+          ? (benchData as Benchmark[]).some((b) => b.id === selectedBenchmark)
+          : false;
+        setActiveBenchmark(
+          selectedStillValid
+            ? selectedBenchmark
+            : (firstWithData?.id ?? benchData[0]?.id ?? null)
+        );
         setLoading(false);
       })
       .catch(() => setLoading(false));
@@ -74,20 +87,26 @@ function ExplorerContent() {
 
   const currentBenchmark = benchmarks.find((b) => b.id === activeBenchmark);
 
+  const benchmarksWithData = useMemo(() => {
+    const ids = new Set(results.map((r) => r.benchmark_id));
+    const filtered = benchmarks.filter((b) => ids.has(b.id));
+    return filtered.length ? filtered : benchmarks;
+  }, [benchmarks, results]);
+
   const providers = useMemo(() => {
     const set = new Set(results.map((r) => r.provider));
     return Array.from(set).sort();
   }, [results]);
 
   const categories = useMemo(() => {
-    const set = new Set(benchmarks.map((b) => b.category));
+    const set = new Set(benchmarksWithData.map((b) => b.category));
     return ["all", ...Array.from(set)];
-  }, [benchmarks]);
+  }, [benchmarksWithData]);
 
   const visibleBenchmarks = useMemo(() => {
-    if (filters.category === "all") return benchmarks;
-    return benchmarks.filter((b) => b.category === filters.category);
-  }, [benchmarks, filters.category]);
+    if (filters.category === "all") return benchmarksWithData;
+    return benchmarksWithData.filter((b) => b.category === filters.category);
+  }, [benchmarksWithData, filters.category]);
 
   useEffect(() => {
     if (!activeBenchmark) return;
