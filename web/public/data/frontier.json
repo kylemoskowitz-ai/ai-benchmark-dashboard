@@ -4716,7 +4716,7 @@
   "epoch_capabilities_index": [
     {
       "date": "2023-02-24",
-      "score": 93.03744829628712,
+      "score": 93.52897826675576,
       "model_id": "meta_ai:llama-7b",
       "model_name": "LLaMA-7B",
       "model_display": "Llama 7B",
@@ -4727,7 +4727,7 @@
     },
     {
       "date": "2023-02-24",
-      "score": 97.9947309920633,
+      "score": 98.35575417814724,
       "model_id": "meta_ai:llama-13b",
       "model_name": "LLaMA-13B",
       "model_display": "Llama 13B",
@@ -4738,7 +4738,7 @@
     },
     {
       "date": "2023-02-24",
-      "score": 106.42732733583053,
+      "score": 106.55322421163513,
       "model_id": "meta_ai:llama-33b",
       "model_name": "LLaMA-33B",
       "model_display": "Llama 33B",
@@ -4749,7 +4749,7 @@
     },
     {
       "date": "2023-02-24",
-      "score": 109.7034414828386,
+      "score": 109.7462503801453,
       "model_id": "meta_ai:llama-65b",
       "model_name": "LLaMA-65B",
       "model_display": "Llama 65B",
@@ -4760,7 +4760,7 @@
     },
     {
       "date": "2023-03-14",
-      "score": 126.12496106062224,
+      "score": 126.08729417622524,
       "model_id": "openai:gpt-4-0314",
       "model_name": "gpt-4-0314",
       "model_display": "GPT-4",
@@ -4771,7 +4771,7 @@
     },
     {
       "date": "2023-03-14",
-      "score": 126.12496106062224,
+      "score": 126.08729417622524,
       "model_id": "openai:gpt-4-32k-0314",
       "model_name": "gpt-4-32k-0314",
       "model_display": "GPT-32k",
@@ -4782,7 +4782,7 @@
     },
     {
       "date": "2024-02-29",
-      "score": 126.8770705419167,
+      "score": 126.87179239524484,
       "model_id": "anthropic:claude-3-opus-20240229",
       "model_name": "claude-3-opus-20240229",
       "model_display": "Claude Opus 3",
@@ -4793,7 +4793,7 @@
     },
     {
       "date": "2024-04-09",
-      "score": 127.53656995843508,
+      "score": 127.50659055196292,
       "model_id": "openai:gpt-4-turbo-2024-04-09",
       "model_name": "gpt-4-turbo-2024-04-09",
       "model_display": "GPT-4 Turbo",
@@ -4804,7 +4804,7 @@
     },
     {
       "date": "2024-05-13",
-      "score": 128.73378412430833,
+      "score": 128.71389087898274,
       "model_id": "openai:gpt-4o-2024-05-13",
       "model_name": "gpt-4o-2024-05-13",
       "model_display": "GPT-4o",
@@ -4815,7 +4815,7 @@
     },
     {
       "date": "2024-05-24",
-      "score": 132.5586327651603,
+      "score": 132.5639931616744,
       "model_id": "google_deepmind:gemini-1.5-pro-001",
       "model_name": "gemini-1.5-pro-001",
       "model_display": "Gemini 1.5 Pro",
@@ -4826,7 +4826,7 @@
     },
     {
       "date": "2024-09-05",
-      "score": 140.56343278686785,
+      "score": 140.53829956519408,
       "model_id": "moonshot:kimi-k2-instruct-0905",
       "model_name": "Kimi-K2-Instruct-0905",
       "model_display": "Kimi K2 Instruct",
@@ -4837,7 +4837,18 @@
     },
     {
       "date": "2024-12-17",
-      "score": 142.33269880991898,
+      "score": 142.34866835505477,
+      "model_id": "openai:o1-2024-12-17_high",
+      "model_name": "o1-2024-12-17_high",
+      "model_display": "O1 High",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "High",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2024-12-17",
+      "score": 142.34866835505477,
       "model_id": "openai:o1-2024-12-17_low",
       "model_name": "o1-2024-12-17_low",
       "model_display": "O1 Low",
@@ -4848,7 +4859,7 @@
     },
     {
       "date": "2024-12-17",
-      "score": 142.33269880991898,
+      "score": 142.34866835505477,
       "model_id": "openai:o1-2024-12-17_medium",
       "model_name": "o1-2024-12-17_medium",
       "model_display": "O1 Medium",
@@ -4858,19 +4869,8 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2024-12-17",
-      "score": 142.33269880991898,
-      "model_id": "openai:o1-2024-12-17_high",
-      "model_name": "o1-2024-12-17_high",
-      "model_display": "O1 High",
-      "model_group": "o1",
-      "model_family": "O1",
-      "model_variant": "High",
-      "provider": "OpenAI"
-    },
-    {
       "date": "2025-03-19",
-      "score": 142.33269880991898,
+      "score": 142.34866835505477,
       "model_id": "openai:o1-pro-2025-03-19_low",
       "model_name": "o1-pro-2025-03-19_low",
       "model_display": "O1 Pro Low",
@@ -4881,7 +4881,7 @@
     },
     {
       "date": "2025-03-25",
-      "score": 144.17924438342197,
+      "score": 144.1432646198278,
       "model_id": "google_deepmind:gemini-2.5-pro-exp-03-25",
       "model_name": "gemini-2.5-pro-exp-03-25",
       "model_display": "Gemini 2.5 Pro",
@@ -4892,7 +4892,7 @@
     },
     {
       "date": "2025-04-09",
-      "score": 144.17924438342197,
+      "score": 144.1432646198278,
       "model_id": "google_deepmind:gemini-2.5-pro-preview-03-25",
       "model_name": "gemini-2.5-pro-preview-03-25",
       "model_display": "Gemini 2.5 Pro Preview",
@@ -4903,7 +4903,7 @@
     },
     {
       "date": "2025-04-16",
-      "score": 145.04558017091668,
+      "score": 145.06396444471704,
       "model_id": "openai:o4-mini-2025-04-16_medium",
       "model_name": "o4-mini-2025-04-16_medium",
       "model_display": "O4 Mini Medium",
@@ -4914,18 +4914,18 @@
     },
     {
       "date": "2025-04-16",
-      "score": 145.04558017091668,
-      "model_id": "openai:o4-mini-2025-04-16_low",
-      "model_name": "o4-mini-2025-04-16_low",
-      "model_display": "O4 Mini Low",
+      "score": 145.06396444471704,
+      "model_id": "openai:o4-mini-2025-04-16_high",
+      "model_name": "o4-mini-2025-04-16_high",
+      "model_display": "O4 Mini High",
       "model_group": "o4",
       "model_family": "O4",
-      "model_variant": "Mini Low",
+      "model_variant": "Mini High",
       "provider": "OpenAI"
     },
     {
       "date": "2025-04-16",
-      "score": 146.63779738234308,
+      "score": 146.61762718919053,
       "model_id": "openai:o3-2025-04-16_high",
       "model_name": "o3-2025-04-16_high",
       "model_display": "O3 High",
@@ -4936,7 +4936,7 @@
     },
     {
       "date": "2025-04-16",
-      "score": 146.63779738234308,
+      "score": 146.61762718919053,
       "model_id": "openai:o3-2025-04-16_low",
       "model_name": "o3-2025-04-16_low",
       "model_display": "O3 Low",
@@ -4947,7 +4947,7 @@
     },
     {
       "date": "2025-04-16",
-      "score": 146.63779738234308,
+      "score": 146.61762718919053,
       "model_id": "openai:o3-2025-04-16_medium",
       "model_name": "o3-2025-04-16_medium",
       "model_display": "O3 Medium",
@@ -4958,18 +4958,18 @@
     },
     {
       "date": "2025-06-10",
-      "score": 148.81442297849998,
-      "model_id": "openai:o3-pro-2025-06-10_low",
-      "model_name": "o3-pro-2025-06-10_low",
-      "model_display": "O3 Pro Low",
+      "score": 148.62439293617905,
+      "model_id": "openai:o3-pro-2025-06-10_high",
+      "model_name": "o3-pro-2025-06-10_high",
+      "model_display": "O3 Pro High",
       "model_group": "o3",
       "model_family": "O3",
-      "model_variant": "Pro Low",
+      "model_variant": "Pro High",
       "provider": "OpenAI"
     },
     {
       "date": "2025-06-10",
-      "score": 148.81442297849998,
+      "score": 148.62439293617905,
       "model_id": "openai:o3-pro-2025-06-10_medium",
       "model_name": "o3-pro-2025-06-10_medium",
       "model_display": "O3 Pro Medium",
@@ -4980,24 +4980,24 @@
     },
     {
       "date": "2025-06-10",
-      "score": 148.81442297849998,
-      "model_id": "openai:o3-pro-2025-06-10_high",
-      "model_name": "o3-pro-2025-06-10_high",
-      "model_display": "O3 Pro High",
+      "score": 148.62439293617905,
+      "model_id": "openai:o3-pro-2025-06-10_low",
+      "model_name": "o3-pro-2025-06-10_low",
+      "model_display": "O3 Pro Low",
       "model_group": "o3",
       "model_family": "O3",
-      "model_variant": "Pro High",
+      "model_variant": "Pro Low",
       "provider": "OpenAI"
     },
     {
       "date": "2025-08-07",
       "score": 150.0,
-      "model_id": "openai:gpt-5-2025-08-07_medium",
-      "model_name": "gpt-5-2025-08-07_medium",
-      "model_display": "GPT-5 Medium",
+      "model_id": "openai:gpt-5-2025-08-07_low",
+      "model_name": "gpt-5-2025-08-07_low",
+      "model_display": "GPT-5 Low",
       "model_group": "gpt-5",
       "model_family": "GPT",
-      "model_variant": "Medium",
+      "model_variant": "Low",
       "provider": "OpenAI"
     },
     {
@@ -5014,12 +5014,12 @@
     {
       "date": "2025-08-07",
       "score": 150.0,
-      "model_id": "openai:gpt-5-2025-08-07_low",
-      "model_name": "gpt-5-2025-08-07_low",
-      "model_display": "GPT-5 Low",
+      "model_id": "openai:gpt-5-2025-08-07_medium",
+      "model_name": "gpt-5-2025-08-07_medium",
+      "model_display": "GPT-5 Medium",
       "model_group": "gpt-5",
       "model_family": "GPT",
-      "model_variant": "Low",
+      "model_variant": "Medium",
       "provider": "OpenAI"
     },
     {
@@ -5046,7 +5046,7 @@
     },
     {
       "date": "2025-10-07",
-      "score": 150.57774312166458,
+      "score": 150.3725419611587,
       "model_id": "openai:gpt-5-pro-2025-10-06_high",
       "model_name": "gpt-5-pro-2025-10-06_high",
       "model_display": "GPT-5 Pro High",
@@ -5057,7 +5057,7 @@
     },
     {
       "date": "2025-11-18",
-      "score": 153.78645237477718,
+      "score": 154.2233541294733,
       "model_id": "google_deepmind:gemini-3-pro-preview",
       "model_name": "gemini-3-pro-preview",
       "model_display": "Gemini 3 Pro Preview",
@@ -5068,94 +5068,6 @@
     }
   ],
   "frontiermath_tier4": [
-    {
-      "date": "2025-07-01",
-      "score": 0.0,
-      "model_id": "xai:grok-3-beta",
-      "model_name": "grok-3-beta",
-      "model_display": "Grok 3 Beta",
-      "model_group": "grok-3",
-      "model_family": "Grok 3",
-      "model_variant": "Beta",
-      "provider": "xAI"
-    },
-    {
-      "date": "2025-07-01",
-      "score": 0.0,
-      "model_id": "openai:gpt-4.1-2025-04-14",
-      "model_name": "gpt-4.1-2025-04-14",
-      "model_display": "GPT-4.1",
-      "model_group": "gpt-4-1",
-      "model_family": "GPT",
-      "model_variant": null,
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-07-01",
-      "score": 0.0,
-      "model_id": "anthropic:claude-3-5-sonnet-20241022",
-      "model_name": "claude-3-5-sonnet-20241022",
-      "model_display": "Claude Sonnet 3.5",
-      "model_group": "claude-sonnet-3-5",
-      "model_family": "Claude Sonnet 3.5",
-      "model_variant": null,
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2025-07-01",
-      "score": 0.0,
-      "model_id": "anthropic:claude-3-5-sonnet-20240620",
-      "model_name": "claude-3-5-sonnet-20240620",
-      "model_display": "Claude Sonnet 3.5",
-      "model_group": "claude-sonnet-3-5",
-      "model_family": "Claude Sonnet 3.5",
-      "model_variant": null,
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2025-07-01",
-      "score": 0.0,
-      "model_id": "anthropic:claude-sonnet-4-20250514",
-      "model_name": "claude-sonnet-4-20250514",
-      "model_display": "Claude Sonnet 4",
-      "model_group": "claude-sonnet-4",
-      "model_family": "Claude Sonnet 4",
-      "model_variant": null,
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2025-07-01",
-      "score": 0.0,
-      "model_id": "anthropic:claude-opus-4-20250514",
-      "model_name": "claude-opus-4-20250514",
-      "model_display": "Claude Opus 4",
-      "model_group": "claude-opus-4",
-      "model_family": "Claude Opus 4",
-      "model_variant": null,
-      "provider": "Anthropic"
-    },
-    {
-      "date": "2025-07-01",
-      "score": 2.083333333333333,
-      "model_id": "openai:o3-2025-04-16_high",
-      "model_name": "o3-2025-04-16_high",
-      "model_display": "O3 High",
-      "model_group": "o3",
-      "model_family": "O3",
-      "model_variant": "High",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-07-01",
-      "score": 4.166666666666666,
-      "model_id": "openai:o3-mini-2025-01-31_high",
-      "model_name": "o3-mini-2025-01-31_high",
-      "model_display": "O3 Mini High",
-      "model_group": "o3",
-      "model_family": "O3",
-      "model_variant": "Mini High",
-      "provider": "OpenAI"
-    },
     {
       "date": "2025-07-01",
       "score": 4.166666666666666,

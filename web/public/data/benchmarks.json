@@ -92,7 +92,7 @@
     "paper_url": null,
     "notes": null,
     "sota": {
-      "score": 153.78645237477718,
+      "score": 154.2233541294733,
       "model_id": "google_deepmind:gemini-3-pro-preview",
       "model_name": "gemini-3-pro-preview",
       "model_display": "Gemini 3 Pro Preview",
