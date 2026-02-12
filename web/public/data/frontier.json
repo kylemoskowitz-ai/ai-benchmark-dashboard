@@ -4803,17 +4803,6 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2024-05-13",
-      "score": 128.71389087898274,
-      "model_id": "openai:gpt-4o-2024-05-13",
-      "model_name": "gpt-4o-2024-05-13",
-      "model_display": "GPT-4o",
-      "model_group": "gpt-4o",
-      "model_family": "GPT",
-      "model_variant": null,
-      "provider": "OpenAI"
-    },
-    {
       "date": "2024-05-24",
       "score": 132.5639931616744,
       "model_id": "google_deepmind:gemini-1.5-pro-001",
@@ -4825,15 +4814,48 @@
       "provider": "Google DeepMind"
     },
     {
-      "date": "2024-09-05",
-      "score": 140.53829956519408,
-      "model_id": "moonshot:kimi-k2-instruct-0905",
-      "model_name": "Kimi-K2-Instruct-0905",
-      "model_display": "Kimi K2 Instruct",
-      "model_group": "kimi-k2",
-      "model_family": "Kimi K2",
-      "model_variant": "Instruct",
-      "provider": "Moonshot"
+      "date": "2024-09-12",
+      "score": 135.3948085704228,
+      "model_id": "openai:o1-preview-2024-09-12",
+      "model_name": "o1-preview-2024-09-12",
+      "model_display": "O1 Preview",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "Preview",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2024-09-12",
+      "score": 136.60657185375655,
+      "model_id": "openai:o1-mini-2024-09-12_high",
+      "model_name": "o1-mini-2024-09-12_high",
+      "model_display": "O1 Mini High",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "Mini High",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2024-09-12",
+      "score": 136.60657185375655,
+      "model_id": "openai:o1-mini-2024-09-12_medium",
+      "model_name": "o1-mini-2024-09-12_medium",
+      "model_display": "O1 Mini Medium",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "Mini Medium",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2024-12-17",
+      "score": 142.34866835505477,
+      "model_id": "openai:o1-2024-12-17_medium",
+      "model_name": "o1-2024-12-17_medium",
+      "model_display": "O1 Medium",
+      "model_group": "o1",
+      "model_family": "O1",
+      "model_variant": "Medium",
+      "provider": "OpenAI"
     },
     {
       "date": "2024-12-17",
@@ -4858,28 +4880,6 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2024-12-17",
-      "score": 142.34866835505477,
-      "model_id": "openai:o1-2024-12-17_medium",
-      "model_name": "o1-2024-12-17_medium",
-      "model_display": "O1 Medium",
-      "model_group": "o1",
-      "model_family": "O1",
-      "model_variant": "Medium",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-03-19",
-      "score": 142.34866835505477,
-      "model_id": "openai:o1-pro-2025-03-19_low",
-      "model_name": "o1-pro-2025-03-19_low",
-      "model_display": "O1 Pro Low",
-      "model_group": "o1",
-      "model_family": "O1",
-      "model_variant": "Pro Low",
-      "provider": "OpenAI"
-    },
-    {
       "date": "2025-03-25",
       "score": 144.1432646198278,
       "model_id": "google_deepmind:gemini-2.5-pro-exp-03-25",
@@ -4891,7 +4891,7 @@
       "provider": "Google DeepMind"
     },
     {
-      "date": "2025-04-09",
+      "date": "2025-03-31",
       "score": 144.1432646198278,
       "model_id": "google_deepmind:gemini-2.5-pro-preview-03-25",
       "model_name": "gemini-2.5-pro-preview-03-25",
@@ -4926,12 +4926,12 @@
     {
       "date": "2025-04-16",
       "score": 146.61762718919053,
-      "model_id": "openai:o3-2025-04-16_high",
-      "model_name": "o3-2025-04-16_high",
-      "model_display": "O3 High",
+      "model_id": "openai:o3-2025-04-16_medium",
+      "model_name": "o3-2025-04-16_medium",
+      "model_display": "O3 Medium",
       "model_group": "o3",
       "model_family": "O3",
-      "model_variant": "High",
+      "model_variant": "Medium",
       "provider": "OpenAI"
     },
     {
@@ -4948,12 +4948,23 @@
     {
       "date": "2025-04-16",
       "score": 146.61762718919053,
-      "model_id": "openai:o3-2025-04-16_medium",
-      "model_name": "o3-2025-04-16_medium",
-      "model_display": "O3 Medium",
+      "model_id": "openai:o3-2025-04-16_high",
+      "model_name": "o3-2025-04-16_high",
+      "model_display": "O3 High",
       "model_group": "o3",
       "model_family": "O3",
-      "model_variant": "Medium",
+      "model_variant": "High",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-06-10",
+      "score": 148.62439293617905,
+      "model_id": "openai:o3-pro-2025-06-10_low",
+      "model_name": "o3-pro-2025-06-10_low",
+      "model_display": "O3 Pro Low",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "Pro Low",
       "provider": "OpenAI"
     },
     {
@@ -4976,17 +4987,6 @@
       "model_group": "o3",
       "model_family": "O3",
       "model_variant": "Pro Medium",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-06-10",
-      "score": 148.62439293617905,
-      "model_id": "openai:o3-pro-2025-06-10_low",
-      "model_name": "o3-pro-2025-06-10_low",
-      "model_display": "O3 Pro Low",
-      "model_group": "o3",
-      "model_family": "O3",
-      "model_variant": "Pro Low",
       "provider": "OpenAI"
     },
     {
@@ -5014,23 +5014,23 @@
     {
       "date": "2025-08-07",
       "score": 150.0,
-      "model_id": "openai:gpt-5-2025-08-07_medium",
-      "model_name": "gpt-5-2025-08-07_medium",
-      "model_display": "GPT-5 Medium",
-      "model_group": "gpt-5",
-      "model_family": "GPT",
-      "model_variant": "Medium",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-08-07",
-      "score": 150.0,
       "model_id": "openai:gpt-5-2025-08-07_high",
       "model_name": "gpt-5-2025-08-07_high",
       "model_display": "GPT-5 High",
       "model_group": "gpt-5",
       "model_family": "GPT",
       "model_variant": "High",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-08-07",
+      "score": 150.0,
+      "model_id": "openai:gpt-5-2025-08-07_medium",
+      "model_name": "gpt-5-2025-08-07_medium",
+      "model_display": "GPT-5 Medium",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": "Medium",
       "provider": "OpenAI"
     },
     {
