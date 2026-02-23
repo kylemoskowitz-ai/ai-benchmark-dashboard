@@ -2,7 +2,7 @@
   "ai_job_postings_share": [
     {
       "date": "2019-01-01",
-      "score": 1.71394639341154,
+      "score": 1.71512218694269,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -13,7 +13,7 @@
     },
     {
       "date": "2019-01-08",
-      "score": 1.71884280918256,
+      "score": 1.71909898911111,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -24,7 +24,7 @@
     },
     {
       "date": "2019-01-09",
-      "score": 1.71995918817009,
+      "score": 1.71999863657192,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -35,7 +35,7 @@
     },
     {
       "date": "2019-01-10",
-      "score": 1.72389985895221,
+      "score": 1.72354311674504,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -46,7 +46,7 @@
     },
     {
       "date": "2019-01-31",
-      "score": 1.72996781289537,
+      "score": 1.73040051080521,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -57,7 +57,7 @@
     },
     {
       "date": "2019-02-01",
-      "score": 1.73659754304852,
+      "score": 1.73682161217582,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -68,7 +68,7 @@
     },
     {
       "date": "2019-02-02",
-      "score": 1.74246945082849,
+      "score": 1.74276633843924,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -79,7 +79,7 @@
     },
     {
       "date": "2019-02-03",
-      "score": 1.74940959131833,
+      "score": 1.74970183250791,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -90,7 +90,7 @@
     },
     {
       "date": "2019-02-04",
-      "score": 1.75807389936652,
+      "score": 1.75843891548439,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -101,7 +101,7 @@
     },
     {
       "date": "2019-02-05",
-      "score": 1.76483145296364,
+      "score": 1.7643746075717,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -112,7 +112,7 @@
     },
     {
       "date": "2019-02-06",
-      "score": 1.76801512292652,
+      "score": 1.76774863769739,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -123,7 +123,7 @@
     },
     {
       "date": "2019-02-07",
-      "score": 1.77013558091568,
+      "score": 1.76997435556269,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -134,7 +134,7 @@
     },
     {
       "date": "2019-02-08",
-      "score": 1.77235321699831,
+      "score": 1.7724060157317,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -145,7 +145,7 @@
     },
     {
       "date": "2019-02-09",
-      "score": 1.77567140069654,
+      "score": 1.77576749917369,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -156,7 +156,7 @@
     },
     {
       "date": "2019-02-10",
-      "score": 1.77685067163258,
+      "score": 1.77694329256906,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -167,7 +167,7 @@
     },
     {
       "date": "2019-02-11",
-      "score": 1.77766766695694,
+      "score": 1.77766926896318,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -178,7 +178,7 @@
     },
     {
       "date": "2019-09-21",
-      "score": 1.78523717433005,
+      "score": 1.78596611782622,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -189,7 +189,7 @@
     },
     {
       "date": "2019-09-22",
-      "score": 1.79578127020486,
+      "score": 1.79649373445274,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -200,7 +200,7 @@
     },
     {
       "date": "2019-09-23",
-      "score": 1.80515090885103,
+      "score": 1.80580087171781,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -211,7 +211,7 @@
     },
     {
       "date": "2019-09-24",
-      "score": 1.81511838798299,
+      "score": 1.81561268110288,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -222,7 +222,7 @@
     },
     {
       "date": "2019-09-25",
-      "score": 1.82417630837267,
+      "score": 1.82441600651358,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -233,7 +233,7 @@
     },
     {
       "date": "2019-09-26",
-      "score": 1.82598047199115,
+      "score": 1.82624029053971,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -244,7 +244,7 @@
     },
     {
       "date": "2019-10-27",
-      "score": 1.82722496928294,
+      "score": 1.82826823580412,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -255,7 +255,18 @@
     },
     {
       "date": "2019-10-28",
-      "score": 1.8291028815744,
+      "score": 1.83017632953513,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2019-11-11",
+      "score": 1.83204033597508,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -266,7 +277,7 @@
     },
     {
       "date": "2019-11-12",
-      "score": 1.83136787674868,
+      "score": 1.83472762215512,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -277,7 +288,7 @@
     },
     {
       "date": "2019-11-13",
-      "score": 1.83335269451598,
+      "score": 1.83670186834967,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -288,7 +299,7 @@
     },
     {
       "date": "2019-11-14",
-      "score": 1.83542086967802,
+      "score": 1.83684565728442,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -299,7 +310,7 @@
     },
     {
       "date": "2019-11-15",
-      "score": 1.8380763972178,
+      "score": 1.83908012611451,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -310,7 +321,7 @@
     },
     {
       "date": "2019-11-16",
-      "score": 1.8393453718816,
+      "score": 1.84016758289731,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -321,7 +332,7 @@
     },
     {
       "date": "2019-11-17",
-      "score": 1.83973650662852,
+      "score": 1.84052039623857,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -332,7 +343,7 @@
     },
     {
       "date": "2019-11-18",
-      "score": 1.84069633474261,
+      "score": 1.84136493348788,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -343,7 +354,7 @@
     },
     {
       "date": "2019-11-19",
-      "score": 1.84204691108946,
+      "score": 1.84262704073975,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -354,7 +365,7 @@
     },
     {
       "date": "2019-11-20",
-      "score": 1.8445505684743,
+      "score": 1.84625519360174,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -365,7 +376,7 @@
     },
     {
       "date": "2019-11-21",
-      "score": 1.84590415680604,
+      "score": 1.84749294234007,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -376,7 +387,7 @@
     },
     {
       "date": "2019-11-22",
-      "score": 1.84632991122413,
+      "score": 1.84800102540005,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -387,7 +398,7 @@
     },
     {
       "date": "2019-11-23",
-      "score": 1.84725663498345,
+      "score": 1.84891267141583,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -398,7 +409,7 @@
     },
     {
       "date": "2019-11-24",
-      "score": 1.84833423164685,
+      "score": 1.84988908185659,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -409,7 +420,7 @@
     },
     {
       "date": "2019-11-25",
-      "score": 1.84875882389857,
+      "score": 1.8505033820435,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -420,18 +431,7 @@
     },
     {
       "date": "2019-11-26",
-      "score": 1.84997045060334,
-      "model_id": "public_economic_data:us_labor_market",
-      "model_name": "US Labor Market",
-      "model_display": "Us Labor Market",
-      "model_group": "us-labor-market",
-      "model_family": null,
-      "model_variant": null,
-      "provider": "Public Economic Data"
-    },
-    {
-      "date": "2019-11-27",
-      "score": 1.85053700475673,
+      "score": 1.85151318504393,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -442,7 +442,7 @@
     },
     {
       "date": "2019-11-28",
-      "score": 1.85131592243404,
+      "score": 1.85189686382479,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -453,7 +453,7 @@
     },
     {
       "date": "2019-11-29",
-      "score": 1.85259289569339,
+      "score": 1.85384620564114,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -464,7 +464,7 @@
     },
     {
       "date": "2019-11-30",
-      "score": 1.85385261980726,
+      "score": 1.85514701301763,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -475,7 +475,7 @@
     },
     {
       "date": "2019-12-01",
-      "score": 1.85432133944067,
+      "score": 1.85597470981764,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -486,7 +486,7 @@
     },
     {
       "date": "2019-12-02",
-      "score": 1.85515193460812,
+      "score": 1.85664964547633,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -497,7 +497,7 @@
     },
     {
       "date": "2019-12-03",
-      "score": 1.85679997179985,
+      "score": 1.85852220260908,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -508,7 +508,7 @@
     },
     {
       "date": "2019-12-04",
-      "score": 1.85900410335443,
+      "score": 1.86090958935036,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -519,7 +519,7 @@
     },
     {
       "date": "2019-12-05",
-      "score": 1.86208604211805,
+      "score": 1.86388131059787,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -530,7 +530,7 @@
     },
     {
       "date": "2019-12-06",
-      "score": 1.86597906006049,
+      "score": 1.86766856718134,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -541,7 +541,7 @@
     },
     {
       "date": "2019-12-07",
-      "score": 1.87135997310428,
+      "score": 1.87533778177136,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -552,7 +552,7 @@
     },
     {
       "date": "2019-12-08",
-      "score": 1.87626519538046,
+      "score": 1.88004527156532,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -563,7 +563,7 @@
     },
     {
       "date": "2019-12-09",
-      "score": 1.88121703852728,
+      "score": 1.88520772549473,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -574,7 +574,7 @@
     },
     {
       "date": "2019-12-10",
-      "score": 1.88420504731225,
+      "score": 1.88860514706934,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -585,7 +585,7 @@
     },
     {
       "date": "2019-12-11",
-      "score": 1.88555065722763,
+      "score": 1.89015357785157,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -596,7 +596,7 @@
     },
     {
       "date": "2019-12-12",
-      "score": 1.88613016596774,
+      "score": 1.89090040539778,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -607,7 +607,7 @@
     },
     {
       "date": "2019-12-13",
-      "score": 1.88704588621963,
+      "score": 1.89127581164315,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -618,7 +618,7 @@
     },
     {
       "date": "2019-12-18",
-      "score": 1.8893399256116,
+      "score": 1.89128051852551,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -629,7 +629,7 @@
     },
     {
       "date": "2019-12-19",
-      "score": 1.89302925597685,
+      "score": 1.89517199565309,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -640,7 +640,7 @@
     },
     {
       "date": "2019-12-20",
-      "score": 1.89566598061097,
+      "score": 1.89810287161388,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -651,7 +651,7 @@
     },
     {
       "date": "2019-12-21",
-      "score": 1.90268500539087,
+      "score": 1.90546727007947,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -662,7 +662,7 @@
     },
     {
       "date": "2019-12-22",
-      "score": 1.90537555084859,
+      "score": 1.90837313395833,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -673,7 +673,7 @@
     },
     {
       "date": "2019-12-23",
-      "score": 1.90846978413914,
+      "score": 1.91140536826773,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -684,7 +684,7 @@
     },
     {
       "date": "2019-12-24",
-      "score": 1.90965292406635,
+      "score": 1.91276389909433,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -695,7 +695,7 @@
     },
     {
       "date": "2019-12-25",
-      "score": 1.91080692602181,
+      "score": 1.91378117792866,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -706,7 +706,7 @@
     },
     {
       "date": "2019-12-26",
-      "score": 1.91187903972012,
+      "score": 1.91460309983008,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -717,18 +717,7 @@
     },
     {
       "date": "2019-12-27",
-      "score": 1.91257048050384,
-      "model_id": "public_economic_data:us_labor_market",
-      "model_name": "US Labor Market",
-      "model_display": "Us Labor Market",
-      "model_group": "us-labor-market",
-      "model_family": null,
-      "model_variant": null,
-      "provider": "Public Economic Data"
-    },
-    {
-      "date": "2020-01-25",
-      "score": 1.91369248505392,
+      "score": 1.91552148874415,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -739,7 +728,7 @@
     },
     {
       "date": "2020-01-26",
-      "score": 1.91680896182436,
+      "score": 1.9185965999347,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -750,7 +739,7 @@
     },
     {
       "date": "2020-01-27",
-      "score": 1.91953384769916,
+      "score": 1.92091557192543,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -761,7 +750,7 @@
     },
     {
       "date": "2020-01-28",
-      "score": 1.92228856503954,
+      "score": 1.92323592308903,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -772,7 +761,7 @@
     },
     {
       "date": "2020-01-29",
-      "score": 1.92544165182054,
+      "score": 1.9260472847529,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -783,7 +772,7 @@
     },
     {
       "date": "2020-01-30",
-      "score": 1.92968982203806,
+      "score": 1.93036861432412,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -794,7 +783,7 @@
     },
     {
       "date": "2020-01-31",
-      "score": 1.93016039746563,
+      "score": 1.93067790825079,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -805,7 +794,7 @@
     },
     {
       "date": "2020-02-01",
-      "score": 1.9305791576468,
+      "score": 1.93153088908367,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -816,7 +805,18 @@
     },
     {
       "date": "2020-02-02",
-      "score": 1.93071655491746,
+      "score": 1.9317425144792,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2020-02-10",
+      "score": 1.9341827705383,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -827,7 +827,7 @@
     },
     {
       "date": "2020-02-11",
-      "score": 1.93470576755369,
+      "score": 1.93851739061565,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -838,7 +838,7 @@
     },
     {
       "date": "2020-02-12",
-      "score": 1.93710589100489,
+      "score": 1.94093398177311,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -849,18 +849,7 @@
     },
     {
       "date": "2020-02-13",
-      "score": 1.93966523512439,
-      "model_id": "public_economic_data:us_labor_market",
-      "model_name": "US Labor Market",
-      "model_display": "Us Labor Market",
-      "model_group": "us-labor-market",
-      "model_family": null,
-      "model_variant": null,
-      "provider": "Public Economic Data"
-    },
-    {
-      "date": "2020-02-14",
-      "score": 1.94232199801173,
+      "score": 1.9434604060971,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -871,7 +860,7 @@
     },
     {
       "date": "2020-02-15",
-      "score": 1.94778952626053,
+      "score": 1.94889093908556,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -882,7 +871,7 @@
     },
     {
       "date": "2020-02-16",
-      "score": 1.95300110844464,
+      "score": 1.95407569649517,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -893,7 +882,7 @@
     },
     {
       "date": "2020-02-17",
-      "score": 1.9562191590104,
+      "score": 1.95763856686226,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -904,7 +893,7 @@
     },
     {
       "date": "2020-02-18",
-      "score": 1.95792795382468,
+      "score": 1.95948567320617,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -915,7 +904,7 @@
     },
     {
       "date": "2020-02-19",
-      "score": 1.96102380285707,
+      "score": 1.96260330188711,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -926,7 +915,7 @@
     },
     {
       "date": "2020-02-20",
-      "score": 1.96458492442672,
+      "score": 1.96588123021471,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -937,7 +926,7 @@
     },
     {
       "date": "2020-02-21",
-      "score": 1.9670411322843,
+      "score": 1.96847778427477,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -948,7 +937,7 @@
     },
     {
       "date": "2020-03-06",
-      "score": 1.96707979162695,
+      "score": 1.96906144867316,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -959,7 +948,7 @@
     },
     {
       "date": "2020-03-07",
-      "score": 1.97030095593851,
+      "score": 1.97480383790877,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -970,7 +959,7 @@
     },
     {
       "date": "2020-03-08",
-      "score": 1.97249127172691,
+      "score": 1.97666473207291,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -981,29 +970,7 @@
     },
     {
       "date": "2020-03-09",
-      "score": 1.97289312369067,
-      "model_id": "public_economic_data:us_labor_market",
-      "model_name": "US Labor Market",
-      "model_display": "Us Labor Market",
-      "model_group": "us-labor-market",
-      "model_family": null,
-      "model_variant": null,
-      "provider": "Public Economic Data"
-    },
-    {
-      "date": "2020-03-14",
-      "score": 1.97341309045897,
-      "model_id": "public_economic_data:us_labor_market",
-      "model_name": "US Labor Market",
-      "model_display": "Us Labor Market",
-      "model_group": "us-labor-market",
-      "model_family": null,
-      "model_variant": null,
-      "provider": "Public Economic Data"
-    },
-    {
-      "date": "2020-03-15",
-      "score": 1.97528556346004,
+      "score": 1.97679185887353,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1014,7 +981,7 @@
     },
     {
       "date": "2020-03-16",
-      "score": 1.97732999912708,
+      "score": 1.97820452228426,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1025,7 +992,7 @@
     },
     {
       "date": "2020-03-17",
-      "score": 1.98338168519702,
+      "score": 1.9839260468342,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1036,7 +1003,7 @@
     },
     {
       "date": "2020-03-18",
-      "score": 1.9905889220897,
+      "score": 1.99114448342071,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1047,7 +1014,7 @@
     },
     {
       "date": "2020-03-19",
-      "score": 1.99459467943645,
+      "score": 1.99521445440172,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1058,7 +1025,7 @@
     },
     {
       "date": "2020-03-20",
-      "score": 1.99900944369913,
+      "score": 1.9996932293775,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1069,7 +1036,7 @@
     },
     {
       "date": "2020-03-21",
-      "score": 2.00482862367346,
+      "score": 2.00553453153033,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1080,7 +1047,7 @@
     },
     {
       "date": "2020-03-22",
-      "score": 2.01109249811785,
+      "score": 2.01180853971561,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1091,7 +1058,7 @@
     },
     {
       "date": "2020-03-23",
-      "score": 2.01840301984055,
+      "score": 2.01905413472731,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1102,7 +1069,7 @@
     },
     {
       "date": "2020-03-24",
-      "score": 2.0232109127677,
+      "score": 2.02413268061123,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1113,7 +1080,7 @@
     },
     {
       "date": "2020-03-25",
-      "score": 2.02387066395592,
+      "score": 2.02476992591548,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1124,7 +1091,7 @@
     },
     {
       "date": "2021-01-29",
-      "score": 2.0296851826111,
+      "score": 2.02843550524857,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1135,7 +1102,7 @@
     },
     {
       "date": "2021-01-30",
-      "score": 2.0415082587833,
+      "score": 2.04095403079439,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1146,7 +1113,7 @@
     },
     {
       "date": "2021-01-31",
-      "score": 2.04723307044388,
+      "score": 2.04685836875999,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1157,7 +1124,7 @@
     },
     {
       "date": "2021-02-01",
-      "score": 2.0527196155899,
+      "score": 2.05275105804529,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1168,7 +1135,7 @@
     },
     {
       "date": "2021-02-02",
-      "score": 2.05492845830588,
+      "score": 2.05491875468597,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1179,7 +1146,7 @@
     },
     {
       "date": "2021-02-03",
-      "score": 2.05843294475361,
+      "score": 2.05826161657173,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1190,7 +1157,7 @@
     },
     {
       "date": "2021-02-04",
-      "score": 2.06475468560653,
+      "score": 2.06498952294685,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1201,7 +1168,7 @@
     },
     {
       "date": "2021-02-05",
-      "score": 2.06865130102539,
+      "score": 2.068182475915,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1212,7 +1179,7 @@
     },
     {
       "date": "2021-02-06",
-      "score": 2.07616602519783,
+      "score": 2.0750091530168,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1223,7 +1190,7 @@
     },
     {
       "date": "2021-02-07",
-      "score": 2.08511645617471,
+      "score": 2.08654978908654,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1234,7 +1201,7 @@
     },
     {
       "date": "2021-02-08",
-      "score": 2.09480973247761,
+      "score": 2.09591270425182,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1245,7 +1212,7 @@
     },
     {
       "date": "2021-02-09",
-      "score": 2.10564412409824,
+      "score": 2.10710007513677,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1256,7 +1223,7 @@
     },
     {
       "date": "2021-02-10",
-      "score": 2.11339572269031,
+      "score": 2.11488398724075,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1267,7 +1234,7 @@
     },
     {
       "date": "2021-02-11",
-      "score": 2.12113702786032,
+      "score": 2.12234956141641,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1278,7 +1245,7 @@
     },
     {
       "date": "2021-02-12",
-      "score": 2.13134625076354,
+      "score": 2.13328263620733,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1289,7 +1256,7 @@
     },
     {
       "date": "2021-02-13",
-      "score": 2.14233982419245,
+      "score": 2.145209286006,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1300,7 +1267,7 @@
     },
     {
       "date": "2021-02-14",
-      "score": 2.14979284770557,
+      "score": 2.14985878418949,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1311,7 +1278,7 @@
     },
     {
       "date": "2021-02-15",
-      "score": 2.15605559513243,
+      "score": 2.15611519170497,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1322,7 +1289,7 @@
     },
     {
       "date": "2021-02-16",
-      "score": 2.16310055121778,
+      "score": 2.16315133907267,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1333,7 +1300,7 @@
     },
     {
       "date": "2021-02-17",
-      "score": 2.17006167619194,
+      "score": 2.17049223271884,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1344,7 +1311,7 @@
     },
     {
       "date": "2021-02-18",
-      "score": 2.17505827538918,
+      "score": 2.17582352310014,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1355,7 +1322,7 @@
     },
     {
       "date": "2021-02-19",
-      "score": 2.17694038390558,
+      "score": 2.17779634391554,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1366,7 +1333,7 @@
     },
     {
       "date": "2021-02-21",
-      "score": 2.17704338756126,
+      "score": 2.1779474611794,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1377,7 +1344,7 @@
     },
     {
       "date": "2021-02-22",
-      "score": 2.17992090470382,
+      "score": 2.18044608458082,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1388,7 +1355,7 @@
     },
     {
       "date": "2021-02-23",
-      "score": 2.18402195573875,
+      "score": 2.18453058639578,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1399,7 +1366,7 @@
     },
     {
       "date": "2021-02-24",
-      "score": 2.1884639378307,
+      "score": 2.18861924701969,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1410,7 +1377,7 @@
     },
     {
       "date": "2021-02-25",
-      "score": 2.19132901435096,
+      "score": 2.1914808770529,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1421,7 +1388,7 @@
     },
     {
       "date": "2021-02-26",
-      "score": 2.19723021140635,
+      "score": 2.19717871318836,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1432,7 +1399,7 @@
     },
     {
       "date": "2021-02-27",
-      "score": 2.20440359076142,
+      "score": 2.20412525907923,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1443,7 +1410,7 @@
     },
     {
       "date": "2021-02-28",
-      "score": 2.20972237824632,
+      "score": 2.2094099316767,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1454,7 +1421,7 @@
     },
     {
       "date": "2021-03-01",
-      "score": 2.21580723772845,
+      "score": 2.21618772005633,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1465,7 +1432,7 @@
     },
     {
       "date": "2021-03-02",
-      "score": 2.21855226208895,
+      "score": 2.21868499876246,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1476,7 +1443,7 @@
     },
     {
       "date": "2021-03-03",
-      "score": 2.22025395953268,
+      "score": 2.22019868691105,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1487,7 +1454,7 @@
     },
     {
       "date": "2021-03-04",
-      "score": 2.22246988012249,
+      "score": 2.22215464948132,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1498,7 +1465,18 @@
     },
     {
       "date": "2021-03-05",
-      "score": 2.2226966007617,
+      "score": 2.22247192813044,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2021-03-12",
+      "score": 2.22395101484048,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1509,18 +1487,7 @@
     },
     {
       "date": "2021-03-13",
-      "score": 2.22819028139534,
-      "model_id": "public_economic_data:us_labor_market",
-      "model_name": "US Labor Market",
-      "model_display": "Us Labor Market",
-      "model_group": "us-labor-market",
-      "model_family": null,
-      "model_variant": null,
-      "provider": "Public Economic Data"
-    },
-    {
-      "date": "2021-03-14",
-      "score": 2.22877416624852,
+      "score": 2.2303442159847,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1531,7 +1498,7 @@
     },
     {
       "date": "2021-07-24",
-      "score": 2.23998448600901,
+      "score": 2.23909727109868,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1542,7 +1509,7 @@
     },
     {
       "date": "2021-07-25",
-      "score": 2.25218991491576,
+      "score": 2.25130103177431,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1553,7 +1520,7 @@
     },
     {
       "date": "2021-07-26",
-      "score": 2.26516047071076,
+      "score": 2.2643167652682,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1564,7 +1531,7 @@
     },
     {
       "date": "2021-07-27",
-      "score": 2.27828727495607,
+      "score": 2.27749625275283,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1575,7 +1542,7 @@
     },
     {
       "date": "2021-07-28",
-      "score": 2.28992249232133,
+      "score": 2.28923051628302,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1586,7 +1553,7 @@
     },
     {
       "date": "2021-07-29",
-      "score": 2.29981517001553,
+      "score": 2.29912709063565,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1597,7 +1564,7 @@
     },
     {
       "date": "2021-07-30",
-      "score": 2.30638439880226,
+      "score": 2.30553242572018,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1608,7 +1575,7 @@
     },
     {
       "date": "2021-07-31",
-      "score": 2.31258845736116,
+      "score": 2.31179137367488,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1619,7 +1586,7 @@
     },
     {
       "date": "2021-08-01",
-      "score": 2.3162675373349,
+      "score": 2.31609138302346,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1630,7 +1597,7 @@
     },
     {
       "date": "2021-08-02",
-      "score": 2.3193860074325,
+      "score": 2.31923859753538,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1641,7 +1608,7 @@
     },
     {
       "date": "2021-08-03",
-      "score": 2.32454680524131,
+      "score": 2.32433312075614,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1652,7 +1619,7 @@
     },
     {
       "date": "2021-08-04",
-      "score": 2.32687131539299,
+      "score": 2.32661194288812,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1663,7 +1630,7 @@
     },
     {
       "date": "2021-08-14",
-      "score": 2.34142967371385,
+      "score": 2.33913215772143,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1674,7 +1641,7 @@
     },
     {
       "date": "2021-08-15",
-      "score": 2.35008320092912,
+      "score": 2.34794234913462,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1685,7 +1652,7 @@
     },
     {
       "date": "2021-08-16",
-      "score": 2.35790725931395,
+      "score": 2.35603928078481,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1696,7 +1663,7 @@
     },
     {
       "date": "2021-08-17",
-      "score": 2.36456023374202,
+      "score": 2.36466452445041,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1707,7 +1674,7 @@
     },
     {
       "date": "2021-08-18",
-      "score": 2.3649176537725,
+      "score": 2.36539619259558,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1718,7 +1685,7 @@
     },
     {
       "date": "2021-08-19",
-      "score": 2.36893044978974,
+      "score": 2.36954126863753,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1729,7 +1696,7 @@
     },
     {
       "date": "2021-08-20",
-      "score": 2.37400873458044,
+      "score": 2.37477446401508,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1740,7 +1707,7 @@
     },
     {
       "date": "2021-08-21",
-      "score": 2.3939172630207,
+      "score": 2.39430201733861,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1751,7 +1718,7 @@
     },
     {
       "date": "2021-08-22",
-      "score": 2.41284825614447,
+      "score": 2.41323200935441,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1762,7 +1729,7 @@
     },
     {
       "date": "2021-08-23",
-      "score": 2.43372807390493,
+      "score": 2.43410943360495,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1773,7 +1740,7 @@
     },
     {
       "date": "2021-08-24",
-      "score": 2.4535478665968,
+      "score": 2.45401927270168,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1784,7 +1751,7 @@
     },
     {
       "date": "2021-08-25",
-      "score": 2.47897565535018,
+      "score": 2.47933577074139,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1795,7 +1762,7 @@
     },
     {
       "date": "2021-08-26",
-      "score": 2.50056415948995,
+      "score": 2.50081466194361,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1806,7 +1773,7 @@
     },
     {
       "date": "2021-08-27",
-      "score": 2.51856746262311,
+      "score": 2.51878224380095,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1817,7 +1784,7 @@
     },
     {
       "date": "2021-08-28",
-      "score": 2.52024082899358,
+      "score": 2.52072392608408,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1828,7 +1795,7 @@
     },
     {
       "date": "2021-08-29",
-      "score": 2.52166560073043,
+      "score": 2.52193191298056,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1839,7 +1806,7 @@
     },
     {
       "date": "2021-08-30",
-      "score": 2.52342766402343,
+      "score": 2.52369772099015,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1850,7 +1817,7 @@
     },
     {
       "date": "2021-09-09",
-      "score": 2.52408120292605,
+      "score": 2.52428917586273,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1861,7 +1828,7 @@
     },
     {
       "date": "2021-09-10",
-      "score": 2.53017334225092,
+      "score": 2.53006584629648,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1872,7 +1839,7 @@
     },
     {
       "date": "2021-09-11",
-      "score": 2.54102875090682,
+      "score": 2.54050835667902,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1883,7 +1850,7 @@
     },
     {
       "date": "2021-09-12",
-      "score": 2.54905424451458,
+      "score": 2.54850049534078,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1894,7 +1861,7 @@
     },
     {
       "date": "2021-09-13",
-      "score": 2.55640705473134,
+      "score": 2.55588731588865,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1905,7 +1872,7 @@
     },
     {
       "date": "2021-09-14",
-      "score": 2.5566309986646,
+      "score": 2.55616546078664,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1916,7 +1883,7 @@
     },
     {
       "date": "2021-09-15",
-      "score": 2.55886869765632,
+      "score": 2.55885222619778,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1927,7 +1894,7 @@
     },
     {
       "date": "2021-09-16",
-      "score": 2.5624844060212,
+      "score": 2.56240653890425,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1938,7 +1905,7 @@
     },
     {
       "date": "2021-09-17",
-      "score": 2.56380948504939,
+      "score": 2.56399649061509,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1949,7 +1916,7 @@
     },
     {
       "date": "2021-09-18",
-      "score": 2.56457634520292,
+      "score": 2.56507186317465,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1960,7 +1927,7 @@
     },
     {
       "date": "2021-09-19",
-      "score": 2.56475380342267,
+      "score": 2.56541652647535,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1971,7 +1938,7 @@
     },
     {
       "date": "2021-09-20",
-      "score": 2.5660638997007,
+      "score": 2.56678077434919,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1982,7 +1949,7 @@
     },
     {
       "date": "2021-09-21",
-      "score": 2.57182234159789,
+      "score": 2.57250538481768,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -1993,7 +1960,7 @@
     },
     {
       "date": "2021-09-22",
-      "score": 2.5762279932507,
+      "score": 2.57634065279592,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2004,7 +1971,7 @@
     },
     {
       "date": "2021-09-23",
-      "score": 2.5814475946392,
+      "score": 2.58168186757394,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2015,7 +1982,7 @@
     },
     {
       "date": "2021-09-24",
-      "score": 2.58639192046106,
+      "score": 2.58697606518195,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2026,7 +1993,7 @@
     },
     {
       "date": "2021-09-25",
-      "score": 2.58967331613572,
+      "score": 2.59024141124739,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2037,7 +2004,7 @@
     },
     {
       "date": "2021-09-26",
-      "score": 2.59459647406908,
+      "score": 2.59500725235442,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2048,7 +2015,7 @@
     },
     {
       "date": "2021-09-27",
-      "score": 2.59820364564283,
+      "score": 2.59861198245967,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2059,7 +2026,7 @@
     },
     {
       "date": "2021-09-28",
-      "score": 2.60138340600777,
+      "score": 2.60174059278922,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2070,7 +2037,7 @@
     },
     {
       "date": "2021-09-29",
-      "score": 2.60680676348443,
+      "score": 2.60730097484457,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2081,7 +2048,7 @@
     },
     {
       "date": "2021-09-30",
-      "score": 2.60855725140282,
+      "score": 2.60916952015954,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2092,7 +2059,7 @@
     },
     {
       "date": "2021-10-01",
-      "score": 2.6095403378366,
+      "score": 2.6106798875827,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2103,7 +2070,7 @@
     },
     {
       "date": "2021-10-02",
-      "score": 2.61263981758643,
+      "score": 2.61373212857619,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2114,7 +2081,7 @@
     },
     {
       "date": "2021-10-03",
-      "score": 2.61584619585718,
+      "score": 2.61690912971731,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2125,7 +2092,7 @@
     },
     {
       "date": "2021-10-04",
-      "score": 2.61878732113305,
+      "score": 2.61971814004988,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2136,7 +2103,7 @@
     },
     {
       "date": "2021-10-05",
-      "score": 2.62254566699346,
+      "score": 2.62341358200434,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2147,7 +2114,7 @@
     },
     {
       "date": "2021-10-06",
-      "score": 2.62728366761498,
+      "score": 2.62801052377441,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2158,7 +2125,7 @@
     },
     {
       "date": "2021-10-07",
-      "score": 2.63601884767511,
+      "score": 2.63631898006658,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2169,7 +2136,7 @@
     },
     {
       "date": "2021-10-08",
-      "score": 2.64320219526446,
+      "score": 2.64265169794298,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2180,7 +2147,7 @@
     },
     {
       "date": "2021-10-09",
-      "score": 2.6520624534842,
+      "score": 2.65156256987427,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2191,7 +2158,7 @@
     },
     {
       "date": "2021-10-10",
-      "score": 2.66109444642537,
+      "score": 2.66064289086564,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2202,7 +2169,7 @@
     },
     {
       "date": "2021-10-11",
-      "score": 2.66990182870471,
+      "score": 2.66927063919148,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2213,7 +2180,7 @@
     },
     {
       "date": "2021-10-12",
-      "score": 2.68047959934735,
+      "score": 2.67979579575009,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2224,7 +2191,7 @@
     },
     {
       "date": "2021-10-13",
-      "score": 2.68874004973017,
+      "score": 2.68812605294001,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2235,7 +2202,7 @@
     },
     {
       "date": "2021-10-14",
-      "score": 2.69478257091098,
+      "score": 2.69367818694201,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2246,7 +2213,7 @@
     },
     {
       "date": "2021-10-15",
-      "score": 2.70126721459695,
+      "score": 2.70028519135538,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2257,7 +2224,7 @@
     },
     {
       "date": "2021-10-16",
-      "score": 2.70585404465808,
+      "score": 2.70481184984849,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2268,7 +2235,7 @@
     },
     {
       "date": "2021-10-17",
-      "score": 2.70839288326417,
+      "score": 2.70751068233815,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2279,7 +2246,7 @@
     },
     {
       "date": "2021-10-18",
-      "score": 2.71291858732785,
+      "score": 2.71226512376151,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2290,7 +2257,7 @@
     },
     {
       "date": "2021-10-20",
-      "score": 2.71497927489458,
+      "score": 2.71425830795689,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2301,7 +2268,7 @@
     },
     {
       "date": "2021-10-21",
-      "score": 2.71564581604999,
+      "score": 2.71575233862406,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2312,7 +2279,7 @@
     },
     {
       "date": "2021-10-22",
-      "score": 2.71760078224951,
+      "score": 2.71698201402324,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2323,7 +2290,7 @@
     },
     {
       "date": "2021-10-23",
-      "score": 2.71908384259968,
+      "score": 2.71841424039271,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2334,7 +2301,7 @@
     },
     {
       "date": "2021-10-24",
-      "score": 2.7211282521144,
+      "score": 2.72026770516697,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2345,7 +2312,7 @@
     },
     {
       "date": "2021-10-25",
-      "score": 2.72182499467773,
+      "score": 2.72104315229589,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2356,7 +2323,7 @@
     },
     {
       "date": "2021-10-26",
-      "score": 2.72580388486081,
+      "score": 2.72484436421468,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2367,7 +2334,7 @@
     },
     {
       "date": "2021-10-27",
-      "score": 2.72835120508992,
+      "score": 2.72745015688564,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2378,7 +2345,7 @@
     },
     {
       "date": "2021-10-28",
-      "score": 2.73138961423168,
+      "score": 2.7305161803693,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2389,7 +2356,7 @@
     },
     {
       "date": "2021-10-29",
-      "score": 2.73627202655723,
+      "score": 2.73576003542176,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2400,7 +2367,7 @@
     },
     {
       "date": "2021-10-30",
-      "score": 2.74088646561554,
+      "score": 2.74017665017827,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2411,7 +2378,18 @@
     },
     {
       "date": "2021-10-31",
-      "score": 2.74679272322478,
+      "score": 2.74611499122348,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2021-11-02",
+      "score": 2.7464205866313,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2422,7 +2400,7 @@
     },
     {
       "date": "2021-11-03",
-      "score": 2.75006255210987,
+      "score": 2.74962253839419,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2433,7 +2411,7 @@
     },
     {
       "date": "2021-11-04",
-      "score": 2.75438816901508,
+      "score": 2.75386339599342,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2444,7 +2422,7 @@
     },
     {
       "date": "2021-11-05",
-      "score": 2.75633776872089,
+      "score": 2.75622573342654,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2455,7 +2433,7 @@
     },
     {
       "date": "2021-11-06",
-      "score": 2.76127585623201,
+      "score": 2.76141647233475,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2466,7 +2444,7 @@
     },
     {
       "date": "2021-11-07",
-      "score": 2.7648712998894,
+      "score": 2.76626295556028,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2477,7 +2455,7 @@
     },
     {
       "date": "2021-11-08",
-      "score": 2.7767135677529,
+      "score": 2.77803522806909,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2488,7 +2466,7 @@
     },
     {
       "date": "2021-11-09",
-      "score": 2.78038054059037,
+      "score": 2.78153105468708,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2499,7 +2477,7 @@
     },
     {
       "date": "2021-11-10",
-      "score": 2.7859202438509,
+      "score": 2.78708211794287,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2510,7 +2488,7 @@
     },
     {
       "date": "2021-11-11",
-      "score": 2.79960940946562,
+      "score": 2.80040694868444,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2521,7 +2499,7 @@
     },
     {
       "date": "2021-11-12",
-      "score": 2.80770403539406,
+      "score": 2.80851528047642,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2532,7 +2510,7 @@
     },
     {
       "date": "2021-11-13",
-      "score": 2.82057519801996,
+      "score": 2.82146038906014,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2543,7 +2521,7 @@
     },
     {
       "date": "2021-11-14",
-      "score": 2.83368044267082,
+      "score": 2.83349145948481,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2554,7 +2532,7 @@
     },
     {
       "date": "2021-11-15",
-      "score": 2.84481151198554,
+      "score": 2.84456646393753,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2565,7 +2543,7 @@
     },
     {
       "date": "2021-11-16",
-      "score": 2.85713146805426,
+      "score": 2.8570554325054,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2576,7 +2554,7 @@
     },
     {
       "date": "2021-11-17",
-      "score": 2.86629350085086,
+      "score": 2.86659866960591,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2587,7 +2565,7 @@
     },
     {
       "date": "2021-11-18",
-      "score": 2.86692162725615,
+      "score": 2.86751107655792,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2598,7 +2576,7 @@
     },
     {
       "date": "2021-11-19",
-      "score": 2.87495857026489,
+      "score": 2.87526134871588,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2609,7 +2587,7 @@
     },
     {
       "date": "2021-11-21",
-      "score": 2.8760020409454,
+      "score": 2.8761265670914,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2620,7 +2598,7 @@
     },
     {
       "date": "2021-11-22",
-      "score": 2.87992640257527,
+      "score": 2.88002765455086,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2631,7 +2609,7 @@
     },
     {
       "date": "2021-11-23",
-      "score": 2.88534551577266,
+      "score": 2.8854292403664,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2642,7 +2620,7 @@
     },
     {
       "date": "2021-11-24",
-      "score": 2.89306865709794,
+      "score": 2.89308016041666,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2653,7 +2631,7 @@
     },
     {
       "date": "2021-11-25",
-      "score": 2.8993172929353,
+      "score": 2.89950294390917,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2664,7 +2642,7 @@
     },
     {
       "date": "2021-11-26",
-      "score": 2.90802155259145,
+      "score": 2.90829599996098,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2675,7 +2653,7 @@
     },
     {
       "date": "2021-11-27",
-      "score": 2.9189092282394,
+      "score": 2.9193528978313,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2686,7 +2664,7 @@
     },
     {
       "date": "2021-11-28",
-      "score": 2.92437159601977,
+      "score": 2.9247196347244,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2697,7 +2675,7 @@
     },
     {
       "date": "2021-11-29",
-      "score": 2.92914420766826,
+      "score": 2.92927632245309,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2708,7 +2686,7 @@
     },
     {
       "date": "2021-11-30",
-      "score": 2.93359309554,
+      "score": 2.93359400393716,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2719,7 +2697,7 @@
     },
     {
       "date": "2021-12-01",
-      "score": 2.93411251190652,
+      "score": 2.9348137200711,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2730,7 +2708,7 @@
     },
     {
       "date": "2021-12-02",
-      "score": 2.9385309872349,
+      "score": 2.93937465070268,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2741,7 +2719,7 @@
     },
     {
       "date": "2021-12-03",
-      "score": 2.94065629030129,
+      "score": 2.94160746438615,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2752,7 +2730,7 @@
     },
     {
       "date": "2021-12-05",
-      "score": 2.94266363855038,
+      "score": 2.94359756208148,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2763,7 +2741,7 @@
     },
     {
       "date": "2021-12-06",
-      "score": 2.94669369372693,
+      "score": 2.94783865626,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2774,7 +2752,7 @@
     },
     {
       "date": "2021-12-07",
-      "score": 2.94717904788147,
+      "score": 2.9505019266742,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2785,7 +2763,7 @@
     },
     {
       "date": "2021-12-08",
-      "score": 2.95112362698964,
+      "score": 2.95321958169923,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2796,7 +2774,7 @@
     },
     {
       "date": "2021-12-09",
-      "score": 2.95360494185353,
+      "score": 2.95545480389688,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2807,7 +2785,7 @@
     },
     {
       "date": "2021-12-10",
-      "score": 2.95420955718291,
+      "score": 2.95613306570115,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2818,7 +2796,7 @@
     },
     {
       "date": "2021-12-11",
-      "score": 2.95709956687666,
+      "score": 2.95889024941729,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2829,7 +2807,7 @@
     },
     {
       "date": "2021-12-12",
-      "score": 2.96249523515406,
+      "score": 2.96413502305173,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2840,7 +2818,7 @@
     },
     {
       "date": "2021-12-13",
-      "score": 2.96771469603085,
+      "score": 2.9693927345398,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2851,7 +2829,7 @@
     },
     {
       "date": "2021-12-14",
-      "score": 2.97252507982362,
+      "score": 2.97231451555023,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2862,7 +2840,7 @@
     },
     {
       "date": "2021-12-15",
-      "score": 2.98407411254264,
+      "score": 2.98447398450658,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2873,7 +2851,7 @@
     },
     {
       "date": "2021-12-16",
-      "score": 2.99731290972232,
+      "score": 2.99779692352775,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2884,7 +2862,7 @@
     },
     {
       "date": "2021-12-17",
-      "score": 3.00987764507507,
+      "score": 3.00992054202822,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2895,7 +2873,7 @@
     },
     {
       "date": "2021-12-18",
-      "score": 3.02401792496178,
+      "score": 3.02416251475567,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2906,7 +2884,7 @@
     },
     {
       "date": "2021-12-19",
-      "score": 3.03546241990475,
+      "score": 3.03578629957111,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2917,7 +2895,7 @@
     },
     {
       "date": "2021-12-20",
-      "score": 3.04590690512322,
+      "score": 3.04626858741449,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2928,7 +2906,7 @@
     },
     {
       "date": "2021-12-21",
-      "score": 3.05052653562102,
+      "score": 3.05026325348891,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2939,7 +2917,7 @@
     },
     {
       "date": "2022-01-16",
-      "score": 3.05396722605486,
+      "score": 3.05354181901907,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2950,7 +2928,7 @@
     },
     {
       "date": "2022-01-17",
-      "score": 3.06271295810909,
+      "score": 3.06240089284986,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2961,7 +2939,7 @@
     },
     {
       "date": "2022-01-18",
-      "score": 3.07269886529361,
+      "score": 3.0726701163003,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2972,7 +2950,7 @@
     },
     {
       "date": "2022-01-19",
-      "score": 3.08024884717463,
+      "score": 3.08053152698808,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2983,7 +2961,7 @@
     },
     {
       "date": "2022-01-20",
-      "score": 3.09035520002758,
+      "score": 3.09112583157033,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -2994,7 +2972,7 @@
     },
     {
       "date": "2022-01-21",
-      "score": 3.10362622378632,
+      "score": 3.10359466293209,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3005,7 +2983,7 @@
     },
     {
       "date": "2022-01-22",
-      "score": 3.11215830519651,
+      "score": 3.11198349047606,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3016,7 +2994,7 @@
     },
     {
       "date": "2022-01-23",
-      "score": 3.12178269641725,
+      "score": 3.12121640558311,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3027,7 +3005,7 @@
     },
     {
       "date": "2022-01-24",
-      "score": 3.13103647961162,
+      "score": 3.13035415091895,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3038,7 +3016,7 @@
     },
     {
       "date": "2022-01-25",
-      "score": 3.14086279801702,
+      "score": 3.13987353418074,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3049,7 +3027,7 @@
     },
     {
       "date": "2022-01-26",
-      "score": 3.15057613265881,
+      "score": 3.14952167289614,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3060,7 +3038,7 @@
     },
     {
       "date": "2022-01-27",
-      "score": 3.15850606240146,
+      "score": 3.15724204009756,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3071,7 +3049,7 @@
     },
     {
       "date": "2022-01-28",
-      "score": 3.16587905928679,
+      "score": 3.16541940619878,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3082,7 +3060,7 @@
     },
     {
       "date": "2022-01-29",
-      "score": 3.1730481307814,
+      "score": 3.17264726654817,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3093,7 +3071,7 @@
     },
     {
       "date": "2022-01-30",
-      "score": 3.17667716874019,
+      "score": 3.17650336134783,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3104,7 +3082,7 @@
     },
     {
       "date": "2022-01-31",
-      "score": 3.18094593247893,
+      "score": 3.18082724153894,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3115,7 +3093,7 @@
     },
     {
       "date": "2022-02-01",
-      "score": 3.18557453357893,
+      "score": 3.18682269347224,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3126,7 +3104,7 @@
     },
     {
       "date": "2022-02-02",
-      "score": 3.19053484504108,
+      "score": 3.19182140948811,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3137,7 +3115,7 @@
     },
     {
       "date": "2022-02-03",
-      "score": 3.19103694934265,
+      "score": 3.19264059900915,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3148,7 +3126,7 @@
     },
     {
       "date": "2022-02-06",
-      "score": 3.1934630855201,
+      "score": 3.19460064123487,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3159,7 +3137,7 @@
     },
     {
       "date": "2022-02-07",
-      "score": 3.19729212430204,
+      "score": 3.20092969509819,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3170,7 +3148,7 @@
     },
     {
       "date": "2022-02-11",
-      "score": 3.20170308208545,
+      "score": 3.20301517410293,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3181,7 +3159,7 @@
     },
     {
       "date": "2022-02-12",
-      "score": 3.20322579988319,
+      "score": 3.20458076462508,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3192,18 +3170,7 @@
     },
     {
       "date": "2022-02-13",
-      "score": 3.20502824594191,
-      "model_id": "public_economic_data:us_labor_market",
-      "model_name": "US Labor Market",
-      "model_display": "Us Labor Market",
-      "model_group": "us-labor-market",
-      "model_family": null,
-      "model_variant": null,
-      "provider": "Public Economic Data"
-    },
-    {
-      "date": "2022-02-14",
-      "score": 3.20643483542296,
+      "score": 3.20715715306725,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3214,7 +3181,7 @@
     },
     {
       "date": "2022-02-15",
-      "score": 3.20927070250425,
+      "score": 3.20872998639817,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3225,7 +3192,7 @@
     },
     {
       "date": "2022-02-16",
-      "score": 3.21122620616884,
+      "score": 3.21039469888658,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3236,7 +3203,7 @@
     },
     {
       "date": "2022-02-17",
-      "score": 3.21682894914909,
+      "score": 3.21601822503229,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3247,7 +3214,7 @@
     },
     {
       "date": "2022-02-18",
-      "score": 3.21974402067642,
+      "score": 3.21910502081431,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3258,7 +3225,7 @@
     },
     {
       "date": "2022-02-20",
-      "score": 3.22052115584085,
+      "score": 3.2193281046973,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3269,7 +3236,7 @@
     },
     {
       "date": "2022-02-21",
-      "score": 3.22461178337264,
+      "score": 3.22249655103908,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3280,7 +3247,7 @@
     },
     {
       "date": "2022-02-22",
-      "score": 3.23202240645604,
+      "score": 3.22998719699048,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3291,7 +3258,7 @@
     },
     {
       "date": "2022-02-23",
-      "score": 3.23600070925341,
+      "score": 3.23380976728313,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3302,7 +3269,7 @@
     },
     {
       "date": "2022-02-24",
-      "score": 3.23800056718839,
+      "score": 3.23581477023465,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3313,7 +3280,7 @@
     },
     {
       "date": "2022-02-25",
-      "score": 3.23941507450731,
+      "score": 3.23751715377224,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3324,7 +3291,7 @@
     },
     {
       "date": "2022-02-26",
-      "score": 3.24318769040084,
+      "score": 3.24201377399911,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3335,7 +3302,7 @@
     },
     {
       "date": "2022-02-27",
-      "score": 3.24749850817131,
+      "score": 3.24606122634364,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3346,7 +3313,29 @@
     },
     {
       "date": "2022-02-28",
-      "score": 3.25039930985527,
+      "score": 3.24975516105682,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2022-03-06",
+      "score": 3.25103964233867,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2022-03-07",
+      "score": 3.25267483263947,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3357,7 +3346,7 @@
     },
     {
       "date": "2022-03-08",
-      "score": 3.25925265376113,
+      "score": 3.26162067761614,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3368,7 +3357,7 @@
     },
     {
       "date": "2022-03-09",
-      "score": 3.26214074232386,
+      "score": 3.2645328843158,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3379,7 +3368,7 @@
     },
     {
       "date": "2022-03-10",
-      "score": 3.26806538673569,
+      "score": 3.27039576033573,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3390,7 +3379,7 @@
     },
     {
       "date": "2022-03-11",
-      "score": 3.27260310991378,
+      "score": 3.27498886966333,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3401,7 +3390,7 @@
     },
     {
       "date": "2022-03-12",
-      "score": 3.277364271169,
+      "score": 3.27986507976417,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3412,7 +3401,7 @@
     },
     {
       "date": "2022-03-13",
-      "score": 3.27874789606286,
+      "score": 3.28129982162375,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3422,8 +3411,19 @@
       "provider": "Public Economic Data"
     },
     {
-      "date": "2022-03-14",
-      "score": 3.28118028807443,
+      "date": "2025-08-19",
+      "score": 3.2814023599795,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-08-20",
+      "score": 3.29381167929595,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3434,7 +3434,7 @@
     },
     {
       "date": "2025-08-21",
-      "score": 3.2905362978236,
+      "score": 3.30607573663647,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3445,7 +3445,7 @@
     },
     {
       "date": "2025-08-22",
-      "score": 3.29571998922456,
+      "score": 3.31195687023161,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3456,7 +3456,7 @@
     },
     {
       "date": "2025-08-23",
-      "score": 3.30068435405203,
+      "score": 3.31687590724359,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3467,7 +3467,7 @@
     },
     {
       "date": "2025-08-24",
-      "score": 3.30750723807449,
+      "score": 3.3242240157568,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3478,7 +3478,7 @@
     },
     {
       "date": "2025-08-25",
-      "score": 3.31383470317656,
+      "score": 3.3311200268863,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3489,7 +3489,7 @@
     },
     {
       "date": "2025-08-26",
-      "score": 3.32209210205787,
+      "score": 3.33991406117464,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3500,7 +3500,7 @@
     },
     {
       "date": "2025-08-27",
-      "score": 3.33203774158358,
+      "score": 3.35080759128572,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3511,7 +3511,7 @@
     },
     {
       "date": "2025-08-28",
-      "score": 3.34213182093174,
+      "score": 3.36294926215824,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3522,7 +3522,7 @@
     },
     {
       "date": "2025-08-30",
-      "score": 3.34586491844754,
+      "score": 3.36713667877992,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3533,7 +3533,18 @@
     },
     {
       "date": "2025-09-01",
-      "score": 3.34668728541697,
+      "score": 3.37283675172344,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-09-06",
+      "score": 3.37285820748492,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3544,7 +3555,7 @@
     },
     {
       "date": "2025-09-07",
-      "score": 3.35427290870633,
+      "score": 3.38166934718992,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3555,7 +3566,7 @@
     },
     {
       "date": "2025-09-08",
-      "score": 3.36183741871227,
+      "score": 3.38523972142138,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3566,7 +3577,7 @@
     },
     {
       "date": "2025-09-09",
-      "score": 3.37132779823393,
+      "score": 3.39543473008194,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3577,7 +3588,7 @@
     },
     {
       "date": "2025-09-10",
-      "score": 3.38726748685526,
+      "score": 3.41290768243139,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3588,7 +3599,7 @@
     },
     {
       "date": "2025-09-11",
-      "score": 3.4012058516588,
+      "score": 3.42777476592388,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3599,7 +3610,7 @@
     },
     {
       "date": "2025-09-12",
-      "score": 3.41657066477132,
+      "score": 3.44410544370765,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3610,7 +3621,7 @@
     },
     {
       "date": "2025-09-13",
-      "score": 3.42811285152219,
+      "score": 3.45622517364125,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3621,7 +3632,7 @@
     },
     {
       "date": "2025-09-14",
-      "score": 3.43873207458508,
+      "score": 3.4670438156205,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3632,7 +3643,7 @@
     },
     {
       "date": "2025-09-15",
-      "score": 3.44743180298157,
+      "score": 3.47602415064869,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3643,7 +3654,7 @@
     },
     {
       "date": "2025-09-16",
-      "score": 3.45799188710472,
+      "score": 3.48675698671676,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3654,7 +3665,7 @@
     },
     {
       "date": "2025-09-17",
-      "score": 3.4630920219963,
+      "score": 3.49167244998691,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3665,7 +3676,7 @@
     },
     {
       "date": "2025-09-18",
-      "score": 3.47039927215351,
+      "score": 3.49969041183487,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3676,7 +3687,7 @@
     },
     {
       "date": "2025-09-19",
-      "score": 3.47550663715984,
+      "score": 3.50434492638957,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3687,7 +3698,7 @@
     },
     {
       "date": "2025-09-20",
-      "score": 3.48293713986079,
+      "score": 3.51217328345124,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3698,7 +3709,7 @@
     },
     {
       "date": "2025-09-21",
-      "score": 3.48986478600763,
+      "score": 3.51946540630059,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3709,7 +3720,7 @@
     },
     {
       "date": "2025-09-22",
-      "score": 3.49773218501095,
+      "score": 3.52755576461814,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3720,7 +3731,7 @@
     },
     {
       "date": "2025-09-23",
-      "score": 3.50332278858496,
+      "score": 3.53398932952338,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3731,7 +3742,7 @@
     },
     {
       "date": "2025-09-24",
-      "score": 3.51345684480859,
+      "score": 3.54375591281092,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3742,7 +3753,7 @@
     },
     {
       "date": "2025-09-25",
-      "score": 3.52372497125274,
+      "score": 3.55369715027788,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3753,7 +3764,7 @@
     },
     {
       "date": "2025-09-26",
-      "score": 3.5333182302223,
+      "score": 3.56380814347714,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3764,7 +3775,7 @@
     },
     {
       "date": "2025-09-27",
-      "score": 3.54516333548541,
+      "score": 3.57593535524915,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3775,7 +3786,7 @@
     },
     {
       "date": "2025-09-28",
-      "score": 3.55775701919585,
+      "score": 3.58895836009291,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3786,7 +3797,7 @@
     },
     {
       "date": "2025-09-29",
-      "score": 3.56996761644949,
+      "score": 3.60147778828827,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3797,7 +3808,7 @@
     },
     {
       "date": "2025-09-30",
-      "score": 3.58253039643524,
+      "score": 3.61354423030995,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3808,7 +3819,7 @@
     },
     {
       "date": "2025-10-01",
-      "score": 3.59207205806587,
+      "score": 3.62884975906598,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3819,7 +3830,7 @@
     },
     {
       "date": "2025-10-02",
-      "score": 3.59920681253023,
+      "score": 3.6367103375247,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3830,7 +3841,7 @@
     },
     {
       "date": "2025-10-03",
-      "score": 3.60673143801693,
+      "score": 3.6447406455974,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3841,7 +3852,7 @@
     },
     {
       "date": "2025-10-04",
-      "score": 3.61262196927684,
+      "score": 3.6511135231289,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3852,7 +3863,7 @@
     },
     {
       "date": "2025-10-05",
-      "score": 3.62087918425781,
+      "score": 3.66005538105002,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3863,7 +3874,7 @@
     },
     {
       "date": "2025-10-06",
-      "score": 3.62948796148165,
+      "score": 3.66930009071008,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3874,7 +3885,7 @@
     },
     {
       "date": "2025-10-07",
-      "score": 3.63582541449089,
+      "score": 3.67611779566421,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3885,7 +3896,7 @@
     },
     {
       "date": "2025-10-08",
-      "score": 3.6406288856867,
+      "score": 3.6763118975285,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3896,7 +3907,7 @@
     },
     {
       "date": "2025-10-09",
-      "score": 3.64936467700414,
+      "score": 3.68668697841319,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3907,7 +3918,7 @@
     },
     {
       "date": "2025-10-10",
-      "score": 3.66479680673931,
+      "score": 3.70434372939062,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3918,7 +3929,7 @@
     },
     {
       "date": "2025-10-11",
-      "score": 3.6801346839776,
+      "score": 3.72194274804684,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3929,7 +3940,7 @@
     },
     {
       "date": "2025-10-12",
-      "score": 3.69268341420409,
+      "score": 3.73634972229704,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3940,7 +3951,7 @@
     },
     {
       "date": "2025-10-13",
-      "score": 3.70778742187831,
+      "score": 3.75348216469646,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3951,7 +3962,7 @@
     },
     {
       "date": "2025-10-14",
-      "score": 3.72554536871433,
+      "score": 3.77382420960614,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3962,7 +3973,7 @@
     },
     {
       "date": "2025-10-15",
-      "score": 3.74502531933721,
+      "score": 3.79615378792839,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3973,7 +3984,7 @@
     },
     {
       "date": "2025-10-16",
-      "score": 3.75979916939722,
+      "score": 3.81306005975326,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3984,7 +3995,7 @@
     },
     {
       "date": "2025-10-17",
-      "score": 3.77024369748906,
+      "score": 3.82568541468494,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -3995,7 +4006,7 @@
     },
     {
       "date": "2025-10-19",
-      "score": 3.77300979906002,
+      "score": 3.83177903404839,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4006,7 +4017,7 @@
     },
     {
       "date": "2025-10-20",
-      "score": 3.78041967276374,
+      "score": 3.83960379294318,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4017,7 +4028,7 @@
     },
     {
       "date": "2025-10-21",
-      "score": 3.78566563524451,
+      "score": 3.8479778795376,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4028,7 +4039,7 @@
     },
     {
       "date": "2025-10-22",
-      "score": 3.79061939212877,
+      "score": 3.85468280678345,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4039,7 +4050,7 @@
     },
     {
       "date": "2025-10-23",
-      "score": 3.79653112371655,
+      "score": 3.86337410864656,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4050,7 +4061,7 @@
     },
     {
       "date": "2025-10-24",
-      "score": 3.80184783867142,
+      "score": 3.87433905315784,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4061,7 +4072,7 @@
     },
     {
       "date": "2025-10-25",
-      "score": 3.82008969520929,
+      "score": 3.89985248373019,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4072,7 +4083,7 @@
     },
     {
       "date": "2025-10-26",
-      "score": 3.83559381036515,
+      "score": 3.92261014403259,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4083,7 +4094,7 @@
     },
     {
       "date": "2025-10-27",
-      "score": 3.84642144786291,
+      "score": 3.94126783709324,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4094,7 +4105,7 @@
     },
     {
       "date": "2025-10-28",
-      "score": 3.85782688017052,
+      "score": 3.95714916522281,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4105,7 +4116,7 @@
     },
     {
       "date": "2025-10-29",
-      "score": 3.86849989967682,
+      "score": 3.97346052449062,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4116,7 +4127,18 @@
     },
     {
       "date": "2025-10-30",
-      "score": 3.87785092769445,
+      "score": 3.98666011641746,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-10-31",
+      "score": 3.98742432181674,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4127,7 +4149,7 @@
     },
     {
       "date": "2025-11-01",
-      "score": 3.88073582883809,
+      "score": 3.99107696534981,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4138,7 +4160,7 @@
     },
     {
       "date": "2025-11-02",
-      "score": 3.88691167362138,
+      "score": 3.99794099153461,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4149,7 +4171,7 @@
     },
     {
       "date": "2025-11-03",
-      "score": 3.89474597240487,
+      "score": 4.00664010354838,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4160,7 +4182,7 @@
     },
     {
       "date": "2025-11-04",
-      "score": 3.89699171522483,
+      "score": 4.0103943637104,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4171,7 +4193,7 @@
     },
     {
       "date": "2025-11-05",
-      "score": 3.90572086953528,
+      "score": 4.01990973789744,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4182,7 +4204,7 @@
     },
     {
       "date": "2025-11-06",
-      "score": 3.91589593420503,
+      "score": 4.03088546804653,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4193,7 +4215,7 @@
     },
     {
       "date": "2025-11-07",
-      "score": 3.93613649138029,
+      "score": 4.05144944045045,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4204,7 +4226,7 @@
     },
     {
       "date": "2025-11-08",
-      "score": 3.95211466540093,
+      "score": 4.06777884327721,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4215,7 +4237,7 @@
     },
     {
       "date": "2025-11-09",
-      "score": 3.96500766663939,
+      "score": 4.07750712368457,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4226,7 +4248,7 @@
     },
     {
       "date": "2025-11-10",
-      "score": 3.97144510840243,
+      "score": 4.08680158701718,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4237,7 +4259,7 @@
     },
     {
       "date": "2025-11-11",
-      "score": 3.98416757044791,
+      "score": 4.10142740531187,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4248,7 +4270,7 @@
     },
     {
       "date": "2025-11-12",
-      "score": 3.99056636534011,
+      "score": 4.10931401640744,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4259,7 +4281,7 @@
     },
     {
       "date": "2025-11-13",
-      "score": 3.99648087729595,
+      "score": 4.11713709383839,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4270,7 +4292,7 @@
     },
     {
       "date": "2025-11-14",
-      "score": 3.99926756775345,
+      "score": 4.12095733756491,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4281,7 +4303,7 @@
     },
     {
       "date": "2025-11-15",
-      "score": 4.00536674654234,
+      "score": 4.12842038570593,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4292,7 +4314,7 @@
     },
     {
       "date": "2025-11-16",
-      "score": 4.00621163926919,
+      "score": 4.1339100448447,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4303,7 +4325,7 @@
     },
     {
       "date": "2025-11-17",
-      "score": 4.01094177871959,
+      "score": 4.13829363087711,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4314,7 +4336,7 @@
     },
     {
       "date": "2025-11-18",
-      "score": 4.01261583003955,
+      "score": 4.13988200440312,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4325,7 +4347,7 @@
     },
     {
       "date": "2025-11-19",
-      "score": 4.01457219874877,
+      "score": 4.14147425187809,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4336,7 +4358,7 @@
     },
     {
       "date": "2025-11-20",
-      "score": 4.01668208717997,
+      "score": 4.14228616462308,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4347,7 +4369,7 @@
     },
     {
       "date": "2025-11-21",
-      "score": 4.02009577875893,
+      "score": 4.14620844958994,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4358,7 +4380,7 @@
     },
     {
       "date": "2025-11-22",
-      "score": 4.02182754454855,
+      "score": 4.14920866784408,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4369,7 +4391,18 @@
     },
     {
       "date": "2025-11-23",
-      "score": 4.02354550060739,
+      "score": 4.15141292158936,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-11-24",
+      "score": 4.15147578055863,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4380,7 +4413,7 @@
     },
     {
       "date": "2025-11-25",
-      "score": 4.02714069076726,
+      "score": 4.15482771535092,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4391,7 +4424,7 @@
     },
     {
       "date": "2025-11-26",
-      "score": 4.03416755442809,
+      "score": 4.16356271738324,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4402,7 +4435,7 @@
     },
     {
       "date": "2025-11-27",
-      "score": 4.04074081844369,
+      "score": 4.17383796989111,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4413,7 +4446,7 @@
     },
     {
       "date": "2025-11-28",
-      "score": 4.04468806394143,
+      "score": 4.18237845905002,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4424,7 +4457,7 @@
     },
     {
       "date": "2025-11-29",
-      "score": 4.04827252769751,
+      "score": 4.18754730806554,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4435,7 +4468,458 @@
     },
     {
       "date": "2025-11-30",
-      "score": 4.04918059407337,
+      "score": 4.19067918985973,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-01",
+      "score": 4.19985479667726,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-02",
+      "score": 4.20415237720197,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-04",
+      "score": 4.20730232592392,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-05",
+      "score": 4.21454011525901,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-06",
+      "score": 4.22749790985213,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-07",
+      "score": 4.2447296347928,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-08",
+      "score": 4.25379391523329,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-09",
+      "score": 4.26713103203502,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-10",
+      "score": 4.27953008993349,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-11",
+      "score": 4.28812755198814,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-12",
+      "score": 4.29529523632764,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-13",
+      "score": 4.30151258482397,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-14",
+      "score": 4.3051043309798,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-15",
+      "score": 4.31313524795465,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-16",
+      "score": 4.3194895167613,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-30",
+      "score": 4.32146570394578,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2025-12-31",
+      "score": 4.32639418300036,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-01",
+      "score": 4.33861569566195,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-09",
+      "score": 4.34110717696508,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-10",
+      "score": 4.35612433187787,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-11",
+      "score": 4.36995928765943,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-12",
+      "score": 4.38507414378155,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-13",
+      "score": 4.39842732066546,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-14",
+      "score": 4.4115307312308,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-15",
+      "score": 4.42491587784421,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-16",
+      "score": 4.43957053639658,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-17",
+      "score": 4.45519897598175,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-18",
+      "score": 4.47323120823468,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-19",
+      "score": 4.48829679097823,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-20",
+      "score": 4.50302590274565,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-21",
+      "score": 4.51517471177386,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-22",
+      "score": 4.52084053464593,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-23",
+      "score": 4.53142536966934,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-24",
+      "score": 4.54395594316528,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-25",
+      "score": 4.55852367574513,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-26",
+      "score": 4.57453537180196,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-27",
+      "score": 4.59307489583246,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-28",
+      "score": 4.61442465827114,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-29",
+      "score": 4.63694761227925,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-30",
+      "score": 4.65426463584024,
+      "model_id": "public_economic_data:us_labor_market",
+      "model_name": "US Labor Market",
+      "model_display": "Us Labor Market",
+      "model_group": "us-labor-market",
+      "model_family": null,
+      "model_variant": null,
+      "provider": "Public Economic Data"
+    },
+    {
+      "date": "2026-01-31",
+      "score": 4.67034327770036,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -4466,17 +4950,6 @@
       "model_group": "o3",
       "model_family": "O3",
       "model_variant": "Mini High",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-04-16",
-      "score": 41.83,
-      "model_id": "openai:o4-mini-2025-04-16-medium",
-      "model_name": "o4-mini-2025-04-16-medium",
-      "model_display": "O4 Mini Medium",
-      "model_group": "o4",
-      "model_family": "O4",
-      "model_variant": "Mini Medium",
       "provider": "OpenAI"
     },
     {
@@ -4555,6 +5028,17 @@
       "model_family": "Claude Opus 4.5",
       "model_variant": "Thinking 64K",
       "provider": "Anthropic"
+    },
+    {
+      "date": "2025-12-11",
+      "score": 86.17,
+      "model_id": "openai:gpt-5-2-2025-12-11-thinking-xhigh",
+      "model_name": "gpt-5-2-2025-12-11-thinking-xhigh",
+      "model_display": "GPT-5.2 Thinking X-High",
+      "model_group": "gpt-5-2",
+      "model_family": "GPT",
+      "model_variant": "Thinking X-High",
+      "provider": "OpenAI"
     },
     {
       "date": "2025-12-11",
@@ -4815,17 +5299,6 @@
     },
     {
       "date": "2024-09-12",
-      "score": 135.3948085704228,
-      "model_id": "openai:o1-preview-2024-09-12",
-      "model_name": "o1-preview-2024-09-12",
-      "model_display": "O1 Preview",
-      "model_group": "o1",
-      "model_family": "O1",
-      "model_variant": "Preview",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2024-09-12",
       "score": 136.60657185375655,
       "model_id": "openai:o1-mini-2024-09-12_high",
       "model_name": "o1-mini-2024-09-12_high",
@@ -4915,23 +5388,23 @@
     {
       "date": "2025-04-16",
       "score": 146.61762718919053,
-      "model_id": "openai:o3-2025-04-16_low",
-      "model_name": "o3-2025-04-16_low",
-      "model_display": "O3 Low",
-      "model_group": "o3",
-      "model_family": "O3",
-      "model_variant": "Low",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-04-16",
-      "score": 146.61762718919053,
       "model_id": "openai:o3-2025-04-16_high",
       "model_name": "o3-2025-04-16_high",
       "model_display": "O3 High",
       "model_group": "o3",
       "model_family": "O3",
       "model_variant": "High",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-04-16",
+      "score": 146.61762718919053,
+      "model_id": "openai:o3-2025-04-16_low",
+      "model_name": "o3-2025-04-16_low",
+      "model_display": "O3 Low",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "Low",
       "provider": "OpenAI"
     },
     {
@@ -4959,17 +5432,6 @@
     {
       "date": "2025-06-10",
       "score": 148.62439293617905,
-      "model_id": "openai:o3-pro-2025-06-10_low",
-      "model_name": "o3-pro-2025-06-10_low",
-      "model_display": "O3 Pro Low",
-      "model_group": "o3",
-      "model_family": "O3",
-      "model_variant": "Pro Low",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-06-10",
-      "score": 148.62439293617905,
       "model_id": "openai:o3-pro-2025-06-10_medium",
       "model_name": "o3-pro-2025-06-10_medium",
       "model_display": "O3 Pro Medium",
@@ -4979,25 +5441,14 @@
       "provider": "OpenAI"
     },
     {
-      "date": "2025-08-07",
-      "score": 150.0,
-      "model_id": "openai:gpt-5",
-      "model_name": "GPT-5",
-      "model_display": "GPT-5",
-      "model_group": "gpt-5",
-      "model_family": "GPT",
-      "model_variant": null,
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-08-07",
-      "score": 150.0,
-      "model_id": "openai:gpt-5-2025-08-07_minimal",
-      "model_name": "gpt-5-2025-08-07_minimal",
-      "model_display": "GPT-5",
-      "model_group": "gpt-5",
-      "model_family": "GPT",
-      "model_variant": null,
+      "date": "2025-06-10",
+      "score": 148.62439293617905,
+      "model_id": "openai:o3-pro-2025-06-10_low",
+      "model_name": "o3-pro-2025-06-10_low",
+      "model_display": "O3 Pro Low",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "Pro Low",
       "provider": "OpenAI"
     },
     {
@@ -5014,23 +5465,45 @@
     {
       "date": "2025-08-07",
       "score": 150.0,
-      "model_id": "openai:gpt-5-2025-08-07_medium",
-      "model_name": "gpt-5-2025-08-07_medium",
-      "model_display": "GPT-5 Medium",
-      "model_group": "gpt-5",
-      "model_family": "GPT",
-      "model_variant": "Medium",
-      "provider": "OpenAI"
-    },
-    {
-      "date": "2025-08-07",
-      "score": 150.0,
       "model_id": "openai:gpt-5-2025-08-07_high",
       "model_name": "gpt-5-2025-08-07_high",
       "model_display": "GPT-5 High",
       "model_group": "gpt-5",
       "model_family": "GPT",
       "model_variant": "High",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-08-07",
+      "score": 150.0,
+      "model_id": "openai:gpt-5-2025-08-07_minimal",
+      "model_name": "gpt-5-2025-08-07_minimal",
+      "model_display": "GPT-5",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": null,
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-08-07",
+      "score": 150.0,
+      "model_id": "openai:gpt-5",
+      "model_name": "GPT-5",
+      "model_display": "GPT-5",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": null,
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-08-07",
+      "score": 150.0,
+      "model_id": "openai:gpt-5-2025-08-07_medium",
+      "model_name": "gpt-5-2025-08-07_medium",
+      "model_display": "GPT-5 Medium",
+      "model_group": "gpt-5",
+      "model_family": "GPT",
+      "model_variant": "Medium",
       "provider": "OpenAI"
     },
     {
@@ -5057,6 +5530,94 @@
     }
   ],
   "frontiermath_tier4": [
+    {
+      "date": "2025-07-01",
+      "score": 0.0,
+      "model_id": "xai:grok-3-beta",
+      "model_name": "grok-3-beta",
+      "model_display": "Grok 3 Beta",
+      "model_group": "grok-3",
+      "model_family": "Grok 3",
+      "model_variant": "Beta",
+      "provider": "xAI"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 0.0,
+      "model_id": "openai:gpt-4.1-2025-04-14",
+      "model_name": "gpt-4.1-2025-04-14",
+      "model_display": "GPT-4.1",
+      "model_group": "gpt-4-1",
+      "model_family": "GPT",
+      "model_variant": null,
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 0.0,
+      "model_id": "anthropic:claude-3-5-sonnet-20241022",
+      "model_name": "claude-3-5-sonnet-20241022",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 0.0,
+      "model_id": "anthropic:claude-3-5-sonnet-20240620",
+      "model_name": "claude-3-5-sonnet-20240620",
+      "model_display": "Claude Sonnet 3.5",
+      "model_group": "claude-sonnet-3-5",
+      "model_family": "Claude Sonnet 3.5",
+      "model_variant": null,
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 0.0,
+      "model_id": "anthropic:claude-sonnet-4-20250514",
+      "model_name": "claude-sonnet-4-20250514",
+      "model_display": "Claude Sonnet 4",
+      "model_group": "claude-sonnet-4",
+      "model_family": "Claude Sonnet 4",
+      "model_variant": null,
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 0.0,
+      "model_id": "anthropic:claude-opus-4-20250514",
+      "model_name": "claude-opus-4-20250514",
+      "model_display": "Claude Opus 4",
+      "model_group": "claude-opus-4",
+      "model_family": "Claude Opus 4",
+      "model_variant": null,
+      "provider": "Anthropic"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 2.083333333333333,
+      "model_id": "openai:o3-2025-04-16_high",
+      "model_name": "o3-2025-04-16_high",
+      "model_display": "O3 High",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "High",
+      "provider": "OpenAI"
+    },
+    {
+      "date": "2025-07-01",
+      "score": 4.166666666666666,
+      "model_id": "openai:o3-mini-2025-01-31_high",
+      "model_name": "o3-mini-2025-01-31_high",
+      "model_display": "O3 Mini High",
+      "model_group": "o3",
+      "model_family": "O3",
+      "model_variant": "Mini High",
+      "provider": "OpenAI"
+    },
     {
       "date": "2025-07-01",
       "score": 4.166666666666666,
@@ -5357,6 +5918,17 @@
       "model_family": "GPT",
       "model_variant": null,
       "provider": "OpenAI"
+    },
+    {
+      "date": "2026-02-05",
+      "score": 870.027186,
+      "model_id": "anthropic:claude_opus_4_6_inspect",
+      "model_name": "claude_opus_4_6_inspect",
+      "model_display": "Claude Opus 4.6",
+      "model_group": "claude-opus-4-6",
+      "model_family": "Claude Opus 4.6",
+      "model_variant": null,
+      "provider": "Anthropic"
     }
   ],
   "mmmu": [

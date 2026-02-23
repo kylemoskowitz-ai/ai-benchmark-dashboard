@@ -14,7 +14,7 @@
     "paper_url": null,
     "notes": "US labor-demand diffusion proxy. Higher values imply broader employer demand for AI skills.",
     "sota": {
-      "score": 4.04918059407337,
+      "score": 4.67034327770036,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -22,7 +22,7 @@
       "model_family": null,
       "model_variant": null,
       "provider": "Public Economic Data",
-      "date": "2025-11-30"
+      "date": "2026-01-31"
     }
   },
   {
@@ -40,14 +40,14 @@
     "paper_url": "https://arxiv.org/abs/1911.01547",
     "notes": "Scores from ARC Prize leaderboard (official), preferring ARC-AGI 1 semi-private split when available.",
     "sota": {
-      "score": 94.0,
-      "model_id": "anthropic:claude-opus-4-6-thinking-120k-high",
-      "model_name": "claude-opus-4-6-thinking-120K-high",
-      "model_display": "Claude Opus 4.6 Thinking 120K High",
-      "model_group": "claude-opus-4-6",
-      "model_family": "Claude Opus 4.6",
-      "model_variant": "Thinking 120K High",
-      "provider": "Anthropic",
+      "score": 98.0,
+      "model_id": "google_deepmind:gemini-3-1-pro-preview",
+      "model_name": "gemini-3-1-pro-preview",
+      "model_display": "Gemini 3.1 Pro Preview",
+      "model_group": "gemini-3-1-pro",
+      "model_family": "Gemini 3.1 Pro",
+      "model_variant": "Preview",
+      "provider": "Google DeepMind",
       "date": null
     }
   },
@@ -66,14 +66,14 @@
     "paper_url": null,
     "notes": "Scores from ARC Prize leaderboard (official), preferring ARC-AGI 2 semi-private split when available.",
     "sota": {
-      "score": 69.17,
-      "model_id": "anthropic:claude-opus-4-6-thinking-120k-high",
-      "model_name": "claude-opus-4-6-thinking-120K-high",
-      "model_display": "Claude Opus 4.6 Thinking 120K High",
-      "model_group": "claude-opus-4-6",
-      "model_family": "Claude Opus 4.6",
-      "model_variant": "Thinking 120K High",
-      "provider": "Anthropic",
+      "score": 77.08,
+      "model_id": "google_deepmind:gemini-3-1-pro-preview",
+      "model_name": "gemini-3-1-pro-preview",
+      "model_display": "Gemini 3.1 Pro Preview",
+      "model_group": "gemini-3-1-pro",
+      "model_family": "Gemini 3.1 Pro",
+      "model_variant": "Preview",
+      "provider": "Google DeepMind",
       "date": null
     }
   },
@@ -185,15 +185,15 @@
     "paper_url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
     "notes": "P50 time horizon in minutes. Higher = can complete more complex autonomous tasks. Data from METR-Horizon-v1.1.",
     "sota": {
-      "score": 394.383957,
-      "model_id": "openai:gpt_5_2",
-      "model_name": "gpt_5_2",
-      "model_display": "GPT-5.2",
-      "model_group": "gpt-5-2",
-      "model_family": "GPT",
+      "score": 870.027186,
+      "model_id": "anthropic:claude_opus_4_6_inspect",
+      "model_name": "claude_opus_4_6_inspect",
+      "model_display": "Claude Opus 4.6",
+      "model_group": "claude-opus-4-6",
+      "model_family": "Claude Opus 4.6",
       "model_variant": null,
-      "provider": "OpenAI",
-      "date": "2025-12-11"
+      "provider": "Anthropic",
+      "date": "2026-02-05"
     }
   },
   {
