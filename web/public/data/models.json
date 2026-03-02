@@ -1,5 +1,16 @@
 [
   {
+    "id": "google_deepmind:gemini-3.1-pro-preview-customtools",
+    "name": "gemini-3.1-pro-preview-customtools",
+    "display_name": "Gemini 3.1 Pro Preview",
+    "group": "gemini-3-1-pro",
+    "family": "Gemini 3.1 Pro",
+    "variant": "Preview",
+    "provider": "Google DeepMind",
+    "release_date": "2026-02-19",
+    "parameters": null
+  },
+  {
     "id": "google_deepmind:gemini-3.1-pro-preview",
     "name": "gemini-3.1-pro-preview",
     "display_name": "Gemini 3.1 Pro Preview",
@@ -11,12 +22,45 @@
     "parameters": null
   },
   {
+    "id": "anthropic:claude-sonnet-4-6",
+    "name": "claude-sonnet-4-6",
+    "display_name": "Claude Sonnet 4.6",
+    "group": "claude-sonnet-4-6",
+    "family": "Claude Sonnet 4.6",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2026-02-17",
+    "parameters": null
+  },
+  {
     "id": "anthropic:claude-sonnet-4-6_32k",
     "name": "claude-sonnet-4-6_32K",
     "display_name": "Claude Sonnet 4.6 32K",
     "group": "claude-sonnet-4-6",
     "family": "Claude Sonnet 4.6",
     "variant": "32K",
+    "provider": "Anthropic",
+    "release_date": "2026-02-17",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-6_high",
+    "name": "claude-sonnet-4-6_high",
+    "display_name": "Claude Sonnet 4.6 High",
+    "group": "claude-sonnet-4-6",
+    "family": "Claude Sonnet 4.6",
+    "variant": "High",
+    "provider": "Anthropic",
+    "release_date": "2026-02-17",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-6_max",
+    "name": "claude-sonnet-4-6_max",
+    "display_name": "Claude Sonnet 4.6 Max",
+    "group": "claude-sonnet-4-6",
+    "family": "Claude Sonnet 4.6",
+    "variant": "Max",
     "provider": "Anthropic",
     "release_date": "2026-02-17",
     "parameters": null
@@ -33,6 +77,28 @@
     "parameters": null
   },
   {
+    "id": "minimax:minimax-m2.5",
+    "name": "MiniMax-M2.5",
+    "display_name": "Minimax M2.5",
+    "group": "minimax-m2-5",
+    "family": null,
+    "variant": null,
+    "provider": "MiniMax",
+    "release_date": "2026-02-12",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-3-deep-think-preview",
+    "name": "gemini-3-deep-think-preview",
+    "display_name": "Gemini 3 Preview",
+    "group": "gemini-3",
+    "family": "Gemini 3",
+    "variant": "Preview",
+    "provider": "Google DeepMind",
+    "release_date": "2026-02-12",
+    "parameters": null
+  },
+  {
     "id": "z.ai__zhipu_ai_:glm-5",
     "name": "glm-5",
     "display_name": "Glm 5",
@@ -41,6 +107,17 @@
     "variant": null,
     "provider": "Z.ai (Zhipu AI)",
     "release_date": "2026-02-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.3-codex_high",
+    "name": "gpt-5.3-codex_high",
+    "display_name": "GPT-5.3 Codex High",
+    "group": "gpt-5-3",
+    "family": "GPT",
+    "variant": "Codex High",
+    "provider": "OpenAI",
+    "release_date": "2026-02-05",
     "parameters": null
   },
   {
@@ -121,6 +198,28 @@
     "parameters": null
   },
   {
+    "id": "anthropic:claude-opus-4-6_unknown",
+    "name": "claude-opus-4-6_unknown",
+    "display_name": "Claude Opus 4.6",
+    "group": "claude-opus-4-6",
+    "family": "Claude Opus 4.6",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2026-02-05",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.3-codex",
+    "name": "gpt-5.3-codex",
+    "display_name": "GPT-5.3 Codex",
+    "group": "gpt-5-3",
+    "family": "GPT",
+    "variant": "Codex",
+    "provider": "OpenAI",
+    "release_date": "2026-02-05",
+    "parameters": null
+  },
+  {
     "id": "moonshot:kimi-k2.5",
     "name": "kimi-k2.5",
     "display_name": "Kimi K2.5",
@@ -154,10 +253,10 @@
     "parameters": null
   },
   {
-    "id": "z.ai__zhipu_ai_:glm-4.7",
-    "name": "glm-4.7",
-    "display_name": "Glm 4.7",
-    "group": "glm-4-7",
+    "id": "z.ai__zhipu_ai_:zai-org_glm-4.7",
+    "name": "zai-org/glm-4.7",
+    "display_name": "Zai Org Glm 4.7",
+    "group": "zai-org-glm-4-7",
     "family": null,
     "variant": null,
     "provider": "Z.ai (Zhipu AI)",
@@ -165,10 +264,10 @@
     "parameters": null
   },
   {
-    "id": "z.ai__zhipu_ai_:zai-org_glm-4.7",
-    "name": "zai-org/GLM-4.7",
-    "display_name": "Zai Org Glm 4.7",
-    "group": "zai-org-glm-4-7",
+    "id": "z.ai__zhipu_ai_:glm-4.7",
+    "name": "glm-4.7",
+    "display_name": "Glm 4.7",
+    "group": "glm-4-7",
     "family": null,
     "variant": null,
     "provider": "Z.ai (Zhipu AI)",
@@ -187,6 +286,17 @@
     "parameters": null
   },
   {
+    "id": "openai:gpt-5.2-codex",
+    "name": "gpt-5.2-codex",
+    "display_name": "GPT-5.2 Codex",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "Codex",
+    "provider": "OpenAI",
+    "release_date": "2025-12-18",
+    "parameters": null
+  },
+  {
     "id": "google_deepmind:gemini-3-flash-preview",
     "name": "gemini-3-flash-preview",
     "display_name": "Gemini 3 Flash Preview",
@@ -198,23 +308,12 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-2-pro-2025-12-11-xhigh",
-    "name": "gpt-5-2-pro-2025-12-11-xhigh",
-    "display_name": "GPT-5.2 Pro X-High",
+    "id": "openai:gpt-5-2-2025-12-11-thinking-high",
+    "name": "gpt-5-2-2025-12-11-thinking-high",
+    "display_name": "GPT-5.2 Thinking High",
     "group": "gpt-5-2",
     "family": "gpt-5",
-    "variant": "Pro X-High",
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5.2-2025-12-11_xhigh",
-    "name": "gpt-5.2-2025-12-11_xhigh",
-    "display_name": "GPT-5.2 X-High",
-    "group": "gpt-5-2",
-    "family": "GPT",
-    "variant": "X-High",
+    "variant": "Thinking High",
     "provider": "OpenAI",
     "release_date": "2025-12-11",
     "parameters": null
@@ -231,23 +330,12 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5.2-2025-12-11_medium",
-    "name": "gpt-5.2-2025-12-11_medium",
-    "display_name": "GPT-5.2 Medium",
+    "id": "openai:gpt-5-2-2025-12-11-thinking-xhigh",
+    "name": "gpt-5-2-2025-12-11-thinking-xhigh",
+    "display_name": "GPT-5.2 Thinking X-High",
     "group": "gpt-5-2",
-    "family": "GPT",
-    "variant": "Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5.2-2025-12-11_low",
-    "name": "gpt-5.2-2025-12-11_low",
-    "display_name": "GPT-5.2 Low",
-    "group": "gpt-5-2",
-    "family": "GPT",
-    "variant": "Low",
+    "family": "gpt-5",
+    "variant": "Thinking X-High",
     "provider": "OpenAI",
     "release_date": "2025-12-11",
     "parameters": null
@@ -264,12 +352,34 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-2-2025-12-11-thinking-low",
-    "name": "gpt-5-2-2025-12-11-thinking-low",
-    "display_name": "GPT-5.2 Thinking Low",
+    "id": "openai:gpt-5.2__2025-12-11_",
+    "name": "GPT-5.2 (2025-12-11)",
+    "display_name": "GPT-5.2",
     "group": "gpt-5-2",
-    "family": "gpt-5",
-    "variant": "Thinking Low",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2-2025-12-11_low",
+    "name": "gpt-5.2-2025-12-11_low",
+    "display_name": "GPT-5.2 Low",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "Low",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2-pro-2025-12-11_high",
+    "name": "gpt-5.2-pro-2025-12-11_high",
+    "display_name": "GPT-5.2 Pro High",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "Pro High",
     "provider": "OpenAI",
     "release_date": "2025-12-11",
     "parameters": null
@@ -286,39 +396,6 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5.2-pro-2025-12-11",
-    "name": "gpt-5.2-pro-2025-12-11",
-    "display_name": "GPT-5.2 Pro",
-    "group": "gpt-5-2",
-    "family": "GPT",
-    "variant": "Pro",
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5.2",
-    "name": "GPT-5.2",
-    "display_name": "GPT-5.2",
-    "group": "gpt-5-2",
-    "family": "GPT",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5.2-pro-2025-12-11-webapp",
-    "name": "gpt-5.2-pro-2025-12-11-webapp",
-    "display_name": "GPT-5.2 Pro",
-    "group": "gpt-5-2",
-    "family": "GPT",
-    "variant": "Pro",
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
     "id": "openai:gpt-5-2-pro-2025-12-11-high",
     "name": "gpt-5-2-pro-2025-12-11-high",
     "display_name": "GPT-5.2 Pro High",
@@ -330,63 +407,30 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-2-2025-12-11-thinking-high",
-    "name": "gpt-5-2-2025-12-11-thinking-high",
-    "display_name": "GPT-5.2 Thinking High",
+    "id": "openai:gpt-5-2-pro-2025-12-11-xhigh",
+    "name": "gpt-5-2-pro-2025-12-11-xhigh",
+    "display_name": "GPT-5.2 Pro X-High",
     "group": "gpt-5-2",
     "family": "gpt-5",
-    "variant": "Thinking High",
+    "variant": "Pro X-High",
     "provider": "OpenAI",
     "release_date": "2025-12-11",
     "parameters": null
   },
   {
-    "id": "openai:gpt-5.2__2025-12-11_",
-    "name": "GPT-5.2 (2025-12-11)",
-    "display_name": "GPT-5.2",
+    "id": "openai:gpt-5.2-pro-2025-12-11_medium",
+    "name": "gpt-5.2-pro-2025-12-11_medium",
+    "display_name": "GPT-5.2 Pro Medium",
     "group": "gpt-5-2",
     "family": "GPT",
-    "variant": null,
+    "variant": "Pro Medium",
     "provider": "OpenAI",
     "release_date": "2025-12-11",
     "parameters": null
   },
   {
-    "id": "openai:gpt-5.2__medium_",
-    "name": "GPT-5.2 (medium)",
-    "display_name": "GPT-5.2 Medium",
-    "group": "gpt-5-2",
-    "family": "GPT",
-    "variant": "Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-2-2025-12-11-thinking-xhigh",
-    "name": "gpt-5-2-2025-12-11-thinking-xhigh",
-    "display_name": "GPT-5.2 Thinking X-High",
-    "group": "gpt-5-2",
-    "family": "gpt-5",
-    "variant": "Thinking X-High",
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-2-2025-12-11-thinking-none",
-    "name": "gpt-5-2-2025-12-11-thinking-none",
-    "display_name": "GPT-5.2 Thinking",
-    "group": "gpt-5-2",
-    "family": "gpt-5",
-    "variant": "Thinking",
-    "provider": "OpenAI",
-    "release_date": "2025-12-11",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5.2__easy_",
-    "name": "GPT-5.2 (easy)",
+    "id": "openai:gpt-5.2",
+    "name": "GPT-5.2",
     "display_name": "GPT-5.2",
     "group": "gpt-5-2",
     "family": "GPT",
@@ -418,6 +462,105 @@
     "parameters": null
   },
   {
+    "id": "openai:gpt-5.2__easy_",
+    "name": "GPT-5.2 (easy)",
+    "display_name": "GPT-5.2",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2-pro-2025-12-11",
+    "name": "gpt-5.2-pro-2025-12-11",
+    "display_name": "GPT-5.2 Pro",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "Pro",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2-2025-12-11_unknown",
+    "name": "gpt-5.2-2025-12-11_unknown",
+    "display_name": "GPT-5.2",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2-pro-2025-12-11-webapp",
+    "name": "gpt-5.2-pro-2025-12-11-webapp",
+    "display_name": "GPT-5.2 Pro",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "Pro",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-2-2025-12-11-thinking-none",
+    "name": "gpt-5-2-2025-12-11-thinking-none",
+    "display_name": "GPT-5.2 Thinking",
+    "group": "gpt-5-2",
+    "family": "gpt-5",
+    "variant": "Thinking",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2-2025-12-11_medium",
+    "name": "gpt-5.2-2025-12-11_medium",
+    "display_name": "GPT-5.2 Medium",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2-2025-12-11_xhigh",
+    "name": "gpt-5.2-2025-12-11_xhigh",
+    "display_name": "GPT-5.2 X-High",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "X-High",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-2-2025-12-11-thinking-low",
+    "name": "gpt-5-2-2025-12-11-thinking-low",
+    "display_name": "GPT-5.2 Thinking Low",
+    "group": "gpt-5-2",
+    "family": "gpt-5",
+    "variant": "Thinking Low",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.2__medium_",
+    "name": "GPT-5.2 (medium)",
+    "display_name": "GPT-5.2 Medium",
+    "group": "gpt-5-2",
+    "family": "GPT",
+    "variant": "Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-12-11",
+    "parameters": null
+  },
+  {
     "id": "moonshot:kimi_k2_thinking",
     "name": "Kimi K2 Thinking",
     "display_name": "Kimi K2 Thinking",
@@ -440,17 +583,6 @@
     "parameters": null
   },
   {
-    "id": "mistral:devstral__2512_",
-    "name": "Devstral (2512)",
-    "display_name": "Devstral 2512",
-    "group": "devstral-2512",
-    "family": null,
-    "variant": null,
-    "provider": "Mistral",
-    "release_date": "2025-12-09",
-    "parameters": null
-  },
-  {
     "id": "mistral:devstral_small__2512_",
     "name": "Devstral small (2512)",
     "display_name": "Devstral Small 2512",
@@ -462,25 +594,14 @@
     "parameters": null
   },
   {
-    "id": "deepseek:deepseek_deepseek-v3.2",
-    "name": "deepseek/deepseek-v3.2",
-    "display_name": "DeepSeek",
-    "group": "deepseek",
-    "family": "DeepSeek",
+    "id": "mistral:devstral__2512_",
+    "name": "Devstral (2512)",
+    "display_name": "Devstral 2512",
+    "group": "devstral-2512",
+    "family": null,
     "variant": null,
-    "provider": "DeepSeek",
-    "release_date": "2025-12-01",
-    "parameters": null
-  },
-  {
-    "id": "deepseek:deepseek-reasoner",
-    "name": "deepseek-reasoner",
-    "display_name": "DeepSeek",
-    "group": "deepseek",
-    "family": "DeepSeek",
-    "variant": null,
-    "provider": "DeepSeek",
-    "release_date": "2025-12-01",
+    "provider": "Mistral",
+    "release_date": "2025-12-09",
     "parameters": null
   },
   {
@@ -489,17 +610,6 @@
     "display_name": "DeepSeek",
     "group": "deepseek",
     "family": "deepseek",
-    "variant": null,
-    "provider": "DeepSeek",
-    "release_date": "2025-12-01",
-    "parameters": null
-  },
-  {
-    "id": "deepseek:fireworks_deepseek-v3p2",
-    "name": "fireworks/deepseek-v3p2",
-    "display_name": "DeepSeek",
-    "group": "deepseek",
-    "family": "DeepSeek",
     "variant": null,
     "provider": "DeepSeek",
     "release_date": "2025-12-01",
@@ -517,6 +627,39 @@
     "parameters": null
   },
   {
+    "id": "deepseek:deepseek-reasoner",
+    "name": "deepseek-reasoner",
+    "display_name": "DeepSeek",
+    "group": "deepseek",
+    "family": "DeepSeek",
+    "variant": null,
+    "provider": "DeepSeek",
+    "release_date": "2025-12-01",
+    "parameters": null
+  },
+  {
+    "id": "deepseek:fireworks_deepseek-v3p2",
+    "name": "fireworks/deepseek-v3p2",
+    "display_name": "DeepSeek",
+    "group": "deepseek",
+    "family": "DeepSeek",
+    "variant": null,
+    "provider": "DeepSeek",
+    "release_date": "2025-12-01",
+    "parameters": null
+  },
+  {
+    "id": "deepseek:deepseek_deepseek-v3.2",
+    "name": "deepseek/deepseek-v3.2",
+    "display_name": "DeepSeek",
+    "group": "deepseek",
+    "family": "DeepSeek",
+    "variant": null,
+    "provider": "DeepSeek",
+    "release_date": "2025-12-01",
+    "parameters": null
+  },
+  {
     "id": "google:gemini_3_pro",
     "name": "Gemini 3 Pro",
     "display_name": "Gemini 3 Pro",
@@ -525,39 +668,6 @@
     "variant": null,
     "provider": "Google",
     "release_date": "2025-11-25",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-5-20251101_64k",
-    "name": "claude-opus-4-5-20251101_64K",
-    "display_name": "Claude Opus 4.5 64K",
-    "group": "claude-opus-4-5",
-    "family": "Claude Opus 4.5",
-    "variant": "64K",
-    "provider": "Anthropic",
-    "release_date": "2025-11-24",
-    "parameters": null
-  },
-  {
-    "id": "minimax:minimax_m2",
-    "name": "Minimax M2",
-    "display_name": "Minimax M2",
-    "group": "minimax-m2",
-    "family": null,
-    "variant": null,
-    "provider": "Minimax",
-    "release_date": "2025-11-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-5-20251101_32k",
-    "name": "claude-opus-4-5-20251101_32K",
-    "display_name": "Claude Opus 4.5 32K",
-    "group": "claude-opus-4-5",
-    "family": "Claude Opus 4.5",
-    "variant": "32K",
-    "provider": "Anthropic",
-    "release_date": "2025-11-24",
     "parameters": null
   },
   {
@@ -583,17 +693,6 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_opus_4_5",
-    "name": "claude_opus_4_5",
-    "display_name": "Claude Opus 4.5",
-    "group": "claude-opus-4-5",
-    "family": "Claude Opus 4.5",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-11-24",
-    "parameters": null
-  },
-  {
     "id": "openai:gpt-5.1-codex__medium_reasoning_",
     "name": "GPT-5.1-codex (medium reasoning)",
     "display_name": "GPT-5.1 Codex Medium",
@@ -605,23 +704,56 @@
     "parameters": null
   },
   {
+    "id": "anthropic:claude-opus-4-5-20251101_8k",
+    "name": "claude-opus-4-5-20251101_8K",
+    "display_name": "Claude Opus 4.5 8K",
+    "group": "claude-opus-4-5",
+    "family": "Claude Opus 4.5",
+    "variant": "8K",
+    "provider": "Anthropic",
+    "release_date": "2025-11-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-5-20251101_32k",
+    "name": "claude-opus-4-5-20251101_32K",
+    "display_name": "Claude Opus 4.5 32K",
+    "group": "claude-opus-4-5",
+    "family": "Claude Opus 4.5",
+    "variant": "32K",
+    "provider": "Anthropic",
+    "release_date": "2025-11-24",
+    "parameters": null
+  },
+  {
+    "id": "minimax:minimax_m2",
+    "name": "Minimax M2",
+    "display_name": "Minimax M2",
+    "group": "minimax-m2",
+    "family": null,
+    "variant": null,
+    "provider": "Minimax",
+    "release_date": "2025-11-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_opus_4_5",
+    "name": "claude_opus_4_5",
+    "display_name": "Claude Opus 4.5",
+    "group": "claude-opus-4-5",
+    "family": "Claude Opus 4.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-11-24",
+    "parameters": null
+  },
+  {
     "id": "anthropic:claude-opus-4-5-20251101_128k",
     "name": "claude-opus-4-5-20251101_128K",
     "display_name": "Claude Opus 4.5 128K",
     "group": "claude-opus-4-5",
     "family": "Claude Opus 4.5",
     "variant": "128K",
-    "provider": "Anthropic",
-    "release_date": "2025-11-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-5-20251101_16k",
-    "name": "claude-opus-4-5-20251101_16K",
-    "display_name": "Claude Opus 4.5 16K",
-    "group": "claude-opus-4-5",
-    "family": "Claude Opus 4.5",
-    "variant": "16K",
     "provider": "Anthropic",
     "release_date": "2025-11-24",
     "parameters": null
@@ -638,6 +770,39 @@
     "parameters": null
   },
   {
+    "id": "anthropic:claude-opus-4-5-20251101_64k",
+    "name": "claude-opus-4-5-20251101_64K",
+    "display_name": "Claude Opus 4.5 64K",
+    "group": "claude-opus-4-5",
+    "family": "Claude Opus 4.5",
+    "variant": "64K",
+    "provider": "Anthropic",
+    "release_date": "2025-11-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-5-20251101_unknown",
+    "name": "claude-opus-4-5-20251101_unknown",
+    "display_name": "Claude Opus 4.5",
+    "group": "claude-opus-4-5",
+    "family": "Claude Opus 4.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-11-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-5-20251101_16k",
+    "name": "claude-opus-4-5-20251101_16K",
+    "display_name": "Claude Opus 4.5 16K",
+    "group": "claude-opus-4-5",
+    "family": "Claude Opus 4.5",
+    "variant": "16K",
+    "provider": "Anthropic",
+    "release_date": "2025-11-24",
+    "parameters": null
+  },
+  {
     "id": "openai:gpt-5.1__2025-11-13___medium_reasoning_",
     "name": "GPT-5.1 (2025-11-13) (medium reasoning)",
     "display_name": "GPT-5.1 Medium",
@@ -649,8 +814,8 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5.1-codex-max",
-    "name": "gpt-5.1-codex-max",
+    "id": "openai:gpt_5_1_codex_max_inspect",
+    "name": "gpt_5_1_codex_max_inspect",
     "display_name": "GPT-5.1 Codex Max",
     "group": "gpt-5-1",
     "family": "GPT",
@@ -660,8 +825,8 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt_5_1_codex_max_inspect",
-    "name": "gpt_5_1_codex_max_inspect",
+    "id": "openai:gpt-5.1-codex-max",
+    "name": "gpt-5.1-codex-max",
     "display_name": "GPT-5.1 Codex Max",
     "group": "gpt-5-1",
     "family": "GPT",
@@ -682,23 +847,23 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-3-pro-preview",
-    "name": "gemini-3-pro-preview",
-    "display_name": "Gemini 3 Pro Preview",
-    "group": "gemini-3-pro",
-    "family": "Gemini 3 Pro",
-    "variant": "Preview",
-    "provider": "Google DeepMind",
-    "release_date": "2025-11-18",
-    "parameters": null
-  },
-  {
     "id": "google_deepmind:gemini_3_pro",
     "name": "gemini_3_pro",
     "display_name": "Gemini 3 Pro",
     "group": "gemini-3-pro",
     "family": "gemini",
     "variant": null,
+    "provider": "Google DeepMind",
+    "release_date": "2025-11-18",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-3-pro-preview",
+    "name": "gemini-3-pro-preview",
+    "display_name": "Gemini 3 Pro Preview",
+    "group": "gemini-3-pro",
+    "family": "Gemini 3 Pro",
+    "variant": "Preview",
     "provider": "Google DeepMind",
     "release_date": "2025-11-18",
     "parameters": null
@@ -721,17 +886,6 @@
     "group": "gpt-5-1",
     "family": "GPT",
     "variant": "Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-11-13",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-1-2025-11-13-thinking-high",
-    "name": "gpt-5-1-2025-11-13-thinking-high",
-    "display_name": "GPT-5.1 Thinking High",
-    "group": "gpt-5-1",
-    "family": "gpt-5",
-    "variant": "Thinking High",
     "provider": "OpenAI",
     "release_date": "2025-11-13",
     "parameters": null
@@ -792,6 +946,17 @@
     "parameters": null
   },
   {
+    "id": "openai:gpt-5.1-2025-11-13_unknown",
+    "name": "gpt-5.1-2025-11-13_unknown",
+    "display_name": "GPT-5.1",
+    "group": "gpt-5-1",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-11-13",
+    "parameters": null
+  },
+  {
     "id": "openai:gpt-5-1-2025-11-13-thinking-medium",
     "name": "gpt-5-1-2025-11-13-thinking-medium",
     "display_name": "GPT-5.1 Thinking Medium",
@@ -803,14 +968,14 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5.1-codex-mini",
-    "name": "gpt-5.1-codex-mini",
-    "display_name": "GPT-5.1 Codex Mini",
+    "id": "openai:gpt-5-1-2025-11-13-thinking-high",
+    "name": "gpt-5-1-2025-11-13-thinking-high",
+    "display_name": "GPT-5.1 Thinking High",
     "group": "gpt-5-1",
-    "family": "GPT",
-    "variant": "Codex Mini",
+    "family": "gpt-5",
+    "variant": "Thinking High",
     "provider": "OpenAI",
-    "release_date": "2025-11-12",
+    "release_date": "2025-11-13",
     "parameters": null
   },
   {
@@ -820,6 +985,17 @@
     "group": "gpt-5-2",
     "family": "GPT",
     "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-11-12",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5.1-codex-mini",
+    "name": "gpt-5.1-codex-mini",
+    "display_name": "GPT-5.1 Codex Mini",
+    "group": "gpt-5-1",
+    "family": "GPT",
+    "variant": "Codex Mini",
     "provider": "OpenAI",
     "release_date": "2025-11-12",
     "parameters": null
@@ -847,6 +1023,17 @@
     "parameters": null
   },
   {
+    "id": "moonshot:kimi-k2-thinking",
+    "name": "kimi-k2-thinking",
+    "display_name": "Kimi K2 Thinking",
+    "group": "kimi-k2",
+    "family": "Kimi K2",
+    "variant": "Thinking",
+    "provider": "Moonshot",
+    "release_date": "2025-11-06",
+    "parameters": null
+  },
+  {
     "id": "moonshot:kimi-k2-thinking-turbo",
     "name": "kimi-k2-thinking-turbo",
     "display_name": "Kimi K2 Thinking Turbo",
@@ -869,14 +1056,36 @@
     "parameters": null
   },
   {
-    "id": "moonshot:kimi-k2-thinking",
-    "name": "kimi-k2-thinking",
-    "display_name": "Kimi K2 Thinking",
-    "group": "kimi-k2",
-    "family": "Kimi K2",
-    "variant": "Thinking",
-    "provider": "Moonshot",
-    "release_date": "2025-11-06",
+    "id": "anthropic:claude-opus-4-5-20251101-thinking-16k",
+    "name": "claude-opus-4-5-20251101-thinking-16k",
+    "display_name": "Claude Opus 4.5 Thinking 16K",
+    "group": "claude-opus-4-5",
+    "family": "claude-4",
+    "variant": "Thinking 16K",
+    "provider": "Anthropic",
+    "release_date": "2025-11-01",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-5-20251101-thinking-32k",
+    "name": "claude-opus-4-5-20251101-thinking-32k",
+    "display_name": "Claude Opus 4.5 Thinking 32K",
+    "group": "claude-opus-4-5",
+    "family": "claude-4",
+    "variant": "Thinking 32K",
+    "provider": "Anthropic",
+    "release_date": "2025-11-01",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-5-20251101-thinking-64k",
+    "name": "claude-opus-4-5-20251101-thinking-64k",
+    "display_name": "Claude Opus 4.5 Thinking 64K",
+    "group": "claude-opus-4-5",
+    "family": "claude-4",
+    "variant": "Thinking 64K",
+    "provider": "Anthropic",
+    "release_date": "2025-11-01",
     "parameters": null
   },
   {
@@ -902,13 +1111,13 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-5-20251101-thinking-32k",
-    "name": "claude-opus-4-5-20251101-thinking-32k",
-    "display_name": "Claude Opus 4.5 Thinking 32K",
-    "group": "claude-opus-4-5",
-    "family": "claude-4",
-    "variant": "Thinking 32K",
-    "provider": "Anthropic",
+    "id": "google:gemini_3_pro_preview",
+    "name": "Gemini 3 Pro Preview",
+    "display_name": "Gemini 3 Pro Preview",
+    "group": "gemini-3-pro",
+    "family": "Gemini 3 Pro",
+    "variant": "Preview",
+    "provider": "Google",
     "release_date": "2025-11-01",
     "parameters": null
   },
@@ -935,36 +1144,14 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-5-20251101-thinking-16k",
-    "name": "claude-opus-4-5-20251101-thinking-16k",
-    "display_name": "Claude Opus 4.5 Thinking 16K",
-    "group": "claude-opus-4-5",
-    "family": "claude-4",
-    "variant": "Thinking 16K",
+    "id": "anthropic:claude-haiku-4-5-20251001_32k",
+    "name": "claude-haiku-4-5-20251001_32K",
+    "display_name": "Claude Haiku 4.5 32K",
+    "group": "claude-haiku-4-5",
+    "family": "Claude Haiku 4.5",
+    "variant": "32K",
     "provider": "Anthropic",
-    "release_date": "2025-11-01",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-5-20251101-thinking-64k",
-    "name": "claude-opus-4-5-20251101-thinking-64k",
-    "display_name": "Claude Opus 4.5 Thinking 64K",
-    "group": "claude-opus-4-5",
-    "family": "claude-4",
-    "variant": "Thinking 64K",
-    "provider": "Anthropic",
-    "release_date": "2025-11-01",
-    "parameters": null
-  },
-  {
-    "id": "google:gemini_3_pro_preview",
-    "name": "Gemini 3 Pro Preview",
-    "display_name": "Gemini 3 Pro Preview",
-    "group": "gemini-3-pro",
-    "family": "Gemini 3 Pro",
-    "variant": "Preview",
-    "provider": "Google",
-    "release_date": "2025-11-01",
+    "release_date": "2025-10-15",
     "parameters": null
   },
   {
@@ -990,14 +1177,25 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-haiku-4-5-20251001_32k",
-    "name": "claude-haiku-4-5-20251001_32K",
-    "display_name": "Claude Haiku 4.5 32K",
-    "group": "claude-haiku-4-5",
-    "family": "Claude Haiku 4.5",
-    "variant": "32K",
-    "provider": "Anthropic",
-    "release_date": "2025-10-15",
+    "id": "openai:gpt-5-pro-2025-10-06_high",
+    "name": "gpt-5-pro-2025-10-06_high",
+    "display_name": "GPT-5 Pro High",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Pro High",
+    "provider": "OpenAI",
+    "release_date": "2025-10-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-pro-2025-10-06_unknown",
+    "name": "gpt-5-pro-2025-10-06_unknown",
+    "display_name": "GPT-5 Pro",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Pro",
+    "provider": "OpenAI",
+    "release_date": "2025-10-07",
     "parameters": null
   },
   {
@@ -1008,17 +1206,6 @@
     "family": null,
     "variant": null,
     "provider": "Unknown",
-    "release_date": "2025-10-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-pro-2025-10-06_high",
-    "name": "gpt-5-pro-2025-10-06_high",
-    "display_name": "GPT-5 Pro High",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Pro High",
-    "provider": "OpenAI",
     "release_date": "2025-10-07",
     "parameters": null
   },
@@ -1045,39 +1232,6 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-haiku-4-5-20251001-thinking-16k",
-    "name": "claude-haiku-4-5-20251001-thinking-16k",
-    "display_name": "Claude Haiku 4.5 Thinking 16K",
-    "group": "claude-haiku-4-5",
-    "family": "Claude Haiku 4.5",
-    "variant": "Thinking 16K",
-    "provider": "Anthropic",
-    "release_date": "2025-10-01",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-haiku-4-5-20251001-thinking-8k",
-    "name": "claude-haiku-4-5-20251001-thinking-8k",
-    "display_name": "Claude Haiku 4.5 Thinking 8K",
-    "group": "claude-haiku-4-5",
-    "family": "Claude Haiku 4.5",
-    "variant": "Thinking 8K",
-    "provider": "Anthropic",
-    "release_date": "2025-10-01",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-haiku-4-5-20251001-thinking-32k",
-    "name": "claude-haiku-4-5-20251001-thinking-32k",
-    "display_name": "Claude Haiku 4.5 Thinking 32K",
-    "group": "claude-haiku-4-5",
-    "family": "Claude Haiku 4.5",
-    "variant": "Thinking 32K",
-    "provider": "Anthropic",
-    "release_date": "2025-10-01",
-    "parameters": null
-  },
-  {
     "id": "deepseek:manus_1.5",
     "name": "Manus 1.5",
     "display_name": "Manus 1.5",
@@ -1100,14 +1254,36 @@
     "parameters": null
   },
   {
-    "id": "z.ai__zhipu_ai__tsinghua_university:glm-4.6",
-    "name": "glm-4.6",
-    "display_name": "Glm 4.6",
-    "group": "glm-4-6",
-    "family": null,
-    "variant": null,
-    "provider": "Z.ai (Zhipu AI),Tsinghua University",
-    "release_date": "2025-09-30",
+    "id": "anthropic:claude-haiku-4-5-20251001-thinking-8k",
+    "name": "claude-haiku-4-5-20251001-thinking-8k",
+    "display_name": "Claude Haiku 4.5 Thinking 8K",
+    "group": "claude-haiku-4-5",
+    "family": "Claude Haiku 4.5",
+    "variant": "Thinking 8K",
+    "provider": "Anthropic",
+    "release_date": "2025-10-01",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-haiku-4-5-20251001-thinking-16k",
+    "name": "claude-haiku-4-5-20251001-thinking-16k",
+    "display_name": "Claude Haiku 4.5 Thinking 16K",
+    "group": "claude-haiku-4-5",
+    "family": "Claude Haiku 4.5",
+    "variant": "Thinking 16K",
+    "provider": "Anthropic",
+    "release_date": "2025-10-01",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-haiku-4-5-20251001-thinking-32k",
+    "name": "claude-haiku-4-5-20251001-thinking-32k",
+    "display_name": "Claude Haiku 4.5 Thinking 32K",
+    "group": "claude-haiku-4-5",
+    "family": "Claude Haiku 4.5",
+    "variant": "Thinking 32K",
+    "provider": "Anthropic",
+    "release_date": "2025-10-01",
     "parameters": null
   },
   {
@@ -1122,6 +1298,39 @@
     "parameters": null
   },
   {
+    "id": "z.ai__zhipu_ai__tsinghua_university:glm-4.6",
+    "name": "glm-4.6",
+    "display_name": "Glm 4.6",
+    "group": "glm-4-6",
+    "family": null,
+    "variant": null,
+    "provider": "Z.ai (Zhipu AI),Tsinghua University",
+    "release_date": "2025-09-30",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929_unknown",
+    "name": "claude-sonnet-4-5-20250929_unknown",
+    "display_name": "Claude Sonnet 4.5",
+    "group": "claude-sonnet-4-5",
+    "family": "Claude Sonnet 4.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929_32k",
+    "name": "claude-sonnet-4-5-20250929_32K",
+    "display_name": "Claude Sonnet 4.5 32K",
+    "group": "claude-sonnet-4-5",
+    "family": "Claude Sonnet 4.5",
+    "variant": "32K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
     "id": "anthropic:claude-sonnet-4-5-20250929_12k",
     "name": "claude-sonnet-4-5-20250929_12K",
     "display_name": "Claude Sonnet 4.5 12K",
@@ -1133,8 +1342,129 @@
     "parameters": null
   },
   {
+    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-1k",
+    "name": "claude-sonnet-4-5-20250929-thinking-1k",
+    "display_name": "Claude Sonnet 4.5 Thinking 1K",
+    "group": "claude-sonnet-4-5",
+    "family": "claude-4",
+    "variant": "Thinking 1K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-8k",
+    "name": "claude-sonnet-4-5-20250929-thinking-8k",
+    "display_name": "Claude Sonnet 4.5 Thinking 8K",
+    "group": "claude-sonnet-4-5",
+    "family": "claude-4",
+    "variant": "Thinking 8K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929_2k",
+    "name": "claude-sonnet-4-5-20250929_2K",
+    "display_name": "Claude Sonnet 4.5 2K",
+    "group": "claude-sonnet-4-5",
+    "family": "Claude Sonnet 4.5",
+    "variant": "2K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
     "id": "anthropic:claude-sonnet-4-5-20250929",
     "name": "claude-sonnet-4-5-20250929",
+    "display_name": "Claude Sonnet 4.5",
+    "group": "claude-sonnet-4-5",
+    "family": "Claude Sonnet 4.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-16k",
+    "name": "claude-sonnet-4-5-20250929-thinking-16k",
+    "display_name": "Claude Sonnet 4.5 Thinking 16K",
+    "group": "claude-sonnet-4-5",
+    "family": "claude-4",
+    "variant": "Thinking 16K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-32k",
+    "name": "claude-sonnet-4-5-20250929-thinking-32k",
+    "display_name": "Claude Sonnet 4.5 Thinking 32K",
+    "group": "claude-sonnet-4-5",
+    "family": "claude-4",
+    "variant": "Thinking 32K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_sonnet_4_5",
+    "name": "claude_sonnet_4_5",
+    "display_name": "Claude Sonnet 4.5",
+    "group": "claude-sonnet-4-5",
+    "family": "Claude Sonnet 4.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "deepseek:deepseek-v3.2-exp_thinking",
+    "name": "DeepSeek-V3.2-Exp_thinking",
+    "display_name": "DeepSeek Thinking",
+    "group": "deepseek",
+    "family": "DeepSeek",
+    "variant": "Thinking",
+    "provider": "DeepSeek",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929_59k",
+    "name": "claude-sonnet-4-5-20250929_59K",
+    "display_name": "Claude Sonnet 4.5 59K",
+    "group": "claude-sonnet-4-5",
+    "family": "Claude Sonnet 4.5",
+    "variant": "59K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-5-20250929_16k",
+    "name": "claude-sonnet-4-5-20250929_16K",
+    "display_name": "Claude Sonnet 4.5 16K",
+    "group": "claude-sonnet-4-5",
+    "family": "Claude Sonnet 4.5",
+    "variant": "16K",
+    "provider": "Anthropic",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "deepseek:deepseek-v3.2-exp_high",
+    "name": "DeepSeek-V3.2-Exp_high",
+    "display_name": "DeepSeek High",
+    "group": "deepseek",
+    "family": "DeepSeek",
+    "variant": "High",
+    "provider": "DeepSeek",
+    "release_date": "2025-09-29",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_4.5_sonnet__20250929_",
+    "name": "Claude 4.5 Sonnet (20250929)",
     "display_name": "Claude Sonnet 4.5",
     "group": "claude-sonnet-4-5",
     "family": "Claude Sonnet 4.5",
@@ -1155,34 +1485,12 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-sonnet-4-5-20250929_32k",
-    "name": "claude-sonnet-4-5-20250929_32K",
-    "display_name": "Claude Sonnet 4.5 32K",
+    "id": "anthropic:claude_sonnet_4.5",
+    "name": "Claude Sonnet 4.5",
+    "display_name": "Claude Sonnet 4.5",
     "group": "claude-sonnet-4-5",
     "family": "Claude Sonnet 4.5",
-    "variant": "32K",
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "deepseek:deepseek-v3.2-exp_high",
-    "name": "DeepSeek-V3.2-Exp_high",
-    "display_name": "DeepSeek High",
-    "group": "deepseek",
-    "family": "DeepSeek",
-    "variant": "High",
-    "provider": "DeepSeek",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-5-20250929_2k",
-    "name": "claude-sonnet-4-5-20250929_2K",
-    "display_name": "Claude Sonnet 4.5 2K",
-    "group": "claude-sonnet-4-5",
-    "family": "Claude Sonnet 4.5",
-    "variant": "2K",
+    "variant": null,
     "provider": "Anthropic",
     "release_date": "2025-09-29",
     "parameters": null
@@ -1199,116 +1507,6 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-1k",
-    "name": "claude-sonnet-4-5-20250929-thinking-1k",
-    "display_name": "Claude Sonnet 4.5 Thinking 1K",
-    "group": "claude-sonnet-4-5",
-    "family": "claude-4",
-    "variant": "Thinking 1K",
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-5-20250929_59k",
-    "name": "claude-sonnet-4-5-20250929_59K",
-    "display_name": "Claude Sonnet 4.5 59K",
-    "group": "claude-sonnet-4-5",
-    "family": "Claude Sonnet 4.5",
-    "variant": "59K",
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_sonnet_4_5",
-    "name": "claude_sonnet_4_5",
-    "display_name": "Claude Sonnet 4.5",
-    "group": "claude-sonnet-4-5",
-    "family": "Claude Sonnet 4.5",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_sonnet_4.5",
-    "name": "Claude Sonnet 4.5",
-    "display_name": "Claude Sonnet 4.5",
-    "group": "claude-sonnet-4-5",
-    "family": "Claude Sonnet 4.5",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-5-20250929_16k",
-    "name": "claude-sonnet-4-5-20250929_16K",
-    "display_name": "Claude Sonnet 4.5 16K",
-    "group": "claude-sonnet-4-5",
-    "family": "Claude Sonnet 4.5",
-    "variant": "16K",
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-8k",
-    "name": "claude-sonnet-4-5-20250929-thinking-8k",
-    "display_name": "Claude Sonnet 4.5 Thinking 8K",
-    "group": "claude-sonnet-4-5",
-    "family": "claude-4",
-    "variant": "Thinking 8K",
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-16k",
-    "name": "claude-sonnet-4-5-20250929-thinking-16k",
-    "display_name": "Claude Sonnet 4.5 Thinking 16K",
-    "group": "claude-sonnet-4-5",
-    "family": "claude-4",
-    "variant": "Thinking 16K",
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "deepseek:deepseek-v3.2-exp_thinking",
-    "name": "DeepSeek-V3.2-Exp_thinking",
-    "display_name": "DeepSeek Thinking",
-    "group": "deepseek",
-    "family": "DeepSeek",
-    "variant": "Thinking",
-    "provider": "DeepSeek",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-5-20250929-thinking-32k",
-    "name": "claude-sonnet-4-5-20250929-thinking-32k",
-    "display_name": "Claude Sonnet 4.5 Thinking 32K",
-    "group": "claude-sonnet-4-5",
-    "family": "claude-4",
-    "variant": "Thinking 32K",
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_4.5_sonnet__20250929_",
-    "name": "Claude 4.5 Sonnet (20250929)",
-    "display_name": "Claude Sonnet 4.5",
-    "group": "claude-sonnet-4-5",
-    "family": "Claude Sonnet 4.5",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-09-29",
-    "parameters": null
-  },
-  {
     "id": "google_deepmind:gemini-robotics-er-1.5-preview",
     "name": "gemini-robotics-er-1.5-preview",
     "display_name": "Gemini 1.5 Preview",
@@ -1320,8 +1518,8 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-flash-preview-09-2025",
-    "name": "gemini-2.5-flash-preview-09-2025",
+    "id": "google_deepmind:gemini-2.5-flash-lite-preview-09-2025",
+    "name": "gemini-2.5-flash-lite-preview-09-2025",
     "display_name": "Gemini 2.5 Flash Preview",
     "group": "gemini-2-5-flash",
     "family": "Gemini 2.5 Flash",
@@ -1331,8 +1529,8 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-flash-lite-preview-09-2025",
-    "name": "gemini-2.5-flash-lite-preview-09-2025",
+    "id": "google_deepmind:gemini-2.5-flash-preview-09-2025",
+    "name": "gemini-2.5-flash-preview-09-2025",
     "display_name": "Gemini 2.5 Flash Preview",
     "group": "gemini-2-5-flash",
     "family": "Gemini 2.5 Flash",
@@ -1386,17 +1584,6 @@
     "parameters": null
   },
   {
-    "id": "alibaba:chutes_qwen3-next-80b-a3b-instruct",
-    "name": "chutes/Qwen3-Next-80B-A3B-Instruct",
-    "display_name": "Qwen 3 80B Instruct",
-    "group": "qwen-3-80b",
-    "family": "Qwen 3 80B",
-    "variant": "Instruct",
-    "provider": "Alibaba",
-    "release_date": "2025-09-11",
-    "parameters": null
-  },
-  {
     "id": "alibaba:deepinfra_qwen3-next-80b-a3b-instruct",
     "name": "deepinfra/Qwen3-Next-80B-A3B-Instruct",
     "display_name": "Qwen 3 80B Instruct",
@@ -1408,14 +1595,14 @@
     "parameters": null
   },
   {
-    "id": "moonshot:fireworks_kimi-k2-instruct-0905",
-    "name": "fireworks/Kimi-K2-Instruct-0905",
-    "display_name": "Kimi K2 Instruct",
-    "group": "kimi-k2",
-    "family": "Kimi K2",
+    "id": "alibaba:chutes_qwen3-next-80b-a3b-instruct",
+    "name": "chutes/Qwen3-Next-80B-A3B-Instruct",
+    "display_name": "Qwen 3 80B Instruct",
+    "group": "qwen-3-80b",
+    "family": "Qwen 3 80B",
     "variant": "Instruct",
-    "provider": "Moonshot",
-    "release_date": "2025-09-05",
+    "provider": "Alibaba",
+    "release_date": "2025-09-11",
     "parameters": null
   },
   {
@@ -1436,6 +1623,17 @@
     "group": "kimi-k2",
     "family": "Kimi K2",
     "variant": null,
+    "provider": "Moonshot",
+    "release_date": "2025-09-05",
+    "parameters": null
+  },
+  {
+    "id": "moonshot:fireworks_kimi-k2-instruct-0905",
+    "name": "fireworks/Kimi-K2-Instruct-0905",
+    "display_name": "Kimi K2 Instruct",
+    "group": "kimi-k2",
+    "family": "Kimi K2",
+    "variant": "Instruct",
     "provider": "Moonshot",
     "release_date": "2025-09-05",
     "parameters": null
@@ -1518,6 +1716,17 @@
     "parameters": null
   },
   {
+    "id": "openai:gpt-5-mini-2025-08-07-high",
+    "name": "gpt-5-mini-2025-08-07-high",
+    "display_name": "GPT-5 Mini High",
+    "group": "gpt-5",
+    "family": "gpt-5",
+    "variant": "Mini High",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
     "id": "openai:gpt-5-nano-2025-08-07-high",
     "name": "gpt-5-nano-2025-08-07-high",
     "display_name": "GPT-5 Nano High",
@@ -1529,45 +1738,23 @@
     "parameters": null
   },
   {
-    "id": "moonshot:kimi_k2_instruct",
-    "name": "Kimi K2 Instruct",
-    "display_name": "Kimi K2 Instruct",
-    "group": "kimi-k2",
-    "family": "Kimi K2",
-    "variant": "Instruct",
-    "provider": "Moonshot",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-mini-2025-08-07_medium",
-    "name": "gpt-5-mini-2025-08-07_medium",
-    "display_name": "GPT-5 Mini Medium",
+    "id": "openai:gpt-5_mini__high_",
+    "name": "GPT-5 mini (high)",
+    "display_name": "GPT-5 Mini High",
     "group": "gpt-5",
     "family": "GPT",
-    "variant": "Mini Medium",
+    "variant": "Mini High",
     "provider": "OpenAI",
     "release_date": "2025-08-07",
     "parameters": null
   },
   {
-    "id": "openai:gpt-5_nano__2025-08-07___medium_reasoning_",
-    "name": "GPT-5 nano (2025-08-07) (medium reasoning)",
-    "display_name": "GPT-5 Nano Medium",
+    "id": "openai:gpt-5-mini-2025-08-07_unknown",
+    "name": "gpt-5-mini-2025-08-07_unknown",
+    "display_name": "GPT-5 Mini",
     "group": "gpt-5",
     "family": "GPT",
-    "variant": "Nano Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5_mini__2025-08-07___medium_reasoning_",
-    "name": "GPT-5 mini (2025-08-07) (medium reasoning)",
-    "display_name": "GPT-5 Mini Medium",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Mini Medium",
+    "variant": "Mini",
     "provider": "OpenAI",
     "release_date": "2025-08-07",
     "parameters": null
@@ -1606,72 +1793,6 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-nano-2025-08-07_medium",
-    "name": "gpt-5-nano-2025-08-07_medium",
-    "display_name": "GPT-5 Nano Medium",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Nano Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt_5",
-    "name": "gpt_5",
-    "display_name": "GPT-5",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-mini-2025-08-07-minimal",
-    "name": "gpt-5-mini-2025-08-07-minimal",
-    "display_name": "GPT-5 Mini",
-    "group": "gpt-5",
-    "family": "gpt-5",
-    "variant": "Mini",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5_mini",
-    "name": "GPT-5 Mini",
-    "display_name": "GPT-5 Mini",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Mini",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-mini-2025-08-07_high",
-    "name": "gpt-5-mini-2025-08-07_high",
-    "display_name": "GPT-5 Mini High",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Mini High",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-2025-08-07-low",
-    "name": "gpt-5-2025-08-07-low",
-    "display_name": "GPT-5 Low",
-    "group": "gpt-5",
-    "family": "gpt-5",
-    "variant": "Low",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
     "id": "openai:gpt-5",
     "name": "GPT-5",
     "display_name": "GPT-5",
@@ -1694,23 +1815,45 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-2025-08-07_low",
-    "name": "gpt-5-2025-08-07_low",
-    "display_name": "GPT-5 Low",
+    "id": "openai:gpt-5-mini-2025-08-07-medium",
+    "name": "gpt-5-mini-2025-08-07-medium",
+    "display_name": "GPT-5 Mini Medium",
     "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Low",
+    "family": "gpt-5",
+    "variant": "Mini Medium",
     "provider": "OpenAI",
     "release_date": "2025-08-07",
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-2025-08-07-minimal",
-    "name": "gpt-5-2025-08-07-minimal",
+    "id": "moonshot:kimi_k2_instruct",
+    "name": "Kimi K2 Instruct",
+    "display_name": "Kimi K2 Instruct",
+    "group": "kimi-k2",
+    "family": "Kimi K2",
+    "variant": "Instruct",
+    "provider": "Moonshot",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt_5_2025_08_07_inspect",
+    "name": "gpt_5_2025_08_07_inspect",
     "display_name": "GPT-5",
     "group": "gpt-5",
-    "family": "gpt-5",
+    "family": "GPT",
     "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-nano-2025-08-07_high",
+    "name": "gpt-5-nano-2025-08-07_high",
+    "display_name": "GPT-5 Nano High",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Nano High",
     "provider": "OpenAI",
     "release_date": "2025-08-07",
     "parameters": null
@@ -1718,39 +1861,6 @@
   {
     "id": "openai:gpt-5__2025-08-07___medium_reasoning_",
     "name": "GPT-5 (2025-08-07) (medium reasoning)",
-    "display_name": "GPT-5 Medium",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5_mini__high_",
-    "name": "GPT-5 mini (high)",
-    "display_name": "GPT-5 Mini High",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "Mini High",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-2025-08-07_minimal",
-    "name": "gpt-5-2025-08-07_minimal",
-    "display_name": "GPT-5",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-2025-08-07_medium",
-    "name": "gpt-5-2025-08-07_medium",
     "display_name": "GPT-5 Medium",
     "group": "gpt-5",
     "family": "GPT",
@@ -1771,28 +1881,6 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-mini-2025-08-07-high",
-    "name": "gpt-5-mini-2025-08-07-high",
-    "display_name": "GPT-5 Mini High",
-    "group": "gpt-5",
-    "family": "gpt-5",
-    "variant": "Mini High",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-5-2025-08-07_high",
-    "name": "gpt-5-2025-08-07_high",
-    "display_name": "GPT-5 High",
-    "group": "gpt-5",
-    "family": "GPT",
-    "variant": "High",
-    "provider": "OpenAI",
-    "release_date": "2025-08-07",
-    "parameters": null
-  },
-  {
     "id": "openai:gpt-5-2025-08-07-medium",
     "name": "gpt-5-2025-08-07-medium",
     "display_name": "GPT-5 Medium",
@@ -1804,23 +1892,23 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-mini-2025-08-07-medium",
-    "name": "gpt-5-mini-2025-08-07-medium",
-    "display_name": "GPT-5 Mini Medium",
+    "id": "openai:gpt-5_mini",
+    "name": "GPT-5 Mini",
+    "display_name": "GPT-5 Mini",
     "group": "gpt-5",
-    "family": "gpt-5",
-    "variant": "Mini Medium",
+    "family": "GPT",
+    "variant": "Mini",
     "provider": "OpenAI",
     "release_date": "2025-08-07",
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-nano-2025-08-07_high",
-    "name": "gpt-5-nano-2025-08-07_high",
-    "display_name": "GPT-5 Nano High",
+    "id": "openai:gpt-5-2025-08-07_low",
+    "name": "gpt-5-2025-08-07_low",
+    "display_name": "GPT-5 Low",
     "group": "gpt-5",
     "family": "GPT",
-    "variant": "Nano High",
+    "variant": "Low",
     "provider": "OpenAI",
     "release_date": "2025-08-07",
     "parameters": null
@@ -1837,8 +1925,140 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt_5_2025_08_07_inspect",
-    "name": "gpt_5_2025_08_07_inspect",
+    "id": "openai:gpt-5-2025-08-07_medium",
+    "name": "gpt-5-2025-08-07_medium",
+    "display_name": "GPT-5 Medium",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-2025-08-07-low",
+    "name": "gpt-5-2025-08-07-low",
+    "display_name": "GPT-5 Low",
+    "group": "gpt-5",
+    "family": "gpt-5",
+    "variant": "Low",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5_nano__2025-08-07___medium_reasoning_",
+    "name": "GPT-5 nano (2025-08-07) (medium reasoning)",
+    "display_name": "GPT-5 Nano Medium",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Nano Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-mini-2025-08-07_medium",
+    "name": "gpt-5-mini-2025-08-07_medium",
+    "display_name": "GPT-5 Mini Medium",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Mini Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5_mini__2025-08-07___medium_reasoning_",
+    "name": "GPT-5 mini (2025-08-07) (medium reasoning)",
+    "display_name": "GPT-5 Mini Medium",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Mini Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-mini-2025-08-07-minimal",
+    "name": "gpt-5-mini-2025-08-07-minimal",
+    "display_name": "GPT-5 Mini",
+    "group": "gpt-5",
+    "family": "gpt-5",
+    "variant": "Mini",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-mini-2025-08-07_high",
+    "name": "gpt-5-mini-2025-08-07_high",
+    "display_name": "GPT-5 Mini High",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Mini High",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-2025-08-07_minimal",
+    "name": "gpt-5-2025-08-07_minimal",
+    "display_name": "GPT-5",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-2025-08-07_high",
+    "name": "gpt-5-2025-08-07_high",
+    "display_name": "GPT-5 High",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "High",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-nano-2025-08-07_low",
+    "name": "gpt-5-nano-2025-08-07_low",
+    "display_name": "GPT-5 Nano Low",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Nano Low",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-nano-2025-08-07_medium",
+    "name": "gpt-5-nano-2025-08-07_medium",
+    "display_name": "GPT-5 Nano Medium",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": "Nano Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-2025-08-07-minimal",
+    "name": "gpt-5-2025-08-07-minimal",
+    "display_name": "GPT-5",
+    "group": "gpt-5",
+    "family": "gpt-5",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-08-07",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt_5",
+    "name": "gpt_5",
     "display_name": "GPT-5",
     "group": "gpt-5",
     "family": "GPT",
@@ -1859,19 +2079,8 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-1-20250805_16k",
-    "name": "claude-opus-4-1-20250805_16K",
-    "display_name": "Claude Opus 4.1 16K",
-    "group": "claude-opus-4-1",
-    "family": "Claude Opus 4.1",
-    "variant": "16K",
-    "provider": "Anthropic",
-    "release_date": "2025-08-05",
-    "parameters": null
-  },
-  {
-    "id": "openai:openai_gpt-oss-120b_high",
-    "name": "openai/gpt-oss-120b_high",
+    "id": "openai:chutes_gpt-oss-120b_high",
+    "name": "chutes/gpt-oss-120b_high",
     "display_name": "GPT-120b High",
     "group": "gpt-120b",
     "family": "GPT",
@@ -1881,32 +2090,10 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_4_1_opus_inspect",
-    "name": "claude_4_1_opus_inspect",
-    "display_name": "Claude Opus 4.1",
-    "group": "claude-opus-4-1",
-    "family": "Claude Opus 4.1",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-08-05",
-    "parameters": null
-  },
-  {
-    "id": "z.ai__zhipu_ai__tsinghua_university:glm-4.5_thinking",
-    "name": "glm-4.5_thinking",
-    "display_name": "Glm 4.5 Thinking",
-    "group": "glm-4-5-thinking",
-    "family": null,
-    "variant": null,
-    "provider": "Z.ai (Zhipu AI),Tsinghua University",
-    "release_date": "2025-08-05",
-    "parameters": null
-  },
-  {
-    "id": "openai:chutes_gpt-oss-120b",
-    "name": "chutes/gpt-oss-120b",
-    "display_name": "GPT-120b",
-    "group": "gpt-120b",
+    "id": "openai:gpt-oss-20b",
+    "name": "gpt-oss-20b",
+    "display_name": "GPT-20b",
+    "group": "gpt-20b",
     "family": "GPT",
     "variant": null,
     "provider": "OpenAI",
@@ -1914,19 +2101,30 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-1-20250805",
-    "name": "claude-opus-4-1-20250805",
-    "display_name": "Claude Opus 4.1",
+    "id": "openai:gpt-oss-120b_high",
+    "name": "gpt-oss-120b_high",
+    "display_name": "GPT-120b High",
+    "group": "gpt-120b",
+    "family": "GPT",
+    "variant": "High",
+    "provider": "OpenAI",
+    "release_date": "2025-08-05",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-1-20250805_32k",
+    "name": "claude-opus-4-1-20250805_32K",
+    "display_name": "Claude Opus 4.1 32K",
     "group": "claude-opus-4-1",
     "family": "Claude Opus 4.1",
-    "variant": null,
+    "variant": "32K",
     "provider": "Anthropic",
     "release_date": "2025-08-05",
     "parameters": null
   },
   {
-    "id": "anthropic:claude_4_1_opus",
-    "name": "claude_4_1_opus",
+    "id": "anthropic:claude_4_1_opus_inspect",
+    "name": "claude_4_1_opus_inspect",
     "display_name": "Claude Opus 4.1",
     "group": "claude-opus-4-1",
     "family": "Claude Opus 4.1",
@@ -1947,24 +2145,79 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-1-20250805_32k",
-    "name": "claude-opus-4-1-20250805_32K",
-    "display_name": "Claude Opus 4.1 32K",
+    "id": "anthropic:claude-opus-4-1-20250805_16k",
+    "name": "claude-opus-4-1-20250805_16K",
+    "display_name": "Claude Opus 4.1 16K",
     "group": "claude-opus-4-1",
     "family": "Claude Opus 4.1",
-    "variant": "32K",
+    "variant": "16K",
     "provider": "Anthropic",
     "release_date": "2025-08-05",
     "parameters": null
   },
   {
-    "id": "anthropic:claude_opus_4.1",
-    "name": "Claude Opus 4.1",
+    "id": "anthropic:claude_4_1_opus",
+    "name": "claude_4_1_opus",
     "display_name": "Claude Opus 4.1",
     "group": "claude-opus-4-1",
     "family": "Claude Opus 4.1",
     "variant": null,
     "provider": "Anthropic",
+    "release_date": "2025-08-05",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-1-20250805",
+    "name": "claude-opus-4-1-20250805",
+    "display_name": "Claude Opus 4.1",
+    "group": "claude-opus-4-1",
+    "family": "Claude Opus 4.1",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-08-05",
+    "parameters": null
+  },
+  {
+    "id": "openai:openai_gpt-oss-120b_high",
+    "name": "openai/gpt-oss-120b_high",
+    "display_name": "GPT-120b High",
+    "group": "gpt-120b",
+    "family": "GPT",
+    "variant": "High",
+    "provider": "OpenAI",
+    "release_date": "2025-08-05",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-oss-120b_medium",
+    "name": "gpt-oss-120b_medium",
+    "display_name": "GPT-120b Medium",
+    "group": "gpt-120b",
+    "family": "GPT",
+    "variant": "Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-08-05",
+    "parameters": null
+  },
+  {
+    "id": "openai:chutes_gpt-oss-120b",
+    "name": "chutes/gpt-oss-120b",
+    "display_name": "GPT-120b",
+    "group": "gpt-120b",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-08-05",
+    "parameters": null
+  },
+  {
+    "id": "z.ai__zhipu_ai__tsinghua_university:glm-4.5_thinking",
+    "name": "glm-4.5_thinking",
+    "display_name": "Glm 4.5 Thinking",
+    "group": "glm-4-5-thinking",
+    "family": null,
+    "variant": null,
+    "provider": "Z.ai (Zhipu AI),Tsinghua University",
     "release_date": "2025-08-05",
     "parameters": null
   },
@@ -1975,28 +2228,6 @@
     "group": "gpt-120b",
     "family": "GPT",
     "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-08-05",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-oss-20b",
-    "name": "gpt-oss-20b",
-    "display_name": "GPT-20b",
-    "group": "gpt-20b",
-    "family": "GPT",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-08-05",
-    "parameters": null
-  },
-  {
-    "id": "openai:chutes_gpt-oss-120b_high",
-    "name": "chutes/gpt-oss-120b_high",
-    "display_name": "GPT-120b High",
-    "group": "gpt-120b",
-    "family": "GPT",
-    "variant": "High",
     "provider": "OpenAI",
     "release_date": "2025-08-05",
     "parameters": null
@@ -2013,13 +2244,24 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-oss-120b_medium",
-    "name": "gpt-oss-120b_medium",
-    "display_name": "GPT-120b Medium",
-    "group": "gpt-120b",
-    "family": "GPT",
-    "variant": "Medium",
-    "provider": "OpenAI",
+    "id": "anthropic:claude_opus_4.1",
+    "name": "Claude Opus 4.1",
+    "display_name": "Claude Opus 4.1",
+    "group": "claude-opus-4-1",
+    "family": "Claude Opus 4.1",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-08-05",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-1-20250805_unknown",
+    "name": "claude-opus-4-1-20250805_unknown",
+    "display_name": "Claude Opus 4.1",
+    "group": "claude-opus-4-1",
+    "family": "Claude Opus 4.1",
+    "variant": null,
+    "provider": "Anthropic",
     "release_date": "2025-08-05",
     "parameters": null
   },
@@ -2028,17 +2270,6 @@
     "name": "gpt-oss-20b_high",
     "display_name": "GPT-20b High",
     "group": "gpt-20b",
-    "family": "GPT",
-    "variant": "High",
-    "provider": "OpenAI",
-    "release_date": "2025-08-05",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-oss-120b_high",
-    "name": "gpt-oss-120b_high",
-    "display_name": "GPT-120b High",
-    "group": "gpt-120b",
     "family": "GPT",
     "variant": "High",
     "provider": "OpenAI",
@@ -2145,17 +2376,6 @@
     "parameters": null
   },
   {
-    "id": "google:gemini_2.5_flash__2025-04-17_",
-    "name": "Gemini 2.5 Flash (2025-04-17)",
-    "display_name": "Gemini 2.5 Flash",
-    "group": "gemini-2-5-flash",
-    "family": "Gemini 2.5 Flash",
-    "variant": null,
-    "provider": "Google",
-    "release_date": "2025-07-26",
-    "parameters": null
-  },
-  {
     "id": "anthropic:claude_4_sonnet__20250514_",
     "name": "Claude 4 Sonnet (20250514)",
     "display_name": "Claude Sonnet 4",
@@ -2167,11 +2387,11 @@
     "parameters": null
   },
   {
-    "id": "google:gemini_2.5_pro__2025-05-06_",
-    "name": "Gemini 2.5 Pro (2025-05-06)",
-    "display_name": "Gemini 2.5 Pro",
-    "group": "gemini-2-5-pro",
-    "family": "Gemini 2.5 Pro",
+    "id": "google:gemini_2.5_flash__2025-04-17_",
+    "name": "Gemini 2.5 Flash (2025-04-17)",
+    "display_name": "Gemini 2.5 Flash",
+    "group": "gemini-2-5-flash",
+    "family": "Gemini 2.5 Flash",
     "variant": null,
     "provider": "Google",
     "release_date": "2025-07-26",
@@ -2185,6 +2405,17 @@
     "family": "O3",
     "variant": null,
     "provider": "OpenAI",
+    "release_date": "2025-07-26",
+    "parameters": null
+  },
+  {
+    "id": "google:gemini_2.5_pro__2025-05-06_",
+    "name": "Gemini 2.5 Pro (2025-05-06)",
+    "display_name": "Gemini 2.5 Pro",
+    "group": "gemini-2-5-pro",
+    "family": "Gemini 2.5 Pro",
+    "variant": null,
+    "provider": "Google",
     "release_date": "2025-07-26",
     "parameters": null
   },
@@ -2208,6 +2439,17 @@
     "variant": null,
     "provider": "Google",
     "release_date": "2025-07-26",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:chutes_qwen3-235b-a22b-thinking-2507",
+    "name": "chutes/Qwen3-235B-A22B-Thinking-2507",
+    "display_name": "Qwen 3 235B Thinking",
+    "group": "qwen-3-235b",
+    "family": "Qwen 3 235B",
+    "variant": "Thinking",
+    "provider": "Alibaba",
+    "release_date": "2025-07-25",
     "parameters": null
   },
   {
@@ -2244,34 +2486,12 @@
     "parameters": null
   },
   {
-    "id": "alibaba:chutes_qwen3-235b-a22b-thinking-2507",
-    "name": "chutes/Qwen3-235B-A22B-Thinking-2507",
-    "display_name": "Qwen 3 235B Thinking",
-    "group": "qwen-3-235b",
-    "family": "Qwen 3 235B",
-    "variant": "Thinking",
-    "provider": "Alibaba",
-    "release_date": "2025-07-25",
-    "parameters": null
-  },
-  {
     "id": "openai:gpt-4.1-mini__2025-04-14_",
     "name": "GPT-4.1-mini (2025-04-14)",
     "display_name": "GPT-4.1 Mini",
     "group": "gpt-4-1",
     "family": "gpt-4",
     "variant": "Mini",
-    "provider": "OpenAI",
-    "release_date": "2025-07-20",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-4o__2024-11-20_",
-    "name": "GPT-4o (2024-11-20)",
-    "display_name": "GPT-4o",
-    "group": "gpt-4o",
-    "family": "gpt-4",
-    "variant": null,
     "provider": "OpenAI",
     "release_date": "2025-07-20",
     "parameters": null
@@ -2306,6 +2526,28 @@
     "family": "Claude Sonnet 3.7",
     "variant": null,
     "provider": "Anthropic",
+    "release_date": "2025-07-20",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4o__2024-11-20_",
+    "name": "GPT-4o (2024-11-20)",
+    "display_name": "GPT-4o",
+    "group": "gpt-4o",
+    "family": "gpt-4",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-07-20",
+    "parameters": null
+  },
+  {
+    "id": "z.ai__zhipu_ai__tsinghua_university:glm-4.5-air",
+    "name": "GLM-4.5-Air",
+    "display_name": "Glm 4.5 Air",
+    "group": "glm-4-5-air",
+    "family": null,
+    "variant": null,
+    "provider": "Z.ai (Zhipu AI),Tsinghua University",
     "release_date": "2025-07-20",
     "parameters": null
   },
@@ -2354,23 +2596,23 @@
     "parameters": null
   },
   {
+    "id": "xai:grok-3-mini_low",
+    "name": "grok-3-mini_low",
+    "display_name": "Grok 3 Mini Low",
+    "group": "grok-3",
+    "family": "Grok 3",
+    "variant": "Mini Low",
+    "provider": "xAI",
+    "release_date": "2025-06-24",
+    "parameters": null
+  },
+  {
     "id": "google_deepmind:gemini-2.5-flash-lite-preview-06-17_16k",
     "name": "gemini-2.5-flash-lite-preview-06-17_16K",
     "display_name": "Gemini 2.5 Flash Preview 16K",
     "group": "gemini-2-5-flash",
     "family": "Gemini 2.5 Flash",
     "variant": "Preview 16K",
-    "provider": "Google DeepMind",
-    "release_date": "2025-06-17",
-    "parameters": null
-  },
-  {
-    "id": "google_deepmind:gemini-2.5-pro_16k",
-    "name": "gemini-2.5-pro_16K",
-    "display_name": "Gemini 2.5 Pro 16K",
-    "group": "gemini-2-5-pro",
-    "family": "Gemini 2.5 Pro",
-    "variant": "16K",
     "provider": "Google DeepMind",
     "release_date": "2025-06-17",
     "parameters": null
@@ -2387,12 +2629,34 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-flash",
-    "name": "gemini-2.5-flash",
-    "display_name": "Gemini 2.5 Flash",
-    "group": "gemini-2-5-flash",
-    "family": "Gemini 2.5 Flash",
-    "variant": null,
+    "id": "google_deepmind:gemini-2.5-pro_16k",
+    "name": "gemini-2.5-pro_16K",
+    "display_name": "Gemini 2.5 Pro 16K",
+    "group": "gemini-2-5-pro",
+    "family": "Gemini 2.5 Pro",
+    "variant": "16K",
+    "provider": "Google DeepMind",
+    "release_date": "2025-06-17",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-2.5-pro_32k",
+    "name": "gemini-2.5-pro_32K",
+    "display_name": "Gemini 2.5 Pro 32K",
+    "group": "gemini-2-5-pro",
+    "family": "Gemini 2.5 Pro",
+    "variant": "32K",
+    "provider": "Google DeepMind",
+    "release_date": "2025-06-17",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-2.5-pro_8k",
+    "name": "gemini-2.5-pro_8K",
+    "display_name": "Gemini 2.5 Pro 8K",
+    "group": "gemini-2-5-pro",
+    "family": "Gemini 2.5 Pro",
+    "variant": "8K",
     "provider": "Google DeepMind",
     "release_date": "2025-06-17",
     "parameters": null
@@ -2420,17 +2684,6 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-flash-lite-preview-06-17-thinking",
-    "name": "gemini-2.5-flash-lite-preview-06-17-thinking",
-    "display_name": "Gemini 2.5 Flash Preview Thinking",
-    "group": "gemini-2-5-flash",
-    "family": "Gemini 2.5 Flash",
-    "variant": "Preview Thinking",
-    "provider": "Google DeepMind",
-    "release_date": "2025-06-17",
-    "parameters": null
-  },
-  {
     "id": "google_deepmind:gemini-2-5-pro-2025-06-17-thinking-32k",
     "name": "gemini-2-5-pro-2025-06-17-thinking-32k",
     "display_name": "Gemini 32k Pro Thinking",
@@ -2448,6 +2701,28 @@
     "group": "gemini-2-5-pro",
     "family": "Gemini 2.5 Pro",
     "variant": null,
+    "provider": "Google DeepMind",
+    "release_date": "2025-06-17",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-2.5-flash",
+    "name": "gemini-2.5-flash",
+    "display_name": "Gemini 2.5 Flash",
+    "group": "gemini-2-5-flash",
+    "family": "Gemini 2.5 Flash",
+    "variant": null,
+    "provider": "Google DeepMind",
+    "release_date": "2025-06-17",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-2.5-flash-lite-preview-06-17-thinking",
+    "name": "gemini-2.5-flash-lite-preview-06-17-thinking",
+    "display_name": "Gemini 2.5 Flash Preview Thinking",
+    "group": "gemini-2-5-flash",
+    "family": "Gemini 2.5 Flash",
+    "variant": "Preview Thinking",
     "provider": "Google DeepMind",
     "release_date": "2025-06-17",
     "parameters": null
@@ -2475,23 +2750,23 @@
     "parameters": null
   },
   {
-    "id": "openai:o3-pro-2025-06-10_high",
-    "name": "o3-pro-2025-06-10_high",
-    "display_name": "O3 Pro High",
-    "group": "o3",
-    "family": "O3",
-    "variant": "Pro High",
-    "provider": "OpenAI",
+    "id": "mistral_ai:magistral-medium-2506",
+    "name": "magistral-medium-2506",
+    "display_name": "Magistral Medium 2506",
+    "group": "magistral-medium-2506",
+    "family": null,
+    "variant": null,
+    "provider": "Mistral AI",
     "release_date": "2025-06-10",
     "parameters": null
   },
   {
-    "id": "openai:o3-pro-2025-06-10_medium",
-    "name": "o3-pro-2025-06-10_medium",
-    "display_name": "O3 Pro Medium",
+    "id": "openai:o3-pro-2025-06-10_low",
+    "name": "o3-pro-2025-06-10_low",
+    "display_name": "O3 Pro Low",
     "group": "o3",
     "family": "O3",
-    "variant": "Pro Medium",
+    "variant": "Pro Low",
     "provider": "OpenAI",
     "release_date": "2025-06-10",
     "parameters": null
@@ -2504,6 +2779,17 @@
     "family": null,
     "variant": null,
     "provider": "Mistral AI",
+    "release_date": "2025-06-10",
+    "parameters": null
+  },
+  {
+    "id": "openai:o3-pro-2025-06-10_high",
+    "name": "o3-pro-2025-06-10_high",
+    "display_name": "O3 Pro High",
+    "group": "o3",
+    "family": "O3",
+    "variant": "Pro High",
+    "provider": "OpenAI",
     "release_date": "2025-06-10",
     "parameters": null
   },
@@ -2541,24 +2827,24 @@
     "parameters": null
   },
   {
-    "id": "openai:o3-pro-2025-06-10_low",
-    "name": "o3-pro-2025-06-10_low",
-    "display_name": "O3 Pro Low",
+    "id": "openai:o3-pro-2025-06-10_medium",
+    "name": "o3-pro-2025-06-10_medium",
+    "display_name": "O3 Pro Medium",
     "group": "o3",
     "family": "O3",
-    "variant": "Pro Low",
+    "variant": "Pro Medium",
     "provider": "OpenAI",
     "release_date": "2025-06-10",
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-pro-preview-06-05_1k",
-    "name": "gemini-2.5-pro-preview-06-05_1K",
-    "display_name": "Gemini 2.5 Pro Preview 1K",
+    "id": "google:gemini_2.5_pro_preview",
+    "name": "Gemini 2.5 Pro Preview",
+    "display_name": "Gemini 2.5 Pro Preview",
     "group": "gemini-2-5-pro",
     "family": "Gemini 2.5 Pro",
-    "variant": "Preview 1K",
-    "provider": "Google DeepMind",
+    "variant": "Preview",
+    "provider": "Google",
     "release_date": "2025-06-05",
     "parameters": null
   },
@@ -2568,17 +2854,6 @@
     "display_name": "Gemini 2.5 Pro Preview",
     "group": "gemini-2-5-pro",
     "family": "Gemini 2.5 Pro",
-    "variant": "Preview",
-    "provider": "Google DeepMind",
-    "release_date": "2025-06-05",
-    "parameters": null
-  },
-  {
-    "id": "google_deepmind:gemini_2_5_pro_preview",
-    "name": "gemini_2_5_pro_preview",
-    "display_name": "Gemini 2.5 Pro Preview",
-    "group": "gemini-2-5-pro",
-    "family": "gemini",
     "variant": "Preview",
     "provider": "Google DeepMind",
     "release_date": "2025-06-05",
@@ -2596,25 +2871,25 @@
     "parameters": null
   },
   {
-    "id": "google:gemini_2.5_pro_preview",
-    "name": "Gemini 2.5 Pro Preview",
-    "display_name": "Gemini 2.5 Pro Preview",
+    "id": "google_deepmind:gemini-2.5-pro-preview-06-05_1k",
+    "name": "gemini-2.5-pro-preview-06-05_1K",
+    "display_name": "Gemini 2.5 Pro Preview 1K",
     "group": "gemini-2-5-pro",
     "family": "Gemini 2.5 Pro",
-    "variant": "Preview",
-    "provider": "Google",
+    "variant": "Preview 1K",
+    "provider": "Google DeepMind",
     "release_date": "2025-06-05",
     "parameters": null
   },
   {
-    "id": "openai:o4-mini",
-    "name": "o4-mini",
-    "display_name": "O4 Mini",
-    "group": "o4",
-    "family": "O4",
-    "variant": "Mini",
-    "provider": "OpenAI",
-    "release_date": "2025-06-01",
+    "id": "google_deepmind:gemini_2_5_pro_preview",
+    "name": "gemini_2_5_pro_preview",
+    "display_name": "Gemini 2.5 Pro Preview",
+    "group": "gemini-2-5-pro",
+    "family": "gemini",
+    "variant": "Preview",
+    "provider": "Google DeepMind",
+    "release_date": "2025-06-05",
     "parameters": null
   },
   {
@@ -2651,14 +2926,14 @@
     "parameters": null
   },
   {
-    "id": "deepseek:deepseek-r1-0528",
-    "name": "DeepSeek-R1-0528",
-    "display_name": "DeepSeek R1",
-    "group": "deepseek-r1",
-    "family": "DeepSeek R1",
-    "variant": null,
-    "provider": "DeepSeek",
-    "release_date": "2025-05-28",
+    "id": "openai:o4-mini",
+    "name": "o4-mini",
+    "display_name": "O4 Mini",
+    "group": "o4",
+    "family": "O4",
+    "variant": "Mini",
+    "provider": "OpenAI",
+    "release_date": "2025-06-01",
     "parameters": null
   },
   {
@@ -2684,6 +2959,17 @@
     "parameters": null
   },
   {
+    "id": "deepseek:deepseek-r1-0528",
+    "name": "DeepSeek-R1-0528",
+    "display_name": "DeepSeek R1",
+    "group": "deepseek-r1",
+    "family": "DeepSeek R1",
+    "variant": null,
+    "provider": "DeepSeek",
+    "release_date": "2025-05-28",
+    "parameters": null
+  },
+  {
     "id": "deepseek:deepseek_r1_0528",
     "name": "deepseek_r1_0528",
     "display_name": "DeepSeek R1",
@@ -2692,28 +2978,6 @@
     "variant": null,
     "provider": "DeepSeek",
     "release_date": "2025-05-28",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-20250514_12k",
-    "name": "claude-sonnet-4-20250514_12K",
-    "display_name": "Claude Sonnet 4 12K",
-    "group": "claude-sonnet-4",
-    "family": "Claude Sonnet 4",
-    "variant": "12K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-20250514_8k",
-    "name": "claude-opus-4-20250514_8K",
-    "display_name": "Claude Opus 4 8K",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": "8K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
     "parameters": null
   },
   {
@@ -2728,155 +2992,23 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-sonnet-4-20250514",
-    "name": "claude-sonnet-4-20250514",
-    "display_name": "Claude Sonnet 4",
-    "group": "claude-sonnet-4",
-    "family": "Claude Sonnet 4",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-20250514_8k",
-    "name": "claude-sonnet-4-20250514_8K",
-    "display_name": "Claude Sonnet 4 8K",
-    "group": "claude-sonnet-4",
-    "family": "Claude Sonnet 4",
-    "variant": "8K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-20250514_12k",
-    "name": "claude-opus-4-20250514_12K",
-    "display_name": "Claude Opus 4 12K",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": "12K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-20250514_16k",
-    "name": "claude-opus-4-20250514_16K",
-    "display_name": "Claude Opus 4 16K",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": "16K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-20250514",
-    "name": "claude-opus-4-20250514",
-    "display_name": "Claude Opus 4",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-20250514_1k",
-    "name": "claude-sonnet-4-20250514_1K",
-    "display_name": "Claude Sonnet 4 1K",
-    "group": "claude-sonnet-4",
-    "family": "Claude Sonnet 4",
-    "variant": "1K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_4_opus_inspect",
-    "name": "claude_4_opus_inspect",
-    "display_name": "Claude Opus 4",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-20250514_16k",
-    "name": "claude-sonnet-4-20250514_16K",
-    "display_name": "Claude Sonnet 4 16K",
-    "group": "claude-sonnet-4",
-    "family": "Claude Sonnet 4",
-    "variant": "16K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-sonnet-4-20250514_2k",
-    "name": "claude-sonnet-4-20250514_2K",
-    "display_name": "Claude Sonnet 4 2K",
-    "group": "claude-sonnet-4",
-    "family": "Claude Sonnet 4",
-    "variant": "2K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_4_opus",
-    "name": "claude_4_opus",
-    "display_name": "Claude Opus 4",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-20250514_2k",
-    "name": "claude-opus-4-20250514_2K",
-    "display_name": "Claude Opus 4 2K",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": "2K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_4_sonnet",
-    "name": "claude_4_sonnet",
-    "display_name": "Claude Sonnet 4",
-    "group": "claude-sonnet-4",
-    "family": "Claude Sonnet 4",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-opus-4-20250514_27k",
-    "name": "claude-opus-4-20250514_27K",
-    "display_name": "Claude Opus 4 27K",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": "27K",
-    "provider": "Anthropic",
-    "release_date": "2025-05-22",
-    "parameters": null
-  },
-  {
     "id": "anthropic:claude-opus-4-20250514_32k",
     "name": "claude-opus-4-20250514_32K",
     "display_name": "Claude Opus 4 32K",
     "group": "claude-opus-4",
     "family": "Claude Opus 4",
     "variant": "32K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-20250514",
+    "name": "claude-sonnet-4-20250514",
+    "display_name": "Claude Sonnet 4",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": null,
     "provider": "Anthropic",
     "release_date": "2025-05-22",
     "parameters": null
@@ -2904,36 +3036,179 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-flash-preview-05-20_16k",
-    "name": "gemini-2.5-flash-preview-05-20_16K",
-    "display_name": "Gemini 2.5 Flash Preview 16K",
-    "group": "gemini-2-5-flash",
-    "family": "Gemini 2.5 Flash",
-    "variant": "Preview 16K",
-    "provider": "Google DeepMind",
-    "release_date": "2025-05-20",
+    "id": "anthropic:claude-opus-4-20250514",
+    "name": "claude-opus-4-20250514",
+    "display_name": "Claude Opus 4",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-flash-preview-05-20_1k",
-    "name": "gemini-2.5-flash-preview-05-20_1K",
-    "display_name": "Gemini 2.5 Flash Preview 1K",
-    "group": "gemini-2-5-flash",
-    "family": "Gemini 2.5 Flash",
-    "variant": "Preview 1K",
-    "provider": "Google DeepMind",
-    "release_date": "2025-05-20",
+    "id": "anthropic:claude-sonnet-4-20250514_1k",
+    "name": "claude-sonnet-4-20250514_1K",
+    "display_name": "Claude Sonnet 4 1K",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": "1K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-2.5-flash-preview-05-20",
-    "name": "gemini-2.5-flash-preview-05-20",
-    "display_name": "Gemini 2.5 Flash Preview",
-    "group": "gemini-2-5-flash",
-    "family": "Gemini 2.5 Flash",
-    "variant": "Preview",
-    "provider": "Google DeepMind",
-    "release_date": "2025-05-20",
+    "id": "anthropic:claude-opus-4-20250514_16k",
+    "name": "claude-opus-4-20250514_16K",
+    "display_name": "Claude Opus 4 16K",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": "16K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_4_opus",
+    "name": "claude_4_opus",
+    "display_name": "Claude Opus 4",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_4_sonnet",
+    "name": "claude_4_sonnet",
+    "display_name": "Claude Sonnet 4",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-20250514_2k",
+    "name": "claude-sonnet-4-20250514_2K",
+    "display_name": "Claude Sonnet 4 2K",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": "2K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-20250514_12k",
+    "name": "claude-sonnet-4-20250514_12K",
+    "display_name": "Claude Sonnet 4 12K",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": "12K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-20250514_16k",
+    "name": "claude-sonnet-4-20250514_16K",
+    "display_name": "Claude Sonnet 4 16K",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": "16K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-20250514_27k",
+    "name": "claude-opus-4-20250514_27K",
+    "display_name": "Claude Opus 4 27K",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": "27K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-20250514_unknown",
+    "name": "claude-sonnet-4-20250514_unknown",
+    "display_name": "Claude Sonnet 4",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_4_opus_inspect",
+    "name": "claude_4_opus_inspect",
+    "display_name": "Claude Opus 4",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-20250514_2k",
+    "name": "claude-opus-4-20250514_2K",
+    "display_name": "Claude Opus 4 2K",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": "2K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-20250514_12k",
+    "name": "claude-opus-4-20250514_12K",
+    "display_name": "Claude Opus 4 12K",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": "12K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-20250514_unknown",
+    "name": "claude-opus-4-20250514_unknown",
+    "display_name": "Claude Opus 4",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-opus-4-20250514_8k",
+    "name": "claude-opus-4-20250514_8K",
+    "display_name": "Claude Opus 4 8K",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": "8K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-sonnet-4-20250514_8k",
+    "name": "claude-sonnet-4-20250514_8K",
+    "display_name": "Claude Sonnet 4 8K",
+    "group": "claude-sonnet-4",
+    "family": "Claude Sonnet 4",
+    "variant": "8K",
+    "provider": "Anthropic",
+    "release_date": "2025-05-22",
     "parameters": null
   },
   {
@@ -2959,6 +3234,39 @@
     "parameters": null
   },
   {
+    "id": "google_deepmind:gemini-2.5-flash-preview-05-20_1k",
+    "name": "gemini-2.5-flash-preview-05-20_1K",
+    "display_name": "Gemini 2.5 Flash Preview 1K",
+    "group": "gemini-2-5-flash",
+    "family": "Gemini 2.5 Flash",
+    "variant": "Preview 1K",
+    "provider": "Google DeepMind",
+    "release_date": "2025-05-20",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-2.5-flash-preview-05-20_16k",
+    "name": "gemini-2.5-flash-preview-05-20_16K",
+    "display_name": "Gemini 2.5 Flash Preview 16K",
+    "group": "gemini-2-5-flash",
+    "family": "Gemini 2.5 Flash",
+    "variant": "Preview 16K",
+    "provider": "Google DeepMind",
+    "release_date": "2025-05-20",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-2.5-flash-preview-05-20",
+    "name": "gemini-2.5-flash-preview-05-20",
+    "display_name": "Gemini 2.5 Flash Preview",
+    "group": "gemini-2-5-flash",
+    "family": "Gemini 2.5 Flash",
+    "variant": "Preview",
+    "provider": "Google DeepMind",
+    "release_date": "2025-05-20",
+    "parameters": null
+  },
+  {
     "id": "unknown:codex-mini-2025-05-16",
     "name": "codex-mini-2025-05-16",
     "display_name": "Codex Mini",
@@ -2970,12 +3278,12 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-sonnet-4-20250514-thinking-1k",
-    "name": "claude-sonnet-4-20250514-thinking-1k",
-    "display_name": "Claude Sonnet 4 Thinking 1K",
-    "group": "claude-sonnet-4",
+    "id": "anthropic:claude-opus-4-20250514-thinking-16k",
+    "name": "claude-opus-4-20250514-thinking-16k",
+    "display_name": "Claude Opus 4 Thinking 16K",
+    "group": "claude-opus-4",
     "family": "claude-4",
-    "variant": "Thinking 1K",
+    "variant": "Thinking 16K",
     "provider": "Anthropic",
     "release_date": "2025-05-14",
     "parameters": null
@@ -2992,12 +3300,12 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-20250514-thinking-1k",
-    "name": "claude-opus-4-20250514-thinking-1k",
-    "display_name": "Claude Opus 4 Thinking 1K",
+    "id": "anthropic:claude-opus-4-20250514-thinking-8k",
+    "name": "claude-opus-4-20250514-thinking-8k",
+    "display_name": "Claude Opus 4 Thinking 8K",
     "group": "claude-opus-4",
     "family": "claude-4",
-    "variant": "Thinking 1K",
+    "variant": "Thinking 8K",
     "provider": "Anthropic",
     "release_date": "2025-05-14",
     "parameters": null
@@ -3014,23 +3322,23 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-20250514-thinking-16k",
-    "name": "claude-opus-4-20250514-thinking-16k",
-    "display_name": "Claude Opus 4 Thinking 16K",
+    "id": "anthropic:claude-opus-4-20250514-thinking-1k",
+    "name": "claude-opus-4-20250514-thinking-1k",
+    "display_name": "Claude Opus 4 Thinking 1K",
     "group": "claude-opus-4",
     "family": "claude-4",
-    "variant": "Thinking 16K",
+    "variant": "Thinking 1K",
     "provider": "Anthropic",
     "release_date": "2025-05-14",
     "parameters": null
   },
   {
-    "id": "anthropic:claude-opus-4-20250514-thinking-8k",
-    "name": "claude-opus-4-20250514-thinking-8k",
-    "display_name": "Claude Opus 4 Thinking 8K",
-    "group": "claude-opus-4",
+    "id": "anthropic:claude-sonnet-4-20250514-thinking-1k",
+    "name": "claude-sonnet-4-20250514-thinking-1k",
+    "display_name": "Claude Sonnet 4 Thinking 1K",
+    "group": "claude-sonnet-4",
     "family": "claude-4",
-    "variant": "Thinking 8K",
+    "variant": "Thinking 1K",
     "provider": "Anthropic",
     "release_date": "2025-05-14",
     "parameters": null
@@ -3080,17 +3388,6 @@
     "parameters": null
   },
   {
-    "id": "openai:chatgpt_agent",
-    "name": "ChatGPT agent",
-    "display_name": "Chatgpt Agent",
-    "group": "chatgpt-agent",
-    "family": null,
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-05-01",
-    "parameters": null
-  },
-  {
     "id": "alibaba:vilamp-llava-qwen",
     "name": "ViLAMP-llava-qwen",
     "display_name": "Qwen",
@@ -3098,6 +3395,17 @@
     "family": "Qwen",
     "variant": null,
     "provider": "Alibaba",
+    "release_date": "2025-05-01",
+    "parameters": null
+  },
+  {
+    "id": "openai:chatgpt_agent",
+    "name": "ChatGPT agent",
+    "display_name": "Chatgpt Agent",
+    "group": "chatgpt-agent",
+    "family": null,
+    "variant": null,
+    "provider": "OpenAI",
     "release_date": "2025-05-01",
     "parameters": null
   },
@@ -3124,11 +3432,22 @@
     "parameters": null
   },
   {
-    "id": "alibaba:chutes_qwen3-8b",
-    "name": "chutes/Qwen3-8B",
-    "display_name": "Qwen 3 8B",
-    "group": "qwen-3-8b",
-    "family": "Qwen 3 8B",
+    "id": "alibaba:chutes_qwen3-30b-a3b",
+    "name": "chutes/Qwen3-30B-A3B",
+    "display_name": "Qwen 3 30B",
+    "group": "qwen-3-30b",
+    "family": "Qwen 3 30B",
+    "variant": null,
+    "provider": "Alibaba",
+    "release_date": "2025-04-28",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:chutes_qwen3-14b",
+    "name": "chutes/Qwen3-14B",
+    "display_name": "Qwen 3 14B",
+    "group": "qwen-3-14b",
+    "family": "Qwen 3 14B",
     "variant": null,
     "provider": "Alibaba",
     "release_date": "2025-04-28",
@@ -3140,6 +3459,17 @@
     "display_name": "Qwen 3 235B",
     "group": "qwen-3-235b",
     "family": "Qwen 3 235B",
+    "variant": null,
+    "provider": "Alibaba",
+    "release_date": "2025-04-28",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:chutes_qwen3-8b",
+    "name": "chutes/Qwen3-8B",
+    "display_name": "Qwen 3 8B",
+    "group": "qwen-3-8b",
+    "family": "Qwen 3 8B",
     "variant": null,
     "provider": "Alibaba",
     "release_date": "2025-04-28",
@@ -3162,28 +3492,6 @@
     "display_name": "Qwen",
     "group": "qwen",
     "family": "Qwen",
-    "variant": null,
-    "provider": "Alibaba",
-    "release_date": "2025-04-28",
-    "parameters": null
-  },
-  {
-    "id": "alibaba:chutes_qwen3-14b",
-    "name": "chutes/Qwen3-14B",
-    "display_name": "Qwen 3 14B",
-    "group": "qwen-3-14b",
-    "family": "Qwen 3 14B",
-    "variant": null,
-    "provider": "Alibaba",
-    "release_date": "2025-04-28",
-    "parameters": null
-  },
-  {
-    "id": "alibaba:chutes_qwen3-30b-a3b",
-    "name": "chutes/Qwen3-30B-A3B",
-    "display_name": "Qwen 3 30B",
-    "group": "qwen-3-30b",
-    "family": "Qwen 3 30B",
     "variant": null,
     "provider": "Alibaba",
     "release_date": "2025-04-28",
@@ -3223,45 +3531,12 @@
     "parameters": null
   },
   {
-    "id": "openai:o4-mini-2025-04-16-medium",
-    "name": "o4-mini-2025-04-16-medium",
-    "display_name": "O4 Mini Medium",
-    "group": "o4",
-    "family": "o4",
-    "variant": "Mini Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-04-16",
-    "parameters": null
-  },
-  {
-    "id": "openai:o4-mini-2025-04-16_high",
-    "name": "o4-mini-2025-04-16_high",
-    "display_name": "O4 Mini High",
-    "group": "o4",
-    "family": "O4",
-    "variant": "Mini High",
-    "provider": "OpenAI",
-    "release_date": "2025-04-16",
-    "parameters": null
-  },
-  {
-    "id": "openai:o4-mini-2025-04-16-high",
-    "name": "o4-mini-2025-04-16-high",
-    "display_name": "O4 Mini High",
-    "group": "o4",
-    "family": "o4",
-    "variant": "Mini High",
-    "provider": "OpenAI",
-    "release_date": "2025-04-16",
-    "parameters": null
-  },
-  {
-    "id": "openai:o3-2025-04-16_medium",
-    "name": "o3-2025-04-16_medium",
-    "display_name": "O3 Medium",
+    "id": "openai:o3",
+    "name": "o3",
+    "display_name": "O3",
     "group": "o3",
     "family": "O3",
-    "variant": "Medium",
+    "variant": null,
     "provider": "OpenAI",
     "release_date": "2025-04-16",
     "parameters": null
@@ -3278,23 +3553,23 @@
     "parameters": null
   },
   {
-    "id": "openai:o3",
-    "name": "o3",
-    "display_name": "O3",
+    "id": "openai:o3-2025-04-16-low",
+    "name": "o3-2025-04-16-low",
+    "display_name": "O3 Low",
     "group": "o3",
-    "family": "O3",
-    "variant": null,
+    "family": "o3",
+    "variant": "Low",
     "provider": "OpenAI",
     "release_date": "2025-04-16",
     "parameters": null
   },
   {
-    "id": "openai:o4-mini-2025-04-16-low",
-    "name": "o4-mini-2025-04-16-low",
-    "display_name": "O4 Mini Low",
-    "group": "o4",
-    "family": "o4",
-    "variant": "Mini Low",
+    "id": "openai:o3-2025-04-16-high",
+    "name": "o3-2025-04-16-high",
+    "display_name": "O3 High",
+    "group": "o3",
+    "family": "o3",
+    "variant": "High",
     "provider": "OpenAI",
     "release_date": "2025-04-16",
     "parameters": null
@@ -3311,34 +3586,23 @@
     "parameters": null
   },
   {
-    "id": "openai:o3-2025-04-16-low",
-    "name": "o3-2025-04-16-low",
-    "display_name": "O3 Low",
-    "group": "o3",
-    "family": "o3",
-    "variant": "Low",
+    "id": "openai:o4-mini-2025-04-16-low",
+    "name": "o4-mini-2025-04-16-low",
+    "display_name": "O4 Mini Low",
+    "group": "o4",
+    "family": "o4",
+    "variant": "Mini Low",
     "provider": "OpenAI",
     "release_date": "2025-04-16",
     "parameters": null
   },
   {
-    "id": "openai:o3-2025-04-16_low",
-    "name": "o3-2025-04-16_low",
-    "display_name": "O3 Low",
+    "id": "openai:o3_inspect",
+    "name": "o3_inspect",
+    "display_name": "O3",
     "group": "o3",
     "family": "O3",
-    "variant": "Low",
-    "provider": "OpenAI",
-    "release_date": "2025-04-16",
-    "parameters": null
-  },
-  {
-    "id": "openai:o3-2025-04-16-medium",
-    "name": "o3-2025-04-16-medium",
-    "display_name": "O3 Medium",
-    "group": "o3",
-    "family": "o3",
-    "variant": "Medium",
+    "variant": null,
     "provider": "OpenAI",
     "release_date": "2025-04-16",
     "parameters": null
@@ -3355,25 +3619,124 @@
     "parameters": null
   },
   {
-    "id": "openai:o3-2025-04-16-high",
-    "name": "o3-2025-04-16-high",
-    "display_name": "O3 High",
+    "id": "openai:o3-2025-04-16_medium",
+    "name": "o3-2025-04-16_medium",
+    "display_name": "O3 Medium",
     "group": "o3",
-    "family": "o3",
-    "variant": "High",
+    "family": "O3",
+    "variant": "Medium",
     "provider": "OpenAI",
     "release_date": "2025-04-16",
     "parameters": null
   },
   {
-    "id": "openai:o3_inspect",
-    "name": "o3_inspect",
-    "display_name": "O3",
-    "group": "o3",
-    "family": "O3",
-    "variant": null,
+    "id": "openai:o4-mini-2025-04-16_high",
+    "name": "o4-mini-2025-04-16_high",
+    "display_name": "O4 Mini High",
+    "group": "o4",
+    "family": "O4",
+    "variant": "Mini High",
     "provider": "OpenAI",
     "release_date": "2025-04-16",
+    "parameters": null
+  },
+  {
+    "id": "openai:o3-2025-04-16-medium",
+    "name": "o3-2025-04-16-medium",
+    "display_name": "O3 Medium",
+    "group": "o3",
+    "family": "o3",
+    "variant": "Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-04-16",
+    "parameters": null
+  },
+  {
+    "id": "openai:o4-mini-2025-04-16-medium",
+    "name": "o4-mini-2025-04-16-medium",
+    "display_name": "O4 Mini Medium",
+    "group": "o4",
+    "family": "o4",
+    "variant": "Mini Medium",
+    "provider": "OpenAI",
+    "release_date": "2025-04-16",
+    "parameters": null
+  },
+  {
+    "id": "openai:o4-mini-2025-04-16-high",
+    "name": "o4-mini-2025-04-16-high",
+    "display_name": "O4 Mini High",
+    "group": "o4",
+    "family": "o4",
+    "variant": "Mini High",
+    "provider": "OpenAI",
+    "release_date": "2025-04-16",
+    "parameters": null
+  },
+  {
+    "id": "openai:o3-2025-04-16_low",
+    "name": "o3-2025-04-16_low",
+    "display_name": "O3 Low",
+    "group": "o3",
+    "family": "O3",
+    "variant": "Low",
+    "provider": "OpenAI",
+    "release_date": "2025-04-16",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4.1-2025-04-14",
+    "name": "gpt-4.1-2025-04-14",
+    "display_name": "GPT-4.1",
+    "group": "gpt-4-1",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-04-14",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4.1-mini-2025-04-14",
+    "name": "gpt-4.1-mini-2025-04-14",
+    "display_name": "GPT-4.1 Mini",
+    "group": "gpt-4-1",
+    "family": "GPT",
+    "variant": "Mini",
+    "provider": "OpenAI",
+    "release_date": "2025-04-14",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4.1-nano-2025-04-14",
+    "name": "gpt-4.1-nano-2025-04-14",
+    "display_name": "GPT-4.1 Nano",
+    "group": "gpt-4-1",
+    "family": "GPT",
+    "variant": "Nano",
+    "provider": "OpenAI",
+    "release_date": "2025-04-14",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4.1",
+    "name": "GPT-4.1",
+    "display_name": "GPT-4.1",
+    "group": "gpt-4-1",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-04-14",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4-1-2025-04-14",
+    "name": "gpt-4-1-2025-04-14",
+    "display_name": "GPT-4.1",
+    "group": "gpt-4-1",
+    "family": "gpt-4",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2025-04-14",
     "parameters": null
   },
   {
@@ -3399,94 +3762,6 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-4.1-mini-2025-04-14",
-    "name": "gpt-4.1-mini-2025-04-14",
-    "display_name": "GPT-4.1 Mini",
-    "group": "gpt-4-1",
-    "family": "GPT",
-    "variant": "Mini",
-    "provider": "OpenAI",
-    "release_date": "2025-04-14",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-4.1",
-    "name": "GPT-4.1",
-    "display_name": "GPT-4.1",
-    "group": "gpt-4-1",
-    "family": "GPT",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-04-14",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-4.1-nano-2025-04-14",
-    "name": "gpt-4.1-nano-2025-04-14",
-    "display_name": "GPT-4.1 Nano",
-    "group": "gpt-4-1",
-    "family": "GPT",
-    "variant": "Nano",
-    "provider": "OpenAI",
-    "release_date": "2025-04-14",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-4-1-2025-04-14",
-    "name": "gpt-4-1-2025-04-14",
-    "display_name": "GPT-4.1",
-    "group": "gpt-4-1",
-    "family": "gpt-4",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-04-14",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-4.1-2025-04-14",
-    "name": "gpt-4.1-2025-04-14",
-    "display_name": "GPT-4.1",
-    "group": "gpt-4-1",
-    "family": "GPT",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2025-04-14",
-    "parameters": null
-  },
-  {
-    "id": "xai:grok-3",
-    "name": "grok-3",
-    "display_name": "Grok 3",
-    "group": "grok-3",
-    "family": "Grok 3",
-    "variant": null,
-    "provider": "xAI",
-    "release_date": "2025-04-09",
-    "parameters": null
-  },
-  {
-    "id": "xai:grok-3-mini-beta_high",
-    "name": "grok-3-mini-beta_high",
-    "display_name": "Grok 3 Mini Beta High",
-    "group": "grok-3",
-    "family": "Grok 3",
-    "variant": "Mini Beta High",
-    "provider": "xAI",
-    "release_date": "2025-04-09",
-    "parameters": null
-  },
-  {
-    "id": "xai:grok-3-mini-beta_medium",
-    "name": "grok-3-mini-beta_medium",
-    "display_name": "Grok 3 Mini Beta Medium",
-    "group": "grok-3",
-    "family": "Grok 3",
-    "variant": "Mini Beta Medium",
-    "provider": "xAI",
-    "release_date": "2025-04-09",
-    "parameters": null
-  },
-  {
     "id": "xai:grok-3-beta",
     "name": "grok-3-beta",
     "display_name": "Grok 3 Beta",
@@ -3504,6 +3779,39 @@
     "group": "grok-3",
     "family": "Grok 3",
     "variant": "Mini Beta Low",
+    "provider": "xAI",
+    "release_date": "2025-04-09",
+    "parameters": null
+  },
+  {
+    "id": "xai:grok-3",
+    "name": "grok-3",
+    "display_name": "Grok 3",
+    "group": "grok-3",
+    "family": "Grok 3",
+    "variant": null,
+    "provider": "xAI",
+    "release_date": "2025-04-09",
+    "parameters": null
+  },
+  {
+    "id": "xai:grok-3-mini-beta_medium",
+    "name": "grok-3-mini-beta_medium",
+    "display_name": "Grok 3 Mini Beta Medium",
+    "group": "grok-3",
+    "family": "Grok 3",
+    "variant": "Mini Beta Medium",
+    "provider": "xAI",
+    "release_date": "2025-04-09",
+    "parameters": null
+  },
+  {
+    "id": "xai:grok-3-mini-beta_high",
+    "name": "grok-3-mini-beta_high",
+    "display_name": "Grok 3 Mini Beta High",
+    "group": "grok-3",
+    "family": "Grok 3",
+    "variant": "Mini Beta High",
     "provider": "xAI",
     "release_date": "2025-04-09",
     "parameters": null
@@ -3542,13 +3850,13 @@
     "parameters": null
   },
   {
-    "id": "meta:llama_4_maverick",
-    "name": "Llama 4 Maverick",
-    "display_name": "Llama 4 Maverick",
-    "group": "llama-4-maverick",
-    "family": "Llama 4 Maverick",
-    "variant": null,
-    "provider": "Meta",
+    "id": "meta_ai:llama-4-scout-17b-16e-instruct",
+    "name": "Llama-4-Scout-17B-16E-Instruct",
+    "display_name": "Llama 4 Scout 17B Instruct",
+    "group": "llama-4-scout",
+    "family": "Llama 4 Scout",
+    "variant": "17B Instruct",
+    "provider": "Meta AI",
     "release_date": "2025-04-05",
     "parameters": null
   },
@@ -3564,22 +3872,22 @@
     "parameters": null
   },
   {
+    "id": "meta:llama_4_maverick",
+    "name": "Llama 4 Maverick",
+    "display_name": "Llama 4 Maverick",
+    "group": "llama-4-maverick",
+    "family": "Llama 4 Maverick",
+    "variant": null,
+    "provider": "Meta",
+    "release_date": "2025-04-05",
+    "parameters": null
+  },
+  {
     "id": "meta_ai:llama-4-maverick-17b-128e-instruct-fp8",
     "name": "Llama-4-Maverick-17B-128E-Instruct-FP8",
     "display_name": "Llama 4 Maverick 17B Instruct",
     "group": "llama-4-maverick",
     "family": "Llama 4 Maverick",
-    "variant": "17B Instruct",
-    "provider": "Meta AI",
-    "release_date": "2025-04-05",
-    "parameters": null
-  },
-  {
-    "id": "meta_ai:llama-4-scout-17b-16e-instruct",
-    "name": "Llama-4-Scout-17B-16E-Instruct",
-    "display_name": "Llama 4 Scout 17B Instruct",
-    "group": "llama-4-scout",
-    "family": "Llama 4 Scout",
     "variant": "17B Instruct",
     "provider": "Meta AI",
     "release_date": "2025-04-05",
@@ -3597,23 +3905,23 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_opus_4__thinking_",
-    "name": "Claude Opus 4 (Thinking)",
-    "display_name": "Claude Opus 4 Thinking",
-    "group": "claude-opus-4",
-    "family": "Claude Opus 4",
-    "variant": "Thinking",
-    "provider": "Anthropic",
-    "release_date": "2025-04-01",
-    "parameters": null
-  },
-  {
     "id": "anthropic:claude_opus_4",
     "name": "Claude Opus 4",
     "display_name": "Claude Opus 4",
     "group": "claude-opus-4",
     "family": "Claude Opus 4",
     "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-04-01",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_opus_4__thinking_",
+    "name": "Claude Opus 4 (Thinking)",
+    "display_name": "Claude Opus 4 Thinking",
+    "group": "claude-opus-4",
+    "family": "Claude Opus 4",
+    "variant": "Thinking",
     "provider": "Anthropic",
     "release_date": "2025-04-01",
     "parameters": null
@@ -3641,6 +3949,17 @@
     "parameters": null
   },
   {
+    "id": "google:gemini_2.5_pro",
+    "name": "Gemini 2.5 Pro",
+    "display_name": "Gemini 2.5 Pro",
+    "group": "gemini-2-5-pro",
+    "family": "Gemini 2.5 Pro",
+    "variant": null,
+    "provider": "Google",
+    "release_date": "2025-03-25",
+    "parameters": null
+  },
+  {
     "id": "google_deepmind:gemini-2.5-pro-exp-03-25",
     "name": "gemini-2.5-pro-exp-03-25",
     "display_name": "Gemini 2.5 Pro",
@@ -3652,14 +3971,14 @@
     "parameters": null
   },
   {
-    "id": "google:gemini_2.5_pro",
-    "name": "Gemini 2.5 Pro",
-    "display_name": "Gemini 2.5 Pro",
-    "group": "gemini-2-5-pro",
-    "family": "Gemini 2.5 Pro",
+    "id": "deepseek:deepseek_v3_0324",
+    "name": "deepseek_v3_0324",
+    "display_name": "DeepSeek",
+    "group": "deepseek",
+    "family": "deepseek",
     "variant": null,
-    "provider": "Google",
-    "release_date": "2025-03-25",
+    "provider": "DeepSeek",
+    "release_date": "2025-03-24",
     "parameters": null
   },
   {
@@ -3679,17 +3998,6 @@
     "display_name": "DeepSeek",
     "group": "deepseek",
     "family": "DeepSeek",
-    "variant": null,
-    "provider": "DeepSeek",
-    "release_date": "2025-03-24",
-    "parameters": null
-  },
-  {
-    "id": "deepseek:deepseek_v3_0324",
-    "name": "deepseek_v3_0324",
-    "display_name": "DeepSeek",
-    "group": "deepseek",
-    "family": "deepseek",
     "variant": null,
     "provider": "DeepSeek",
     "release_date": "2025-03-24",
@@ -3740,17 +4048,6 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:chutes_gemma-3-27b-it",
-    "name": "chutes/Gemma-3-27b-It",
-    "display_name": "Chutes Gemma 3 27B It",
-    "group": "chutes-gemma-3-27b-it",
-    "family": null,
-    "variant": null,
-    "provider": "Google DeepMind",
-    "release_date": "2025-03-11",
-    "parameters": null
-  },
-  {
     "id": "unknown:computer-use-preview-2025-03-11",
     "name": "computer-use-preview-2025-03-11",
     "display_name": "Computer Use Preview",
@@ -3758,6 +4055,17 @@
     "family": null,
     "variant": null,
     "provider": "Unknown",
+    "release_date": "2025-03-11",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:chutes_gemma-3-27b-it",
+    "name": "chutes/Gemma-3-27b-It",
+    "display_name": "Chutes Gemma 3 27B It",
+    "group": "chutes-gemma-3-27b-it",
+    "family": null,
+    "variant": null,
+    "provider": "Google DeepMind",
     "release_date": "2025-03-11",
     "parameters": null
   },
@@ -3773,10 +4081,10 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwq-32b__16k_thinking_",
-    "name": "QwQ-32B (16K thinking)",
-    "display_name": "Qwq 32B 16K Thinking",
-    "group": "qwq-32b-16k-thinking",
+    "id": "alibaba:qwq-32b",
+    "name": "QwQ-32B",
+    "display_name": "Qwq 32B",
+    "group": "qwq-32b",
     "family": null,
     "variant": null,
     "provider": "Alibaba",
@@ -3795,25 +4103,14 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwq-32b",
-    "name": "QwQ-32B",
-    "display_name": "Qwq 32B",
-    "group": "qwq-32b",
+    "id": "alibaba:qwq-32b__16k_thinking_",
+    "name": "QwQ-32B (16K thinking)",
+    "display_name": "Qwq 32B 16K Thinking",
+    "group": "qwq-32b-16k-thinking",
     "family": null,
     "variant": null,
     "provider": "Alibaba",
     "release_date": "2025-03-05",
-    "parameters": null
-  },
-  {
-    "id": "deepseek:deepseek_v3",
-    "name": "DeepSeek V3",
-    "display_name": "DeepSeek",
-    "group": "deepseek",
-    "family": "DeepSeek",
-    "variant": null,
-    "provider": "DeepSeek",
-    "release_date": "2025-03-01",
     "parameters": null
   },
   {
@@ -3828,12 +4125,23 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-4.5",
-    "name": "GPT-4.5",
-    "display_name": "GPT-4.5",
+    "id": "deepseek:deepseek_v3",
+    "name": "DeepSeek V3",
+    "display_name": "DeepSeek",
+    "group": "deepseek",
+    "family": "DeepSeek",
+    "variant": null,
+    "provider": "DeepSeek",
+    "release_date": "2025-03-01",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4.5-preview-2025-02-27",
+    "name": "gpt-4.5-preview-2025-02-27",
+    "display_name": "GPT-4.5 Preview",
     "group": "gpt-4-5",
     "family": "GPT",
-    "variant": null,
+    "variant": "Preview",
     "provider": "OpenAI",
     "release_date": "2025-02-27",
     "parameters": null
@@ -3850,12 +4158,12 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-4.5-preview-2025-02-27",
-    "name": "gpt-4.5-preview-2025-02-27",
-    "display_name": "GPT-4.5 Preview",
+    "id": "openai:gpt-4.5",
+    "name": "GPT-4.5",
+    "display_name": "GPT-4.5",
     "group": "gpt-4-5",
     "family": "GPT",
-    "variant": "Preview",
+    "variant": null,
     "provider": "OpenAI",
     "release_date": "2025-02-27",
     "parameters": null
@@ -3883,56 +4191,12 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_3_7_sonnet_inspect",
-    "name": "claude_3_7_sonnet_inspect",
-    "display_name": "Claude Sonnet 3.7",
+    "id": "anthropic:claude-3-7-sonnet-20250219_64k",
+    "name": "claude-3-7-sonnet-20250219_64K",
+    "display_name": "Claude Sonnet 3.7 64K",
     "group": "claude-sonnet-3-7",
     "family": "Claude Sonnet 3.7",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-02-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_3.7_sonnet",
-    "name": "Claude 3.7 Sonnet",
-    "display_name": "Claude Sonnet 3.7",
-    "group": "claude-sonnet-3-7",
-    "family": "Claude Sonnet 3.7",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-02-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-3-7-sonnet-20250219_2k",
-    "name": "claude-3-7-sonnet-20250219_2K",
-    "display_name": "Claude Sonnet 3.7 2K",
-    "group": "claude-sonnet-3-7",
-    "family": "Claude Sonnet 3.7",
-    "variant": "2K",
-    "provider": "Anthropic",
-    "release_date": "2025-02-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-3-7-sonnet-20250219",
-    "name": "claude-3-7-sonnet-20250219",
-    "display_name": "Claude Sonnet 3.7",
-    "group": "claude-sonnet-3-7",
-    "family": "Claude Sonnet 3.7",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2025-02-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_3.7_sonnet__thinking_",
-    "name": "Claude 3.7 Sonnet (Thinking)",
-    "display_name": "Claude Sonnet 3.7 Thinking",
-    "group": "claude-sonnet-3-7",
-    "family": "Claude Sonnet 3.7",
-    "variant": "Thinking",
+    "variant": "64K",
     "provider": "Anthropic",
     "release_date": "2025-02-24",
     "parameters": null
@@ -3960,30 +4224,8 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-3-7-sonnet-20250219_16k",
-    "name": "claude-3-7-sonnet-20250219_16K",
-    "display_name": "Claude Sonnet 3.7 16K",
-    "group": "claude-sonnet-3-7",
-    "family": "Claude Sonnet 3.7",
-    "variant": "16K",
-    "provider": "Anthropic",
-    "release_date": "2025-02-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-3-7-sonnet-20250219_64k",
-    "name": "claude-3-7-sonnet-20250219_64K",
-    "display_name": "Claude Sonnet 3.7 64K",
-    "group": "claude-sonnet-3-7",
-    "family": "Claude Sonnet 3.7",
-    "variant": "64K",
-    "provider": "Anthropic",
-    "release_date": "2025-02-24",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude_3_7_sonnet",
-    "name": "claude_3_7_sonnet",
+    "id": "anthropic:claude_3.7_sonnet",
+    "name": "Claude 3.7 Sonnet",
     "display_name": "Claude Sonnet 3.7",
     "group": "claude-sonnet-3-7",
     "family": "Claude Sonnet 3.7",
@@ -3993,12 +4235,12 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-3-7-sonnet-20250219_12k",
-    "name": "claude-3-7-sonnet-20250219_12K",
-    "display_name": "Claude Sonnet 3.7 12K",
+    "id": "anthropic:claude_3_7_sonnet_inspect",
+    "name": "claude_3_7_sonnet_inspect",
+    "display_name": "Claude Sonnet 3.7",
     "group": "claude-sonnet-3-7",
     "family": "Claude Sonnet 3.7",
-    "variant": "12K",
+    "variant": null,
     "provider": "Anthropic",
     "release_date": "2025-02-24",
     "parameters": null
@@ -4015,6 +4257,39 @@
     "parameters": null
   },
   {
+    "id": "anthropic:claude-3-7-sonnet-20250219_12k",
+    "name": "claude-3-7-sonnet-20250219_12K",
+    "display_name": "Claude Sonnet 3.7 12K",
+    "group": "claude-sonnet-3-7",
+    "family": "Claude Sonnet 3.7",
+    "variant": "12K",
+    "provider": "Anthropic",
+    "release_date": "2025-02-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-3-7-sonnet-20250219_unknown",
+    "name": "claude-3-7-sonnet-20250219_unknown",
+    "display_name": "Claude Sonnet 3.7",
+    "group": "claude-sonnet-3-7",
+    "family": "Claude Sonnet 3.7",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-02-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-3-7-sonnet-20250219_2k",
+    "name": "claude-3-7-sonnet-20250219_2K",
+    "display_name": "Claude Sonnet 3.7 2K",
+    "group": "claude-sonnet-3-7",
+    "family": "Claude Sonnet 3.7",
+    "variant": "2K",
+    "provider": "Anthropic",
+    "release_date": "2025-02-24",
+    "parameters": null
+  },
+  {
     "id": "anthropic:claude-3-7-sonnet-20250219_1k",
     "name": "claude-3-7-sonnet-20250219_1K",
     "display_name": "Claude Sonnet 3.7 1K",
@@ -4026,23 +4301,56 @@
     "parameters": null
   },
   {
+    "id": "anthropic:claude_3_7_sonnet",
+    "name": "claude_3_7_sonnet",
+    "display_name": "Claude Sonnet 3.7",
+    "group": "claude-sonnet-3-7",
+    "family": "Claude Sonnet 3.7",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-02-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_3.7_sonnet__thinking_",
+    "name": "Claude 3.7 Sonnet (Thinking)",
+    "display_name": "Claude Sonnet 3.7 Thinking",
+    "group": "claude-sonnet-3-7",
+    "family": "Claude Sonnet 3.7",
+    "variant": "Thinking",
+    "provider": "Anthropic",
+    "release_date": "2025-02-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-3-7-sonnet-20250219_16k",
+    "name": "claude-3-7-sonnet-20250219_16K",
+    "display_name": "Claude Sonnet 3.7 16K",
+    "group": "claude-sonnet-3-7",
+    "family": "Claude Sonnet 3.7",
+    "variant": "16K",
+    "provider": "Anthropic",
+    "release_date": "2025-02-24",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-3-7-sonnet-20250219",
+    "name": "claude-3-7-sonnet-20250219",
+    "display_name": "Claude Sonnet 3.7",
+    "group": "claude-sonnet-3-7",
+    "family": "Claude Sonnet 3.7",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2025-02-24",
+    "parameters": null
+  },
+  {
     "id": "google_deepmind:gemini-2.0-flash-lite",
     "name": "gemini-2.0-flash-lite",
     "display_name": "Gemini 2.0 Flash",
     "group": "gemini-2-0-flash",
     "family": "Gemini 2.0 Flash",
     "variant": null,
-    "provider": "Google DeepMind",
-    "release_date": "2025-02-05",
-    "parameters": null
-  },
-  {
-    "id": "google_deepmind:gemini-2.0-flash-lite-preview-02-05",
-    "name": "gemini-2.0-flash-lite-preview-02-05",
-    "display_name": "Gemini 2.0 Flash Preview",
-    "group": "gemini-2-0-flash",
-    "family": "Gemini 2.0 Flash",
-    "variant": "Preview",
     "provider": "Google DeepMind",
     "release_date": "2025-02-05",
     "parameters": null
@@ -4070,13 +4378,13 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5.3-codex",
-    "name": "gpt-5.3-codex",
-    "display_name": "GPT-5.3 Codex",
-    "group": "gpt-5-3",
-    "family": "GPT",
-    "variant": "Codex",
-    "provider": "OpenAI",
+    "id": "google_deepmind:gemini-2.0-flash-lite-preview-02-05",
+    "name": "gemini-2.0-flash-lite-preview-02-05",
+    "display_name": "Gemini 2.0 Flash Preview",
+    "group": "gemini-2-0-flash",
+    "family": "Gemini 2.0 Flash",
+    "variant": "Preview",
+    "provider": "Google DeepMind",
     "release_date": "2025-02-05",
     "parameters": null
   },
@@ -4103,6 +4411,17 @@
     "parameters": null
   },
   {
+    "id": "openai:o3-mini-2025-01-31_low",
+    "name": "o3-mini-2025-01-31_low",
+    "display_name": "O3 Mini Low",
+    "group": "o3",
+    "family": "O3",
+    "variant": "Mini Low",
+    "provider": "OpenAI",
+    "release_date": "2025-01-31",
+    "parameters": null
+  },
+  {
     "id": "openai:o3-mini-2025-01-31-low",
     "name": "o3-mini-2025-01-31-low",
     "display_name": "O3 Mini Low",
@@ -4114,11 +4433,11 @@
     "parameters": null
   },
   {
-    "id": "openai:o3-mini-2025-01-31_medium",
-    "name": "o3-mini-2025-01-31_medium",
+    "id": "openai:o3-mini-2025-01-31-medium",
+    "name": "o3-mini-2025-01-31-medium",
     "display_name": "O3 Mini Medium",
     "group": "o3",
-    "family": "O3",
+    "family": "o3",
     "variant": "Mini Medium",
     "provider": "OpenAI",
     "release_date": "2025-01-31",
@@ -4136,23 +4455,12 @@
     "parameters": null
   },
   {
-    "id": "openai:o3-mini-2025-01-31-medium",
-    "name": "o3-mini-2025-01-31-medium",
+    "id": "openai:o3-mini-2025-01-31_medium",
+    "name": "o3-mini-2025-01-31_medium",
     "display_name": "O3 Mini Medium",
     "group": "o3",
-    "family": "o3",
-    "variant": "Mini Medium",
-    "provider": "OpenAI",
-    "release_date": "2025-01-31",
-    "parameters": null
-  },
-  {
-    "id": "openai:o3-mini-2025-01-31_low",
-    "name": "o3-mini-2025-01-31_low",
-    "display_name": "O3 Mini Low",
-    "group": "o3",
     "family": "O3",
-    "variant": "Mini Low",
+    "variant": "Mini Medium",
     "provider": "OpenAI",
     "release_date": "2025-01-31",
     "parameters": null
@@ -4180,17 +4488,6 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwen-max-2025-01-25",
-    "name": "qwen-max-2025-01-25",
-    "display_name": "Qwen Max",
-    "group": "qwen",
-    "family": "Qwen",
-    "variant": "Max",
-    "provider": "Alibaba",
-    "release_date": "2025-01-25",
-    "parameters": null
-  },
-  {
     "id": "mistral_ai:mistral-small-2501",
     "name": "mistral-small-2501",
     "display_name": "Mistral",
@@ -4198,6 +4495,17 @@
     "family": "Mistral",
     "variant": null,
     "provider": "Mistral AI",
+    "release_date": "2025-01-25",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:qwen-max-2025-01-25",
+    "name": "qwen-max-2025-01-25",
+    "display_name": "Qwen Max",
+    "group": "qwen",
+    "family": "Qwen",
+    "variant": "Max",
+    "provider": "Alibaba",
     "release_date": "2025-01-25",
     "parameters": null
   },
@@ -4224,23 +4532,23 @@
     "parameters": null
   },
   {
+    "id": "deepseek:deepseek-r1-distill-llama-70b",
+    "name": "DeepSeek-R1-Distill-Llama-70B",
+    "display_name": "DeepSeek R1 70B",
+    "group": "deepseek-r1",
+    "family": "DeepSeek R1",
+    "variant": "70B",
+    "provider": "DeepSeek",
+    "release_date": "2025-01-20",
+    "parameters": null
+  },
+  {
     "id": "deepseek:deepseek_r1",
     "name": "DeepSeek R1",
     "display_name": "DeepSeek R1",
     "group": "deepseek-r1",
     "family": "DeepSeek R1",
     "variant": null,
-    "provider": "DeepSeek",
-    "release_date": "2025-01-20",
-    "parameters": null
-  },
-  {
-    "id": "deepseek:deepseek-r1-distill-qwen-14b",
-    "name": "DeepSeek-R1-Distill-Qwen-14B",
-    "display_name": "DeepSeek R1 14B",
-    "group": "deepseek-r1",
-    "family": "DeepSeek R1",
-    "variant": "14B",
     "provider": "DeepSeek",
     "release_date": "2025-01-20",
     "parameters": null
@@ -4268,12 +4576,12 @@
     "parameters": null
   },
   {
-    "id": "deepseek:deepseek-r1-distill-llama-70b",
-    "name": "DeepSeek-R1-Distill-Llama-70B",
-    "display_name": "DeepSeek R1 70B",
+    "id": "deepseek:deepseek-r1-distill-qwen-14b",
+    "name": "DeepSeek-R1-Distill-Qwen-14B",
+    "display_name": "DeepSeek R1 14B",
     "group": "deepseek-r1",
     "family": "DeepSeek R1",
-    "variant": "70B",
+    "variant": "14B",
     "provider": "DeepSeek",
     "release_date": "2025-01-20",
     "parameters": null
@@ -4378,17 +4686,6 @@
     "parameters": null
   },
   {
-    "id": "unknown:vita-1.5",
-    "name": "VITA-1.5",
-    "display_name": "Vita 1.5",
-    "group": "vita-1-5",
-    "family": null,
-    "variant": null,
-    "provider": "Unknown",
-    "release_date": "2024-12-20",
-    "parameters": null
-  },
-  {
     "id": "openai:o3_mini__medium_",
     "name": "o3 Mini (medium)",
     "display_name": "O3 Mini Medium",
@@ -4433,14 +4730,14 @@
     "parameters": null
   },
   {
-    "id": "openai:o1-2024-12-17_high",
-    "name": "o1-2024-12-17_high",
-    "display_name": "O1 High",
-    "group": "o1",
-    "family": "O1",
-    "variant": "High",
-    "provider": "OpenAI",
-    "release_date": "2024-12-17",
+    "id": "unknown:vita-1.5",
+    "name": "VITA-1.5",
+    "display_name": "Vita 1.5",
+    "group": "vita-1-5",
+    "family": null,
+    "variant": null,
+    "provider": "Unknown",
+    "release_date": "2024-12-20",
     "parameters": null
   },
   {
@@ -4461,6 +4758,17 @@
     "group": "o1",
     "family": "O1",
     "variant": "Low",
+    "provider": "OpenAI",
+    "release_date": "2024-12-17",
+    "parameters": null
+  },
+  {
+    "id": "openai:o1-2024-12-17_high",
+    "name": "o1-2024-12-17_high",
+    "display_name": "O1 High",
+    "group": "o1",
+    "family": "O1",
+    "variant": "High",
     "provider": "OpenAI",
     "release_date": "2024-12-17",
     "parameters": null
@@ -4532,17 +4840,6 @@
     "parameters": null
   },
   {
-    "id": "unknown:linvt",
-    "name": "LinVT",
-    "display_name": "Linvt",
-    "group": "linvt",
-    "family": null,
-    "variant": null,
-    "provider": "Unknown",
-    "release_date": "2024-12-06",
-    "parameters": null
-  },
-  {
     "id": "google_deepmind_google:gemini-exp-1206",
     "name": "gemini-exp-1206",
     "display_name": "Gemini 1206",
@@ -4565,14 +4862,14 @@
     "parameters": null
   },
   {
-    "id": "openai:o1_inspect",
-    "name": "o1_inspect",
-    "display_name": "O1",
-    "group": "o1",
-    "family": "O1",
+    "id": "unknown:linvt",
+    "name": "LinVT",
+    "display_name": "Linvt",
+    "group": "linvt",
+    "family": null,
     "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2024-12-05",
+    "provider": "Unknown",
+    "release_date": "2024-12-06",
     "parameters": null
   },
   {
@@ -4587,14 +4884,14 @@
     "parameters": null
   },
   {
-    "id": "amazon:amazon.nova-pro-v1_0",
-    "name": "amazon.nova-pro-v1:0",
-    "display_name": "Amazon.Nova Pro V1:0",
-    "group": "amazon-nova-pro-v1-0",
-    "family": null,
+    "id": "openai:o1_inspect",
+    "name": "o1_inspect",
+    "display_name": "O1",
+    "group": "o1",
+    "family": "O1",
     "variant": null,
-    "provider": "Amazon",
-    "release_date": "2024-12-03",
+    "provider": "OpenAI",
+    "release_date": "2024-12-05",
     "parameters": null
   },
   {
@@ -4602,6 +4899,17 @@
     "name": "amazon.nova-lite-v1:0",
     "display_name": "Amazon.Nova Lite V1:0",
     "group": "amazon-nova-lite-v1-0",
+    "family": null,
+    "variant": null,
+    "provider": "Amazon",
+    "release_date": "2024-12-03",
+    "parameters": null
+  },
+  {
+    "id": "amazon:amazon.nova-pro-v1_0",
+    "name": "amazon.nova-pro-v1:0",
+    "display_name": "Amazon.Nova Pro V1:0",
+    "group": "amazon-nova-pro-v1-0",
     "family": null,
     "variant": null,
     "provider": "Amazon",
@@ -4686,17 +4994,6 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwen2.5-coder-32b-instruct",
-    "name": "Qwen2.5-Coder-32B-Instruct",
-    "display_name": "Qwen 2.5 32B Instruct",
-    "group": "qwen-2-5-32b",
-    "family": "Qwen 2.5 32B",
-    "variant": "Instruct",
-    "provider": "Alibaba",
-    "release_date": "2024-11-21",
-    "parameters": null
-  },
-  {
     "id": "allen_institute_for_ai_university_of_washington:llama-3.1-tulu-3-70b-dpo",
     "name": "Llama-3.1-Tulu-3-70B-DPO",
     "display_name": "Llama 3.1 70B",
@@ -4704,6 +5001,17 @@
     "family": "Llama 3.1",
     "variant": "70B",
     "provider": "Allen Institute for AI,University of Washington",
+    "release_date": "2024-11-21",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:qwen2.5-coder-32b-instruct",
+    "name": "Qwen2.5-Coder-32B-Instruct",
+    "display_name": "Qwen 2.5 32B Instruct",
+    "group": "qwen-2-5-32b",
+    "family": "Qwen 2.5 32B",
+    "variant": "Instruct",
+    "provider": "Alibaba",
     "release_date": "2024-11-21",
     "parameters": null
   },
@@ -4785,50 +5093,6 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_3.5_sonnet",
-    "name": "Claude 3.5 Sonnet",
-    "display_name": "Claude Sonnet 3.5",
-    "group": "claude-sonnet-3-5",
-    "family": "Claude Sonnet 3.5",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2024-10-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-3-5-sonnet-20241022",
-    "name": "claude-3-5-sonnet-20241022",
-    "display_name": "Claude Sonnet 3.5",
-    "group": "claude-sonnet-3-5",
-    "family": "Claude Sonnet 3.5",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2024-10-22",
-    "parameters": null
-  },
-  {
-    "id": "anthropic:claude-3-5-haiku-20241022",
-    "name": "claude-3-5-haiku-20241022",
-    "display_name": "Claude Haiku 3.5",
-    "group": "claude-haiku-3-5",
-    "family": "Claude Haiku 3.5",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2024-10-22",
-    "parameters": null
-  },
-  {
-    "id": "unknown:oryx-1.5-32b",
-    "name": "Oryx-1.5-32B",
-    "display_name": "Oryx 1.5 32B",
-    "group": "oryx-1-5-32b",
-    "family": null,
-    "variant": null,
-    "provider": "Unknown",
-    "release_date": "2024-10-22",
-    "parameters": null
-  },
-  {
     "id": "anthropic:claude_3_5_sonnet_20241022_inspect",
     "name": "claude_3_5_sonnet_20241022_inspect",
     "display_name": "Claude Sonnet 3.5",
@@ -4851,6 +5115,50 @@
     "parameters": null
   },
   {
+    "id": "unknown:oryx-1.5-32b",
+    "name": "Oryx-1.5-32B",
+    "display_name": "Oryx 1.5 32B",
+    "group": "oryx-1-5-32b",
+    "family": null,
+    "variant": null,
+    "provider": "Unknown",
+    "release_date": "2024-10-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-3-5-haiku-20241022",
+    "name": "claude-3-5-haiku-20241022",
+    "display_name": "Claude Haiku 3.5",
+    "group": "claude-haiku-3-5",
+    "family": "Claude Haiku 3.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2024-10-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude_3.5_sonnet",
+    "name": "Claude 3.5 Sonnet",
+    "display_name": "Claude Sonnet 3.5",
+    "group": "claude-sonnet-3-5",
+    "family": "Claude Sonnet 3.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2024-10-22",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-3-5-sonnet-20241022",
+    "name": "claude-3-5-sonnet-20241022",
+    "display_name": "Claude Sonnet 3.5",
+    "group": "claude-sonnet-3-5",
+    "family": "Claude Sonnet 3.5",
+    "variant": null,
+    "provider": "Anthropic",
+    "release_date": "2024-10-22",
+    "parameters": null
+  },
+  {
     "id": "unknown:video-xl-7b",
     "name": "Video-XL-7B",
     "display_name": "Video Xl 7B",
@@ -4862,10 +5170,10 @@
     "parameters": null
   },
   {
-    "id": "mistral_ai:ministral-8b-2410",
-    "name": "ministral-8b-2410",
-    "display_name": "Ministral 8B 2410",
-    "group": "ministral-8b-2410",
+    "id": "mistral_ai:ministral-3b-2410",
+    "name": "ministral-3b-2410",
+    "display_name": "Ministral 3B 2410",
+    "group": "ministral-3b-2410",
     "family": null,
     "variant": null,
     "provider": "Mistral AI",
@@ -4873,10 +5181,10 @@
     "parameters": null
   },
   {
-    "id": "mistral_ai:ministral-3b-2410",
-    "name": "ministral-3b-2410",
-    "display_name": "Ministral 3B 2410",
-    "group": "ministral-3b-2410",
+    "id": "mistral_ai:ministral-8b-2410",
+    "name": "ministral-8b-2410",
+    "display_name": "Ministral 8B 2410",
+    "group": "ministral-8b-2410",
     "family": null,
     "variant": null,
     "provider": "Mistral AI",
@@ -4906,10 +5214,10 @@
     "parameters": null
   },
   {
-    "id": "unknown:aria",
-    "name": "Aria",
-    "display_name": "Aria",
-    "group": "aria",
+    "id": "unknown:dracarys2-72b-instruct",
+    "name": "Dracarys2-72B-Instruct",
+    "display_name": "Dracarys2 72B Instruct",
+    "group": "dracarys2-72b-instruct",
     "family": null,
     "variant": null,
     "provider": "Unknown",
@@ -4917,10 +5225,10 @@
     "parameters": null
   },
   {
-    "id": "unknown:dracarys2-72b-instruct",
-    "name": "Dracarys2-72B-Instruct",
-    "display_name": "Dracarys2 72B Instruct",
-    "group": "dracarys2-72b-instruct",
+    "id": "unknown:aria",
+    "name": "Aria",
+    "display_name": "Aria",
+    "group": "aria",
     "family": null,
     "variant": null,
     "provider": "Unknown",
@@ -4939,45 +5247,23 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemini-1.5-flash-002",
-    "name": "gemini-1.5-flash-002",
-    "display_name": "Gemini 1.5 Flash",
-    "group": "gemini-1-5-flash",
-    "family": "Gemini 1.5 Flash",
-    "variant": null,
-    "provider": "Google DeepMind",
-    "release_date": "2024-09-24",
-    "parameters": null
-  },
-  {
-    "id": "meta_ai:llama-3.2-11b-vision-instruct",
-    "name": "Llama-3.2-11B-Vision-Instruct",
-    "display_name": "Llama 3.2 11B Instruct",
-    "group": "llama-3-2",
-    "family": "Llama 3.2",
-    "variant": "11B Instruct",
-    "provider": "Meta AI",
-    "release_date": "2024-09-24",
-    "parameters": null
-  },
-  {
-    "id": "meta_ai:llama-3.2-3b-instruct",
-    "name": "Llama-3.2-3B-Instruct",
-    "display_name": "Llama 3.2 3B Instruct",
-    "group": "llama-3-2",
-    "family": "Llama 3.2",
-    "variant": "3B Instruct",
-    "provider": "Meta AI",
-    "release_date": "2024-09-24",
-    "parameters": null
-  },
-  {
     "id": "meta_ai:llama-3.2-90b-vision-instruct",
     "name": "Llama-3.2-90B-Vision-Instruct",
     "display_name": "Llama 3.2 90B Instruct",
     "group": "llama-3-2",
     "family": "Llama 3.2",
     "variant": "90B Instruct",
+    "provider": "Meta AI",
+    "release_date": "2024-09-24",
+    "parameters": null
+  },
+  {
+    "id": "meta_ai:llama-3.2-1b-instruct",
+    "name": "Llama-3.2-1B-Instruct",
+    "display_name": "Llama 3.2 1B Instruct",
+    "group": "llama-3-2",
+    "family": "Llama 3.2",
+    "variant": "1B Instruct",
     "provider": "Meta AI",
     "release_date": "2024-09-24",
     "parameters": null
@@ -4994,25 +5280,36 @@
     "parameters": null
   },
   {
-    "id": "meta_ai:llama-3.2-1b-instruct",
-    "name": "Llama-3.2-1B-Instruct",
-    "display_name": "Llama 3.2 1B Instruct",
+    "id": "meta_ai:llama-3.2-3b-instruct",
+    "name": "Llama-3.2-3B-Instruct",
+    "display_name": "Llama 3.2 3B Instruct",
     "group": "llama-3-2",
     "family": "Llama 3.2",
-    "variant": "1B Instruct",
+    "variant": "3B Instruct",
     "provider": "Meta AI",
     "release_date": "2024-09-24",
     "parameters": null
   },
   {
-    "id": "alibaba:qwen2.5-72b-instruct",
-    "name": "qwen2.5-72b-instruct",
-    "display_name": "Qwen 2.5 72B Instruct",
-    "group": "qwen-2-5-72b",
-    "family": "Qwen 2.5 72B",
-    "variant": "Instruct",
-    "provider": "Alibaba",
-    "release_date": "2024-09-19",
+    "id": "meta_ai:llama-3.2-11b-vision-instruct",
+    "name": "Llama-3.2-11B-Vision-Instruct",
+    "display_name": "Llama 3.2 11B Instruct",
+    "group": "llama-3-2",
+    "family": "Llama 3.2",
+    "variant": "11B Instruct",
+    "provider": "Meta AI",
+    "release_date": "2024-09-24",
+    "parameters": null
+  },
+  {
+    "id": "google_deepmind:gemini-1.5-flash-002",
+    "name": "gemini-1.5-flash-002",
+    "display_name": "Gemini 1.5 Flash",
+    "group": "gemini-1-5-flash",
+    "family": "Gemini 1.5 Flash",
+    "variant": null,
+    "provider": "Google DeepMind",
+    "release_date": "2024-09-24",
     "parameters": null
   },
   {
@@ -5038,6 +5335,17 @@
     "parameters": null
   },
   {
+    "id": "alibaba:qwen2.5-72b-instruct",
+    "name": "qwen2.5-72b-instruct",
+    "display_name": "Qwen 2.5 72B Instruct",
+    "group": "qwen-2-5-72b",
+    "family": "Qwen 2.5 72B",
+    "variant": "Instruct",
+    "provider": "Alibaba",
+    "release_date": "2024-09-19",
+    "parameters": null
+  },
+  {
     "id": "alibaba:qwen2.5-vl-72b-instruct",
     "name": "Qwen2.5-VL-72B-Instruct",
     "display_name": "Qwen 2.5 72B Instruct",
@@ -5046,6 +5354,17 @@
     "variant": "Instruct",
     "provider": "Alibaba",
     "release_date": "2024-09-19",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:qwen2.5-coder-1.5b",
+    "name": "Qwen2.5-Coder-1.5B",
+    "display_name": "Qwen 2.5",
+    "group": "qwen-2-5",
+    "family": "Qwen 2.5",
+    "variant": null,
+    "provider": "Alibaba",
+    "release_date": "2024-09-18",
     "parameters": null
   },
   {
@@ -5060,11 +5379,22 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwen2.5-coder-1.5b",
-    "name": "Qwen2.5-Coder-1.5B",
-    "display_name": "Qwen 2.5",
-    "group": "qwen-2-5",
-    "family": "Qwen 2.5",
+    "id": "alibaba:qwen2.5-coder-7b",
+    "name": "Qwen2.5-Coder-7B",
+    "display_name": "Qwen 2.5 7B",
+    "group": "qwen-2-5-7b",
+    "family": "Qwen 2.5 7B",
+    "variant": null,
+    "provider": "Alibaba",
+    "release_date": "2024-09-18",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:qwen2.5-coder-14b",
+    "name": "Qwen2.5-Coder-14B",
+    "display_name": "Qwen 2.5 14B",
+    "group": "qwen-2-5-14b",
+    "family": "Qwen 2.5 14B",
     "variant": null,
     "provider": "Alibaba",
     "release_date": "2024-09-18",
@@ -5093,25 +5423,14 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwen2.5-coder-14b",
-    "name": "Qwen2.5-Coder-14B",
-    "display_name": "Qwen 2.5 14B",
-    "group": "qwen-2-5-14b",
-    "family": "Qwen 2.5 14B",
-    "variant": null,
-    "provider": "Alibaba",
-    "release_date": "2024-09-18",
-    "parameters": null
-  },
-  {
-    "id": "alibaba:qwen2.5-coder-7b",
-    "name": "Qwen2.5-Coder-7B",
-    "display_name": "Qwen 2.5 7B",
+    "id": "alibaba:qwen2.5-coder-7b-instruct",
+    "name": "Qwen2.5-Coder-7B-Instruct",
+    "display_name": "Qwen 2.5 7B Instruct",
     "group": "qwen-2-5-7b",
     "family": "Qwen 2.5 7B",
-    "variant": null,
+    "variant": "Instruct",
     "provider": "Alibaba",
-    "release_date": "2024-09-18",
+    "release_date": "2024-09-17",
     "parameters": null
   },
   {
@@ -5137,28 +5456,6 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwen2.5-coder-7b-instruct",
-    "name": "Qwen2.5-Coder-7B-Instruct",
-    "display_name": "Qwen 2.5 7B Instruct",
-    "group": "qwen-2-5-7b",
-    "family": "Qwen 2.5 7B",
-    "variant": "Instruct",
-    "provider": "Alibaba",
-    "release_date": "2024-09-17",
-    "parameters": null
-  },
-  {
-    "id": "openai:o1-preview-2024-09-12",
-    "name": "o1-preview-2024-09-12",
-    "display_name": "O1 Preview",
-    "group": "o1",
-    "family": "O1",
-    "variant": "Preview",
-    "provider": "OpenAI",
-    "release_date": "2024-09-12",
-    "parameters": null
-  },
-  {
     "id": "openai:o1-mini-2024-09-12_high",
     "name": "o1-mini-2024-09-12_high",
     "display_name": "O1 Mini High",
@@ -5170,12 +5467,34 @@
     "parameters": null
   },
   {
-    "id": "openai:o1-mini-2024-09-12",
-    "name": "o1-mini-2024-09-12",
+    "id": "openai:o1_preview",
+    "name": "o1_preview",
+    "display_name": "O1 Preview",
+    "group": "o1",
+    "family": "O1",
+    "variant": "Preview",
+    "provider": "OpenAI",
+    "release_date": "2024-09-12",
+    "parameters": null
+  },
+  {
+    "id": "openai:o1-mini-2024-09-12_unknown",
+    "name": "o1-mini-2024-09-12_unknown",
     "display_name": "O1 Mini",
     "group": "o1",
-    "family": "o1",
+    "family": "O1",
     "variant": "Mini",
+    "provider": "OpenAI",
+    "release_date": "2024-09-12",
+    "parameters": null
+  },
+  {
+    "id": "openai:o1-preview-2024-09-12",
+    "name": "o1-preview-2024-09-12",
+    "display_name": "O1 Preview",
+    "group": "o1",
+    "family": "O1",
+    "variant": "Preview",
     "provider": "OpenAI",
     "release_date": "2024-09-12",
     "parameters": null
@@ -5192,12 +5511,12 @@
     "parameters": null
   },
   {
-    "id": "openai:o1_preview",
-    "name": "o1_preview",
-    "display_name": "O1 Preview",
+    "id": "openai:o1-mini-2024-09-12",
+    "name": "o1-mini-2024-09-12",
+    "display_name": "O1 Mini",
     "group": "o1",
-    "family": "O1",
-    "variant": "Preview",
+    "family": "o1",
+    "variant": "Mini",
     "provider": "OpenAI",
     "release_date": "2024-09-12",
     "parameters": null
@@ -5236,17 +5555,6 @@
     "parameters": null
   },
   {
-    "id": "cohere:c4ai-command-r-08-2024",
-    "name": "c4ai-command-r-08-2024",
-    "display_name": "C4Ai Command R 08 2024",
-    "group": "c4ai-command-r-08-2024",
-    "family": null,
-    "variant": null,
-    "provider": "Cohere",
-    "release_date": "2024-08-30",
-    "parameters": null
-  },
-  {
     "id": "alibaba:long-llava-qwen2-7b",
     "name": "long-llava-qwen2-7b",
     "display_name": "Qwen 2 7B",
@@ -5254,6 +5562,17 @@
     "family": "Qwen 2 7B",
     "variant": null,
     "provider": "Alibaba",
+    "release_date": "2024-08-30",
+    "parameters": null
+  },
+  {
+    "id": "cohere:c4ai-command-r-08-2024",
+    "name": "c4ai-command-r-08-2024",
+    "display_name": "C4Ai Command R 08 2024",
+    "group": "c4ai-command-r-08-2024",
+    "family": null,
+    "variant": null,
+    "provider": "Cohere",
     "release_date": "2024-08-30",
     "parameters": null
   },
@@ -5302,17 +5621,6 @@
     "parameters": null
   },
   {
-    "id": "microsoft:phi-3.5-mini-instruct",
-    "name": "Phi-3.5-mini-instruct",
-    "display_name": "Phi 3.5 Mini Instruct",
-    "group": "phi-3-5-mini-instruct",
-    "family": null,
-    "variant": null,
-    "provider": "Microsoft",
-    "release_date": "2024-08-16",
-    "parameters": null
-  },
-  {
     "id": "unknown:internvl-chat-vit-6b-vicuna-13b",
     "name": "InternVL-Chat-ViT-6B-Vicuna-13B",
     "display_name": "Internvl Chat Vit 6B Vicuna 13B",
@@ -5331,6 +5639,17 @@
     "family": null,
     "variant": null,
     "provider": "Unknown",
+    "release_date": "2024-08-16",
+    "parameters": null
+  },
+  {
+    "id": "microsoft:phi-3.5-mini-instruct",
+    "name": "Phi-3.5-mini-instruct",
+    "display_name": "Phi 3.5 Mini Instruct",
+    "group": "phi-3-5-mini-instruct",
+    "family": null,
+    "variant": null,
+    "provider": "Microsoft",
     "release_date": "2024-08-16",
     "parameters": null
   },
@@ -5357,17 +5676,6 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-4o-2024-08-06",
-    "name": "gpt-4o-2024-08-06",
-    "display_name": "GPT-4o",
-    "group": "gpt-4o",
-    "family": "GPT",
-    "variant": null,
-    "provider": "OpenAI",
-    "release_date": "2024-08-06",
-    "parameters": null
-  },
-  {
     "id": "unknown:llava-onevision_72b",
     "name": "LLaVA-OneVision 72B",
     "display_name": "Llava Onevision 72B",
@@ -5375,6 +5683,17 @@
     "family": null,
     "variant": null,
     "provider": "Unknown",
+    "release_date": "2024-08-06",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4o-2024-08-06",
+    "name": "gpt-4o-2024-08-06",
+    "display_name": "GPT-4o",
+    "group": "gpt-4o",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
     "release_date": "2024-08-06",
     "parameters": null
   },
@@ -5401,34 +5720,23 @@
     "parameters": null
   },
   {
-    "id": "meta_ai:llama-3.1-8b-instruct",
-    "name": "Llama-3.1-8B-Instruct",
-    "display_name": "Llama 3.1 8B Instruct",
-    "group": "llama-3-1",
-    "family": "Llama 3.1",
-    "variant": "8B Instruct",
-    "provider": "Meta AI",
-    "release_date": "2024-07-23",
-    "parameters": null
-  },
-  {
-    "id": "meta_ai:llama-3.1-70b-instruct",
-    "name": "Llama-3.1-70B-Instruct",
-    "display_name": "Llama 3.1 70B Instruct",
-    "group": "llama-3-1",
-    "family": "Llama 3.1",
-    "variant": "70B Instruct",
-    "provider": "Meta AI",
-    "release_date": "2024-07-23",
-    "parameters": null
-  },
-  {
     "id": "meta_ai:llama-3.1-405b",
     "name": "Llama-3.1-405B",
     "display_name": "Llama 3.1 405B",
     "group": "llama-3-1",
     "family": "Llama 3.1",
     "variant": "405B",
+    "provider": "Meta AI",
+    "release_date": "2024-07-23",
+    "parameters": null
+  },
+  {
+    "id": "meta_ai:llama-3.1-8b-instruct",
+    "name": "Llama-3.1-8B-Instruct",
+    "display_name": "Llama 3.1 8B Instruct",
+    "group": "llama-3-1",
+    "family": "Llama 3.1",
+    "variant": "8B Instruct",
     "provider": "Meta AI",
     "release_date": "2024-07-23",
     "parameters": null
@@ -5445,6 +5753,28 @@
     "parameters": null
   },
   {
+    "id": "meta_ai:llama-3.1-70b-instruct",
+    "name": "Llama-3.1-70B-Instruct",
+    "display_name": "Llama 3.1 70B Instruct",
+    "group": "llama-3-1",
+    "family": "Llama 3.1",
+    "variant": "70B Instruct",
+    "provider": "Meta AI",
+    "release_date": "2024-07-23",
+    "parameters": null
+  },
+  {
+    "id": "mistral_ai:mistral-nemo-base-2407",
+    "name": "Mistral-Nemo-Base-2407",
+    "display_name": "Mistral",
+    "group": "mistral",
+    "family": "Mistral",
+    "variant": null,
+    "provider": "Mistral AI",
+    "release_date": "2024-07-18",
+    "parameters": null
+  },
+  {
     "id": "openai:gpt-4o-mini-2024-07-18",
     "name": "gpt-4o-mini-2024-07-18",
     "display_name": "GPT-4o Mini",
@@ -5452,17 +5782,6 @@
     "family": "GPT",
     "variant": "Mini",
     "provider": "OpenAI",
-    "release_date": "2024-07-18",
-    "parameters": null
-  },
-  {
-    "id": "mistral_ai:open-mistral-nemo-2407",
-    "name": "open-mistral-nemo-2407",
-    "display_name": "Mistral",
-    "group": "mistral",
-    "family": "Mistral",
-    "variant": null,
-    "provider": "Mistral AI",
     "release_date": "2024-07-18",
     "parameters": null
   },
@@ -5478,8 +5797,8 @@
     "parameters": null
   },
   {
-    "id": "mistral_ai:mistral-nemo-base-2407",
-    "name": "Mistral-Nemo-Base-2407",
+    "id": "mistral_ai:open-mistral-nemo-2407",
+    "name": "open-mistral-nemo-2407",
     "display_name": "Mistral",
     "group": "mistral",
     "family": "Mistral",
@@ -5533,6 +5852,17 @@
     "parameters": null
   },
   {
+    "id": "nous_research_arcee_ai:hermes-2-theta-llama-3-70b",
+    "name": "Hermes-2-Theta-Llama-3-70B",
+    "display_name": "Llama 3 70B",
+    "group": "llama-3",
+    "family": "Llama 3",
+    "variant": "70B",
+    "provider": "Nous Research,Arcee AI",
+    "release_date": "2024-06-20",
+    "parameters": null
+  },
+  {
     "id": "anthropic:claude_3_5_sonnet",
     "name": "claude_3_5_sonnet",
     "display_name": "Claude Sonnet 3.5",
@@ -5566,17 +5896,6 @@
     "parameters": null
   },
   {
-    "id": "nous_research_arcee_ai:hermes-2-theta-llama-3-70b",
-    "name": "Hermes-2-Theta-Llama-3-70B",
-    "display_name": "Llama 3 70B",
-    "group": "llama-3",
-    "family": "Llama 3",
-    "variant": "70B",
-    "provider": "Nous Research,Arcee AI",
-    "release_date": "2024-06-20",
-    "parameters": null
-  },
-  {
     "id": "deepseek:deepseek-coder-v2-instruct",
     "name": "DeepSeek-Coder-V2-Instruct",
     "display_name": "DeepSeek Instruct",
@@ -5599,17 +5918,6 @@
     "parameters": null
   },
   {
-    "id": "unknown:longva-7b",
-    "name": "LongVA-7B",
-    "display_name": "Longva 7B",
-    "group": "longva-7b",
-    "family": null,
-    "variant": null,
-    "provider": "Unknown",
-    "release_date": "2024-06-13",
-    "parameters": null
-  },
-  {
     "id": "deepseek:deepseek-coder-v2-lite-base",
     "name": "DeepSeek-Coder-V2-Lite-Base",
     "display_name": "DeepSeek",
@@ -5617,6 +5925,17 @@
     "family": "DeepSeek",
     "variant": null,
     "provider": "DeepSeek",
+    "release_date": "2024-06-13",
+    "parameters": null
+  },
+  {
+    "id": "unknown:longva-7b",
+    "name": "LongVA-7B",
+    "display_name": "Longva 7B",
+    "group": "longva-7b",
+    "family": null,
+    "variant": null,
+    "provider": "Unknown",
     "release_date": "2024-06-13",
     "parameters": null
   },
@@ -5643,23 +5962,23 @@
     "parameters": null
   },
   {
-    "id": "alibaba:qwen_2_72b",
-    "name": "qwen_2_72b",
-    "display_name": "Qwen 72b 72B",
-    "group": "qwen-72b-72b",
-    "family": "Qwen 72b 72B",
-    "variant": null,
-    "provider": "Alibaba",
-    "release_date": "2024-06-07",
-    "parameters": null
-  },
-  {
     "id": "alibaba:qwen2-72b-instruct",
     "name": "qwen2-72b-instruct",
     "display_name": "Qwen 2 72B Instruct",
     "group": "qwen-2-72b",
     "family": "Qwen 2 72B",
     "variant": "Instruct",
+    "provider": "Alibaba",
+    "release_date": "2024-06-07",
+    "parameters": null
+  },
+  {
+    "id": "alibaba:qwen_2_72b",
+    "name": "qwen_2_72b",
+    "display_name": "Qwen 72b 72B",
+    "group": "qwen-72b-72b",
+    "family": "Qwen 72b 72B",
+    "variant": null,
     "provider": "Alibaba",
     "release_date": "2024-06-07",
     "parameters": null
@@ -5676,17 +5995,6 @@
     "parameters": null
   },
   {
-    "id": "mistral_ai:mistral-7b-instruct-v0.3",
-    "name": "Mistral-7B-Instruct-v0.3",
-    "display_name": "Mistral 7B Instruct",
-    "group": "mistral",
-    "family": "Mistral",
-    "variant": "7B Instruct",
-    "provider": "Mistral AI",
-    "release_date": "2024-05-27",
-    "parameters": null
-  },
-  {
     "id": "unknown:sharegpt4video-8b",
     "name": "sharegpt4video-8b",
     "display_name": "Sharegpt4Video 8B",
@@ -5694,6 +6002,17 @@
     "family": null,
     "variant": null,
     "provider": "Unknown",
+    "release_date": "2024-05-27",
+    "parameters": null
+  },
+  {
+    "id": "mistral_ai:mistral-7b-instruct-v0.3",
+    "name": "Mistral-7B-Instruct-v0.3",
+    "display_name": "Mistral 7B Instruct",
+    "group": "mistral",
+    "family": "Mistral",
+    "variant": "7B Instruct",
+    "provider": "Mistral AI",
     "release_date": "2024-05-27",
     "parameters": null
   },
@@ -5742,17 +6061,6 @@
     "parameters": null
   },
   {
-    "id": "01.ai:yi-large",
-    "name": "Yi-large",
-    "display_name": "Yi Large",
-    "group": "yi-large",
-    "family": null,
-    "variant": null,
-    "provider": "01.AI",
-    "release_date": "2024-05-13",
-    "parameters": null
-  },
-  {
     "id": "openai:gpt_4o",
     "name": "gpt_4o",
     "display_name": "GPT-4o",
@@ -5760,6 +6068,28 @@
     "family": "GPT",
     "variant": null,
     "provider": "OpenAI",
+    "release_date": "2024-05-13",
+    "parameters": null
+  },
+  {
+    "id": "01.ai:yi-1.5-34b-chat",
+    "name": "Yi-1.5-34B-Chat",
+    "display_name": "Yi 1.5 34B Chat",
+    "group": "yi-1-5-34b-chat",
+    "family": null,
+    "variant": null,
+    "provider": "01.AI",
+    "release_date": "2024-05-13",
+    "parameters": null
+  },
+  {
+    "id": "01.ai:yi-large",
+    "name": "Yi-large",
+    "display_name": "Yi Large",
+    "group": "yi-large",
+    "family": null,
+    "variant": null,
+    "provider": "01.AI",
     "release_date": "2024-05-13",
     "parameters": null
   },
@@ -5786,17 +6116,6 @@
     "parameters": null
   },
   {
-    "id": "01.ai:yi-1.5-34b-chat",
-    "name": "Yi-1.5-34B-Chat",
-    "display_name": "Yi 1.5 34B Chat",
-    "group": "yi-1-5-34b-chat",
-    "family": null,
-    "variant": null,
-    "provider": "01.AI",
-    "release_date": "2024-05-13",
-    "parameters": null
-  },
-  {
     "id": "technology_innovation_institute:falcon-11b",
     "name": "falcon-11b",
     "display_name": "Falcon 11B",
@@ -5816,17 +6135,6 @@
     "variant": null,
     "provider": "DeepSeek",
     "release_date": "2024-05-07",
-    "parameters": null
-  },
-  {
-    "id": "microsoft:phi-3-medium-128k-instruct",
-    "name": "Phi-3-medium-128k-instruct",
-    "display_name": "Phi 3 Medium 128K Instruct",
-    "group": "phi-3-medium-128k-instruct",
-    "family": null,
-    "variant": null,
-    "provider": "Microsoft",
-    "release_date": "2024-04-23",
     "parameters": null
   },
   {
@@ -5863,6 +6171,17 @@
     "parameters": null
   },
   {
+    "id": "microsoft:phi-3-medium-128k-instruct",
+    "name": "Phi-3-medium-128k-instruct",
+    "display_name": "Phi 3 Medium 128K Instruct",
+    "group": "phi-3-medium-128k-instruct",
+    "family": null,
+    "variant": null,
+    "provider": "Microsoft",
+    "release_date": "2024-04-23",
+    "parameters": null
+  },
+  {
     "id": "meta:llama3-llava-next-8b",
     "name": "llama3-llava-next-8b",
     "display_name": "Llama3 Llava Next 8B",
@@ -5871,17 +6190,6 @@
     "variant": null,
     "provider": "Meta",
     "release_date": "2024-04-20",
-    "parameters": null
-  },
-  {
-    "id": "meta_ai:meta-llama-3-8b-instruct",
-    "name": "Meta-Llama-3-8B-Instruct",
-    "display_name": "Llama 3 8B Instruct",
-    "group": "llama-3",
-    "family": "Llama 3",
-    "variant": "8B Instruct",
-    "provider": "Meta AI",
-    "release_date": "2024-04-18",
     "parameters": null
   },
   {
@@ -5896,12 +6204,12 @@
     "parameters": null
   },
   {
-    "id": "meta_ai:meta-llama-3-70b-instruct",
-    "name": "Meta-Llama-3-70B-Instruct",
-    "display_name": "Llama 3 70B Instruct",
+    "id": "meta_ai:meta-llama-3-8b-instruct",
+    "name": "Meta-Llama-3-8B-Instruct",
+    "display_name": "Llama 3 8B Instruct",
     "group": "llama-3",
     "family": "Llama 3",
-    "variant": "70B Instruct",
+    "variant": "8B Instruct",
     "provider": "Meta AI",
     "release_date": "2024-04-18",
     "parameters": null
@@ -5929,12 +6237,23 @@
     "parameters": null
   },
   {
-    "id": "mistral_ai:mixtral-8x22b-instruct-v0.1",
-    "name": "Mixtral-8x22B-Instruct-v0.1",
-    "display_name": "Mixtral Instruct",
+    "id": "meta_ai:meta-llama-3-70b-instruct",
+    "name": "Meta-Llama-3-70B-Instruct",
+    "display_name": "Llama 3 70B Instruct",
+    "group": "llama-3",
+    "family": "Llama 3",
+    "variant": "70B Instruct",
+    "provider": "Meta AI",
+    "release_date": "2024-04-18",
+    "parameters": null
+  },
+  {
+    "id": "mistral_ai:mixtral-8x22b-v0.1",
+    "name": "Mixtral-8x22B-v0.1",
+    "display_name": "Mixtral",
     "group": "mixtral",
     "family": "Mixtral",
-    "variant": "Instruct",
+    "variant": null,
     "provider": "Mistral AI",
     "release_date": "2024-04-17",
     "parameters": null
@@ -5951,25 +6270,14 @@
     "parameters": null
   },
   {
-    "id": "mistral_ai:mixtral-8x22b-v0.1",
-    "name": "Mixtral-8x22B-v0.1",
-    "display_name": "Mixtral",
+    "id": "mistral_ai:mixtral-8x22b-instruct-v0.1",
+    "name": "Mixtral-8x22B-Instruct-v0.1",
+    "display_name": "Mixtral Instruct",
     "group": "mixtral",
     "family": "Mixtral",
-    "variant": null,
+    "variant": "Instruct",
     "provider": "Mistral AI",
     "release_date": "2024-04-17",
-    "parameters": null
-  },
-  {
-    "id": "microsoft:wizardlm-2-8x22b",
-    "name": "WizardLM-2-8x22B",
-    "display_name": "Wizardlm 2 8X22B",
-    "group": "wizardlm-2-8x22b",
-    "family": null,
-    "variant": null,
-    "provider": "Microsoft",
-    "release_date": "2024-04-15",
     "parameters": null
   },
   {
@@ -5980,6 +6288,17 @@
     "family": null,
     "variant": null,
     "provider": "Alibaba",
+    "release_date": "2024-04-15",
+    "parameters": null
+  },
+  {
+    "id": "microsoft:wizardlm-2-8x22b",
+    "name": "WizardLM-2-8x22B",
+    "display_name": "Wizardlm 2 8X22B",
+    "group": "wizardlm-2-8x22b",
+    "family": null,
+    "variant": null,
+    "provider": "Microsoft",
     "release_date": "2024-04-15",
     "parameters": null
   },
@@ -5995,8 +6314,8 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-4-turbo-2024-04-09",
-    "name": "gpt-4-turbo-2024-04-09",
+    "id": "openai:gpt_4_turbo",
+    "name": "gpt_4_turbo",
     "display_name": "GPT-4 Turbo",
     "group": "gpt-4",
     "family": "GPT",
@@ -6017,8 +6336,8 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt_4_turbo",
-    "name": "gpt_4_turbo",
+    "id": "openai:gpt-4-turbo-2024-04-09",
+    "name": "gpt-4-turbo-2024-04-09",
     "display_name": "GPT-4 Turbo",
     "group": "gpt-4",
     "family": "GPT",
@@ -6105,8 +6424,8 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_3_opus_inspect",
-    "name": "claude_3_opus_inspect",
+    "id": "anthropic:claude_3_opus",
+    "name": "claude_3_opus",
     "display_name": "Claude Opus 3",
     "group": "claude-opus-3",
     "family": "Claude Opus 3",
@@ -6116,8 +6435,8 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_3_opus",
-    "name": "claude_3_opus",
+    "id": "anthropic:claude_3_opus_inspect",
+    "name": "claude_3_opus_inspect",
     "display_name": "Claude Opus 3",
     "group": "claude-opus-3",
     "family": "Claude Opus 3",
@@ -6160,13 +6479,13 @@
     "parameters": null
   },
   {
-    "id": "mistral_ai:mistral-large-2402",
-    "name": "mistral-large-2402",
+    "id": "mistral:mistral-small-2402",
+    "name": "mistral-small-2402",
     "display_name": "Mistral",
     "group": "mistral",
     "family": "Mistral",
     "variant": null,
-    "provider": "Mistral AI",
+    "provider": "Mistral",
     "release_date": "2024-02-26",
     "parameters": null
   },
@@ -6182,13 +6501,13 @@
     "parameters": null
   },
   {
-    "id": "mistral:mistral-small-2402",
-    "name": "mistral-small-2402",
+    "id": "mistral_ai:mistral-large-2402",
+    "name": "mistral-large-2402",
     "display_name": "Mistral",
     "group": "mistral",
     "family": "Mistral",
     "variant": null,
-    "provider": "Mistral",
+    "provider": "Mistral AI",
     "release_date": "2024-02-26",
     "parameters": null
   },
@@ -6204,17 +6523,6 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemma-7b",
-    "name": "gemma-7b",
-    "display_name": "Gemma 7B",
-    "group": "gemma-7b",
-    "family": null,
-    "variant": null,
-    "provider": "Google DeepMind",
-    "release_date": "2024-02-21",
-    "parameters": null
-  },
-  {
     "id": "google_deepmind:gemma-2b",
     "name": "gemma-2b",
     "display_name": "Gemma 2B",
@@ -6226,14 +6534,14 @@
     "parameters": null
   },
   {
-    "id": "hugging_face_servicenow_nvidia_bigcode:starcoder2-15b",
-    "name": "starcoder2-15b",
-    "display_name": "Starcoder2 15B",
-    "group": "starcoder2-15b",
+    "id": "google_deepmind:gemma-7b",
+    "name": "gemma-7b",
+    "display_name": "Gemma 7B",
+    "group": "gemma-7b",
     "family": null,
     "variant": null,
-    "provider": "Hugging Face,ServiceNow,NVIDIA,BigCode",
-    "release_date": "2024-02-20",
+    "provider": "Google DeepMind",
+    "release_date": "2024-02-21",
     "parameters": null
   },
   {
@@ -6241,6 +6549,17 @@
     "name": "starcoder2-7b",
     "display_name": "Starcoder2 7B",
     "group": "starcoder2-7b",
+    "family": null,
+    "variant": null,
+    "provider": "Hugging Face,ServiceNow,NVIDIA,BigCode",
+    "release_date": "2024-02-20",
+    "parameters": null
+  },
+  {
+    "id": "hugging_face_servicenow_nvidia_bigcode:starcoder2-15b",
+    "name": "starcoder2-15b",
+    "display_name": "Starcoder2 15B",
+    "group": "starcoder2-15b",
     "family": null,
     "variant": null,
     "provider": "Hugging Face,ServiceNow,NVIDIA,BigCode",
@@ -6256,17 +6575,6 @@
     "variant": null,
     "provider": "Google DeepMind",
     "release_date": "2024-02-15",
-    "parameters": null
-  },
-  {
-    "id": "alibaba:qwen1.5-72b-chat",
-    "name": "qwen1.5-72b-chat",
-    "display_name": "Qwen 1.5 72B",
-    "group": "qwen-1-5-72b",
-    "family": "Qwen 1.5 72B",
-    "variant": null,
-    "provider": "Alibaba",
-    "release_date": "2024-02-04",
     "parameters": null
   },
   {
@@ -6303,14 +6611,14 @@
     "parameters": null
   },
   {
-    "id": "unknown:llava-v1.6-vicuna-7b",
-    "name": "llava-v1.6-vicuna-7b",
-    "display_name": "Llava V1.6 Vicuna 7B",
-    "group": "llava-v1-6-vicuna-7b",
-    "family": null,
+    "id": "alibaba:qwen1.5-72b-chat",
+    "name": "qwen1.5-72b-chat",
+    "display_name": "Qwen 1.5 72B",
+    "group": "qwen-1-5-72b",
+    "family": "Qwen 1.5 72B",
     "variant": null,
-    "provider": "Unknown",
-    "release_date": "2024-01-31",
+    "provider": "Alibaba",
+    "release_date": "2024-02-04",
     "parameters": null
   },
   {
@@ -6336,14 +6644,14 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-3.5-turbo-0125",
-    "name": "gpt-3.5-turbo-0125",
-    "display_name": "GPT-3.5 Turbo",
-    "group": "gpt-3-5",
-    "family": "GPT",
-    "variant": "Turbo",
-    "provider": "OpenAI",
-    "release_date": "2024-01-25",
+    "id": "unknown:llava-v1.6-vicuna-7b",
+    "name": "llava-v1.6-vicuna-7b",
+    "display_name": "Llava V1.6 Vicuna 7B",
+    "group": "llava-v1-6-vicuna-7b",
+    "family": null,
+    "variant": null,
+    "provider": "Unknown",
+    "release_date": "2024-01-31",
     "parameters": null
   },
   {
@@ -6353,6 +6661,17 @@
     "group": "gpt-4",
     "family": "GPT",
     "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2024-01-25",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-3.5-turbo-0125",
+    "name": "gpt-3.5-turbo-0125",
+    "display_name": "GPT-3.5 Turbo",
+    "group": "gpt-3-5",
+    "family": "GPT",
+    "variant": "Turbo",
     "provider": "OpenAI",
     "release_date": "2024-01-25",
     "parameters": null
@@ -6435,6 +6754,17 @@
     "parameters": null
   },
   {
+    "id": "mistral_ai:mixtral-8x7b-instruct-v0.1",
+    "name": "Mixtral-8x7B-Instruct-v0.1",
+    "display_name": "Mixtral Instruct",
+    "group": "mixtral",
+    "family": "Mixtral",
+    "variant": "Instruct",
+    "provider": "Mistral AI",
+    "release_date": "2023-12-11",
+    "parameters": null
+  },
+  {
     "id": "mistral_ai:mixtral-8x7b-v0.1",
     "name": "Mixtral-8x7B-v0.1",
     "display_name": "Mixtral",
@@ -6463,17 +6793,6 @@
     "group": "mixtral",
     "family": "Mixtral",
     "variant": null,
-    "provider": "Mistral AI",
-    "release_date": "2023-12-11",
-    "parameters": null
-  },
-  {
-    "id": "mistral_ai:mixtral-8x7b-instruct-v0.1",
-    "name": "Mixtral-8x7B-Instruct-v0.1",
-    "display_name": "Mixtral Instruct",
-    "group": "mixtral",
-    "family": "Mixtral",
-    "variant": "Instruct",
     "provider": "Mistral AI",
     "release_date": "2023-12-11",
     "parameters": null
@@ -6556,6 +6875,17 @@
     "parameters": null
   },
   {
+    "id": "openai:gpt-3.5-turbo-1106",
+    "name": "gpt-3.5-turbo-1106",
+    "display_name": "GPT-3.5 Turbo",
+    "group": "gpt-3-5",
+    "family": "GPT",
+    "variant": "Turbo",
+    "provider": "OpenAI",
+    "release_date": "2023-11-06",
+    "parameters": null
+  },
+  {
     "id": "openai:gpt-4-1106-vision-preview",
     "name": "gpt-4-1106-vision-preview",
     "display_name": "GPT-4 Preview",
@@ -6571,28 +6901,6 @@
     "name": "gpt-4-turbo",
     "display_name": "GPT-4 Turbo",
     "group": "gpt-4",
-    "family": "GPT",
-    "variant": "Turbo",
-    "provider": "OpenAI",
-    "release_date": "2023-11-06",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-4-1106-preview",
-    "name": "gpt-4-1106-preview",
-    "display_name": "GPT-4 Preview",
-    "group": "gpt-4",
-    "family": "GPT",
-    "variant": "Preview",
-    "provider": "OpenAI",
-    "release_date": "2023-11-06",
-    "parameters": null
-  },
-  {
-    "id": "openai:gpt-3.5-turbo-1106",
-    "name": "gpt-3.5-turbo-1106",
-    "display_name": "GPT-3.5 Turbo",
-    "group": "gpt-3-5",
     "family": "GPT",
     "variant": "Turbo",
     "provider": "OpenAI",
@@ -6617,6 +6925,17 @@
     "group": "gpt-4",
     "family": "GPT",
     "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2023-11-06",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-4-1106-preview",
+    "name": "gpt-4-1106-preview",
+    "display_name": "GPT-4 Preview",
+    "group": "gpt-4",
+    "family": "GPT",
+    "variant": "Preview",
     "provider": "OpenAI",
     "release_date": "2023-11-06",
     "parameters": null
@@ -6710,6 +7029,17 @@
     "parameters": null
   },
   {
+    "id": "mistral_ai:open-mistral-7b",
+    "name": "open-mistral-7b",
+    "display_name": "Mistral 7B",
+    "group": "mistral",
+    "family": "Mistral",
+    "variant": "7B",
+    "provider": "Mistral AI",
+    "release_date": "2023-09-27",
+    "parameters": null
+  },
+  {
     "id": "mistral_ai:mistral-7b-instruct-v0.1",
     "name": "Mistral-7B-Instruct-v0.1",
     "display_name": "Mistral 7B Instruct",
@@ -6723,17 +7053,6 @@
   {
     "id": "mistral_ai:mistral-7b-v0.1",
     "name": "Mistral-7B-v0.1",
-    "display_name": "Mistral 7B",
-    "group": "mistral",
-    "family": "Mistral",
-    "variant": "7B",
-    "provider": "Mistral AI",
-    "release_date": "2023-09-27",
-    "parameters": null
-  },
-  {
-    "id": "mistral_ai:open-mistral-7b",
-    "name": "open-mistral-7b",
     "display_name": "Mistral 7B",
     "group": "mistral",
     "family": "Mistral",
@@ -6820,17 +7139,6 @@
     "parameters": null
   },
   {
-    "id": "technology_innovation_institute:falcon-180b",
-    "name": "falcon-180B",
-    "display_name": "Falcon 180B",
-    "group": "falcon-180b",
-    "family": null,
-    "variant": null,
-    "provider": "Technology Innovation Institute",
-    "release_date": "2023-09-06",
-    "parameters": null
-  },
-  {
     "id": "baichuan:baichuan-2-13b-base",
     "name": "Baichuan-2-13B-Base",
     "display_name": "Baichuan 2 13B Base",
@@ -6838,6 +7146,17 @@
     "family": null,
     "variant": null,
     "provider": "Baichuan",
+    "release_date": "2023-09-06",
+    "parameters": null
+  },
+  {
+    "id": "technology_innovation_institute:falcon-180b",
+    "name": "falcon-180B",
+    "display_name": "Falcon 180B",
+    "group": "falcon-180b",
+    "family": null,
+    "variant": null,
+    "provider": "Technology Innovation Institute",
     "release_date": "2023-09-06",
     "parameters": null
   },
@@ -6875,41 +7194,8 @@
     "parameters": null
   },
   {
-    "id": "meta_ai:llama-2-70b-chat-hf",
-    "name": "Llama-2-70b-chat-hf",
-    "display_name": "Llama 2 70B",
-    "group": "llama-2",
-    "family": "Llama 2",
-    "variant": "70B",
-    "provider": "Meta AI",
-    "release_date": "2023-07-18",
-    "parameters": null
-  },
-  {
     "id": "meta_ai:llama-2-70b-chat",
     "name": "Llama-2-70b-chat",
-    "display_name": "Llama 2 70B",
-    "group": "llama-2",
-    "family": "Llama 2",
-    "variant": "70B",
-    "provider": "Meta AI",
-    "release_date": "2023-07-18",
-    "parameters": null
-  },
-  {
-    "id": "meta_ai:llama-2-13b",
-    "name": "Llama-2-13b",
-    "display_name": "Llama 2 13B",
-    "group": "llama-2",
-    "family": "Llama 2",
-    "variant": "13B",
-    "provider": "Meta AI",
-    "release_date": "2023-07-18",
-    "parameters": null
-  },
-  {
-    "id": "meta_ai:llama-2-70b-hf",
-    "name": "Llama-2-70b-hf ",
     "display_name": "Llama 2 70B",
     "group": "llama-2",
     "family": "Llama 2",
@@ -6930,8 +7216,30 @@
     "parameters": null
   },
   {
-    "id": "meta_ai:llama-2-13b-chat",
-    "name": "Llama-2-13b-chat",
+    "id": "meta_ai:llama-2-70b-hf",
+    "name": "Llama-2-70b-hf ",
+    "display_name": "Llama 2 70B",
+    "group": "llama-2",
+    "family": "Llama 2",
+    "variant": "70B",
+    "provider": "Meta AI",
+    "release_date": "2023-07-18",
+    "parameters": null
+  },
+  {
+    "id": "meta_ai:llama-2-70b-chat-hf",
+    "name": "Llama-2-70b-chat-hf",
+    "display_name": "Llama 2 70B",
+    "group": "llama-2",
+    "family": "Llama 2",
+    "variant": "70B",
+    "provider": "Meta AI",
+    "release_date": "2023-07-18",
+    "parameters": null
+  },
+  {
+    "id": "meta_ai:llama-2-13b",
+    "name": "Llama-2-13b",
     "display_name": "Llama 2 13B",
     "group": "llama-2",
     "family": "Llama 2",
@@ -6952,14 +7260,14 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude-2.0",
-    "name": "claude-2.0",
-    "display_name": "Claude 2.0",
-    "group": "claude-2-0",
-    "family": "Claude 2.0",
-    "variant": null,
-    "provider": "Anthropic",
-    "release_date": "2023-07-11",
+    "id": "meta_ai:llama-2-13b-chat",
+    "name": "Llama-2-13b-chat",
+    "display_name": "Llama 2 13B",
+    "group": "llama-2",
+    "family": "Llama 2",
+    "variant": "13B",
+    "provider": "Meta AI",
+    "release_date": "2023-07-18",
     "parameters": null
   },
   {
@@ -6970,6 +7278,17 @@
     "family": null,
     "variant": null,
     "provider": "Baichuan",
+    "release_date": "2023-07-11",
+    "parameters": null
+  },
+  {
+    "id": "anthropic:claude-2.0",
+    "name": "claude-2.0",
+    "display_name": "Claude 2.0",
+    "group": "claude-2-0",
+    "family": "Claude 2.0",
+    "variant": null,
+    "provider": "Anthropic",
     "release_date": "2023-07-11",
     "parameters": null
   },
@@ -7007,17 +7326,6 @@
     "parameters": null
   },
   {
-    "id": "mosaicml:mpt-30b-instruct",
-    "name": "mpt-30b-instruct",
-    "display_name": "Mpt 30B Instruct",
-    "group": "mpt-30b-instruct",
-    "family": null,
-    "variant": null,
-    "provider": "MosaicML",
-    "release_date": "2023-06-22",
-    "parameters": null
-  },
-  {
     "id": "mosaicml:mpt-30b",
     "name": "mpt-30b",
     "display_name": "Mpt 30B",
@@ -7036,6 +7344,17 @@
     "family": null,
     "variant": null,
     "provider": "Inflection AI",
+    "release_date": "2023-06-22",
+    "parameters": null
+  },
+  {
+    "id": "mosaicml:mpt-30b-instruct",
+    "name": "mpt-30b-instruct",
+    "display_name": "Mpt 30B Instruct",
+    "group": "mpt-30b-instruct",
+    "family": null,
+    "variant": null,
+    "provider": "MosaicML",
     "release_date": "2023-06-22",
     "parameters": null
   },
@@ -7117,10 +7436,10 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:palm_2-m",
-    "name": "PaLM 2-M",
-    "display_name": "Palm 2 M",
-    "group": "palm-2-m",
+    "id": "google_deepmind:palm_2-s",
+    "name": "PaLM 2-S",
+    "display_name": "Palm 2 S",
+    "group": "palm-2-s",
     "family": null,
     "variant": null,
     "provider": "Google DeepMind",
@@ -7139,10 +7458,10 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:palm_2-s",
-    "name": "PaLM 2-S",
-    "display_name": "Palm 2 S",
-    "group": "palm-2-s",
+    "id": "google_deepmind:palm_2-m",
+    "name": "PaLM 2-M",
+    "display_name": "Palm 2 M",
+    "group": "palm-2-m",
     "family": null,
     "variant": null,
     "provider": "Google DeepMind",
@@ -7271,10 +7590,10 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt_4",
-    "name": "gpt_4",
-    "display_name": "GPT-4",
-    "group": "gpt-4",
+    "id": "openai:gpt-4-32k-0314",
+    "name": "gpt-4-32k-0314",
+    "display_name": "GPT-32k",
+    "group": "gpt-32k",
     "family": "GPT",
     "variant": null,
     "provider": "OpenAI",
@@ -7282,10 +7601,10 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-4-32k-0314",
-    "name": "gpt-4-32k-0314",
-    "display_name": "GPT-32k",
-    "group": "gpt-32k",
+    "id": "openai:gpt_4",
+    "name": "gpt_4",
+    "display_name": "GPT-4",
+    "group": "gpt-4",
     "family": "GPT",
     "variant": null,
     "provider": "OpenAI",
@@ -7458,23 +7777,23 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt_3_5_turbo_instruct",
-    "name": "gpt_3_5_turbo_instruct",
-    "display_name": "GPT-3.5 Turbo Instruct",
-    "group": "gpt-3-5",
-    "family": "GPT",
-    "variant": "Turbo Instruct",
-    "provider": "OpenAI",
-    "release_date": "2022-03-15",
-    "parameters": null
-  },
-  {
     "id": "openai:text-davinci-002",
     "name": "text-davinci-002",
     "display_name": "Text Davinci 002",
     "group": "text-davinci-002",
     "family": null,
     "variant": null,
+    "provider": "OpenAI",
+    "release_date": "2022-03-15",
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt_3_5_turbo_instruct",
+    "name": "gpt_3_5_turbo_instruct",
+    "display_name": "GPT-3.5 Turbo Instruct",
+    "group": "gpt-3-5",
+    "family": "GPT",
+    "variant": "Turbo Instruct",
     "provider": "OpenAI",
     "release_date": "2022-03-15",
     "parameters": null
@@ -7601,13 +7920,13 @@
     "parameters": null
   },
   {
-    "id": "openai:davinci",
-    "name": "davinci",
-    "display_name": "Davinci",
-    "group": "davinci",
+    "id": "unknown:sonar",
+    "name": "sonar",
+    "display_name": "Sonar",
+    "group": "sonar",
     "family": null,
     "variant": null,
-    "provider": "OpenAI",
+    "provider": "Unknown",
     "release_date": null,
     "parameters": null
   },
@@ -7678,28 +7997,6 @@
     "parameters": null
   },
   {
-    "id": "unknown:learnlm-1.5-pro-experimental",
-    "name": "learnlm-1.5-pro-experimental",
-    "display_name": "Learnlm 1.5 Pro Experimental",
-    "group": "learnlm-1-5-pro-experimental",
-    "family": null,
-    "variant": null,
-    "provider": "Unknown",
-    "release_date": null,
-    "parameters": null
-  },
-  {
-    "id": "unknown:sonar",
-    "name": "sonar",
-    "display_name": "Sonar",
-    "group": "sonar",
-    "family": null,
-    "variant": null,
-    "provider": "Unknown",
-    "release_date": null,
-    "parameters": null
-  },
-  {
     "id": "google_deepmind:gemini-2-5-flash-preview-05-20-thinking-1k",
     "name": "gemini-2-5-flash-preview-05-20-thinking-1k",
     "display_name": "Gemini 1k Flash Preview Thinking",
@@ -7744,13 +8041,13 @@
     "parameters": null
   },
   {
-    "id": "anthropic:claude_3.7",
-    "name": "Claude 3.7",
-    "display_name": "Claude 3.7",
-    "group": "claude-3-7",
-    "family": "Claude 3.7",
+    "id": "unknown:codex-mini-latest",
+    "name": "codex-mini-latest",
+    "display_name": "Codex Mini Latest",
+    "group": "codex-mini-latest",
+    "family": null,
     "variant": null,
-    "provider": "Anthropic",
+    "provider": "Unknown",
     "release_date": null,
     "parameters": null
   },
@@ -7766,13 +8063,13 @@
     "parameters": null
   },
   {
-    "id": "xai:grok-3-mini-beta-low-openrouter",
-    "name": "grok-3-mini-beta-low-openrouter",
-    "display_name": "Grok 3 Mini Beta Low",
-    "group": "grok-3",
-    "family": "Grok 3",
-    "variant": "Mini Beta Low",
-    "provider": "xAI",
+    "id": "anthropic:claude_3.7",
+    "name": "Claude 3.7",
+    "display_name": "Claude 3.7",
+    "group": "claude-3-7",
+    "family": "Claude 3.7",
+    "variant": null,
+    "provider": "Anthropic",
     "release_date": null,
     "parameters": null
   },
@@ -7817,17 +8114,6 @@
     "family": "Grok 4",
     "variant": null,
     "provider": "xAI",
-    "release_date": null,
-    "parameters": null
-  },
-  {
-    "id": "google_deepmind:gemini-3-deep-think-preview",
-    "name": "gemini-3-deep-think-preview",
-    "display_name": "Gemini 3 Preview",
-    "group": "gemini-3",
-    "family": "gemini-3",
-    "variant": "Preview",
-    "provider": "Google DeepMind",
     "release_date": null,
     "parameters": null
   },
@@ -7942,6 +8228,17 @@
     "parameters": null
   },
   {
+    "id": "deepseek:deepseek-v3.2",
+    "name": "deepseek-v3.2",
+    "display_name": "DeepSeek",
+    "group": "deepseek",
+    "family": "DeepSeek",
+    "variant": null,
+    "provider": "DeepSeek",
+    "release_date": null,
+    "parameters": null
+  },
+  {
     "id": "google_deepmind:gemini_1.5_pro",
     "name": "Gemini 1.5 Pro",
     "display_name": "Gemini 1.5 Pro",
@@ -7964,17 +8261,6 @@
     "parameters": null
   },
   {
-    "id": "google_deepmind:gemma-2-9b",
-    "name": "gemma-2-9b",
-    "display_name": "Gemma 2 9B",
-    "group": "gemma-2-9b",
-    "family": null,
-    "variant": null,
-    "provider": "Google DeepMind",
-    "release_date": null,
-    "parameters": null
-  },
-  {
     "id": "anthropic:claude-instant-1.1",
     "name": "claude-instant-1.1",
     "display_name": "Claude 1.1",
@@ -7986,35 +8272,13 @@
     "parameters": null
   },
   {
-    "id": "unknown:t5-large",
-    "name": "T5-Large",
-    "display_name": "T5 Large",
-    "group": "t5-large",
+    "id": "google_deepmind:gemma-2-9b",
+    "name": "gemma-2-9b",
+    "display_name": "Gemma 2 9B",
+    "group": "gemma-2-9b",
     "family": null,
     "variant": null,
-    "provider": "Unknown",
-    "release_date": null,
-    "parameters": null
-  },
-  {
-    "id": "google:t5-11b",
-    "name": "T5-11B",
-    "display_name": "T5 11B",
-    "group": "t5-11b",
-    "family": null,
-    "variant": null,
-    "provider": "Google",
-    "release_date": null,
-    "parameters": null
-  },
-  {
-    "id": "google:t5-3b",
-    "name": "T5-3B",
-    "display_name": "T5 3B",
-    "group": "t5-3b",
-    "family": null,
-    "variant": null,
-    "provider": "Google",
+    "provider": "Google DeepMind",
     "release_date": null,
     "parameters": null
   },
@@ -8041,13 +8305,13 @@
     "parameters": null
   },
   {
-    "id": "public_economic_data:us_labor_market",
-    "name": "US Labor Market",
-    "display_name": "Us Labor Market",
-    "group": "us-labor-market",
-    "family": "Economic signal",
+    "id": "openai:davinci",
+    "name": "davinci",
+    "display_name": "Davinci",
+    "group": "davinci",
+    "family": null,
     "variant": null,
-    "provider": "Public Economic Data",
+    "provider": "OpenAI",
     "release_date": null,
     "parameters": null
   },
@@ -8085,10 +8349,10 @@
     "parameters": null
   },
   {
-    "id": "unknown:ml-elephant",
-    "name": "ml-elephant",
-    "display_name": "Ml Elephant",
-    "group": "ml-elephant",
+    "id": "unknown:learnlm-1.5-pro-experimental",
+    "name": "learnlm-1.5-pro-experimental",
+    "display_name": "Learnlm 1.5 Pro Experimental",
+    "group": "learnlm-1-5-pro-experimental",
     "family": null,
     "variant": null,
     "provider": "Unknown",
@@ -8096,35 +8360,24 @@
     "parameters": null
   },
   {
-    "id": "openai:gpt-5-chat",
-    "name": "gpt-5-chat",
-    "display_name": "GPT-5",
-    "group": "gpt-5",
-    "family": "GPT",
+    "id": "public_economic_data:us_labor_market",
+    "name": "US Labor Market",
+    "display_name": "Us Labor Market",
+    "group": "us-labor-market",
+    "family": "Economic signal",
     "variant": null,
-    "provider": "OpenAI",
+    "provider": "Public Economic Data",
     "release_date": null,
     "parameters": null
   },
   {
-    "id": "xai:grok-4-1-fast-non-reasoning",
-    "name": "grok-4-1-fast-non-reasoning",
-    "display_name": "Grok 4.1",
-    "group": "grok-4-1",
-    "family": "Grok 4.1",
+    "id": "google:t5-11b",
+    "name": "T5-11B",
+    "display_name": "T5 11B",
+    "group": "t5-11b",
+    "family": null,
     "variant": null,
-    "provider": "xAI",
-    "release_date": null,
-    "parameters": null
-  },
-  {
-    "id": "xai:grok-4-1-fast-reasoning",
-    "name": "grok-4-1-fast-reasoning",
-    "display_name": "Grok 4.1",
-    "group": "grok-4-1",
-    "family": "Grok 4.1",
-    "variant": null,
-    "provider": "xAI",
+    "provider": "Google",
     "release_date": null,
     "parameters": null
   },
@@ -8151,6 +8404,72 @@
     "parameters": null
   },
   {
+    "id": "unknown:t5-large",
+    "name": "T5-Large",
+    "display_name": "T5 Large",
+    "group": "t5-large",
+    "family": null,
+    "variant": null,
+    "provider": "Unknown",
+    "release_date": null,
+    "parameters": null
+  },
+  {
+    "id": "google:t5-3b",
+    "name": "T5-3B",
+    "display_name": "T5 3B",
+    "group": "t5-3b",
+    "family": null,
+    "variant": null,
+    "provider": "Google",
+    "release_date": null,
+    "parameters": null
+  },
+  {
+    "id": "unknown:ml-elephant",
+    "name": "ml-elephant",
+    "display_name": "Ml Elephant",
+    "group": "ml-elephant",
+    "family": null,
+    "variant": null,
+    "provider": "Unknown",
+    "release_date": null,
+    "parameters": null
+  },
+  {
+    "id": "xai:grok-4-1-fast-reasoning",
+    "name": "grok-4-1-fast-reasoning",
+    "display_name": "Grok 4.1",
+    "group": "grok-4-1",
+    "family": "Grok 4.1",
+    "variant": null,
+    "provider": "xAI",
+    "release_date": null,
+    "parameters": null
+  },
+  {
+    "id": "xai:grok-4-1-fast-non-reasoning",
+    "name": "grok-4-1-fast-non-reasoning",
+    "display_name": "Grok 4.1",
+    "group": "grok-4-1",
+    "family": "Grok 4.1",
+    "variant": null,
+    "provider": "xAI",
+    "release_date": null,
+    "parameters": null
+  },
+  {
+    "id": "openai:gpt-5-chat",
+    "name": "gpt-5-chat",
+    "display_name": "GPT-5",
+    "group": "gpt-5",
+    "family": "GPT",
+    "variant": null,
+    "provider": "OpenAI",
+    "release_date": null,
+    "parameters": null
+  },
+  {
     "id": "unknown:switch-base",
     "name": "Switch-Base",
     "display_name": "Switch Base",
@@ -8173,13 +8492,13 @@
     "parameters": null
   },
   {
-    "id": "unknown:codex-mini-latest",
-    "name": "codex-mini-latest",
-    "display_name": "Codex Mini Latest",
-    "group": "codex-mini-latest",
-    "family": null,
-    "variant": null,
-    "provider": "Unknown",
+    "id": "xai:grok-3-mini-beta-low-openrouter",
+    "name": "grok-3-mini-beta-low-openrouter",
+    "display_name": "Grok 3 Mini Beta Low",
+    "group": "grok-3",
+    "family": "Grok 3",
+    "variant": "Mini Beta Low",
+    "provider": "xAI",
     "release_date": null,
     "parameters": null
   }
