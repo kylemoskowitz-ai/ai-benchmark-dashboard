@@ -66,14 +66,14 @@
     "paper_url": null,
     "notes": "Scores from ARC Prize leaderboard (official), preferring ARC-AGI 2 semi-private split when available.",
     "sota": {
-      "score": 77.08,
-      "model_id": "google_deepmind:gemini-3-1-pro-preview",
-      "model_name": "gemini-3-1-pro-preview",
-      "model_display": "Gemini 3.1 Pro Preview",
-      "model_group": "gemini-3-1-pro",
-      "model_family": "Gemini 3.1 Pro",
-      "model_variant": "Preview",
-      "provider": "Google DeepMind",
+      "score": 83.33,
+      "model_id": "openai:gpt-5-4-pro-xhigh",
+      "model_name": "gpt-5-4-pro-xhigh",
+      "model_display": "GPT-5.4 Pro X-High",
+      "model_group": "gpt-5-4",
+      "model_family": "GPT",
+      "model_variant": "Pro X-High",
+      "provider": "OpenAI",
       "date": null
     }
   },
@@ -92,15 +92,15 @@
     "paper_url": null,
     "notes": null,
     "sota": {
-      "score": 154.2233541294733,
-      "model_id": "google_deepmind:gemini-3-pro-preview",
-      "model_name": "gemini-3-pro-preview",
-      "model_display": "Gemini 3 Pro Preview",
-      "model_group": "gemini-3-pro",
-      "model_family": "Gemini 3 Pro",
-      "model_variant": "Preview",
-      "provider": "Google DeepMind",
-      "date": "2025-11-18"
+      "score": 156.42281854686453,
+      "model_id": "openai:gpt-5.4-pro-2026-03-05_unknown",
+      "model_name": "gpt-5.4-pro-2026-03-05_unknown",
+      "model_display": "GPT-5.4 Pro",
+      "model_group": "gpt-5-4",
+      "model_family": "GPT",
+      "model_variant": "Pro",
+      "provider": "OpenAI",
+      "date": "2026-03-05"
     }
   },
   {
@@ -118,15 +118,15 @@
     "paper_url": "https://arxiv.org/abs/2411.04872",
     "notes": "Tier 4 = hardest problems. Most models score <15%.",
     "sota": {
-      "score": 31.3,
-      "model_id": "openai:gpt-5.2-pro-2025-12-11-webapp",
-      "model_name": "gpt-5.2-pro-2025-12-11-webapp",
-      "model_display": "GPT-5.2 Pro",
-      "model_group": "gpt-5-2",
+      "score": 37.5,
+      "model_id": "openai:gpt-5.4-pro-2026-03-05-web-app",
+      "model_name": "gpt-5.4-pro-2026-03-05-web-app",
+      "model_display": "GPT-5.4 Pro",
+      "model_group": "gpt-5-4",
       "model_family": "GPT",
       "model_variant": "Pro",
       "provider": "OpenAI",
-      "date": "2025-12-24"
+      "date": "2026-03-06"
     }
   },
   {
@@ -185,7 +185,7 @@
     "paper_url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
     "notes": "P50 time horizon in minutes. Higher = can complete more complex autonomous tasks. Data from METR-Horizon-v1.1.",
     "sota": {
-      "score": 870.027186,
+      "score": 718.80683,
       "model_id": "anthropic:claude_opus_4_6_inspect",
       "model_name": "claude_opus_4_6_inspect",
       "model_display": "Claude Opus 4.6",
