@@ -14,7 +14,7 @@
     "paper_url": null,
     "notes": "US labor-demand diffusion proxy. Higher values imply broader employer demand for AI skills.",
     "sota": {
-      "score": 4.67034327770036,
+      "score": 4.9048953669236,
       "model_id": "public_economic_data:us_labor_market",
       "model_name": "US Labor Market",
       "model_display": "Us Labor Market",
@@ -22,7 +22,7 @@
       "model_family": null,
       "model_variant": null,
       "provider": "Public Economic Data",
-      "date": "2026-01-31"
+      "date": "2026-02-28"
     }
   },
   {
@@ -92,7 +92,7 @@
     "paper_url": null,
     "notes": null,
     "sota": {
-      "score": 156.42281854686453,
+      "score": 158.24337972795823,
       "model_id": "openai:gpt-5.4-pro-2026-03-05_unknown",
       "model_name": "gpt-5.4-pro-2026-03-05_unknown",
       "model_display": "GPT-5.4 Pro",
